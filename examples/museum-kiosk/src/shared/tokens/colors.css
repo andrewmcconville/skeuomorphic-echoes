@@ -1,0 +1,27 @@
+:root {
+  /* Primary Surface */
+  --surface-100: #F5F0E8;
+  --surface-200: #EDE8DC;
+  --surface-300: #D8D3CA;
+  --surface-400: #C8C2B8;
+
+  /* Accent — Warm Overlay Spectrum */
+  --amber-500: #E8A838;
+  --amber-700: #D4922A;
+  --orange-500: #D46A38;
+  --orange-700: #C25A30;
+
+  /* Structure */
+  --ink-900: #1A1A1A;
+  --ink-800: #2A2A2A;
+  --gray-500: #6B6B6B;
+  --gray-400: #8A8A8A;
+
+  /* Semantic */
+  --collected-green: #5A7A5A;
+  --locked-brown: #8A5A3A;
+
+  /* Overlay Opacity */
+  --zone-overlay-opacity: 0.5;
+  --shadow-opacity: 0.12;
+}

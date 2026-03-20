@@ -1,0 +1,25 @@
+:root {
+  /* Font Families */
+  --font-display: 'IBM Plex Serif', serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-meta: 'IBM Plex Mono', monospace;
+
+  /* Display — IBM Plex Serif */
+  --text-display-title: 700 80px/88px var(--font-display);
+  --text-display-specimen: 700 56px/64px var(--font-display);
+  --text-display-h1: 700 40px/48px var(--font-display);
+  --text-display-h2: 300 32px/40px var(--font-display);
+
+  /* Body / UI — IBM Plex Sans */
+  --text-body-default: 400 24px/36px var(--font-body);
+  --text-body-small: 400 20px/28px var(--font-body);
+  --text-ui-button: 500 20px/20px var(--font-body);
+  --text-ui-nav: 500 16px/20px var(--font-body);
+  --text-ui-caption: 400 16px/24px var(--font-body);
+
+  /* Metadata — IBM Plex Mono */
+  --text-meta-era: 400 18px/24px var(--font-meta);
+  --text-meta-field-label: 400 14px/20px var(--font-meta);
+  --text-meta-field-value: 300 14px/20px var(--font-meta);
+  --text-meta-progress: 400 16px/20px var(--font-meta);
+}

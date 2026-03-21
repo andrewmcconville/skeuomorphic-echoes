@@ -20,14 +20,14 @@ const router = createRouter({
       component: () => import('./views/Step2_2View.vue'),
     },
     {
+      path: '/step/2.8',
+      name: 'step-2.8',
+      component: () => import('./views/Step2_8View.vue'),
+    },
+    {
       path: '/step/:id',
       name: 'step',
       component: () => import('./views/StepView.vue'),
-    },
-    {
-      path: '/design-system',
-      name: 'design-system',
-      component: () => import('./views/DesignSystemView.vue'),
     },
   ],
 })

@@ -35,6 +35,11 @@ const brands = [
   'Apple (selectively)',
 ]
 
+const goals = [
+  'Discover the history behind familiar interface icons, sounds, and language.',
+  'Save/collect references (artifacts, favorites, achievements) to revisit later.',
+]
+
 const motivations = [
   'Builds a personal archive of design references for inspiration, talks, and fun.',
   'Enjoys systems-thinking: timelines, taxonomies, tech trees, provenance.',
@@ -57,106 +62,118 @@ const needs = [
 
 <template>
   <article class="step-page">
-    <!-- Hero -->
+    <!-- ===== HERO — warm dark band ===== -->
     <header class="hero">
-      <div class="hero-meta">
-        <span class="step-number">2.2</span>
-        <span class="step-label">Process Step</span>
+      <div class="hero-badge">
+        <span class="badge-number">2.2</span>
       </div>
       <h1>Persona</h1>
       <p class="hero-lead">
         Defining the target visitor — their goals, frustrations, and the
         experience they expect from a museum kiosk.
       </p>
+      <div class="hero-accent"></div>
     </header>
 
-    <div class="divider"></div>
 
-    <!-- Identity -->
-    <section class="section-row">
-      <div class="section-label">
-        <h2 class="section-heading">Identity</h2>
-      </div>
-      <div class="section-content">
-        <div class="identity-card">
-          <div class="identity-top">
-            <div class="identity-info">
-              <h3 class="identity-name">Maya Rios</h3>
-              <span class="pronoun">she / her</span>
+    <!-- ===== IDENTITY ===== -->
+    <section class="category">
+      <div class="section-row">
+        <div class="section-label">
+          <h2 class="section-heading">Identity</h2>
+        </div>
+        <div class="section-content">
+          <div class="identity-card">
+            <div class="identity-top">
+              <div class="identity-info">
+                <h3 class="identity-name">Maya Rios</h3>
+                <span class="pronoun">she / her</span>
+              </div>
+              <div class="identity-role">
+                <span class="role-tag">Museum Goer</span>
+              </div>
             </div>
-            <div class="identity-role">
-              <span class="role-tag">Museum Goer</span>
+            <div class="identity-org">
+              <span class="datum-label">Organization</span>
+              <span class="datum-value">Independent artist and maker</span>
             </div>
           </div>
-          <div class="identity-org">
-            <span class="datum-label">Organization</span>
-            <span class="datum-value">Independent artist and maker</span>
+        </div>
+      </div>
+
+      <div class="section-row subsection">
+        <div class="section-label">
+          <h3 class="subsection-heading">Bio</h3>
+        </div>
+        <div class="section-content">
+          <p class="bio">
+            Maya just finished her MFA in Art &amp; Design + Technology and is
+            decompressing by visiting museums and design exhibitions — part
+            research, part therapy. She's obsessed with how interface conventions
+            become "invisible culture," and she loves exhibits that treat everyday
+            UI details like artifacts worth studying.
+          </p>
+          <blockquote>
+            "I'm here for the details — show me the lineage, not just the label."
+          </blockquote>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===== DEMOGRAPHICS ===== -->
+    <section class="category">
+      <div class="section-row">
+        <div class="section-label">
+          <h2 class="section-heading">Demographics</h2>
+        </div>
+        <div class="section-content">
+          <div class="specs-grid">
+            <div v-for="d in demographics" :key="d.label" class="spec">
+              <span class="spec-label">{{ d.label }}</span>
+              <span class="spec-dots"></span>
+              <span class="spec-value">{{ d.value }}</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="divider"></div>
-
-    <!-- Bio -->
-    <section class="section-row">
-      <div class="section-label">
-        <h2 class="section-heading">Bio</h2>
-      </div>
-      <div class="section-content">
-        <p class="bio">
-          Maya just finished her MFA in Art &amp; Design + Technology and is
-          decompressing by visiting museums and design exhibitions — part
-          research, part therapy. She's obsessed with how interface conventions
-          become "invisible culture," and she loves exhibits that treat everyday
-          UI details like artifacts worth studying.
-        </p>
-        <blockquote>
-          "I'm here for the details — show me the lineage, not just the label."
-        </blockquote>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- Demographics -->
-    <section class="section-row">
-      <div class="section-label">
-        <h2 class="section-heading">Demographics</h2>
-      </div>
-      <div class="section-content">
-        <div class="specs-grid">
-          <div v-for="d in demographics" :key="d.label" class="spec">
-            <span class="spec-label">{{ d.label }}</span>
-            <span class="spec-dots"></span>
-            <span class="spec-value">{{ d.value }}</span>
-          </div>
+    <!-- ===== PSYCHOGRAPHICS ===== -->
+    <section class="category">
+      <div class="section-row">
+        <div class="section-label">
+          <h2 class="section-heading">Psychographics</h2>
         </div>
       </div>
-    </section>
 
-    <div class="divider"></div>
-
-    <!-- Psychographics -->
-    <section class="section-row">
-      <div class="section-label">
-        <h2 class="section-heading">Psychographics</h2>
-      </div>
-      <div class="section-content">
-        <div class="tag-group">
-          <span class="tag-label">Interests</span>
+      <div class="section-row subsection">
+        <div class="section-label">
+          <h3 class="subsection-heading">Interests</h3>
+        </div>
+        <div class="section-content">
           <div class="tags">
             <span v-for="t in interests" :key="t" class="tag">{{ t }}</span>
           </div>
         </div>
-        <div class="tag-group">
-          <span class="tag-label">Personality</span>
+      </div>
+
+      <div class="section-row subsection">
+        <div class="section-label">
+          <h3 class="subsection-heading">Personality</h3>
+        </div>
+        <div class="section-content">
           <div class="tags">
             <span v-for="t in traits" :key="t" class="tag">{{ t }}</span>
           </div>
         </div>
-        <div class="tag-group">
-          <span class="tag-label">Brands</span>
+      </div>
+
+      <div class="section-row subsection">
+        <div class="section-label">
+          <h3 class="subsection-heading">Brands</h3>
+        </div>
+        <div class="section-content">
           <div class="tags">
             <span v-for="b in brands" :key="b" class="tag tag--outline">{{ b }}</span>
           </div>
@@ -164,59 +181,84 @@ const needs = [
       </div>
     </section>
 
-    <div class="divider"></div>
-
-    <!-- Goals & Motivations -->
-    <section class="section-row">
-      <div class="section-label">
-        <h2 class="section-heading">Motivations</h2>
-      </div>
-      <div class="section-content">
-        <div class="goal-list">
-          <div class="goal-item">
-            <span class="goal-icon">◎</span>
-            <span>Discover the history behind familiar interface icons, sounds, and language.</span>
-          </div>
-          <div class="goal-item">
-            <span class="goal-icon">◎</span>
-            <span>Save/collect references (artifacts, favorites, achievements) to revisit later.</span>
-          </div>
+    <!-- ===== MOTIVATIONS ===== -->
+    <section class="category">
+      <div class="section-row">
+        <div class="section-label">
+          <h2 class="section-heading">Motivations</h2>
         </div>
+      </div>
 
-        <div class="divider-thin"></div>
+      <div class="section-row subsection">
+        <div class="section-label">
+          <h3 class="subsection-heading">Goals</h3>
+        </div>
+        <div class="section-content">
+          <ol class="numbered-list">
+            <li v-for="(g, i) in goals" :key="g">
+              <span class="list-number">{{ i + 1 }}</span>
+              <span>{{ g }}</span>
+            </li>
+          </ol>
+        </div>
+      </div>
 
-        <ul class="detail-list">
-          <li v-for="m in motivations" :key="m">{{ m }}</li>
-        </ul>
+      <div class="section-row subsection">
+        <div class="section-label">
+          <h3 class="subsection-heading">Drivers</h3>
+        </div>
+        <div class="section-content">
+          <ol class="numbered-list">
+            <li v-for="(m, i) in motivations" :key="m">
+              <span class="list-number">{{ i + 1 }}</span>
+              <span>{{ m }}</span>
+            </li>
+          </ol>
+        </div>
       </div>
     </section>
 
-    <div class="divider"></div>
-
-    <!-- Frustrations -->
-    <section class="section-row">
-      <div class="section-label">
-        <h2 class="section-heading">Frustrations</h2>
+    <!-- ===== FRUSTRATIONS ===== -->
+    <section class="category">
+      <div class="section-row">
+        <div class="section-label">
+          <h2 class="section-heading">Frustrations</h2>
+        </div>
       </div>
-      <div class="section-content">
-        <ul class="detail-list detail-list--frustration">
-          <li v-for="f in frustrations" :key="f">{{ f }}</li>
-        </ul>
+
+      <div class="section-row subsection">
+        <div class="section-label">
+          <h3 class="subsection-heading">Pain Points</h3>
+        </div>
+        <div class="section-content">
+          <ol class="numbered-list">
+            <li v-for="(f, i) in frustrations" :key="f">
+              <span class="list-number">{{ i + 1 }}</span>
+              <span>{{ f }}</span>
+            </li>
+          </ol>
+        </div>
       </div>
     </section>
 
-    <div class="divider"></div>
-
-    <!-- Needs -->
-    <section class="section-row">
-      <div class="section-label">
-        <h2 class="section-heading">UX Needs</h2>
+    <!-- ===== UX NEEDS ===== -->
+    <section class="category">
+      <div class="section-row">
+        <div class="section-label">
+          <h2 class="section-heading">UX Needs</h2>
+        </div>
       </div>
-      <div class="section-content">
-        <div class="needs-grid">
-          <div v-for="(n, i) in needs" :key="n" class="need-card">
-            <span class="need-number">{{ i + 1 }}</span>
-            <p>{{ n }}</p>
+
+      <div class="section-row subsection">
+        <div class="section-label">
+          <h3 class="subsection-heading">Requirements</h3>
+        </div>
+        <div class="section-content">
+          <div class="needs-grid">
+            <div v-for="(n, i) in needs" :key="n" class="need-card">
+              <span class="need-number">{{ i + 1 }}</span>
+              <p>{{ n }}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -225,85 +267,50 @@ const needs = [
 </template>
 
 <style scoped>
-.step-page {
-  max-width: 820px;
-}
-
-/* ---- Hero ---- */
-.hero {
-  margin-bottom: var(--space-2xl);
-}
-
-.hero-meta {
+/* ---- Category ---- */
+.category {
   display: flex;
-  align-items: baseline;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-md);
+  flex-direction: column;
 }
 
-.step-number {
-  font: var(--text-display-title);
-  font-size: 56px;
-  line-height: 1;
-  color: var(--ink-900);
-}
-
-.step-label {
-  font: var(--text-meta-field-label);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--gray-400);
-  align-self: flex-end;
-  margin-bottom: 8px;
-}
-
-h1 {
-  font: var(--text-display-title);
-  margin-bottom: var(--space-md);
-}
-
-.hero-lead {
-  font: var(--text-body-default);
-  color: var(--gray-500);
-  max-width: 560px;
-}
-
-/* ---- Divider ---- */
-.divider {
-  height: var(--stroke-medium);
-  background: var(--ink-900);
-  margin: var(--space-2xl) 0;
-}
-
-.divider-thin {
-  height: var(--stroke-thin);
-  background: var(--surface-300);
-  margin: var(--space-lg) 0;
-}
-
-/* ---- Section row ---- */
-.section-row {
+/* ---- Subsections (2-col grid) ---- */
+.subsection {
+  padding: 0;
+  margin-bottom: var(--space-2xl);
   display: grid;
   grid-template-columns: 120px 1fr;
   gap: var(--space-2xl);
 }
 
-.section-label {
-  padding-top: 2px;
+.subsection .section-label {
+  grid-column: 1;
+  border-bottom: none;
+  margin-bottom: 0;
 }
 
-.section-heading {
-  font: var(--text-display-h2);
-  font-size: 18px;
-  line-height: 24px;
-  color: var(--ink-800);
+.subsection .section-label::after {
+  display: none;
+}
+
+.subsection .section-content {
+  grid-column: 2;
+}
+
+.subsection-heading {
+  font: var(--text-meta-field-label);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray-400);
+  line-height: 1.4;
   margin: 0;
+  font-weight: 400;
 }
 
-.section-content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xl);
+/* ---- Divider ---- */
+.divider-thin {
+  height: var(--stroke-thin);
+  background: var(--surface-300);
+  margin: var(--space-lg) 0;
 }
 
 /* ---- Identity card ---- */
@@ -345,18 +352,6 @@ h1 {
   gap: 2px;
 }
 
-.datum-label {
-  font: var(--text-meta-field-label);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--gray-400);
-}
-
-.datum-value {
-  font: var(--text-body-default);
-  font-size: 16px;
-}
-
 /* ---- Bio ---- */
 .bio {
   font: var(--text-body-default);
@@ -370,37 +365,14 @@ blockquote {
   color: var(--ink-800);
 }
 
-/* ---- Specs grid (dotted leaders) ---- */
-.specs-grid {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-.spec {
-  display: flex;
-  align-items: baseline;
-  gap: var(--space-sm);
-}
-
-.spec-label {
-  font: var(--text-meta-field-label);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--gray-500);
-  white-space: nowrap;
-}
-
+/* ---- Specs overrides ---- */
 .spec-dots {
-  flex: 1;
-  border-bottom: 1px dotted var(--surface-400);
-  margin-bottom: 3px;
   min-width: 20px;
 }
 
 .spec-value {
-  font: var(--text-body-small);
   font-size: 14px;
+  white-space: normal;
 }
 
 /* ---- Tags ---- */
@@ -438,51 +410,28 @@ blockquote {
   color: var(--gray-500);
 }
 
-/* ---- Goals ---- */
-.goal-list {
+/* ---- Numbered lists ---- */
+.numbered-list {
+  list-style: none;
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
 }
 
-.goal-item {
+.numbered-list li {
   display: flex;
   align-items: baseline;
-  gap: var(--space-sm);
+  gap: var(--space-md);
   font: var(--text-body-default);
 }
 
-.goal-icon {
-  color: var(--amber-500);
-  font-size: 14px;
-  flex-shrink: 0;
-}
-
-/* ---- Detail lists ---- */
-.detail-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-.detail-list li {
-  font: var(--text-body-small);
-  color: var(--gray-500);
-  padding-left: var(--space-md);
-  position: relative;
-}
-
-.detail-list li::before {
-  content: '—';
-  position: absolute;
-  left: 0;
+.list-number {
+  font: var(--text-display-h1);
+  font-size: 28px;
+  line-height: 1;
   color: var(--surface-400);
-}
-
-.detail-list--frustration li::before {
-  content: '×';
-  color: var(--orange-500);
+  min-width: 24px;
+  flex-shrink: 0;
 }
 
 /* ---- Needs grid ---- */

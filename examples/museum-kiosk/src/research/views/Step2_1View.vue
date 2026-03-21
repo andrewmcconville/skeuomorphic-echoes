@@ -1,4 +1,13 @@
 <script setup lang="ts">
+const evolutionStages = [
+  'Hand-written manuscripts',
+  'Movable type',
+  'Linotype machines',
+  'X-Acto knife paste-ups',
+  'Adobe InDesign',
+  'Google Docs',
+]
+
 const secondarySkeuomorphs = [
   {
     name: 'Camera shutter',
@@ -50,22 +59,20 @@ const formFactors = [
 
 <template>
   <article class="step-page">
-    <!-- Hero header -->
+    <!-- ===== HERO — warm dark band ===== -->
     <header class="hero">
-      <div class="hero-meta">
-        <span class="step-number">2.1</span>
-        <span class="step-label">Process Step</span>
+      <div class="hero-badge">
+        <span class="badge-number">2.1</span>
       </div>
       <h1>Skeuomorph<br />Selection</h1>
       <p class="hero-lead">
         Identifying the physical artifacts that persist as metaphors in digital
         interfaces — and choosing which evolution to trace.
       </p>
+      <div class="hero-accent"></div>
     </header>
 
-    <div class="divider"></div>
-
-    <!-- Goals -->
+    <!-- ===== GOALS ===== -->
     <section class="section-row">
       <div class="section-label">
         <h2 class="section-heading">Goals</h2>
@@ -92,25 +99,25 @@ const formFactors = [
       </div>
     </section>
 
-    <div class="divider"></div>
-
-    <!-- Primary Skeuomorph -->
-    <section class="section-row">
-      <div class="section-label">
-        <h2 class="section-heading">Primary</h2>
-      </div>
-      <div class="section-content">
-        <div class="primary-card">
-          <h3 class="primary-title">The WYSIWYG Page Editor</h3>
-          <p class="evolution-chain">
-            Hand-written manuscripts
-            <span class="arrow">→</span> Movable type
-            <span class="arrow">→</span> Linotype machines
-            <span class="arrow">→</span> X-Acto knife paste-ups
-            <span class="arrow">→</span> Adobe InDesign
-            <span class="arrow">→</span> Google Docs
-          </p>
-          <p class="rationale">
+    <!-- ===== PRIMARY — warm dark band ===== -->
+    <section class="band band--dark band--no-panel">
+      <div class="band-inner section-row">
+        <div class="section-label">
+          <h2 class="section-heading section-heading--light">Primary</h2>
+        </div>
+        <div class="section-content">
+          <h3 class="primary-title">The WYSIWYG<br />Page Editor</h3>
+          <div class="evolution-timeline">
+            <div
+              v-for="(stage, i) in evolutionStages"
+              :key="stage"
+              class="evo-stage"
+            >
+              <span class="evo-marker">{{ String(i + 1).padStart(2, '0') }}</span>
+              <span class="evo-name">{{ stage }}</span>
+            </div>
+          </div>
+          <p class="rationale rationale--light">
             The most popular and taken-for-granted skeuomorph in daily digital
             life — virtual pages mimic paper, clipboards reference paste-up
             boards, and font menus appear as mini type specimen books.
@@ -119,9 +126,7 @@ const formFactors = [
       </div>
     </section>
 
-    <div class="divider"></div>
-
-    <!-- Secondary Skeuomorphs -->
+    <!-- ===== SECONDARY ===== -->
     <section class="section-row">
       <div class="section-label">
         <h2 class="section-heading">Secondary</h2>
@@ -152,23 +157,20 @@ const formFactors = [
       </div>
     </section>
 
-    <div class="divider"></div>
 
-    <!-- UX Pattern & Media -->
+    <!-- ===== FORMAT ===== -->
     <section class="section-row">
       <div class="section-label">
         <h2 class="section-heading">Format</h2>
       </div>
       <div class="section-content">
-        <div class="data-row">
-          <div class="datum">
-            <span class="datum-label">UX Pattern</span>
-            <span class="datum-value">Museum kiosk with wayfinding and collecting</span>
-          </div>
-          <div class="datum">
-            <span class="datum-label">Media</span>
-            <span class="datum-value">Typographic primary, supported by historical photography, diagrams, and floor-plan maps</span>
-          </div>
+        <div class="prose-block">
+          <h3>UX Pattern</h3>
+          <p>Museum kiosk with wayfinding and collecting</p>
+        </div>
+        <div class="prose-block">
+          <h3>Media</h3>
+          <p>Typographic primary, supported by historical photography, diagrams, and floor-plan maps</p>
         </div>
         <div class="prose-block">
           <h3>Why this format?</h3>
@@ -181,31 +183,28 @@ const formFactors = [
       </div>
     </section>
 
-    <div class="divider"></div>
 
-    <!-- Research Sources -->
+    <!-- ===== SOURCES ===== -->
     <section class="section-row">
       <div class="section-label">
         <h2 class="section-heading">Sources</h2>
       </div>
       <div class="section-content">
-        <div class="data-row">
-          <div class="datum">
-            <span class="datum-label">Informational</span>
-            <span class="datum-value">
-              Bringhurst's <em>The Elements of Typographic Style</em>, the
-              Letterform Archive's online collection, and the Computer History
-              Museum's desktop publishing archives.
-            </span>
-          </div>
-          <div class="datum">
-            <span class="datum-label">Visual</span>
-            <span class="datum-value">
-              The Letterform Archive's digitized type specimens, the Computer
-              History Museum's early DTP screenshots, and archive.org for
-              scanned specimen books and software documentation.
-            </span>
-          </div>
+        <div class="prose-block">
+          <h3>Informational</h3>
+          <p>
+            Bringhurst's <em>The Elements of Typographic Style</em>, the
+            Letterform Archive's online collection, and the Computer History
+            Museum's desktop publishing archives.
+          </p>
+        </div>
+        <div class="prose-block">
+          <h3>Visual</h3>
+          <p>
+            The Letterform Archive's digitized type specimens, the Computer
+            History Museum's early DTP screenshots, and archive.org for
+            scanned specimen books and software documentation.
+          </p>
         </div>
         <p class="rationale">
           Each provides verifiable primary-source material. Bringhurst is the
@@ -216,34 +215,32 @@ const formFactors = [
       </div>
     </section>
 
-    <div class="divider"></div>
-
-    <!-- Inspiration -->
-    <section class="section-row">
-      <div class="section-label">
-        <h2 class="section-heading">Inspiration</h2>
-      </div>
-      <div class="section-content">
-        <div class="inspiration-grid">
-          <a
-            v-for="site in inspirationSites"
-            :key="site.url"
-            :href="site.url"
-            target="_blank"
-            rel="noopener"
-            class="inspiration-card"
-          >
-            <span class="inspiration-name">{{ site.name }}</span>
-            <span class="inspiration-arrow">↗</span>
-            <p class="inspiration-note">{{ site.note }}</p>
-          </a>
+    <!-- ===== INSPIRATION — warm band ===== -->
+    <section class="band band--warm">
+      <div class="band-inner section-row">
+        <div class="section-label">
+          <h2 class="section-heading">Inspiration</h2>
+        </div>
+        <div class="section-content">
+          <div class="inspiration-grid">
+            <a
+              v-for="site in inspirationSites"
+              :key="site.url"
+              :href="site.url"
+              target="_blank"
+              rel="noopener"
+              class="inspiration-card"
+            >
+              <span class="inspiration-name">{{ site.name }}</span>
+              <span class="inspiration-arrow">↗</span>
+              <p class="inspiration-note">{{ site.note }}</p>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <div class="divider"></div>
-
-    <!-- Form Factor -->
+    <!-- ===== FORM FACTOR ===== -->
     <section class="section-row">
       <div class="section-label">
         <h2 class="section-heading">Form Factor</h2>
@@ -285,16 +282,17 @@ const formFactors = [
       </div>
     </section>
 
-    <div class="divider"></div>
-
-    <!-- Project Title -->
-    <section class="section-row">
-      <div class="section-label">
-        <h2 class="section-heading">Title</h2>
-      </div>
-      <div class="section-content">
-        <div class="title-card">
-          <em>Before the Prompt:<br />The Rise and Fall of Digital Icons</em>
+    <!-- ===== TITLE — warm dark band ===== -->
+    <section class="band band--dark band--title">
+      <div class="band-inner section-row">
+        <div class="section-label">
+          <h2 class="section-heading section-heading--light">Title</h2>
+        </div>
+        <div class="section-content">
+          <div class="title-lockup">
+            <span class="title-circle"></span>
+            <em>Before the Prompt:<br />The Rise and Fall of Digital Icons</em>
+          </div>
         </div>
       </div>
     </section>
@@ -302,79 +300,64 @@ const formFactors = [
 </template>
 
 <style scoped>
-.step-page {
+/* ---- Full-bleed bands ---- */
+.band {
+  margin-left: calc(-1 * var(--space-2xl));
+  margin-right: calc(-1 * var(--space-2xl));
+  padding: var(--space-2xl);
+}
+
+.band-inner {
   max-width: 820px;
+  position: relative;
+  z-index: 1;
 }
 
-/* ---- Hero ---- */
-.hero {
-  margin-bottom: var(--space-2xl);
+.band--dark {
+  background: var(--warm-mid);
+  color: var(--surface-100);
 }
 
-.hero-meta {
-  display: flex;
-  align-items: baseline;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-md);
+.band--warm {
+  background: var(--surface-200);
 }
 
-.step-number {
-  font: var(--text-display-title);
-  font-size: 56px;
-  line-height: 1;
-  color: var(--ink-900);
+.band--title {
+  background: var(--warm-dark);
+  position: relative;
+  overflow: hidden;
 }
 
-.step-label {
-  font: var(--text-meta-field-label);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--gray-400);
-  align-self: flex-end;
-  margin-bottom: 8px;
-}
-
-h1 {
-  font: var(--text-display-title);
-  margin-bottom: var(--space-md);
-}
-
-.hero-lead {
-  font: var(--text-body-default);
-  color: var(--gray-500);
-  max-width: 560px;
-}
-
-/* ---- Divider ---- */
-.divider {
-  height: var(--stroke-medium);
-  background: var(--ink-900);
-  margin: var(--space-2xl) 0;
-}
-
-/* ---- Section row: label + content ---- */
+/* ---- Section row ---- */
 .section-row {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: var(--space-2xl);
+  position: relative;
 }
 
-.section-label {
-  padding-top: 2px;
+/* Subtle background panel behind content column */
+.section-row::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 60%;
+  background: var(--surface-200);
+  opacity: 0.5;
+  z-index: 0;
 }
 
-.section-heading {
-  font: var(--text-display-h2);
-  font-size: 18px;
-  line-height: 24px;
-  color: var(--ink-800);
-  margin: 0;
+.section-row > * {
+  position: relative;
+  z-index: 1;
 }
 
-.section-content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xl);
+.band--no-panel .section-row::before,
+.band--title .section-row::before {
+  display: none;
+}
+
+.section-heading--light {
+  color: var(--warm-border);
 }
 
 /* ---- Prose ---- */
@@ -403,36 +386,64 @@ h1 {
   padding-left: var(--space-md);
 }
 
-/* ---- Primary card ---- */
-.primary-card {
-  padding: var(--space-xl);
-  background: var(--surface-200);
-  border: var(--stroke-medium) solid var(--ink-900);
+.rationale--light {
+  color: var(--surface-300);
+  border-left-color: var(--warm-border);
 }
 
+/* ---- Primary — warm dark band content ---- */
 .primary-title {
-  font: var(--text-display-h1);
-  margin-bottom: var(--space-lg);
+  font: var(--text-display-title);
+  color: var(--surface-100);
+  margin: 0;
 }
 
-.evolution-chain {
+.evolution-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-left: var(--stroke-medium) solid var(--orange-500);
+  margin-left: var(--space-sm);
+  padding: var(--space-sm) 0;
+  background: linear-gradient(
+    to right,
+    oklch(0 0 0 / 0.12) 0px,
+    transparent 40px
+  );
+}
+
+.evo-stage {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
+  padding: var(--space-sm) 0 var(--space-sm) var(--space-lg);
+  position: relative;
+}
+
+.evo-stage::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  background: var(--orange-500);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.evo-marker {
+  font: var(--text-meta-field-value);
+  color: var(--surface-400);
+  min-width: 20px;
+}
+
+.evo-name {
   font: var(--text-body-default);
-  font-size: 15px;
-  line-height: 28px;
-  margin-bottom: var(--space-lg);
+  color: var(--surface-100);
 }
 
-.arrow {
-  color: var(--orange-500);
-  padding: 0 2px;
-}
-
-.primary-card .rationale {
-  border-left: none;
-  padding-left: 0;
-}
-
-/* ---- Secondary grid ---- */
+/* ---- Secondary ---- */
 .secondary-grid {
   display: flex;
   flex-direction: column;
@@ -443,8 +454,9 @@ h1 {
   display: flex;
   gap: var(--space-md);
   padding: var(--space-lg);
-  border: var(--stroke-thin) solid var(--surface-300);
+  border: var(--stroke-medium) solid var(--ink-900);
   background: var(--surface-100);
+  box-shadow: 4px 4px 0 var(--surface-300);
 }
 
 .card-number {
@@ -500,52 +512,8 @@ h1 {
   gap: 4px;
 }
 
-.datum-label {
-  font: var(--text-meta-field-label);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--gray-400);
-}
 
-.datum-value {
-  font: var(--text-body-default);
-  font-size: 16px;
-}
-
-/* ---- Specs grid (dotted leader lines) ---- */
-.specs-grid {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-.spec {
-  display: flex;
-  align-items: baseline;
-  gap: var(--space-sm);
-}
-
-.spec-label {
-  font: var(--text-meta-field-label);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--gray-500);
-  white-space: nowrap;
-}
-
-.spec-dots {
-  flex: 1;
-  border-bottom: 1px dotted var(--surface-400);
-  margin-bottom: 3px;
-}
-
-.spec-value {
-  font: var(--text-body-small);
-  font-size: 15px;
-  white-space: nowrap;
-}
-
-/* ---- Inspiration cards ---- */
+/* ---- Inspiration cards (on warm band) ---- */
 .inspiration-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -560,11 +528,13 @@ h1 {
   border: var(--stroke-medium) solid var(--ink-900);
   background: var(--surface-100);
   position: relative;
-  transition: background 0.15s;
+  box-shadow: 3px 3px 0 var(--surface-300);
+  transition: transform 0.15s, box-shadow 0.15s;
 }
 
 .inspiration-card:hover {
-  background: var(--surface-200);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--surface-400);
 }
 
 .inspiration-name {
@@ -592,14 +562,36 @@ h1 {
   color: var(--gray-500);
 }
 
-/* ---- Title card ---- */
-.title-card {
+/* ---- Title lockup — warm dark band ---- */
+.title-lockup {
   font: var(--text-display-h1);
-  font-size: 32px;
-  line-height: 40px;
-  padding: var(--space-2xl) var(--space-xl);
-  border: var(--stroke-medium) solid var(--ink-900);
-  background: var(--ink-900);
+  font-size: 36px;
+  line-height: 44px;
   color: var(--surface-100);
+  position: relative;
+  padding-left: var(--space-2xl);
+}
+
+.title-circle {
+  position: absolute;
+  left: -60px;
+  top: 50%;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--orange-500);
+  opacity: 0.15;
+  transform: translateY(-50%);
+}
+
+.band--title::after {
+  content: '';
+  position: absolute;
+  right: 40px;
+  bottom: -30px;
+  width: 80px;
+  height: 80px;
+  border: var(--stroke-medium) solid var(--warm-border);
+  opacity: 0.3;
 }
 </style>

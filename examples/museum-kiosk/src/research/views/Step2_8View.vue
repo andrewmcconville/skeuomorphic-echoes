@@ -28,6 +28,14 @@ const colorGroups = [
     ],
   },
   {
+    name: 'Warm Darks',
+    colors: [
+      { name: 'Warm-Dark', var: '--warm-dark', hex: '#3A3530', usage: 'Editorial dark bands, hero backgrounds, title sections' },
+      { name: 'Warm-Mid', var: '--warm-mid', hex: '#4A4540', usage: 'Mid-tone panels, primary content bands, tonal contrast' },
+      { name: 'Warm-Border', var: '--warm-border', hex: '#524D47', usage: 'Borders and accents on dark bands, decorative strokes' },
+    ],
+  },
+  {
     name: 'Semantic',
     colors: [
       { name: 'Collected-Green', var: '--collected-green', hex: '#5A7A5A', usage: 'Collected/completed state, progress bar segment' },
@@ -131,8 +139,8 @@ const components = [
 <template>
   <article class="ds-page">
     <header class="hero">
-      <div class="hero-meta">
-        <span class="step-label">Reference</span>
+      <div class="hero-badge">
+        <span class="badge-number">2.8</span>
       </div>
       <h1>Design System</h1>
       <p class="hero-lead">
@@ -140,20 +148,15 @@ const components = [
         prototype. All values map directly to Figma variables, text styles,
         and components.
       </p>
+      <div class="hero-accent"></div>
     </header>
 
-    <div class="divider"></div>
 
     <!-- ==================== COLORS ==================== -->
     <section class="category">
       <div class="section-row">
         <div class="section-label">
           <h2 class="section-heading">Colors</h2>
-        </div>
-        <div class="section-content">
-          <p class="category-desc">
-            All colors stored as Figma variables, organized into five groups.
-          </p>
         </div>
       </div>
 
@@ -166,7 +169,7 @@ const components = [
           <h3 class="subsection-heading">{{ group.name }}</h3>
         </div>
         <div class="section-content">
-          <div class="color-grid" :class="{ 'color-grid--narrow': group.colors.length <= 2 }">
+          <div class="color-grid">
             <div v-for="c in group.colors" :key="c.var" class="color-swatch">
               <div class="swatch" :style="{ background: `var(${c.var})` }" />
               <div class="swatch-info">
@@ -200,20 +203,12 @@ const components = [
       </div>
     </section>
 
-    <div class="divider"></div>
 
     <!-- ==================== TYPOGRAPHY ==================== -->
     <section class="category">
       <div class="section-row">
         <div class="section-label">
           <h2 class="section-heading">Typography</h2>
-        </div>
-        <div class="section-content">
-          <p class="category-desc">
-            All text styles use the IBM Plex family — three optical roles
-            sharing a single design DNA. Sizes shown are kiosk-scale
-            (1440 × 2560).
-          </p>
         </div>
       </div>
 
@@ -228,6 +223,12 @@ const components = [
         <div class="section-content">
           <div class="type-samples">
             <div v-for="s in group.styles" :key="s.token" class="type-sample">
+              <p
+                class="type-preview"
+                :style="{ font: `var(${s.token})`, ...(s.extra ? Object.fromEntries(s.extra.split('; ').map(p => { const [k, v] = p.split(': '); return [k.replace(/-([a-z])/g, (_, c) => c.toUpperCase()), v] })) : {}) }"
+              >
+                {{ s.sample }}
+              </p>
               <div class="type-meta">
                 <span class="type-name">{{ s.name }}</span>
                 <div class="type-specs">
@@ -235,31 +236,18 @@ const components = [
                   <span class="type-spec">{{ s.size }}</span>
                 </div>
               </div>
-              <p
-                class="type-preview"
-                :style="{ font: `var(${s.token})`, ...(s.extra ? Object.fromEntries(s.extra.split('; ').map(p => { const [k, v] = p.split(': '); return [k.replace(/-([a-z])/g, (_, c) => c.toUpperCase()), v] })) : {}) }"
-              >
-                {{ s.sample }}
-              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="divider"></div>
 
     <!-- ==================== COMPONENTS ==================== -->
     <section class="category">
       <div class="section-row">
         <div class="section-label">
           <h2 class="section-heading">Components</h2>
-        </div>
-        <div class="section-content">
-          <p class="category-desc">
-            All repeated elements built as Figma components with variants.
-            Instances used throughout the hi-fi prototype.
-          </p>
         </div>
       </div>
 
@@ -286,44 +274,6 @@ const components = [
 </template>
 
 <style scoped>
-.ds-page {
-  max-width: 820px;
-}
-
-/* ---- Hero ---- */
-.hero {
-  margin-bottom: var(--space-2xl);
-}
-
-.hero-meta {
-  margin-bottom: var(--space-md);
-}
-
-.step-label {
-  font: var(--text-meta-field-label);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--gray-400);
-}
-
-h1 {
-  font: var(--text-display-title);
-  margin-bottom: var(--space-md);
-}
-
-.hero-lead {
-  font: var(--text-body-default);
-  color: var(--gray-500);
-  max-width: 560px;
-}
-
-/* ---- Divider ---- */
-.divider {
-  height: var(--stroke-medium);
-  background: var(--ink-900);
-  margin: var(--space-2xl) 0;
-}
-
 /* ---- Category ---- */
 .category {
   display: flex;
@@ -331,33 +281,34 @@ h1 {
   gap: 0;
 }
 
-.category-desc {
-  font: var(--text-body-small);
-  color: var(--gray-500);
+
+.section-content {
+  gap: var(--space-lg);
+  margin-left: 180px;
 }
 
-/* ---- Section row ---- */
-.section-row {
+/* ---- Subsections (keep grid) ---- */
+.subsection {
+  padding: 0;
+  margin-bottom: var(--space-2xl);
   display: grid;
   grid-template-columns: 120px 1fr;
   gap: var(--space-2xl);
-  margin-bottom: var(--space-xl);
 }
 
-.subsection {
-  margin-bottom: var(--space-2xl);
+.subsection .section-label {
+  grid-column: 1;
+  border-bottom: none;
+  margin-bottom: 0;
 }
 
-.section-label {
-  padding-top: 2px;
+.subsection .section-label::after {
+  display: none;
 }
 
-.section-heading {
-  font: var(--text-display-h2);
-  font-size: 18px;
-  line-height: 24px;
-  color: var(--ink-800);
-  margin: 0;
+.subsection .section-content {
+  grid-column: 2;
+  margin-left: 0;
 }
 
 .subsection-heading {
@@ -370,21 +321,11 @@ h1 {
   font-weight: 400;
 }
 
-.section-content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
-}
-
 /* ---- Color grid ---- */
 .color-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-md);
-}
-
-.color-grid--narrow {
-  grid-template-columns: repeat(2, 1fr);
 }
 
 .color-swatch {
@@ -422,39 +363,6 @@ h1 {
   line-height: 1.4;
 }
 
-/* ---- Specs grid (dotted leaders) ---- */
-.specs-grid {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-.spec {
-  display: flex;
-  align-items: baseline;
-  gap: var(--space-sm);
-}
-
-.spec-label {
-  font: var(--text-meta-field-label);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--gray-500);
-  white-space: nowrap;
-}
-
-.spec-dots {
-  flex: 1;
-  border-bottom: 1px dotted var(--surface-400);
-  margin-bottom: 3px;
-}
-
-.spec-value {
-  font: var(--text-body-small);
-  font-size: 15px;
-  white-space: nowrap;
-}
-
 .overlay-usage p {
   font: var(--text-body-small);
   color: var(--gray-500);
@@ -485,7 +393,7 @@ h1 {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin-bottom: var(--space-sm);
+  margin-top: var(--space-sm);
 }
 
 .type-name {

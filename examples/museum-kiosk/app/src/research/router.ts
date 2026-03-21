@@ -20,6 +20,11 @@ const router = createRouter({
       component: () => import('./views/Step2_2View.vue'),
     },
     {
+      path: '/step/2.3',
+      name: 'step-2.3',
+      component: () => import('./views/Step2_3View.vue'),
+    },
+    {
       path: '/step/2.8',
       name: 'step-2.8',
       component: () => import('./views/Step2_8View.vue'),

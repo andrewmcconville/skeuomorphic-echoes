@@ -1,17 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-
-const steps = [
-  { id: '2.1', title: 'Skeuomorph Selection', to: '/step/2.1' },
-  { id: '2.2', title: 'Persona', to: '/step/2.2' },
-  { id: '2.3', title: 'Sitemap & Content Inventory', to: '/step/2.3' },
-  { id: '2.4', title: 'Happy Path & User Task', to: '/step/2.4' },
-  { id: '2.5', title: 'Lo-fi Wireframe on Paper', to: '/step/2.5' },
-  { id: '2.6', title: 'Lo-fi Wireframe in Figma', to: '/step/2.6' },
-  { id: '2.7', title: 'Think-Aloud & Task Analysis', to: '/step/2.7' },
-  { id: '2.8', title: 'Design System', to: '/step/2.8' },
-  { id: '2.9', title: 'Hi-fi Home & Primary Skeuomorph', to: '/step/2.9' },
-]
+import { steps } from './data/steps'
 </script>
 
 <template>
@@ -94,7 +83,7 @@ const steps = [
 .logo {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--space-2xs);
   padding-bottom: var(--space-lg);
   border-bottom: var(--stroke-thin) solid var(--surface-300);
 }
@@ -116,7 +105,7 @@ const steps = [
 .sidebar-nav {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--space-2xs);
 }
 
 .nav-label {
@@ -153,11 +142,11 @@ const steps = [
   font: var(--text-meta-field-value);
   min-width: 24px;
   color: inherit;
-  opacity: 0.6;
+  opacity: var(--opacity-muted);
 }
 
 .nav-step.router-link-exact-active .nav-step-id {
-  opacity: 0.5;
+  opacity: var(--opacity-panel);
 }
 
 .nav-step-title {

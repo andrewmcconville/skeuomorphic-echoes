@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { LabelValue, SkeuomorphMapping, InspirationSite } from '../data/types'
+
 const evolutionStages = [
   'Hand-written manuscripts',
   'Movable type',
@@ -8,7 +10,7 @@ const evolutionStages = [
   'Google Docs',
 ]
 
-const secondarySkeuomorphs = [
+const secondarySkeuomorphs: SkeuomorphMapping[] = [
   {
     name: 'Camera shutter',
     maps: 'Shutter sound effect',
@@ -29,7 +31,7 @@ const secondarySkeuomorphs = [
   },
 ]
 
-const inspirationSites = [
+const inspirationSites: InspirationSite[] = [
   {
     name: 'Klim Type Foundry',
     url: 'https://klim.co.nz/',
@@ -47,7 +49,7 @@ const inspirationSites = [
   },
 ]
 
-const formFactors = [
+const formFactors: LabelValue[] = [
   { label: 'Viewport', value: '1440 × 2560 px' },
   { label: 'Orientation', value: 'Portrait' },
   { label: 'Format', value: 'Web app' },
@@ -300,28 +302,7 @@ const formFactors = [
 </template>
 
 <style scoped>
-/* ---- Full-bleed bands ---- */
-.band {
-  margin-left: calc(-1 * var(--space-2xl));
-  margin-right: calc(-1 * var(--space-2xl));
-  padding: var(--space-2xl);
-}
-
-.band-inner {
-  max-width: 820px;
-  position: relative;
-  z-index: 1;
-}
-
-.band--dark {
-  background: var(--warm-mid);
-  color: var(--surface-100);
-}
-
-.band--warm {
-  background: var(--surface-200);
-}
-
+/* ---- Band variant: title ---- */
 .band--title {
   background: var(--warm-dark);
   position: relative;
@@ -342,7 +323,7 @@ const formFactors = [
   bottom: 0;
   width: 60%;
   background: var(--surface-200);
-  opacity: 0.5;
+  opacity: var(--opacity-panel);
   z-index: 0;
 }
 
@@ -354,10 +335,6 @@ const formFactors = [
 .band--no-panel .section-row::before,
 .band--title .section-row::before {
   display: none;
-}
-
-.section-heading--light {
-  color: var(--warm-border);
 }
 
 /* ---- Prose ---- */
@@ -456,7 +433,7 @@ const formFactors = [
   padding: var(--space-lg);
   border: var(--stroke-medium) solid var(--ink-900);
   background: var(--surface-100);
-  box-shadow: 4px 4px 0 var(--surface-300);
+  box-shadow: var(--shadow-card) var(--surface-300);
 }
 
 .card-number {
@@ -509,7 +486,7 @@ const formFactors = [
 .datum {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--space-xs);
 }
 
 
@@ -528,13 +505,13 @@ const formFactors = [
   border: var(--stroke-medium) solid var(--ink-900);
   background: var(--surface-100);
   position: relative;
-  box-shadow: 3px 3px 0 var(--surface-300);
+  box-shadow: var(--shadow-card-sm) var(--surface-300);
   transition: transform 0.15s, box-shadow 0.15s;
 }
 
 .inspiration-card:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 5px 5px 0 var(--surface-400);
+  box-shadow: var(--shadow-card-hover) var(--surface-400);
 }
 
 .inspiration-name {
@@ -580,7 +557,7 @@ const formFactors = [
   height: 120px;
   border-radius: 50%;
   background: var(--orange-500);
-  opacity: 0.15;
+  opacity: var(--opacity-decorative);
   transform: translateY(-50%);
 }
 
@@ -592,6 +569,6 @@ const formFactors = [
   width: 80px;
   height: 80px;
   border: var(--stroke-medium) solid var(--warm-border);
-  opacity: 0.3;
+  opacity: var(--opacity-ghost);
 }
 </style>

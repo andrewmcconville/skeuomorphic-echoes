@@ -29,4 +29,10 @@
   /* Overlay Opacity */
   --zone-overlay-opacity: 0.5;
   --shadow-opacity: 0.12;
+
+  /* Opacity scale */
+  --opacity-decorative: 0.15;
+  --opacity-ghost: 0.3;
+  --opacity-panel: 0.5;
+  --opacity-muted: 0.6;
 }

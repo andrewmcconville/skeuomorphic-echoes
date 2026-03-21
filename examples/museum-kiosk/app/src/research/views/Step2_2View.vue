@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const demographics = [
+import type { LabelValue } from '../data/types'
+
+const demographics: LabelValue[] = [
   { label: 'Age', value: '27–33' },
   { label: 'Location', value: 'Chicago / Milwaukee corridor' },
   { label: 'Education', value: 'MFA (completed within the last year)' },
@@ -329,7 +331,7 @@ const needs = [
 
 .identity-name {
   font: var(--text-display-h1);
-  margin-bottom: 2px;
+  margin-bottom: var(--space-2xs);
 }
 
 .pronoun {
@@ -349,7 +351,7 @@ const needs = [
 .identity-org {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--space-2xs);
 }
 
 /* ---- Bio ---- */

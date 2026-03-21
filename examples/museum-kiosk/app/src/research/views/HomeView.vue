@@ -1,17 +1,6 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
-
-const steps = [
-  { id: '2.1', title: 'Skeuomorph Selection' },
-  { id: '2.2', title: 'Persona' },
-  { id: '2.3', title: 'Sitemap & Content Inventory' },
-  { id: '2.4', title: 'Happy Path & User Task' },
-  { id: '2.5', title: 'Lo-fi Wireframe on Paper' },
-  { id: '2.6', title: 'Lo-fi Wireframe in Figma' },
-  { id: '2.7', title: 'Think-Aloud & Task Analysis' },
-  { id: '2.8', title: 'Design System' },
-  { id: '2.9', title: 'Hi-fi Home & Primary Skeuomorph' },
-]
+import { steps } from '../data/steps'
 </script>
 
 <template>
@@ -33,7 +22,7 @@ const steps = [
         <RouterLink
           v-for="s in steps"
           :key="s.id"
-          :to="`/step/${s.id}`"
+          :to="s.to"
           class="step-row"
         >
           <span class="step-id">{{ s.id }}</span>

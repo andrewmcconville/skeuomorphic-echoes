@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const screens = [
+import type { LabelValue, ScreenEntry, RoomEntry, CatalogGroup } from '../data/types'
+
+const screens: ScreenEntry[] = [
   { name: 'Floor Plan Map (Home)', type: 'Home screen', notes: 'Entry point; always accessible via nav' },
   { name: 'Visited Rooms', type: 'List screen', notes: 'Accessible from home via nav icon' },
   { name: 'About', type: 'Info screen', notes: 'Accessible from home via nav icon' },
@@ -10,14 +12,14 @@ const screens = [
   { name: 'Evolutionary stages (×20)', type: 'Interior pages', notes: 'Tap from room landing or previous/next' },
 ]
 
-const modals = [
+const modals: ScreenEntry[] = [
   { name: 'Navigation drawer', type: 'Slide-out menu', notes: 'Hamburger/menu icon tap' },
   { name: 'Collectible confirmation', type: 'Popup/toast', notes: 'Collecting an evolutionary stage' },
   { name: 'Specimen detail expand', type: 'Modal overlay', notes: 'Tap "show more" on metadata' },
   { name: 'Inactivity reset prompt', type: 'Dialog', notes: 'Kiosk idle timeout' },
 ]
 
-const rooms = [
+const rooms: RoomEntry[] = [
   {
     name: 'WYSIWYG',
     stages: ['Google Docs', 'Adobe InDesign', 'Printing Press', 'Linotype Machine', 'Scrolls'],
@@ -36,7 +38,7 @@ const rooms = [
   },
 ]
 
-const homeContent = [
+const homeContent: LabelValue[] = [
   { label: 'Title', value: '"Before the Prompt" — anchors exhibit identity' },
   { label: 'Subtitle', value: 'One-line hook explaining the exhibit concept' },
   { label: 'Floor plan', value: 'Top-down layout of the four rooms; primary navigation surface' },
@@ -47,7 +49,7 @@ const homeContent = [
   { label: 'Progress', value: 'Overall completion across all four rooms' },
 ]
 
-const visitedContent = [
+const visitedContent: LabelValue[] = [
   { label: 'Title', value: '"Visited Rooms"' },
   { label: 'Navigation', value: 'Back arrow returns to floor plan' },
   { label: 'Room cards (×4)', value: 'Room name + thumbnail + progress; tap to jump to room' },
@@ -56,7 +58,7 @@ const visitedContent = [
   { label: 'Locked state', value: 'Indicator for locked or unvisited stages' },
 ]
 
-const aboutContent = [
+const aboutContent: LabelValue[] = [
   { label: 'Title', value: '"About" or exhibit title' },
   { label: 'Subheading', value: 'Brief descriptor of the exhibit\'s theme' },
   { label: 'Navigation', value: 'Back arrow to return to floor plan' },
@@ -67,7 +69,7 @@ const aboutContent = [
   { label: 'Sources', value: 'Works cited, image credits, tools used' },
 ]
 
-const roomLandingContent = [
+const roomLandingContent: LabelValue[] = [
   { label: 'Room title', value: 'Names the skeuomorph category (e.g., "WYSIWYG")' },
   { label: 'Description', value: '2–3 sentences on what physical object persists and where' },
   { label: 'Summary', value: 'One-line thesis connecting the original artifact to its digital echo' },
@@ -77,7 +79,7 @@ const roomLandingContent = [
   { label: 'Mini-map', value: 'Highlights which room the visitor is currently in' },
 ]
 
-const interiorCore = [
+const interiorCore: LabelValue[] = [
   { label: 'Specimen name', value: 'Display-size title of the artifact' },
   { label: 'Era tag', value: 'e.g., "Mechanical · c. 1450"' },
   { label: 'Date range', value: 'e.g., "c. 1450 – c. 1880"' },
@@ -87,7 +89,7 @@ const interiorCore = [
   { label: 'Navigation', value: 'Previous / next / close / back to room' },
 ]
 
-const interiorCatalog = [
+const interiorCatalog: CatalogGroup[] = [
   { group: 'Physical', fields: ['Medium / Material', 'Dimensions', 'Weight', 'Scale indicator'] },
   { group: 'Mechanism', fields: ['Input method', 'Output', 'Key constraint', 'Innovation'] },
   { group: 'Cultural', fields: ['Geographic origin', 'Primary users', 'Cultural impact'] },
@@ -457,35 +459,9 @@ const interiorCatalog = [
 </template>
 
 <style scoped>
-/* ---- Full-bleed bands ---- */
-.band {
-  margin-left: calc(-1 * var(--space-2xl));
-  margin-right: calc(-1 * var(--space-2xl));
-  padding: var(--space-2xl);
-}
-
-.band-inner {
-  max-width: 820px;
-  position: relative;
-  z-index: 1;
-}
-
-.band--dark {
-  background: var(--warm-mid);
-  color: var(--surface-100);
-}
-
-.band--warm {
-  background: var(--surface-200);
-}
-
 /* Suppress background panel on dark/warm bands */
 .band--no-panel .section-row::before {
   display: none;
-}
-
-.section-heading--light {
-  color: var(--warm-border);
 }
 
 /* ---- Section row ---- */
@@ -501,7 +477,7 @@ const interiorCatalog = [
   bottom: 0;
   width: 60%;
   background: var(--surface-200);
-  opacity: 0.5;
+  opacity: var(--opacity-panel);
   z-index: 0;
 }
 
@@ -792,7 +768,7 @@ const interiorCatalog = [
   padding: var(--space-lg);
   border: var(--stroke-medium) solid var(--ink-900);
   background: var(--surface-100);
-  box-shadow: 3px 3px 0 var(--surface-300);
+  box-shadow: var(--shadow-card-sm) var(--surface-300);
 }
 
 .room-card-header {
@@ -818,7 +794,7 @@ const interiorCatalog = [
 .room-stages {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--space-xs);
 }
 
 .stage-chip {

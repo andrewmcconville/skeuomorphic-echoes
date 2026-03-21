@@ -1,6 +1,6 @@
 /* ============================================
    Shared step-page styles
-   Used by Step2_1View, Step2_2View, Step2_8View
+   Used by all step views
    ============================================ */
 
 /* ---- Hero — warm dark band ---- */
@@ -25,7 +25,7 @@
   color: var(--ink-900);
   padding: var(--space-sm) var(--space-lg);
   margin-bottom: var(--space-lg);
-  box-shadow: 3px 3px 0 oklch(0 0 0 / 0.2);
+  box-shadow: var(--shadow-card-sm) oklch(0 0 0 / 0.2);
 }
 
 .badge-number {
@@ -155,11 +155,37 @@
 .spec-dots {
   flex: 1;
   border-bottom: 1px dotted var(--surface-400);
-  margin-bottom: 3px;
+  margin-bottom: var(--space-2xs);
 }
 
 .spec-value {
   font: var(--text-body-small);
   font-size: 15px;
   white-space: nowrap;
+}
+
+/* ---- Full-bleed bands ---- */
+.band {
+  margin-left: calc(-1 * var(--space-2xl));
+  margin-right: calc(-1 * var(--space-2xl));
+  padding: var(--space-2xl);
+}
+
+.band-inner {
+  max-width: 820px;
+  position: relative;
+  z-index: 1;
+}
+
+.band--dark {
+  background: var(--warm-mid);
+  color: var(--surface-100);
+}
+
+.band--warm {
+  background: var(--surface-200);
+}
+
+.section-heading--light {
+  color: var(--warm-border);
 }

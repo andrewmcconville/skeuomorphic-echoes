@@ -1,5 +1,6 @@
 :root {
   /* Spacing scale */
+  --space-2xs: 2px;
   --space-xs: 4px;
   --space-sm: 8px;
   --space-md: 16px;
@@ -16,6 +17,11 @@
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-pill: 999px;
+
+  /* Shadows (offset, no blur — "stamp" aesthetic) */
+  --shadow-card: 4px 4px 0;
+  --shadow-card-sm: 3px 3px 0;
+  --shadow-card-hover: 5px 5px 0;
 
   /* Touch target (kiosk) */
   --touch-min: 88px;

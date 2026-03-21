@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const colorGroups = [
+import type { ColorGroup, TypeGroup, ComponentDef } from '../data/types'
+
+const colorGroups: ColorGroup[] = [
   {
     name: 'Primary Surface',
     colors: [
@@ -49,7 +51,7 @@ const overlays = [
   { name: 'Shadow-Opacity', value: '12%', usage: 'Specimen card and zone drop shadows' },
 ]
 
-const typeGroups = [
+const typeGroups: TypeGroup[] = [
   {
     name: 'Display — IBM Plex Serif',
     styles: [
@@ -80,7 +82,7 @@ const typeGroups = [
   },
 ]
 
-const components = [
+const components: ComponentDef[] = [
   {
     name: 'Specimen Card',
     description: 'The primary content container — one per evolutionary stage. Feels like a pinned card on a museum wall.',
@@ -343,7 +345,7 @@ const components = [
 .swatch-info {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--space-2xs);
 }
 
 .color-name {
@@ -435,7 +437,7 @@ const components = [
 .variant {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--space-2xs);
   padding: var(--space-md) 0;
   border-bottom: var(--stroke-thin) solid var(--surface-300);
 }

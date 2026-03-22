@@ -20,12 +20,11 @@ const statusLabel: Record<string, string> = {
       <div class="hero-badge">
         <span class="badge-label">§</span>
       </div>
-      <h1>Glossary of<br />Typographic Ghosts</h1>
+      <h1 class="hero-title">Glossary of<br />Typographic Ghosts</h1>
       <p class="hero-lead">
         Thirteen marks that once organized the written word by hand. Some survive
         in modern editors; others haunt our interfaces as invisible defaults.
       </p>
-      <div class="hero-accent"></div>
     </header>
 
     <!-- ===== TABLE OF CONTENTS ===== -->

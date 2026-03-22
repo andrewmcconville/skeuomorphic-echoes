@@ -69,24 +69,24 @@ const needs = [
       <div class="hero-badge">
         <span class="badge-label">2.2</span>
       </div>
-      <h1>Persona</h1>
+      <h1 class="hero-title">Persona</h1>
       <p class="hero-lead">
         Defining the target visitor — their goals, frustrations, and the
         experience they expect from a museum kiosk.
       </p>
-      <div class="hero-accent"></div>
     </header>
 
 
     <!-- ===== IDENTITY ===== -->
     <section class="section">
-      <header class="section-row">
+      <div class="section-panel"></div>
+      <header class="section-header">
         <div class="section-label">
           <h2 class="section-heading">Identity</h2>
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row subsection">
+        <div class="section-row">
           <div class="section-label">
             <h3 class="subsection-heading">Card</h3>
           </div>
@@ -109,7 +109,7 @@ const needs = [
           </div>
         </div>
 
-        <div class="section-row subsection">
+        <div class="section-row">
           <div class="section-label">
             <h3 class="subsection-heading">Bio</h3>
           </div>
@@ -132,13 +132,14 @@ const needs = [
 
     <!-- ===== DEMOGRAPHICS ===== -->
     <section class="section">
-      <header class="section-row">
+      <div class="section-panel"></div>
+      <header class="section-header">
         <div class="section-label">
           <h2 class="section-heading">Demographics</h2>
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row subsection">
+        <div class="section-row">
           <div class="section-label">
             <h3 class="subsection-heading">Profile</h3>
           </div>
@@ -157,13 +158,13 @@ const needs = [
 
     <!-- ===== PSYCHOGRAPHICS ===== -->
     <section class="section">
-      <header class="section-row">
+      <header class="section-header">
         <div class="section-label">
           <h2 class="section-heading">Psychographics</h2>
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row subsection">
+        <div class="section-row">
           <div class="section-label">
             <h3 class="subsection-heading">Interests</h3>
           </div>
@@ -174,7 +175,7 @@ const needs = [
           </div>
         </div>
 
-        <div class="section-row subsection">
+        <div class="section-row">
           <div class="section-label">
             <h3 class="subsection-heading">Personality</h3>
           </div>
@@ -185,7 +186,7 @@ const needs = [
           </div>
         </div>
 
-        <div class="section-row subsection">
+        <div class="section-row">
           <div class="section-label">
             <h3 class="subsection-heading">Brands</h3>
           </div>
@@ -200,13 +201,14 @@ const needs = [
 
     <!-- ===== MOTIVATIONS ===== -->
     <section class="section">
-      <header class="section-row">
+      <div class="section-panel"></div>
+      <header class="section-header">
         <div class="section-label">
           <h2 class="section-heading">Motivations</h2>
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row subsection">
+        <div class="section-row">
           <div class="section-label">
             <h3 class="subsection-heading">Goals</h3>
           </div>
@@ -220,7 +222,7 @@ const needs = [
           </div>
         </div>
 
-        <div class="section-row subsection">
+        <div class="section-row">
           <div class="section-label">
             <h3 class="subsection-heading">Drivers</h3>
           </div>
@@ -238,13 +240,14 @@ const needs = [
 
     <!-- ===== FRUSTRATIONS ===== -->
     <section class="section">
-      <header class="section-row">
+      <div class="section-panel"></div>
+      <header class="section-header">
         <div class="section-label">
           <h2 class="section-heading">Frustrations</h2>
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row subsection">
+        <div class="section-row">
           <div class="section-label">
             <h3 class="subsection-heading">Pain Points</h3>
           </div>
@@ -262,13 +265,13 @@ const needs = [
 
     <!-- ===== UX NEEDS ===== -->
     <section class="section">
-      <header class="section-row">
+      <header class="section-header">
         <div class="section-label">
           <h2 class="section-heading">UX Needs</h2>
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row subsection">
+        <div class="section-row">
           <div class="section-label">
             <h3 class="subsection-heading">Requirements</h3>
           </div>
@@ -287,45 +290,6 @@ const needs = [
 </template>
 
 <style scoped>
-/* ---- Category ---- */
-.section {
-  display: flex;
-  flex-direction: column;
-}
-
-/* ---- Subsections (2-col grid) ---- */
-.subsection {
-  padding: 0;
-  margin-bottom: var(--space-2xl);
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: var(--space-2xl);
-}
-
-.subsection .section-label {
-  grid-column: 1;
-  border-bottom: none;
-  margin-bottom: 0;
-}
-
-.subsection .section-label::after {
-  display: none;
-}
-
-.subsection .section-content {
-  grid-column: 2;
-}
-
-.subsection-heading {
-  font: var(--text-meta-field-label);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--gray-400);
-  line-height: 1.4;
-  margin: 0;
-  font-weight: 400;
-}
-
 /* ---- Divider ---- */
 .divider-thin {
   height: var(--stroke-thin);

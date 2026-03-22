@@ -106,24 +106,23 @@ const interiorCatalog: CatalogGroup[] = [
       <div class="hero-badge">
         <span class="badge-label">2.3</span>
       </div>
-      <h1>Sitemap &amp;<br />Content Inventory</h1>
+      <h1 class="hero-title">Sitemap &amp;<br />Content Inventory</h1>
       <p class="hero-lead">
         Mapping every screen, overlay, and content element the kiosk
         needs — from the floor-plan home screen down to individual
         specimen catalog fields.
       </p>
-      <div class="hero-accent"></div>
     </header>
 
     <!-- ===== SITEMAP ===== -->
     <section class="section">
-      <header class="section-row">
+      <header class="section-header">
         <div class="section-label">
           <h2 class="section-heading">Sitemap</h2>
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row subsection">
+        <div class="section-row">
           <div class="section-label">
             <h3 class="subsection-heading">Structure</h3>
           </div>
@@ -156,13 +155,14 @@ const interiorCatalog: CatalogGroup[] = [
 
     <!-- ===== SCREENS ===== -->
     <section class="section">
-      <header class="section-row">
+      <div class="section-panel"></div>
+      <header class="section-header">
         <div class="section-label">
           <h2 class="section-heading">Screens</h2>
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row subsection">
+        <div class="section-row">
           <div class="section-label">
             <h3 class="subsection-heading">Pages</h3>
           </div>
@@ -186,13 +186,14 @@ const interiorCatalog: CatalogGroup[] = [
 
     <!-- ===== MODALS & OVERLAYS ===== -->
     <section class="section">
-      <header class="section-row">
+      <div class="section-panel"></div>
+      <header class="section-header">
         <div class="section-label">
           <h2 class="section-heading">Modals</h2>
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row subsection">
+        <div class="section-row">
           <div class="section-label">
             <h3 class="subsection-heading">Overlays</h3>
           </div>
@@ -215,8 +216,8 @@ const interiorCatalog: CatalogGroup[] = [
     </section>
 
     <!-- ===== CONTENT INVENTORY INTRO — warm dark band ===== -->
-    <section class="band band--dark band--no-panel">
-      <header class="band-inner section-row">
+    <section class="section section--full-width section--dark">
+      <header class="section-header">
         <div class="section-label">
           <h2 class="section-heading section-heading--light">Content<br />Inventory</h2>
         </div>
@@ -246,7 +247,8 @@ const interiorCatalog: CatalogGroup[] = [
 
     <!-- ===== HOME SCREEN ===== -->
     <section class="section">
-      <header class="section-row">
+      <div class="section-panel"></div>
+      <header class="section-header">
         <div class="section-label">
           <h2 class="section-heading">Home</h2>
         </div>
@@ -259,7 +261,7 @@ const interiorCatalog: CatalogGroup[] = [
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row subsection">
+        <div class="section-row">
           <div class="section-label">
             <h3 class="subsection-heading">Fields</h3>
           </div>
@@ -278,7 +280,8 @@ const interiorCatalog: CatalogGroup[] = [
 
     <!-- ===== VISITED ROOMS ===== -->
     <section class="section">
-      <header class="section-row">
+      <div class="section-panel"></div>
+      <header class="section-header">
         <div class="section-label">
           <h2 class="section-heading">Visited</h2>
         </div>
@@ -290,7 +293,7 @@ const interiorCatalog: CatalogGroup[] = [
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row subsection">
+        <div class="section-row">
           <div class="section-label">
             <h3 class="subsection-heading">Fields</h3>
           </div>
@@ -309,7 +312,8 @@ const interiorCatalog: CatalogGroup[] = [
 
     <!-- ===== ABOUT ===== -->
     <section class="section">
-      <header class="section-row">
+      <div class="section-panel"></div>
+      <header class="section-header">
         <div class="section-label">
           <h2 class="section-heading">About</h2>
         </div>
@@ -321,7 +325,7 @@ const interiorCatalog: CatalogGroup[] = [
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row subsection">
+        <div class="section-row">
           <div class="section-label">
             <h3 class="subsection-heading">Fields</h3>
           </div>
@@ -339,21 +343,21 @@ const interiorCatalog: CatalogGroup[] = [
     </section>
 
     <!-- ===== ROOM LANDING — warm band ===== -->
-    <section class="band band--warm">
-      <div class="band-inner">
-        <header class="section-row">
-          <div class="section-label">
-            <h2 class="section-heading">Room<br />Landing</h2>
-          </div>
-          <div class="section-content">
-            <div class="register-badge register-badge--transition">Transitional</div>
-            <p class="register-desc">
-              Warm ground with emerging catalog density; the threshold
-              between gallery browsing and specimen study.
-            </p>
-          </div>
-        </header>
-        <div class="section-row subsection">
+    <section class="section section--full-width section--warm">
+      <header class="section-header">
+        <div class="section-label">
+          <h2 class="section-heading">Room<br />Landing</h2>
+        </div>
+        <div class="section-content">
+          <div class="register-badge register-badge--transition">Transitional</div>
+          <p class="register-desc">
+            Warm ground with emerging catalog density; the threshold
+            between gallery browsing and specimen study.
+          </p>
+        </div>
+      </header>
+      <div class="section-body">
+        <div class="section-row">
           <div class="section-label">
             <h3 class="subsection-heading">Fields</h3>
           </div>
@@ -369,7 +373,7 @@ const interiorCatalog: CatalogGroup[] = [
         </div>
 
         <!-- Room breakdown cards -->
-        <div class="section-row subsection">
+        <div class="section-row">
           <div class="section-label">
             <h3 class="subsection-heading">Rooms</h3>
           </div>
@@ -398,24 +402,23 @@ const interiorCatalog: CatalogGroup[] = [
     </section>
 
     <!-- ===== INTERIOR PAGE — dark band ===== -->
-    <section class="band band--dark band--no-panel">
-      <div class="band-inner">
-        <header class="section-row">
-          <div class="section-label">
-            <h2 class="section-heading section-heading--light">Interior<br />Page</h2>
-          </div>
-          <div class="section-content">
-            <div class="register-badge register-badge--cool">Cool / Clinical</div>
-            <p class="register-desc register-desc--light">
-              Cream + near-black + mid-gray dominant, heavier type weights,
-              tighter spacing, dense and authoritative. Layout reads like a
-              museum catalog raisonné or a specimen tag pinned beside a
-              display case.
-            </p>
-          </div>
-        </header>
-
-        <div class="section-row subsection subsection--light">
+    <section class="section section--full-width section--dark">
+      <header class="section-header">
+        <div class="section-label">
+          <h2 class="section-heading section-heading--light">Interior<br />Page</h2>
+        </div>
+        <div class="section-content">
+          <div class="register-badge register-badge--cool">Cool / Clinical</div>
+          <p class="register-desc register-desc--light">
+            Cream + near-black + mid-gray dominant, heavier type weights,
+            tighter spacing, dense and authoritative. Layout reads like a
+            museum catalog raisonné or a specimen tag pinned beside a
+            display case.
+          </p>
+        </div>
+      </header>
+      <div class="section-body">
+        <div class="section-row">
           <div class="section-label">
             <h3 class="subsection-heading subsection-heading--light">Core Fields</h3>
           </div>
@@ -430,7 +433,7 @@ const interiorCatalog: CatalogGroup[] = [
           </div>
         </div>
 
-        <div class="section-row subsection subsection--light">
+        <div class="section-row">
           <div class="section-label">
             <h3 class="subsection-heading subsection-heading--light">Catalog Fields</h3>
           </div>
@@ -448,7 +451,7 @@ const interiorCatalog: CatalogGroup[] = [
           </div>
         </div>
 
-        <div class="section-row subsection subsection--light">
+        <div class="section-row">
           <div class="section-label">
             <h3 class="subsection-heading subsection-heading--light">Actions</h3>
           </div>
@@ -473,51 +476,8 @@ const interiorCatalog: CatalogGroup[] = [
 </template>
 
 <style scoped>
-/* ---- Category ---- */
-.section {
-  display: flex;
-  flex-direction: column;
-}
-
-/* ---- Subsections ---- */
-.subsection {
-  padding: 0;
-  margin-bottom: var(--space-2xl);
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: var(--space-2xl);
-}
-
-.subsection .section-label {
-  grid-column: 1;
-  border-bottom: none;
-  margin-bottom: 0;
-}
-
-.subsection .section-label::after {
-  display: none;
-}
-
-.subsection .section-content {
-  grid-column: 2;
-}
-
-.subsection-heading {
-  font: var(--text-meta-field-label);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--gray-400);
-  line-height: 1.4;
-  margin: 0;
-  font-weight: 400;
-}
-
 .subsection-heading--light {
   color: var(--surface-400);
-}
-
-.subsection--light .section-label {
-  border-bottom: none;
 }
 
 /* ---- Sitemap tree ---- */

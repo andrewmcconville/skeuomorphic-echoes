@@ -3,7 +3,9 @@
    Used by all step views
    ============================================ */
 
-/* ---- Hero — warm dark band ---- */
+
+/* ---- Hero block — warm dark band ---- */
+
 .hero {
   background: var(--warm-dark);
   color: var(--surface-100);
@@ -13,11 +15,8 @@
   overflow: hidden;
 }
 
-.hero > * {
-  position: relative;
-}
-
 .hero-badge {
+  position: relative;
   display: inline-flex;
   align-items: flex-end;
   justify-content: center;
@@ -37,80 +36,72 @@
   color: var(--warm-dark);
 }
 
-.hero h1 {
+.hero-title {
+  position: relative;
   font: var(--text-display-title);
   color: var(--surface-100);
   margin-bottom: var(--space-lg);
 }
 
 .hero-lead {
+  position: relative;
   font: var(--text-body-default);
   color: var(--surface-300);
   max-width: 520px;
 }
 
-.hero-accent {
-  position: absolute;
-  right: -40px;
-  top: -40px;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border: var(--stroke-medium) solid var(--warm-border);
-  opacity: 0.5;
+
+
+
+/* ---- Section block ---- */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 820px;
 }
 
-.hero-accent::after {
-  content: '';
-  position: absolute;
-  right: 60px;
-  top: 80px;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: var(--warm-mid);
-  opacity: 0.5;
+.section-header,
+.section-body {
+  position: relative;
+  z-index: 1;
+  max-width: 820px;
 }
 
-/* ---- Section row ---- */
-.section-row {
+.section-row,
+.section-header {
   display: grid;
   grid-template-columns: 120px 1fr;
   gap: var(--space-2xl);
   padding: var(--space-3xl) 0;
-  max-width: 820px;
   position: relative;
 }
 
-/* Background panel behind content column */
-.section-row::before {
-  content: '';
+
+/* ---- Section panel (background behind content column) ---- */
+
+.section-panel {
   position: absolute;
   right: 0;
-  top: 0;
-  bottom: 0;
+  top: var(--space-2xl);
+  bottom: var(--space-2xl);
   width: 60%;
   background: var(--surface-200);
   opacity: var(--opacity-panel);
   z-index: 0;
+  pointer-events: none;
 }
 
-.section-row > * {
-  position: relative;
-  z-index: 1;
-}
 
-/* Suppress panels inside bands and on no-panel variants */
-.band .section-row::before,
-.band--no-panel .section-row::before {
-  display: none;
-}
+/* ---- Section label & heading ---- */
 
 .section-label {
   grid-column: 1 / -1;
   border-bottom: 2px dotted var(--amber-500);
   margin-bottom: var(--space-lg);
   position: relative;
+  z-index: 1;
 }
 
 .section-label::after {
@@ -119,11 +110,11 @@
   left: 0;
   right: 0;
   top: 100%;
-  height: 200px;
+  height: 300px;
   background: linear-gradient(
     to bottom,
-    oklch(0 0 0 / 0.01) 0px,
-    transparent 200px
+    oklch(0 0 0 / 0.015) 0px,
+    transparent 300px
   );
   pointer-events: none;
 }
@@ -139,14 +130,54 @@
   overflow: hidden;
 }
 
+.section-heading--light {
+  color: var(--amber-500);
+  opacity: 0.6;
+}
+
+
+/* ---- Section content ---- */
+
 .section-content {
   grid-column: 2;
   display: flex;
   flex-direction: column;
   gap: var(--space-xl);
+  position: relative;
+  z-index: 1;
 }
 
+
+/* ---- Section body — nested rows ---- */
+
+.section-body .section-row {
+  padding: 0;
+  margin-bottom: var(--space-2xl);
+}
+
+.section-body .section-label {
+  grid-column: 1;
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.section-body .section-label::after {
+  display: none;
+}
+
+.subsection-heading {
+  font: var(--text-meta-field-label);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray-400);
+  line-height: 1.4;
+  margin: 0;
+  font-weight: 400;
+}
+
+
 /* ---- Data rows ---- */
+
 .datum-label {
   font: var(--text-meta-field-label);
   text-transform: uppercase;
@@ -159,7 +190,9 @@
   font-size: 16px;
 }
 
+
 /* ---- Specs grid (dotted leaders) ---- */
+
 .specs-grid {
   display: flex;
   flex-direction: column;
@@ -192,29 +225,21 @@
   white-space: nowrap;
 }
 
-/* ---- Full-bleed bands ---- */
-.band {
+
+/* ---- Section modifiers ---- */
+
+.section--full-width {
+  max-width: none;
   margin-left: calc(-1 * var(--space-2xl));
   margin-right: calc(-1 * var(--space-2xl));
   padding: var(--space-2xl);
 }
 
-.band-inner {
-  max-width: 820px;
-  position: relative;
-  z-index: 1;
-}
-
-.band--dark {
+.section--dark {
   background: var(--warm-mid);
   color: var(--surface-100);
 }
 
-.band--warm {
+.section--warm {
   background: var(--surface-200);
-}
-
-.section-heading--light {
-  color: var(--amber-500);
-  opacity: 0.6;
 }

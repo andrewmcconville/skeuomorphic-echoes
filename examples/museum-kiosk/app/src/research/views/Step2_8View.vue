@@ -144,19 +144,18 @@ const components: ComponentDef[] = [
       <div class="hero-badge">
         <span class="badge-label">2.8</span>
       </div>
-      <h1>Design System</h1>
+      <h1 class="hero-title">Design System</h1>
       <p class="hero-lead">
         Color, typography, and component specifications for the museum kiosk
         prototype. All values map directly to Figma variables, text styles,
         and components.
       </p>
-      <div class="hero-accent"></div>
     </header>
 
 
     <!-- ==================== COLORS ==================== -->
     <section class="section">
-      <header class="section-row">
+      <header class="section-header">
         <div class="section-label">
           <h2 class="section-heading">Colors</h2>
         </div>
@@ -165,7 +164,7 @@ const components: ComponentDef[] = [
         <div
           v-for="group in colorGroups"
           :key="group.name"
-          class="section-row subsection"
+          class="section-row"
         >
           <div class="section-label">
             <h3 class="subsection-heading">{{ group.name }}</h3>
@@ -184,7 +183,7 @@ const components: ComponentDef[] = [
           </div>
         </div>
 
-        <div class="section-row subsection">
+        <div class="section-row">
           <div class="section-label">
             <h3 class="subsection-heading">Overlay Opacity</h3>
           </div>
@@ -209,7 +208,7 @@ const components: ComponentDef[] = [
 
     <!-- ==================== TYPOGRAPHY ==================== -->
     <section class="section">
-      <header class="section-row">
+      <header class="section-header">
         <div class="section-label">
           <h2 class="section-heading">Typography</h2>
         </div>
@@ -218,7 +217,7 @@ const components: ComponentDef[] = [
         <div
           v-for="group in typeGroups"
           :key="group.name"
-          class="section-row subsection"
+          class="section-row"
         >
           <div class="section-label">
             <h3 class="subsection-heading">{{ group.name }}</h3>
@@ -249,7 +248,7 @@ const components: ComponentDef[] = [
 
     <!-- ==================== COMPONENTS ==================== -->
     <section class="section">
-      <header class="section-row">
+      <header class="section-header">
         <div class="section-label">
           <h2 class="section-heading">Components</h2>
         </div>
@@ -258,7 +257,7 @@ const components: ComponentDef[] = [
         <div
           v-for="comp in components"
           :key="comp.name"
-          class="section-row subsection"
+          class="section-row"
         >
           <div class="section-label">
             <h3 class="subsection-heading">{{ comp.name }}</h3>
@@ -279,51 +278,14 @@ const components: ComponentDef[] = [
 </template>
 
 <style scoped>
-/* ---- Category ---- */
-.section {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-
+/* ---- Step 2.8 overrides ---- */
 .section-content {
   gap: var(--space-lg);
   margin-left: 180px;
 }
 
-/* ---- Subsections (keep grid) ---- */
-.subsection {
-  padding: 0;
-  margin-bottom: var(--space-2xl);
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: var(--space-2xl);
-}
-
-.subsection .section-label {
-  grid-column: 1;
-  border-bottom: none;
-  margin-bottom: 0;
-}
-
-.subsection .section-label::after {
-  display: none;
-}
-
-.subsection .section-content {
-  grid-column: 2;
+.section-body .section-content {
   margin-left: 0;
-}
-
-.subsection-heading {
-  font: var(--text-meta-field-label);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--gray-400);
-  line-height: 1.4;
-  margin: 0;
-  font-weight: 400;
 }
 
 /* ---- Color grid ---- */

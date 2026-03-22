@@ -5,6 +5,10 @@ function isCite(part: SourcePart): part is { cite: string } {
   return typeof part === 'object'
 }
 
+function scrollTo(id: string) {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+}
+
 const statusLabel: Record<string, string> = {
   active: 'Active',
   vestigial: 'Vestigial',
@@ -31,8 +35,9 @@ const statusLabel: Record<string, string> = {
         <a
           v-for="entry in glossaryEntries"
           :key="entry.id"
-          :href="`#${entry.id}`"
+          href="#"
           class="toc-item"
+          @click.prevent="scrollTo(entry.id)"
         >
           <span class="toc-char">{{ entry.char }}</span>
           <span>{{ entry.name }}</span>

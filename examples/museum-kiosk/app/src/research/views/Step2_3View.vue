@@ -3,14 +3,14 @@ import type { LabelValue, ScreenEntry, RoomEntry, CatalogGroup } from '../data/t
 
 const screens: ScreenEntry[] = [
   { name: 'Floor Plan Map (Home)', type: 'Home screen', notes: 'Entry point; always accessible via nav' },
-  { name: 'Visited Rooms', type: 'List screen', notes: 'Accessible from home via nav icon' },
+  { name: 'Artifact Collection', type: 'List screen', notes: 'Accessible from home via nav icon' },
   { name: 'About', type: 'Info screen', notes: 'Accessible from home via nav icon' },
   { name: 'Glossary', type: 'Reference screen', notes: 'Accessible from home via nav icon' },
-  { name: 'Room: WYSIWYG', type: 'Room landing', notes: 'Tap zone on floor plan map' },
-  { name: 'Room: Camera Shutter', type: 'Room landing', notes: 'Tap zone on floor plan map' },
-  { name: 'Room: Envelope', type: 'Room landing', notes: 'Tap zone on floor plan map' },
-  { name: 'Room: Hanging Up', type: 'Room landing', notes: 'Tap zone on floor plan map' },
-  { name: 'Evolutionary stages (×20)', type: 'Interior pages', notes: 'Tap from room landing or previous/next' },
+  { name: 'Skeuomorph Room: WYSIWYG', type: 'Room', notes: 'Tap zone on floor plan map' },
+  { name: 'Skeuomorph Room: Camera Shutter', type: 'Room', notes: 'Tap zone on floor plan map' },
+  { name: 'Skeuomorph Room: Envelope', type: 'Room', notes: 'Tap zone on floor plan map' },
+  { name: 'Skeuomorph Room: Hanging Up', type: 'Room', notes: 'Tap zone on floor plan map' },
+  { name: 'Evolutionary stages (×20)', type: 'Interior pages', notes: 'Tap from skeuomorph room landing or previous/next' },
 ]
 
 const modals: ScreenEntry[] = [
@@ -42,21 +42,21 @@ const rooms: RoomEntry[] = [
 const homeContent: LabelValue[] = [
   { label: 'Title', value: '"Before the Prompt" — anchors exhibit identity' },
   { label: 'Subtitle', value: 'One-line hook explaining the exhibit concept' },
-  { label: 'Floor plan', value: 'Top-down layout of the four rooms; primary navigation surface' },
-  { label: 'Room zones (×4)', value: 'Tappable regions with labels; 88px min touch targets' },
-  { label: 'Zone states', value: 'Visited vs. unvisited differentiation' },
-  { label: 'Visited icon', value: 'Shows stages collected out of total' },
+  { label: 'Floor plan', value: 'Top-down layout of the four skeuomorph rooms; primary navigation surface' },
+  { label: 'Skeuomorph room zones (×4)', value: 'Tappable regions with labels; 88px min touch targets' },
+  { label: 'Zone states', value: 'Collected vs. uncollected differentiation' },
+  { label: 'Collection icon', value: 'Shows artifacts collected out of total' },
   { label: 'About icon', value: 'Links to credits, sources, and project info' },
-  { label: 'Progress', value: 'Overall completion across all four rooms' },
+  { label: 'Progress', value: 'Overall completion across all four skeuomorph rooms' },
 ]
 
-const visitedContent: LabelValue[] = [
-  { label: 'Title', value: '"Visited Rooms"' },
+const collectionContent: LabelValue[] = [
+  { label: 'Title', value: '"Artifact Collection"' },
   { label: 'Navigation', value: 'Back arrow returns to floor plan' },
-  { label: 'Room cards (×4)', value: 'Room name + thumbnail + progress; tap to jump to room' },
-  { label: 'Stage count', value: 'e.g., "3 / 5 collected" beneath each card' },
-  { label: 'Thumbnails', value: 'Small specimen previews for stages already collected' },
-  { label: 'Locked state', value: 'Indicator for locked or unvisited stages' },
+  { label: 'Artifact cards', value: 'Each collected artifact (e.g., Printing Press, Google Docs); thumbnail + name + era' },
+  { label: 'Grouping', value: 'Artifacts grouped by skeuomorph room' },
+  { label: 'Progress per room', value: 'e.g., "3 / 5 collected" beneath each room group' },
+  { label: 'Locked state', value: 'Silhouette or placeholder for uncollected artifacts' },
 ]
 
 const aboutContent: LabelValue[] = [
@@ -71,13 +71,13 @@ const aboutContent: LabelValue[] = [
 ]
 
 const roomLandingContent: LabelValue[] = [
-  { label: 'Room title', value: 'Names the skeuomorph section (e.g., "WYSIWYG")' },
+  { label: 'Skeuomorph room title', value: 'Names the skeuomorph room (e.g., "WYSIWYG")' },
   { label: 'Description', value: '2–3 sentences on what physical object persists and where' },
   { label: 'Summary', value: 'One-line thesis connecting the original artifact to its digital echo' },
-  { label: 'Navigation', value: 'Back to map and visited rooms' },
-  { label: 'Stage cards', value: '4–5 per room; title + thumbnail + era tag; shows collected state' },
-  { label: 'Progress', value: 'Visual bar showing room completion' },
-  { label: 'Mini-map', value: 'Highlights which room the visitor is currently in' },
+  { label: 'Navigation', value: 'Back to map and artifact collection' },
+  { label: 'Stage cards', value: '4–5 per skeuomorph room; title + thumbnail + era tag; shows collected state' },
+  { label: 'Progress', value: 'Visual bar showing skeuomorph room completion' },
+  { label: 'Mini-map', value: 'Highlights which skeuomorph room the visitor is currently in' },
 ]
 
 const interiorCore: LabelValue[] = [
@@ -87,7 +87,7 @@ const interiorCore: LabelValue[] = [
   { label: 'Stage position', value: 'e.g., "3 of 6"; locates user in the evolutionary chain' },
   { label: 'Summary', value: '1–2 sentences describing the artifact' },
   { label: 'Hero image', value: 'Primary specimen illustration' },
-  { label: 'Navigation', value: 'Previous / next / close / back to room' },
+  { label: 'Navigation', value: 'Previous / next / close / back to skeuomorph room' },
 ]
 
 const interiorCatalog: CatalogGroup[] = [
@@ -129,7 +129,7 @@ const interiorCatalog: CatalogGroup[] = [
           <div class="section-content">
             <div class="sitemap-tree">
               <div class="tree-level tree-level--top">
-                <div class="tree-node tree-node--secondary">Visited Rooms</div>
+                <div class="tree-node tree-node--secondary">Artifact Collection</div>
                 <div class="tree-node tree-node--secondary">About</div>
                 <div class="tree-node tree-node--secondary">Glossary</div>
               </div>
@@ -215,35 +215,6 @@ const interiorCatalog: CatalogGroup[] = [
       </div>
     </section>
 
-    <!-- ===== CONTENT INVENTORY INTRO — warm dark band ===== -->
-    <section class="section section--full-width section--dark">
-      <header class="section-header">
-        <div class="section-label">
-          <h2 class="section-heading section-heading--light">Content<br />Inventory</h2>
-        </div>
-        <div class="section-content">
-          <p class="inventory-intro">
-            Each screen occupies a distinct visual register — from
-            the warm, sparse gallery of the home screen to the cool,
-            dense catalog of the interior specimen pages.
-          </p>
-          <div class="register-legend">
-            <div class="register-chip register-chip--warm">
-              <span class="chip-dot chip-dot--warm"></span>
-              Warm / Gallery
-            </div>
-            <div class="register-chip register-chip--transition">
-              <span class="chip-dot chip-dot--transition"></span>
-              Transitional
-            </div>
-            <div class="register-chip register-chip--cool">
-              <span class="chip-dot chip-dot--cool"></span>
-              Cool / Clinical
-            </div>
-          </div>
-        </div>
-      </header>
-    </section>
 
     <!-- ===== HOME SCREEN ===== -->
     <section class="section">
@@ -251,13 +222,6 @@ const interiorCatalog: CatalogGroup[] = [
       <header class="section-header">
         <div class="section-label">
           <h2 class="section-heading">Home</h2>
-        </div>
-        <div class="section-content">
-          <div class="register-badge register-badge--warm">Warm / Gallery</div>
-          <p class="register-desc">
-            Cream ground, amber/orange overlays, lighter type weights,
-            sparse and inviting.
-          </p>
         </div>
       </header>
       <div class="section-body">
@@ -278,82 +242,11 @@ const interiorCatalog: CatalogGroup[] = [
       </div>
     </section>
 
-    <!-- ===== VISITED ROOMS ===== -->
-    <section class="section">
-      <div class="section-panel"></div>
-      <header class="section-header">
-        <div class="section-label">
-          <h2 class="section-heading">Visited</h2>
-        </div>
-        <div class="section-content">
-          <div class="register-badge register-badge--warm">Warm / Gallery</div>
-          <p class="register-desc">
-            Overview and collection tracking; sparse, card-based layout.
-          </p>
-        </div>
-      </header>
-      <div class="section-body">
-        <div class="section-row section-row--nested">
-          <div class="section-label section-label--nested">
-            <h3 class="subsection-heading">Fields</h3>
-          </div>
-          <div class="section-content">
-            <div class="specs-grid specs-grid--dense">
-              <div v-for="c in visitedContent" :key="c.label" class="spec">
-                <span class="spec-label">{{ c.label }}</span>
-                <span class="spec-dots"></span>
-                <span class="spec-value">{{ c.value }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== ABOUT ===== -->
-    <section class="section">
-      <div class="section-panel"></div>
-      <header class="section-header">
-        <div class="section-label">
-          <h2 class="section-heading">About</h2>
-        </div>
-        <div class="section-content">
-          <div class="register-badge register-badge--warm">Warm / Gallery</div>
-          <p class="register-desc">
-            Informational, low density; colophon-style credits block.
-          </p>
-        </div>
-      </header>
-      <div class="section-body">
-        <div class="section-row section-row--nested">
-          <div class="section-label section-label--nested">
-            <h3 class="subsection-heading">Fields</h3>
-          </div>
-          <div class="section-content">
-            <div class="specs-grid specs-grid--dense">
-              <div v-for="c in aboutContent" :key="c.label" class="spec">
-                <span class="spec-label">{{ c.label }}</span>
-                <span class="spec-dots"></span>
-                <span class="spec-value">{{ c.value }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== ROOM LANDING — warm band ===== -->
+    <!-- ===== SKEUOMORPH ROOM LANDING — warm band ===== -->
     <section class="section section--full-width section--warm">
       <header class="section-header">
         <div class="section-label">
-          <h2 class="section-heading">Room<br />Landing</h2>
-        </div>
-        <div class="section-content">
-          <div class="register-badge register-badge--transition">Transitional</div>
-          <p class="register-desc">
-            Warm ground with emerging catalog density; the threshold
-            between gallery browsing and specimen study.
-          </p>
+          <h2 class="section-heading">Skeuomorph<br />Room Landing</h2>
         </div>
       </header>
       <div class="section-body">
@@ -372,10 +265,10 @@ const interiorCatalog: CatalogGroup[] = [
           </div>
         </div>
 
-        <!-- Room breakdown cards -->
+        <!-- Skeuomorph room breakdown cards -->
         <div class="section-row section-row--nested">
           <div class="section-label section-label--nested">
-            <h3 class="subsection-heading">Rooms</h3>
+            <h3 class="subsection-heading">Skeuomorph Rooms</h3>
           </div>
           <div class="section-content">
             <div class="room-cards">
@@ -401,20 +294,63 @@ const interiorCatalog: CatalogGroup[] = [
       </div>
     </section>
 
+    <!-- ===== ARTIFACT COLLECTION ===== -->
+    <section class="section">
+      <div class="section-panel"></div>
+      <header class="section-header">
+        <div class="section-label">
+          <h2 class="section-heading">Artifact<br />Collection</h2>
+        </div>
+      </header>
+      <div class="section-body">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
+            <h3 class="subsection-heading">Fields</h3>
+          </div>
+          <div class="section-content">
+            <div class="specs-grid specs-grid--dense">
+              <div v-for="c in collectionContent" :key="c.label" class="spec">
+                <span class="spec-label">{{ c.label }}</span>
+                <span class="spec-dots"></span>
+                <span class="spec-value">{{ c.value }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section">
+      <div class="section-panel"></div>
+      <header class="section-header">
+        <div class="section-label">
+          <h2 class="section-heading">About</h2>
+        </div>
+      </header>
+      <div class="section-body">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
+            <h3 class="subsection-heading">Fields</h3>
+          </div>
+          <div class="section-content">
+            <div class="specs-grid specs-grid--dense">
+              <div v-for="c in aboutContent" :key="c.label" class="spec">
+                <span class="spec-label">{{ c.label }}</span>
+                <span class="spec-dots"></span>
+                <span class="spec-value">{{ c.value }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== INTERIOR PAGE — dark band ===== -->
     <section class="section section--full-width section--dark">
       <header class="section-header">
         <div class="section-label">
           <h2 class="section-heading section-heading--light">Interior<br />Page</h2>
-        </div>
-        <div class="section-content">
-          <div class="register-badge register-badge--cool">Cool / Clinical</div>
-          <p class="register-desc register-desc--light">
-            Cream + near-black + mid-gray dominant, heavier type weights,
-            tighter spacing, dense and authoritative. Layout reads like a
-            museum catalog raisonné or a specimen tag pinned beside a
-            display case.
-          </p>
         </div>
       </header>
       <div class="section-body">
@@ -595,83 +531,6 @@ const interiorCatalog: CatalogGroup[] = [
   font: var(--text-body-small);
   font-size: 13px;
   color: var(--gray-500);
-}
-
-/* ---- Inventory intro ---- */
-.inventory-intro {
-  font: var(--text-body-default);
-  color: var(--surface-300);
-  max-width: 520px;
-}
-
-/* ---- Register legend ---- */
-.register-legend {
-  display: flex;
-  gap: var(--space-lg);
-}
-
-.register-chip {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  font: var(--text-meta-era);
-  font-size: 12px;
-  letter-spacing: 0.05em;
-  color: var(--surface-300);
-}
-
-.chip-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-
-.chip-dot--warm {
-  background: var(--amber-500);
-}
-
-.chip-dot--transition {
-  background: var(--orange-500);
-}
-
-.chip-dot--cool {
-  background: var(--gray-500);
-}
-
-/* ---- Register badge ---- */
-.register-badge {
-  display: inline-block;
-  font: var(--text-meta-era);
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: var(--space-xs) 10px;
-  align-self: flex-start;
-}
-
-.register-badge--warm {
-  background: var(--amber-500);
-  color: var(--ink-900);
-}
-
-.register-badge--transition {
-  background: var(--orange-500);
-  color: var(--surface-100);
-}
-
-.register-badge--cool {
-  background: var(--gray-500);
-  color: var(--surface-100);
-}
-
-.register-desc {
-  font: var(--text-body-small);
-  color: var(--gray-500);
-  font-style: italic;
-}
-
-.register-desc--light {
-  color: var(--surface-300);
 }
 
 /* ---- Room cards ---- */

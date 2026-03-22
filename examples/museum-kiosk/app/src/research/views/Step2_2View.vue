@@ -347,6 +347,7 @@ const needs = [
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-sm);
+  justify-content: flex-end;
 }
 
 .tag {

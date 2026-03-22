@@ -5,6 +5,7 @@ const screens: ScreenEntry[] = [
   { name: 'Floor Plan Map (Home)', type: 'Home screen', notes: 'Entry point; always accessible via nav' },
   { name: 'Visited Rooms', type: 'List screen', notes: 'Accessible from home via nav icon' },
   { name: 'About', type: 'Info screen', notes: 'Accessible from home via nav icon' },
+  { name: 'Glossary', type: 'Reference screen', notes: 'Accessible from home via nav icon' },
   { name: 'Room: WYSIWYG', type: 'Room landing', notes: 'Tap zone on floor plan map' },
   { name: 'Room: Camera Shutter', type: 'Room landing', notes: 'Tap zone on floor plan map' },
   { name: 'Room: Envelope', type: 'Room landing', notes: 'Tap zone on floor plan map' },
@@ -103,7 +104,7 @@ const interiorCatalog: CatalogGroup[] = [
     <!-- ===== HERO — warm dark band ===== -->
     <header class="hero">
       <div class="hero-badge">
-        <span class="badge-number">2.3</span>
+        <span class="badge-label">2.3</span>
       </div>
       <h1>Sitemap &amp;<br />Content Inventory</h1>
       <p class="hero-lead">
@@ -130,8 +131,9 @@ const interiorCatalog: CatalogGroup[] = [
             <div class="tree-level tree-level--top">
               <div class="tree-node tree-node--secondary">Visited Rooms</div>
               <div class="tree-node tree-node--secondary">About</div>
+              <div class="tree-node tree-node--secondary">Glossary</div>
             </div>
-            <div class="tree-connector">▼</div>
+            <div class="tree-connector">▲</div>
             <div class="tree-level">
               <div class="tree-node tree-node--home">Floor Plan Map<span class="node-tag">Home</span></div>
             </div>

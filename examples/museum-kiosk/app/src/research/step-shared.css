@@ -19,19 +19,22 @@
 
 .hero-badge {
   display: inline-flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   background: var(--amber-500);
   color: var(--ink-900);
-  padding: var(--space-sm) var(--space-lg);
+  width: 100px;
+  height: 120px;
+  padding: 0 var(--space-lg) var(--space-sm);
   margin-bottom: var(--space-lg);
-  box-shadow: var(--shadow-card-sm) oklch(0 0 0 / 0.2);
 }
 
-.badge-number {
+.badge-label {
   font: var(--text-display-title);
+  font-weight: 100;
   font-size: 40px;
   line-height: 1;
+  color: var(--warm-dark);
 }
 
 .hero h1 {
@@ -80,7 +83,7 @@
 
 .section-label {
   grid-column: 1 / -1;
-  border-bottom: var(--stroke-thin) solid var(--surface-300);
+  border-bottom: 2px dotted var(--amber-500);
   margin-bottom: var(--space-lg);
   position: relative;
 }
@@ -102,12 +105,12 @@
 
 .section-heading {
   font: var(--text-display-h2);
-  font-size: 56px;
+  font-size: 52px;
   line-height: 1;
-  color: var(--surface-300);
+  color: var(--amber-500);
   margin: 0;
   white-space: nowrap;
-  height: 0.82em;
+  height: 0.85em;
   overflow: hidden;
 }
 
@@ -187,5 +190,6 @@
 }
 
 .section-heading--light {
-  color: var(--warm-border);
+  color: var(--amber-500);
+  opacity: 0.6;
 }

@@ -67,7 +67,7 @@ const needs = [
     <!-- ===== HERO — warm dark band ===== -->
     <header class="hero">
       <div class="hero-badge">
-        <span class="badge-number">2.2</span>
+        <span class="badge-label">2.2</span>
       </div>
       <h1>Persona</h1>
       <p class="hero-lead">

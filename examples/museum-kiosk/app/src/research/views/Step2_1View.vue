@@ -64,7 +64,7 @@ const formFactors: LabelValue[] = [
     <!-- ===== HERO — warm dark band ===== -->
     <header class="hero">
       <div class="hero-badge">
-        <span class="badge-number">2.1</span>
+        <span class="badge-label">2.1</span>
       </div>
       <h1>Skeuomorph<br />Selection</h1>
       <p class="hero-lead">

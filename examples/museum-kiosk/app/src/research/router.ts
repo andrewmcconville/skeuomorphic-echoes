@@ -34,6 +34,11 @@ const router = createRouter({
       name: 'step',
       component: () => import('./views/StepView.vue'),
     },
+    {
+      path: '/glossary',
+      name: 'glossary',
+      component: () => import('./views/GlossaryView.vue'),
+    },
   ],
 })
 

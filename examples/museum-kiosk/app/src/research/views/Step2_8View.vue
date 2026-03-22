@@ -142,7 +142,7 @@ const components: ComponentDef[] = [
   <article class="ds-page">
     <header class="hero">
       <div class="hero-badge">
-        <span class="badge-number">2.8</span>
+        <span class="badge-label">2.8</span>
       </div>
       <h1>Design System</h1>
       <p class="hero-lead">

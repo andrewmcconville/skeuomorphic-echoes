@@ -23,6 +23,14 @@ import { steps } from './data/steps'
           <span class="nav-step-title">{{ s.title }}</span>
         </RouterLink>
       </nav>
+
+      <nav class="sidebar-nav sidebar-nav--reference">
+        <span class="nav-label">Reference</span>
+        <RouterLink to="/glossary" class="nav-step">
+          <span class="nav-step-id">§</span>
+          <span class="nav-step-title">Glossary</span>
+        </RouterLink>
+      </nav>
     </aside>
 
     <main>
@@ -151,6 +159,12 @@ import { steps } from './data/steps'
 
 .nav-step-title {
   color: inherit;
+}
+
+.sidebar-nav--reference {
+  padding-top: var(--space-md);
+  margin-top: var(--space-md);
+  border-top: var(--stroke-thin) solid var(--surface-300);
 }
 
 /* ---- Main ---- */

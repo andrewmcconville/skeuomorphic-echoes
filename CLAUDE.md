@@ -44,6 +44,13 @@ npx playwright test # visual regression tests (Playwright)
 - Section headings use amber-500 accent with dotted amber borders
 - Hero badges: fixed width/height, `align-items: flex-end`, `font-weight: 100`
 - Non-step pages (Glossary) go under "Reference" nav section in research sidebar
+- BEM naming strictly — no descendant selectors, no raw tag selectors
+- CSS custom properties for modifier-affects-children patterns (not descendant selectors)
+- All pixel values must align to design token scale; snap 1–2px drift to nearest token
+- Shared step styles in step-shared.css; duplicated rules across views get extracted there
+- Spacing scale: 2, 4, 8, 16, 24, 32, 48, 64 (`--space-2xs` through `--space-3xl`)
+- Research app overrides typography to smaller scale (see App.vue `:root` block)
+- Stroke tokens: `--stroke-thin` (1px), `--stroke-medium` (2px) — always use vars for borders
 
 ## Testing
 

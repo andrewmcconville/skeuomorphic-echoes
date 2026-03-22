@@ -122,8 +122,8 @@ const interiorCatalog: CatalogGroup[] = [
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row">
-          <div class="section-label">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
             <h3 class="subsection-heading">Structure</h3>
           </div>
           <div class="section-content">
@@ -162,8 +162,8 @@ const interiorCatalog: CatalogGroup[] = [
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row">
-          <div class="section-label">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
             <h3 class="subsection-heading">Pages</h3>
           </div>
           <div class="section-content">
@@ -193,8 +193,8 @@ const interiorCatalog: CatalogGroup[] = [
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row">
-          <div class="section-label">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
             <h3 class="subsection-heading">Overlays</h3>
           </div>
           <div class="section-content">
@@ -261,12 +261,12 @@ const interiorCatalog: CatalogGroup[] = [
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row">
-          <div class="section-label">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
             <h3 class="subsection-heading">Fields</h3>
           </div>
           <div class="section-content">
-            <div class="specs-grid">
+            <div class="specs-grid specs-grid--dense">
               <div v-for="c in homeContent" :key="c.label" class="spec">
                 <span class="spec-label">{{ c.label }}</span>
                 <span class="spec-dots"></span>
@@ -293,12 +293,12 @@ const interiorCatalog: CatalogGroup[] = [
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row">
-          <div class="section-label">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
             <h3 class="subsection-heading">Fields</h3>
           </div>
           <div class="section-content">
-            <div class="specs-grid">
+            <div class="specs-grid specs-grid--dense">
               <div v-for="c in visitedContent" :key="c.label" class="spec">
                 <span class="spec-label">{{ c.label }}</span>
                 <span class="spec-dots"></span>
@@ -325,12 +325,12 @@ const interiorCatalog: CatalogGroup[] = [
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row">
-          <div class="section-label">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
             <h3 class="subsection-heading">Fields</h3>
           </div>
           <div class="section-content">
-            <div class="specs-grid">
+            <div class="specs-grid specs-grid--dense">
               <div v-for="c in aboutContent" :key="c.label" class="spec">
                 <span class="spec-label">{{ c.label }}</span>
                 <span class="spec-dots"></span>
@@ -357,12 +357,12 @@ const interiorCatalog: CatalogGroup[] = [
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row">
-          <div class="section-label">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
             <h3 class="subsection-heading">Fields</h3>
           </div>
           <div class="section-content">
-            <div class="specs-grid">
+            <div class="specs-grid specs-grid--dense">
               <div v-for="c in roomLandingContent" :key="c.label" class="spec">
                 <span class="spec-label">{{ c.label }}</span>
                 <span class="spec-dots"></span>
@@ -373,8 +373,8 @@ const interiorCatalog: CatalogGroup[] = [
         </div>
 
         <!-- Room breakdown cards -->
-        <div class="section-row">
-          <div class="section-label">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
             <h3 class="subsection-heading">Rooms</h3>
           </div>
           <div class="section-content">
@@ -418,12 +418,12 @@ const interiorCatalog: CatalogGroup[] = [
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row">
-          <div class="section-label">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
             <h3 class="subsection-heading subsection-heading--light">Core Fields</h3>
           </div>
           <div class="section-content">
-            <div class="specs-grid specs-grid--light">
+            <div class="specs-grid specs-grid--dense specs-grid--light">
               <div v-for="c in interiorCore" :key="c.label" class="spec">
                 <span class="spec-label">{{ c.label }}</span>
                 <span class="spec-dots"></span>
@@ -433,8 +433,8 @@ const interiorCatalog: CatalogGroup[] = [
           </div>
         </div>
 
-        <div class="section-row">
-          <div class="section-label">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
             <h3 class="subsection-heading subsection-heading--light">Catalog Fields</h3>
           </div>
           <div class="section-content">
@@ -451,12 +451,12 @@ const interiorCatalog: CatalogGroup[] = [
           </div>
         </div>
 
-        <div class="section-row">
-          <div class="section-label">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
             <h3 class="subsection-heading subsection-heading--light">Actions</h3>
           </div>
           <div class="section-content">
-            <div class="specs-grid specs-grid--light">
+            <div class="specs-grid specs-grid--dense specs-grid--light">
               <div class="spec">
                 <span class="spec-label">Collect</span>
                 <span class="spec-dots"></span>
@@ -476,10 +476,6 @@ const interiorCatalog: CatalogGroup[] = [
 </template>
 
 <style scoped>
-.subsection-heading--light {
-  color: var(--surface-400);
-}
-
 /* ---- Sitemap tree ---- */
 .sitemap-tree {
   display: flex;
@@ -540,7 +536,7 @@ const interiorCatalog: CatalogGroup[] = [
   font-size: 10px;
   font-weight: 400;
   color: var(--ink-800);
-  margin-top: 2px;
+  margin-top: var(--space-2xs);
 }
 
 .tree-node--room {
@@ -555,7 +551,7 @@ const interiorCatalog: CatalogGroup[] = [
 .tree-node--leaf {
   border-style: dotted;
   color: var(--gray-500);
-  font-size: 11px;
+  font-size: 12px;
 }
 
 /* ---- Screen table ---- */
@@ -646,10 +642,10 @@ const interiorCatalog: CatalogGroup[] = [
 .register-badge {
   display: inline-block;
   font: var(--text-meta-era);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 3px 10px;
+  padding: var(--space-xs) 10px;
   align-self: flex-start;
 }
 
@@ -676,28 +672,6 @@ const interiorCatalog: CatalogGroup[] = [
 
 .register-desc--light {
   color: var(--surface-300);
-}
-
-/* ---- Specs overrides ---- */
-.spec-dots {
-  min-width: 20px;
-}
-
-.spec-value {
-  font-size: 14px;
-  white-space: normal;
-}
-
-.specs-grid--light .spec-label {
-  color: var(--surface-400);
-}
-
-.specs-grid--light .spec-dots {
-  border-bottom-color: var(--warm-border);
-}
-
-.specs-grid--light .spec-value {
-  color: var(--surface-200);
 }
 
 /* ---- Room cards ---- */
@@ -730,7 +704,7 @@ const interiorCatalog: CatalogGroup[] = [
 
 .room-name {
   font: var(--text-ui-nav);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
 }
 
@@ -781,7 +755,7 @@ const interiorCatalog: CatalogGroup[] = [
 .catalog-field {
   font: var(--text-meta-field-value);
   color: var(--surface-200);
-  padding: 3px 10px;
+  padding: var(--space-xs) 10px;
   border: var(--stroke-thin) solid var(--warm-border);
 }
 </style>

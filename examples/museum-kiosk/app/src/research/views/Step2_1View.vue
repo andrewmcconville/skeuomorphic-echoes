@@ -82,11 +82,11 @@ const formFactors: LabelValue[] = [
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row">
+        <div class="section-row section-row--nested">
           <div class="section-content">
             <div class="prose-block">
-              <h3>What do you hope to make?</h3>
-              <p>
+              <h3 class="prose-block__heading">What do you hope to make?</h3>
+              <p class="prose-block__text">
                 A museum kiosk interface that serves as both wayfinding guide and
                 collectible-driven exploration tool, greeting visitors at each
                 exhibit entrance and inviting them to collect evolutionary stages as
@@ -94,8 +94,8 @@ const formFactors: LabelValue[] = [
               </p>
             </div>
             <div class="prose-block">
-              <h3>Why does this project matter to you?</h3>
-              <p>
+              <h3 class="prose-block__heading">Why does this project matter to you?</h3>
+              <p class="prose-block__text">
                 AI prompting is replacing the toolbars, rulers, and drop-down menus
                 of traditional editors. If natural-language interaction removes the
                 need for visual metaphors altogether, skeuomorphs may become
@@ -143,7 +143,7 @@ const formFactors: LabelValue[] = [
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row">
+        <div class="section-row section-row--nested">
           <div class="section-content">
             <div class="secondary-grid">
               <div
@@ -154,11 +154,11 @@ const formFactors: LabelValue[] = [
                 <span class="card-number">{{ i + 1 }}</span>
                 <div class="card-body">
                   <div class="card-mapping">
-                    <span class="mapping-from">{{ s.name }}</span>
+                    <span class="mapping-term">{{ s.name }}</span>
                     <span class="mapping-arrow">→</span>
-                    <span class="mapping-to">{{ s.maps }}</span>
+                    <span class="mapping-term">{{ s.maps }}</span>
                   </div>
-                  <p>{{ s.description }}</p>
+                  <p class="card-body__text">{{ s.description }}</p>
                 </div>
               </div>
             </div>
@@ -182,19 +182,19 @@ const formFactors: LabelValue[] = [
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row">
+        <div class="section-row section-row--nested">
           <div class="section-content">
             <div class="prose-block">
-              <h3>UX Pattern</h3>
-              <p>Museum kiosk with wayfinding and collecting</p>
+              <h3 class="prose-block__heading">UX Pattern</h3>
+              <p class="prose-block__text">Museum kiosk with wayfinding and collecting</p>
             </div>
             <div class="prose-block">
-              <h3>Media</h3>
-              <p>Typographic primary, supported by historical photography, diagrams, and floor-plan maps</p>
+              <h3 class="prose-block__heading">Media</h3>
+              <p class="prose-block__text">Typographic primary, supported by historical photography, diagrams, and floor-plan maps</p>
             </div>
             <div class="prose-block">
-              <h3>Why this format?</h3>
-              <p>
+              <h3 class="prose-block__heading">Why this format?</h3>
+              <p class="prose-block__text">
                 Each kiosk orients visitors to the room they're entering while
                 offering collectible evolutionary stages, turning a passive gallery
                 walk into an active scavenger hunt through design history.
@@ -215,19 +215,19 @@ const formFactors: LabelValue[] = [
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row">
+        <div class="section-row section-row--nested">
           <div class="section-content">
             <div class="prose-block">
-              <h3>Informational</h3>
-              <p>
+              <h3 class="prose-block__heading">Informational</h3>
+              <p class="prose-block__text">
                 Bringhurst's <em>The Elements of Typographic Style</em>, the
                 Letterform Archive's online collection, and the Computer History
                 Museum's desktop publishing archives.
               </p>
             </div>
             <div class="prose-block">
-              <h3>Visual</h3>
-              <p>
+              <h3 class="prose-block__heading">Visual</h3>
+              <p class="prose-block__text">
                 The Letterform Archive's digitized type specimens, the Computer
                 History Museum's early DTP screenshots, and archive.org for
                 scanned specimen books and software documentation.
@@ -278,7 +278,7 @@ const formFactors: LabelValue[] = [
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row">
+        <div class="section-row section-row--nested">
           <div class="section-content">
             <div class="specs-grid">
               <div v-for="f in formFactors" :key="f.label" class="spec">
@@ -289,24 +289,24 @@ const formFactors: LabelValue[] = [
             </div>
             <div class="prose-group">
               <div class="prose-block">
-                <h3>Why portrait?</h3>
-                <p>
+                <h3 class="prose-block__heading">Why portrait?</h3>
+                <p class="prose-block__text">
                   Portrait mirrors the vertical proportions of a physical page, the
                   central artifact of the WYSIWYG skeuomorph. The fixed resolution
                   allows precise positioning like a typeset museum placard.
                 </p>
               </div>
               <div class="prose-block">
-                <h3>Why a web app?</h3>
-                <p>
+                <h3 class="prose-block__heading">Why a web app?</h3>
+                <p class="prose-block__text">
                   The kiosk needs room-specific content, collectible tracking, touch
                   navigation without browser chrome, and inactivity resets — all
                   requiring app-level state management.
                 </p>
               </div>
               <div class="prose-block">
-                <h3>Why coarse input?</h3>
-                <p>
+                <h3 class="prose-block__heading">Why coarse input?</h3>
+                <p class="prose-block__text">
                   Museum visitors expect to walk up and interact immediately with
                   generously sized touch targets, echoing the tactile history of
                   compositors physically handling type.
@@ -343,7 +343,7 @@ const formFactors: LabelValue[] = [
 }
 
 /* ---- Prose ---- */
-.prose-block h3 {
+.prose-block__heading {
   font: var(--text-meta-era);
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -351,7 +351,7 @@ const formFactors: LabelValue[] = [
   margin-bottom: var(--space-sm);
 }
 
-.prose-block p {
+.prose-block__text {
   font: var(--text-body-default);
 }
 
@@ -407,8 +407,8 @@ const formFactors: LabelValue[] = [
   position: absolute;
   left: -5px;
   top: 50%;
-  width: 8px;
-  height: 8px;
+  width: var(--space-sm);
+  height: var(--space-sm);
   background: var(--orange-500);
   border-radius: 50%;
   transform: translateY(-50%);
@@ -462,7 +462,7 @@ const formFactors: LabelValue[] = [
   font-size: 14px;
 }
 
-.mapping-from {
+.mapping-term {
   font-weight: 500;
   color: var(--ink-900);
 }
@@ -471,27 +471,9 @@ const formFactors: LabelValue[] = [
   color: var(--orange-500);
 }
 
-.mapping-to {
-  font-weight: 500;
-  color: var(--ink-900);
-}
-
-.card-body p {
+.card-body__text {
   font: var(--text-body-small);
   color: var(--gray-500);
-}
-
-/* ---- Data rows ---- */
-.data-row {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-}
-
-.datum {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
 }
 
 
@@ -521,7 +503,7 @@ const formFactors: LabelValue[] = [
 
 .inspiration-name {
   font: var(--text-ui-nav);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
 }
 
@@ -552,17 +534,5 @@ const formFactors: LabelValue[] = [
   color: var(--surface-100);
   position: relative;
   padding-left: var(--space-2xl);
-}
-
-
-.band--title::after {
-  content: '';
-  position: absolute;
-  right: 40px;
-  bottom: -30px;
-  width: 80px;
-  height: 80px;
-  border: var(--stroke-medium) solid var(--warm-border);
-  opacity: var(--opacity-ghost);
 }
 </style>

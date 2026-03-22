@@ -86,8 +86,8 @@ const needs = [
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row">
-          <div class="section-label">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
             <h3 class="subsection-heading">Card</h3>
           </div>
           <div class="section-content">
@@ -109,8 +109,8 @@ const needs = [
           </div>
         </div>
 
-        <div class="section-row">
-          <div class="section-label">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
             <h3 class="subsection-heading">Bio</h3>
           </div>
           <div class="section-content">
@@ -121,7 +121,7 @@ const needs = [
               become "invisible culture," and she loves exhibits that treat everyday
               UI details like artifacts worth studying.
             </p>
-            <blockquote>
+            <blockquote class="bio-quote">
               "I'm here for the details — show me the lineage, not just the label."
             </blockquote>
           </div>
@@ -139,12 +139,12 @@ const needs = [
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row">
-          <div class="section-label">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
             <h3 class="subsection-heading">Profile</h3>
           </div>
           <div class="section-content">
-            <div class="specs-grid">
+            <div class="specs-grid specs-grid--dense">
               <div v-for="d in demographics" :key="d.label" class="spec">
                 <span class="spec-label">{{ d.label }}</span>
                 <span class="spec-dots"></span>
@@ -164,8 +164,8 @@ const needs = [
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row">
-          <div class="section-label">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
             <h3 class="subsection-heading">Interests</h3>
           </div>
           <div class="section-content">
@@ -175,8 +175,8 @@ const needs = [
           </div>
         </div>
 
-        <div class="section-row">
-          <div class="section-label">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
             <h3 class="subsection-heading">Personality</h3>
           </div>
           <div class="section-content">
@@ -186,8 +186,8 @@ const needs = [
           </div>
         </div>
 
-        <div class="section-row">
-          <div class="section-label">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
             <h3 class="subsection-heading">Brands</h3>
           </div>
           <div class="section-content">
@@ -208,13 +208,13 @@ const needs = [
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row">
-          <div class="section-label">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
             <h3 class="subsection-heading">Goals</h3>
           </div>
           <div class="section-content">
             <ol class="numbered-list">
-              <li v-for="(g, i) in goals" :key="g">
+              <li v-for="(g, i) in goals" :key="g" class="numbered-list__item">
                 <span class="list-number">{{ i + 1 }}</span>
                 <span>{{ g }}</span>
               </li>
@@ -222,13 +222,13 @@ const needs = [
           </div>
         </div>
 
-        <div class="section-row">
-          <div class="section-label">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
             <h3 class="subsection-heading">Drivers</h3>
           </div>
           <div class="section-content">
             <ol class="numbered-list">
-              <li v-for="(m, i) in motivations" :key="m">
+              <li v-for="(m, i) in motivations" :key="m" class="numbered-list__item">
                 <span class="list-number">{{ i + 1 }}</span>
                 <span>{{ m }}</span>
               </li>
@@ -247,13 +247,13 @@ const needs = [
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row">
-          <div class="section-label">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
             <h3 class="subsection-heading">Pain Points</h3>
           </div>
           <div class="section-content">
             <ol class="numbered-list">
-              <li v-for="(f, i) in frustrations" :key="f">
+              <li v-for="(f, i) in frustrations" :key="f" class="numbered-list__item">
                 <span class="list-number">{{ i + 1 }}</span>
                 <span>{{ f }}</span>
               </li>
@@ -271,15 +271,15 @@ const needs = [
         </div>
       </header>
       <div class="section-body">
-        <div class="section-row">
-          <div class="section-label">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
             <h3 class="subsection-heading">Requirements</h3>
           </div>
           <div class="section-content">
             <div class="needs-grid">
               <div v-for="(n, i) in needs" :key="n" class="need-card">
                 <span class="need-number">{{ i + 1 }}</span>
-                <p>{{ n }}</p>
+                <p class="need-card__text">{{ n }}</p>
               </div>
             </div>
           </div>
@@ -290,13 +290,6 @@ const needs = [
 </template>
 
 <style scoped>
-/* ---- Divider ---- */
-.divider-thin {
-  height: var(--stroke-thin);
-  background: var(--surface-300);
-  margin: var(--space-lg) 0;
-}
-
 /* ---- Identity card ---- */
 .identity-card {
   padding: var(--space-xl);
@@ -327,7 +320,7 @@ const needs = [
   letter-spacing: 0.1em;
   color: var(--surface-100);
   background: var(--ink-900);
-  padding: 4px 12px;
+  padding: var(--space-xs) 12px;
 }
 
 .identity-org {
@@ -341,7 +334,7 @@ const needs = [
   font: var(--text-body-default);
 }
 
-blockquote {
+.bio-quote {
   font: var(--text-display-h2);
   font-style: italic;
   padding-left: var(--space-lg);
@@ -349,30 +342,7 @@ blockquote {
   color: var(--ink-800);
 }
 
-/* ---- Specs overrides ---- */
-.spec-dots {
-  min-width: 20px;
-}
-
-.spec-value {
-  font-size: 14px;
-  white-space: normal;
-}
-
 /* ---- Tags ---- */
-.tag-group {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-.tag-label {
-  font: var(--text-meta-field-label);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--gray-400);
-}
-
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -383,7 +353,7 @@ blockquote {
   font: var(--text-meta-era);
   font-size: 12px;
   letter-spacing: 0.05em;
-  padding: 4px 10px;
+  padding: var(--space-xs) 10px;
   background: var(--surface-300);
   color: var(--ink-900);
 }
@@ -402,7 +372,7 @@ blockquote {
   gap: var(--space-md);
 }
 
-.numbered-list li {
+.numbered-list__item {
   display: flex;
   align-items: baseline;
   gap: var(--space-md);
@@ -440,7 +410,7 @@ blockquote {
   margin-bottom: var(--space-sm);
 }
 
-.need-card p {
+.need-card__text {
   font: var(--text-body-small);
 }
 </style>

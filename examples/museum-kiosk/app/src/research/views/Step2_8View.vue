@@ -164,9 +164,9 @@ const components: ComponentDef[] = [
         <div
           v-for="group in colorGroups"
           :key="group.name"
-          class="section-row"
+          class="section-row section-row--nested"
         >
-          <div class="section-label">
+          <div class="section-label section-label--nested">
             <h3 class="subsection-heading">{{ group.name }}</h3>
           </div>
           <div class="section-content">
@@ -183,8 +183,8 @@ const components: ComponentDef[] = [
           </div>
         </div>
 
-        <div class="section-row">
-          <div class="section-label">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
             <h3 class="subsection-heading">Overlay Opacity</h3>
           </div>
           <div class="section-content">
@@ -196,8 +196,8 @@ const components: ComponentDef[] = [
               </div>
             </div>
             <div class="overlay-usage">
-              <p v-for="o in overlays" :key="o.name">
-                <strong>{{ o.value }}</strong> — {{ o.usage }}
+              <p v-for="o in overlays" :key="o.name" class="overlay-usage__text">
+                <strong class="overlay-usage__value">{{ o.value }}</strong> — {{ o.usage }}
               </p>
             </div>
           </div>
@@ -217,9 +217,9 @@ const components: ComponentDef[] = [
         <div
           v-for="group in typeGroups"
           :key="group.name"
-          class="section-row"
+          class="section-row section-row--nested"
         >
-          <div class="section-label">
+          <div class="section-label section-label--nested">
             <h3 class="subsection-heading">{{ group.name }}</h3>
           </div>
           <div class="section-content">
@@ -257,9 +257,9 @@ const components: ComponentDef[] = [
         <div
           v-for="comp in components"
           :key="comp.name"
-          class="section-row"
+          class="section-row section-row--nested"
         >
-          <div class="section-label">
+          <div class="section-label section-label--nested">
             <h3 class="subsection-heading">{{ comp.name }}</h3>
           </div>
           <div class="section-content">
@@ -281,11 +281,6 @@ const components: ComponentDef[] = [
 /* ---- Step 2.8 overrides ---- */
 .section-content {
   gap: var(--space-lg);
-  margin-left: 180px;
-}
-
-.section-body .section-content {
-  margin-left: 0;
 }
 
 /* ---- Color grid ---- */
@@ -315,7 +310,6 @@ const components: ComponentDef[] = [
 
 .color-name {
   font: var(--text-ui-nav);
-  font-size: 13px;
 }
 
 .color-hex {
@@ -325,18 +319,18 @@ const components: ComponentDef[] = [
 
 .color-usage {
   font: var(--text-meta-field-value);
-  font-size: 11px;
+  font-size: 12px;
   color: var(--gray-400);
   line-height: 1.4;
 }
 
-.overlay-usage p {
+.overlay-usage__text {
   font: var(--text-body-small);
   color: var(--gray-500);
   margin-bottom: var(--space-xs);
 }
 
-.overlay-usage strong {
+.overlay-usage__value {
   color: var(--ink-900);
 }
 
@@ -413,13 +407,11 @@ const components: ComponentDef[] = [
 
 .variant-name {
   font: var(--text-ui-nav);
-  font-size: 13px;
   font-weight: 500;
 }
 
 .variant-spec {
   font: var(--text-body-small);
-  font-size: 13px;
   color: var(--gray-500);
 }
 </style>

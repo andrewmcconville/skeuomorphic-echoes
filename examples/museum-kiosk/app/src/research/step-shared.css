@@ -98,7 +98,7 @@
 
 .section-label {
   grid-column: 1 / -1;
-  border-bottom: 2px dotted var(--amber-500);
+  border-bottom: var(--stroke-medium) dotted var(--amber-500);
   margin-bottom: var(--space-lg);
   position: relative;
   z-index: 1;
@@ -131,7 +131,6 @@
 }
 
 .section-heading--light {
-  color: var(--amber-500);
   opacity: 0.6;
 }
 
@@ -148,20 +147,20 @@
 }
 
 
-/* ---- Section body — nested rows ---- */
+/* ---- Nested rows (inside section-body) ---- */
 
-.section-body .section-row {
+.section-row--nested {
   padding: 0;
   margin-bottom: var(--space-2xl);
 }
 
-.section-body .section-label {
+.section-label--nested {
   grid-column: 1;
   border-bottom: none;
   margin-bottom: 0;
 }
 
-.section-body .section-label::after {
+.section-label--nested::after {
   display: none;
 }
 
@@ -173,6 +172,10 @@
   line-height: 1.4;
   margin: 0;
   font-weight: 400;
+}
+
+.subsection-heading--light {
+  color: var(--surface-400);
 }
 
 
@@ -209,20 +212,37 @@
   font: var(--text-meta-field-label);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--gray-500);
+  color: var(--_spec-label-color, var(--gray-500));
   white-space: nowrap;
 }
 
 .spec-dots {
   flex: 1;
-  border-bottom: 1px dotted var(--surface-400);
+  min-width: var(--_spec-dots-min, 0);
+  border-bottom: var(--stroke-thin) dotted var(--_spec-dots-color, var(--surface-400));
   margin-bottom: var(--space-2xs);
 }
 
 .spec-value {
   font: var(--text-body-small);
-  font-size: 15px;
-  white-space: nowrap;
+  font-size: var(--_spec-value-size, 14px);
+  white-space: var(--_spec-value-wrap, nowrap);
+  color: var(--_spec-value-color, inherit);
+}
+
+
+/* ---- Specs grid modifiers ---- */
+
+.specs-grid--dense {
+  --_spec-dots-min: 20px;
+  --_spec-value-size: 14px;
+  --_spec-value-wrap: normal;
+}
+
+.specs-grid--light {
+  --_spec-label-color: var(--surface-400);
+  --_spec-dots-color: var(--warm-border);
+  --_spec-value-color: var(--surface-200);
 }
 
 

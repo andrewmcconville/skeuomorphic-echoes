@@ -19,14 +19,17 @@ npx playwright test # visual regression tests (Playwright)
 - examples/museum-kiosk/app/ — Vue 3 + TypeScript + Vite multi-page app
   - research.html — Process book (step views: /step/2.1, /step/2.2, etc.)
   - prototype.html — Hi-fi product prototype
-  - src/shared/ — Design tokens, shared styles
+  - src/shared/ — Design tokens, shared styles, shared data
     - tokens/colors.css — OKLCH palette custom properties
     - tokens/typography.css — IBM Plex font stacks + scale
     - tokens/spacing.css — Spacing scale
     - styles/reset.css — Base reset
+    - data/glossary.ts — Glossary of typographic ghosts (13 glyph entries, shared by both apps)
   - src/research/ — Research app views and router
+    - step-shared.css — Shared step-page styles (hero, sections, bands, badges)
   - src/prototype/ — Prototype app views and router
   - tests/ — Playwright test specs
+- examples/museum-kiosk/docs/ — Reference markdown documents (glossary.md)
 - examples/museum-kiosk/tests/ — Playwright test screenshots (visual baselines)
 
 ## Conventions
@@ -37,6 +40,10 @@ npx playwright test # visual regression tests (Playwright)
 - IBM Plex family: Serif (display), Sans (body/UI), Mono (metadata/labels)
 - Use "Step" not "Assignment" in exemplar apps (e.g., "Step 2.1")
 - Noun-based titles without scope qualifiers
+- Unified `.badge-label` class for hero badges (not separate number/glyph classes)
+- Section headings use amber-500 accent with dotted amber borders
+- Hero badges: fixed width/height, `align-items: flex-end`, `font-weight: 100`
+- Non-step pages (Glossary) go under "Reference" nav section in research sidebar
 
 ## Testing
 

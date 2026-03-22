@@ -79,62 +79,76 @@ const needs = [
 
 
     <!-- ===== IDENTITY ===== -->
-    <section class="category">
-      <div class="section-row">
+    <section class="section">
+      <header class="section-row">
         <div class="section-label">
           <h2 class="section-heading">Identity</h2>
         </div>
-        <div class="section-content">
-          <div class="identity-card">
-            <div class="identity-top">
-              <div class="identity-info">
-                <h3 class="identity-name">Maya Rios</h3>
-                <span class="pronoun">she / her</span>
+      </header>
+      <div class="section-body">
+        <div class="section-row subsection">
+          <div class="section-label">
+            <h3 class="subsection-heading">Card</h3>
+          </div>
+          <div class="section-content">
+            <div class="identity-card">
+              <div class="identity-top">
+                <div class="identity-info">
+                  <h3 class="identity-name">Maya Rios</h3>
+                  <span class="pronoun">she / her</span>
+                </div>
+                <div class="identity-role">
+                  <span class="role-tag">Museum Goer</span>
+                </div>
               </div>
-              <div class="identity-role">
-                <span class="role-tag">Museum Goer</span>
+              <div class="identity-org">
+                <span class="datum-label">Organization</span>
+                <span class="datum-value">Independent artist and maker</span>
               </div>
-            </div>
-            <div class="identity-org">
-              <span class="datum-label">Organization</span>
-              <span class="datum-value">Independent artist and maker</span>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="section-row subsection">
-        <div class="section-label">
-          <h3 class="subsection-heading">Bio</h3>
-        </div>
-        <div class="section-content">
-          <p class="bio">
-            Maya just finished her MFA in Art &amp; Design + Technology and is
-            decompressing by visiting museums and design exhibitions — part
-            research, part therapy. She's obsessed with how interface conventions
-            become "invisible culture," and she loves exhibits that treat everyday
-            UI details like artifacts worth studying.
-          </p>
-          <blockquote>
-            "I'm here for the details — show me the lineage, not just the label."
-          </blockquote>
+        <div class="section-row subsection">
+          <div class="section-label">
+            <h3 class="subsection-heading">Bio</h3>
+          </div>
+          <div class="section-content">
+            <p class="bio">
+              Maya just finished her MFA in Art &amp; Design + Technology and is
+              decompressing by visiting museums and design exhibitions — part
+              research, part therapy. She's obsessed with how interface conventions
+              become "invisible culture," and she loves exhibits that treat everyday
+              UI details like artifacts worth studying.
+            </p>
+            <blockquote>
+              "I'm here for the details — show me the lineage, not just the label."
+            </blockquote>
+          </div>
         </div>
       </div>
 
     </section>
 
     <!-- ===== DEMOGRAPHICS ===== -->
-    <section class="category">
-      <div class="section-row">
+    <section class="section">
+      <header class="section-row">
         <div class="section-label">
           <h2 class="section-heading">Demographics</h2>
         </div>
-        <div class="section-content">
-          <div class="specs-grid">
-            <div v-for="d in demographics" :key="d.label" class="spec">
-              <span class="spec-label">{{ d.label }}</span>
-              <span class="spec-dots"></span>
-              <span class="spec-value">{{ d.value }}</span>
+      </header>
+      <div class="section-body">
+        <div class="section-row subsection">
+          <div class="section-label">
+            <h3 class="subsection-heading">Profile</h3>
+          </div>
+          <div class="section-content">
+            <div class="specs-grid">
+              <div v-for="d in demographics" :key="d.label" class="spec">
+                <span class="spec-label">{{ d.label }}</span>
+                <span class="spec-dots"></span>
+                <span class="spec-value">{{ d.value }}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -142,124 +156,128 @@ const needs = [
     </section>
 
     <!-- ===== PSYCHOGRAPHICS ===== -->
-    <section class="category">
-      <div class="section-row">
+    <section class="section">
+      <header class="section-row">
         <div class="section-label">
           <h2 class="section-heading">Psychographics</h2>
         </div>
-      </div>
-
-      <div class="section-row subsection">
-        <div class="section-label">
-          <h3 class="subsection-heading">Interests</h3>
-        </div>
-        <div class="section-content">
-          <div class="tags">
-            <span v-for="t in interests" :key="t" class="tag">{{ t }}</span>
+      </header>
+      <div class="section-body">
+        <div class="section-row subsection">
+          <div class="section-label">
+            <h3 class="subsection-heading">Interests</h3>
+          </div>
+          <div class="section-content">
+            <div class="tags">
+              <span v-for="t in interests" :key="t" class="tag">{{ t }}</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="section-row subsection">
-        <div class="section-label">
-          <h3 class="subsection-heading">Personality</h3>
-        </div>
-        <div class="section-content">
-          <div class="tags">
-            <span v-for="t in traits" :key="t" class="tag">{{ t }}</span>
+        <div class="section-row subsection">
+          <div class="section-label">
+            <h3 class="subsection-heading">Personality</h3>
+          </div>
+          <div class="section-content">
+            <div class="tags">
+              <span v-for="t in traits" :key="t" class="tag">{{ t }}</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="section-row subsection">
-        <div class="section-label">
-          <h3 class="subsection-heading">Brands</h3>
-        </div>
-        <div class="section-content">
-          <div class="tags">
-            <span v-for="b in brands" :key="b" class="tag tag--outline">{{ b }}</span>
+        <div class="section-row subsection">
+          <div class="section-label">
+            <h3 class="subsection-heading">Brands</h3>
+          </div>
+          <div class="section-content">
+            <div class="tags">
+              <span v-for="b in brands" :key="b" class="tag tag--outline">{{ b }}</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ===== MOTIVATIONS ===== -->
-    <section class="category">
-      <div class="section-row">
+    <section class="section">
+      <header class="section-row">
         <div class="section-label">
           <h2 class="section-heading">Motivations</h2>
         </div>
-      </div>
+      </header>
+      <div class="section-body">
+        <div class="section-row subsection">
+          <div class="section-label">
+            <h3 class="subsection-heading">Goals</h3>
+          </div>
+          <div class="section-content">
+            <ol class="numbered-list">
+              <li v-for="(g, i) in goals" :key="g">
+                <span class="list-number">{{ i + 1 }}</span>
+                <span>{{ g }}</span>
+              </li>
+            </ol>
+          </div>
+        </div>
 
-      <div class="section-row subsection">
-        <div class="section-label">
-          <h3 class="subsection-heading">Goals</h3>
-        </div>
-        <div class="section-content">
-          <ol class="numbered-list">
-            <li v-for="(g, i) in goals" :key="g">
-              <span class="list-number">{{ i + 1 }}</span>
-              <span>{{ g }}</span>
-            </li>
-          </ol>
-        </div>
-      </div>
-
-      <div class="section-row subsection">
-        <div class="section-label">
-          <h3 class="subsection-heading">Drivers</h3>
-        </div>
-        <div class="section-content">
-          <ol class="numbered-list">
-            <li v-for="(m, i) in motivations" :key="m">
-              <span class="list-number">{{ i + 1 }}</span>
-              <span>{{ m }}</span>
-            </li>
-          </ol>
+        <div class="section-row subsection">
+          <div class="section-label">
+            <h3 class="subsection-heading">Drivers</h3>
+          </div>
+          <div class="section-content">
+            <ol class="numbered-list">
+              <li v-for="(m, i) in motivations" :key="m">
+                <span class="list-number">{{ i + 1 }}</span>
+                <span>{{ m }}</span>
+              </li>
+            </ol>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ===== FRUSTRATIONS ===== -->
-    <section class="category">
-      <div class="section-row">
+    <section class="section">
+      <header class="section-row">
         <div class="section-label">
           <h2 class="section-heading">Frustrations</h2>
         </div>
-      </div>
-
-      <div class="section-row subsection">
-        <div class="section-label">
-          <h3 class="subsection-heading">Pain Points</h3>
-        </div>
-        <div class="section-content">
-          <ol class="numbered-list">
-            <li v-for="(f, i) in frustrations" :key="f">
-              <span class="list-number">{{ i + 1 }}</span>
-              <span>{{ f }}</span>
-            </li>
-          </ol>
+      </header>
+      <div class="section-body">
+        <div class="section-row subsection">
+          <div class="section-label">
+            <h3 class="subsection-heading">Pain Points</h3>
+          </div>
+          <div class="section-content">
+            <ol class="numbered-list">
+              <li v-for="(f, i) in frustrations" :key="f">
+                <span class="list-number">{{ i + 1 }}</span>
+                <span>{{ f }}</span>
+              </li>
+            </ol>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ===== UX NEEDS ===== -->
-    <section class="category">
-      <div class="section-row">
+    <section class="section">
+      <header class="section-row">
         <div class="section-label">
           <h2 class="section-heading">UX Needs</h2>
         </div>
-      </div>
-
-      <div class="section-row subsection">
-        <div class="section-label">
-          <h3 class="subsection-heading">Requirements</h3>
-        </div>
-        <div class="section-content">
-          <div class="needs-grid">
-            <div v-for="(n, i) in needs" :key="n" class="need-card">
-              <span class="need-number">{{ i + 1 }}</span>
-              <p>{{ n }}</p>
+      </header>
+      <div class="section-body">
+        <div class="section-row subsection">
+          <div class="section-label">
+            <h3 class="subsection-heading">Requirements</h3>
+          </div>
+          <div class="section-content">
+            <div class="needs-grid">
+              <div v-for="(n, i) in needs" :key="n" class="need-card">
+                <span class="need-number">{{ i + 1 }}</span>
+                <p>{{ n }}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -270,7 +288,7 @@ const needs = [
 
 <style scoped>
 /* ---- Category ---- */
-.category {
+.section {
   display: flex;
   flex-direction: column;
 }

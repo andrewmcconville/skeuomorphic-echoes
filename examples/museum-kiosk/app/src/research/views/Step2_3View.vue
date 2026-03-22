@@ -71,7 +71,7 @@ const aboutContent: LabelValue[] = [
 ]
 
 const roomLandingContent: LabelValue[] = [
-  { label: 'Room title', value: 'Names the skeuomorph category (e.g., "WYSIWYG")' },
+  { label: 'Room title', value: 'Names the skeuomorph section (e.g., "WYSIWYG")' },
   { label: 'Description', value: '2–3 sentences on what physical object persists and where' },
   { label: 'Summary', value: 'One-line thesis connecting the original artifact to its digital echo' },
   { label: 'Navigation', value: 'Back to map and visited rooms' },
@@ -116,36 +116,38 @@ const interiorCatalog: CatalogGroup[] = [
     </header>
 
     <!-- ===== SITEMAP ===== -->
-    <section class="category">
-      <div class="section-row">
+    <section class="section">
+      <header class="section-row">
         <div class="section-label">
           <h2 class="section-heading">Sitemap</h2>
         </div>
-      </div>
-      <div class="section-row subsection">
-        <div class="section-label">
-          <h3 class="subsection-heading">Structure</h3>
-        </div>
-        <div class="section-content">
-          <div class="sitemap-tree">
-            <div class="tree-level tree-level--top">
-              <div class="tree-node tree-node--secondary">Visited Rooms</div>
-              <div class="tree-node tree-node--secondary">About</div>
-              <div class="tree-node tree-node--secondary">Glossary</div>
-            </div>
-            <div class="tree-connector">▲</div>
-            <div class="tree-level">
-              <div class="tree-node tree-node--home">Floor Plan Map<span class="node-tag">Home</span></div>
-            </div>
-            <div class="tree-connector">▼</div>
-            <div class="tree-level tree-level--rooms">
-              <div v-for="room in rooms" :key="room.name" class="tree-node tree-node--room">
-                {{ room.name }}
+      </header>
+      <div class="section-body">
+        <div class="section-row subsection">
+          <div class="section-label">
+            <h3 class="subsection-heading">Structure</h3>
+          </div>
+          <div class="section-content">
+            <div class="sitemap-tree">
+              <div class="tree-level tree-level--top">
+                <div class="tree-node tree-node--secondary">Visited Rooms</div>
+                <div class="tree-node tree-node--secondary">About</div>
+                <div class="tree-node tree-node--secondary">Glossary</div>
               </div>
-            </div>
-            <div class="tree-connector">▼</div>
-            <div class="tree-level">
-              <div class="tree-node tree-node--leaf">Evolutionary Stages (×20)</div>
+              <div class="tree-connector">▲</div>
+              <div class="tree-level">
+                <div class="tree-node tree-node--home">Floor Plan Map<span class="node-tag">Home</span></div>
+              </div>
+              <div class="tree-connector">▼</div>
+              <div class="tree-level tree-level--rooms">
+                <div v-for="room in rooms" :key="room.name" class="tree-node tree-node--room">
+                  {{ room.name }}
+                </div>
+              </div>
+              <div class="tree-connector">▼</div>
+              <div class="tree-level">
+                <div class="tree-node tree-node--leaf">Evolutionary Stages (×20)</div>
+              </div>
             </div>
           </div>
         </div>
@@ -153,27 +155,29 @@ const interiorCatalog: CatalogGroup[] = [
     </section>
 
     <!-- ===== SCREENS ===== -->
-    <section class="category">
-      <div class="section-row">
+    <section class="section">
+      <header class="section-row">
         <div class="section-label">
           <h2 class="section-heading">Screens</h2>
         </div>
-      </div>
-      <div class="section-row subsection">
-        <div class="section-label">
-          <h3 class="subsection-heading">Pages</h3>
-        </div>
-        <div class="section-content">
-          <div class="screen-table">
-            <div class="screen-header">
-              <span class="col-name">Screen</span>
-              <span class="col-type">Type</span>
-              <span class="col-notes">Notes</span>
-            </div>
-            <div v-for="s in screens" :key="s.name" class="screen-row">
-              <span class="col-name">{{ s.name }}</span>
-              <span class="col-type">{{ s.type }}</span>
-              <span class="col-notes">{{ s.notes }}</span>
+      </header>
+      <div class="section-body">
+        <div class="section-row subsection">
+          <div class="section-label">
+            <h3 class="subsection-heading">Pages</h3>
+          </div>
+          <div class="section-content">
+            <div class="screen-table">
+              <div class="screen-header">
+                <span class="col-name">Screen</span>
+                <span class="col-type">Type</span>
+                <span class="col-notes">Notes</span>
+              </div>
+              <div v-for="s in screens" :key="s.name" class="screen-row">
+                <span class="col-name">{{ s.name }}</span>
+                <span class="col-type">{{ s.type }}</span>
+                <span class="col-notes">{{ s.notes }}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -181,27 +185,29 @@ const interiorCatalog: CatalogGroup[] = [
     </section>
 
     <!-- ===== MODALS & OVERLAYS ===== -->
-    <section class="category">
-      <div class="section-row">
+    <section class="section">
+      <header class="section-row">
         <div class="section-label">
           <h2 class="section-heading">Modals</h2>
         </div>
-      </div>
-      <div class="section-row subsection">
-        <div class="section-label">
-          <h3 class="subsection-heading">Overlays</h3>
-        </div>
-        <div class="section-content">
-          <div class="screen-table">
-            <div class="screen-header">
-              <span class="col-name">Element</span>
-              <span class="col-type">Type</span>
-              <span class="col-notes">Notes</span>
-            </div>
-            <div v-for="m in modals" :key="m.name" class="screen-row">
-              <span class="col-name">{{ m.name }}</span>
-              <span class="col-type">{{ m.type }}</span>
-              <span class="col-notes">{{ m.notes }}</span>
+      </header>
+      <div class="section-body">
+        <div class="section-row subsection">
+          <div class="section-label">
+            <h3 class="subsection-heading">Overlays</h3>
+          </div>
+          <div class="section-content">
+            <div class="screen-table">
+              <div class="screen-header">
+                <span class="col-name">Element</span>
+                <span class="col-type">Type</span>
+                <span class="col-notes">Notes</span>
+              </div>
+              <div v-for="m in modals" :key="m.name" class="screen-row">
+                <span class="col-name">{{ m.name }}</span>
+                <span class="col-type">{{ m.type }}</span>
+                <span class="col-notes">{{ m.notes }}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -210,7 +216,7 @@ const interiorCatalog: CatalogGroup[] = [
 
     <!-- ===== CONTENT INVENTORY INTRO — warm dark band ===== -->
     <section class="band band--dark band--no-panel">
-      <div class="band-inner section-row">
+      <header class="band-inner section-row">
         <div class="section-label">
           <h2 class="section-heading section-heading--light">Content<br />Inventory</h2>
         </div>
@@ -235,12 +241,12 @@ const interiorCatalog: CatalogGroup[] = [
             </div>
           </div>
         </div>
-      </div>
+      </header>
     </section>
 
     <!-- ===== HOME SCREEN ===== -->
-    <section class="category">
-      <div class="section-row">
+    <section class="section">
+      <header class="section-row">
         <div class="section-label">
           <h2 class="section-heading">Home</h2>
         </div>
@@ -251,17 +257,19 @@ const interiorCatalog: CatalogGroup[] = [
             sparse and inviting.
           </p>
         </div>
-      </div>
-      <div class="section-row subsection">
-        <div class="section-label">
-          <h3 class="subsection-heading">Fields</h3>
-        </div>
-        <div class="section-content">
-          <div class="specs-grid">
-            <div v-for="c in homeContent" :key="c.label" class="spec">
-              <span class="spec-label">{{ c.label }}</span>
-              <span class="spec-dots"></span>
-              <span class="spec-value">{{ c.value }}</span>
+      </header>
+      <div class="section-body">
+        <div class="section-row subsection">
+          <div class="section-label">
+            <h3 class="subsection-heading">Fields</h3>
+          </div>
+          <div class="section-content">
+            <div class="specs-grid">
+              <div v-for="c in homeContent" :key="c.label" class="spec">
+                <span class="spec-label">{{ c.label }}</span>
+                <span class="spec-dots"></span>
+                <span class="spec-value">{{ c.value }}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -269,8 +277,8 @@ const interiorCatalog: CatalogGroup[] = [
     </section>
 
     <!-- ===== VISITED ROOMS ===== -->
-    <section class="category">
-      <div class="section-row">
+    <section class="section">
+      <header class="section-row">
         <div class="section-label">
           <h2 class="section-heading">Visited</h2>
         </div>
@@ -280,17 +288,19 @@ const interiorCatalog: CatalogGroup[] = [
             Overview and collection tracking; sparse, card-based layout.
           </p>
         </div>
-      </div>
-      <div class="section-row subsection">
-        <div class="section-label">
-          <h3 class="subsection-heading">Fields</h3>
-        </div>
-        <div class="section-content">
-          <div class="specs-grid">
-            <div v-for="c in visitedContent" :key="c.label" class="spec">
-              <span class="spec-label">{{ c.label }}</span>
-              <span class="spec-dots"></span>
-              <span class="spec-value">{{ c.value }}</span>
+      </header>
+      <div class="section-body">
+        <div class="section-row subsection">
+          <div class="section-label">
+            <h3 class="subsection-heading">Fields</h3>
+          </div>
+          <div class="section-content">
+            <div class="specs-grid">
+              <div v-for="c in visitedContent" :key="c.label" class="spec">
+                <span class="spec-label">{{ c.label }}</span>
+                <span class="spec-dots"></span>
+                <span class="spec-value">{{ c.value }}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -298,8 +308,8 @@ const interiorCatalog: CatalogGroup[] = [
     </section>
 
     <!-- ===== ABOUT ===== -->
-    <section class="category">
-      <div class="section-row">
+    <section class="section">
+      <header class="section-row">
         <div class="section-label">
           <h2 class="section-heading">About</h2>
         </div>
@@ -309,17 +319,19 @@ const interiorCatalog: CatalogGroup[] = [
             Informational, low density; colophon-style credits block.
           </p>
         </div>
-      </div>
-      <div class="section-row subsection">
-        <div class="section-label">
-          <h3 class="subsection-heading">Fields</h3>
-        </div>
-        <div class="section-content">
-          <div class="specs-grid">
-            <div v-for="c in aboutContent" :key="c.label" class="spec">
-              <span class="spec-label">{{ c.label }}</span>
-              <span class="spec-dots"></span>
-              <span class="spec-value">{{ c.value }}</span>
+      </header>
+      <div class="section-body">
+        <div class="section-row subsection">
+          <div class="section-label">
+            <h3 class="subsection-heading">Fields</h3>
+          </div>
+          <div class="section-content">
+            <div class="specs-grid">
+              <div v-for="c in aboutContent" :key="c.label" class="spec">
+                <span class="spec-label">{{ c.label }}</span>
+                <span class="spec-dots"></span>
+                <span class="spec-value">{{ c.value }}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -329,7 +341,7 @@ const interiorCatalog: CatalogGroup[] = [
     <!-- ===== ROOM LANDING — warm band ===== -->
     <section class="band band--warm">
       <div class="band-inner">
-        <div class="section-row">
+        <header class="section-row">
           <div class="section-label">
             <h2 class="section-heading">Room<br />Landing</h2>
           </div>
@@ -340,7 +352,7 @@ const interiorCatalog: CatalogGroup[] = [
               between gallery browsing and specimen study.
             </p>
           </div>
-        </div>
+        </header>
         <div class="section-row subsection">
           <div class="section-label">
             <h3 class="subsection-heading">Fields</h3>
@@ -388,7 +400,7 @@ const interiorCatalog: CatalogGroup[] = [
     <!-- ===== INTERIOR PAGE — dark band ===== -->
     <section class="band band--dark band--no-panel">
       <div class="band-inner">
-        <div class="section-row">
+        <header class="section-row">
           <div class="section-label">
             <h2 class="section-heading section-heading--light">Interior<br />Page</h2>
           </div>
@@ -401,7 +413,7 @@ const interiorCatalog: CatalogGroup[] = [
               display case.
             </p>
           </div>
-        </div>
+        </header>
 
         <div class="section-row subsection subsection--light">
           <div class="section-label">
@@ -461,39 +473,8 @@ const interiorCatalog: CatalogGroup[] = [
 </template>
 
 <style scoped>
-/* Suppress background panel on dark/warm bands */
-.band--no-panel .section-row::before {
-  display: none;
-}
-
-/* ---- Section row ---- */
-.section-row {
-  position: relative;
-}
-
-.section-row::before {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 60%;
-  background: var(--surface-200);
-  opacity: var(--opacity-panel);
-  z-index: 0;
-}
-
-.section-row > * {
-  position: relative;
-  z-index: 1;
-}
-
-.band .section-row::before {
-  display: none;
-}
-
 /* ---- Category ---- */
-.category {
+.section {
   display: flex;
   flex-direction: column;
 }

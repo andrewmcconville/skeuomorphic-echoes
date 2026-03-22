@@ -16,7 +16,7 @@ const colorGroups: ColorGroup[] = [
     colors: [
       { name: 'Amber-500', var: '--amber-500', hex: '#E8A838', usage: 'Primary zone highlight, active tab, selected state' },
       { name: 'Amber-700', var: '--amber-700', hex: '#D4922A', usage: 'Pressed/hover state for amber, progress bar fill' },
-      { name: 'Orange-500', var: '--orange-500', hex: '#D46A38', usage: 'Secondary zone highlight, category badges, era tags' },
+      { name: 'Orange-500', var: '--orange-500', hex: '#D46A38', usage: 'Secondary zone highlight, section badges, era tags' },
       { name: 'Orange-700', var: '--orange-700', hex: '#C25A30', usage: 'Pressed/hover for orange, active room indicator' },
     ],
   },
@@ -155,51 +155,52 @@ const components: ComponentDef[] = [
 
 
     <!-- ==================== COLORS ==================== -->
-    <section class="category">
-      <div class="section-row">
+    <section class="section">
+      <header class="section-row">
         <div class="section-label">
           <h2 class="section-heading">Colors</h2>
         </div>
-      </div>
-
-      <div
-        v-for="group in colorGroups"
-        :key="group.name"
-        class="section-row subsection"
-      >
-        <div class="section-label">
-          <h3 class="subsection-heading">{{ group.name }}</h3>
-        </div>
-        <div class="section-content">
-          <div class="color-grid">
-            <div v-for="c in group.colors" :key="c.var" class="color-swatch">
-              <div class="swatch" :style="{ background: `var(${c.var})` }" />
-              <div class="swatch-info">
-                <span class="color-name">{{ c.name }}</span>
-                <code class="color-hex">{{ c.hex }}</code>
-                <span class="color-usage">{{ c.usage }}</span>
+      </header>
+      <div class="section-body">
+        <div
+          v-for="group in colorGroups"
+          :key="group.name"
+          class="section-row subsection"
+        >
+          <div class="section-label">
+            <h3 class="subsection-heading">{{ group.name }}</h3>
+          </div>
+          <div class="section-content">
+            <div class="color-grid">
+              <div v-for="c in group.colors" :key="c.var" class="color-swatch">
+                <div class="swatch" :style="{ background: `var(${c.var})` }" />
+                <div class="swatch-info">
+                  <span class="color-name">{{ c.name }}</span>
+                  <code class="color-hex">{{ c.hex }}</code>
+                  <span class="color-usage">{{ c.usage }}</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="section-row subsection">
-        <div class="section-label">
-          <h3 class="subsection-heading">Overlay Opacity</h3>
-        </div>
-        <div class="section-content">
-          <div class="specs-grid">
-            <div v-for="o in overlays" :key="o.name" class="spec">
-              <span class="spec-label">{{ o.name }}</span>
-              <span class="spec-dots"></span>
-              <span class="spec-value">{{ o.value }}</span>
-            </div>
+        <div class="section-row subsection">
+          <div class="section-label">
+            <h3 class="subsection-heading">Overlay Opacity</h3>
           </div>
-          <div class="overlay-usage">
-            <p v-for="o in overlays" :key="o.name">
-              <strong>{{ o.value }}</strong> — {{ o.usage }}
-            </p>
+          <div class="section-content">
+            <div class="specs-grid">
+              <div v-for="o in overlays" :key="o.name" class="spec">
+                <span class="spec-label">{{ o.name }}</span>
+                <span class="spec-dots"></span>
+                <span class="spec-value">{{ o.value }}</span>
+              </div>
+            </div>
+            <div class="overlay-usage">
+              <p v-for="o in overlays" :key="o.name">
+                <strong>{{ o.value }}</strong> — {{ o.usage }}
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -207,35 +208,36 @@ const components: ComponentDef[] = [
 
 
     <!-- ==================== TYPOGRAPHY ==================== -->
-    <section class="category">
-      <div class="section-row">
+    <section class="section">
+      <header class="section-row">
         <div class="section-label">
           <h2 class="section-heading">Typography</h2>
         </div>
-      </div>
-
-      <div
-        v-for="group in typeGroups"
-        :key="group.name"
-        class="section-row subsection"
-      >
-        <div class="section-label">
-          <h3 class="subsection-heading">{{ group.name }}</h3>
-        </div>
-        <div class="section-content">
-          <div class="type-samples">
-            <div v-for="s in group.styles" :key="s.token" class="type-sample">
-              <p
-                class="type-preview"
-                :style="{ font: `var(${s.token})`, ...(s.extra ? Object.fromEntries(s.extra.split('; ').map(p => { const [k, v] = p.split(': '); return [k.replace(/-([a-z])/g, (_, c) => c.toUpperCase()), v] })) : {}) }"
-              >
-                {{ s.sample }}
-              </p>
-              <div class="type-meta">
-                <span class="type-name">{{ s.name }}</span>
-                <div class="type-specs">
-                  <span class="type-spec">{{ s.weight }}</span>
-                  <span class="type-spec">{{ s.size }}</span>
+      </header>
+      <div class="section-body">
+        <div
+          v-for="group in typeGroups"
+          :key="group.name"
+          class="section-row subsection"
+        >
+          <div class="section-label">
+            <h3 class="subsection-heading">{{ group.name }}</h3>
+          </div>
+          <div class="section-content">
+            <div class="type-samples">
+              <div v-for="s in group.styles" :key="s.token" class="type-sample">
+                <p
+                  class="type-preview"
+                  :style="{ font: `var(${s.token})`, ...(s.extra ? Object.fromEntries(s.extra.split('; ').map(p => { const [k, v] = p.split(': '); return [k.replace(/-([a-z])/g, (_, c) => c.toUpperCase()), v] })) : {}) }"
+                >
+                  {{ s.sample }}
+                </p>
+                <div class="type-meta">
+                  <span class="type-name">{{ s.name }}</span>
+                  <div class="type-specs">
+                    <span class="type-spec">{{ s.weight }}</span>
+                    <span class="type-spec">{{ s.size }}</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -246,27 +248,28 @@ const components: ComponentDef[] = [
 
 
     <!-- ==================== COMPONENTS ==================== -->
-    <section class="category">
-      <div class="section-row">
+    <section class="section">
+      <header class="section-row">
         <div class="section-label">
           <h2 class="section-heading">Components</h2>
         </div>
-      </div>
-
-      <div
-        v-for="comp in components"
-        :key="comp.name"
-        class="section-row subsection"
-      >
-        <div class="section-label">
-          <h3 class="subsection-heading">{{ comp.name }}</h3>
-        </div>
-        <div class="section-content">
-          <p class="comp-desc">{{ comp.description }}</p>
-          <div class="variant-list">
-            <div v-for="v in comp.variants" :key="v.name" class="variant">
-              <span class="variant-name">{{ v.name }}</span>
-              <span class="variant-spec">{{ v.spec }}</span>
+      </header>
+      <div class="section-body">
+        <div
+          v-for="comp in components"
+          :key="comp.name"
+          class="section-row subsection"
+        >
+          <div class="section-label">
+            <h3 class="subsection-heading">{{ comp.name }}</h3>
+          </div>
+          <div class="section-content">
+            <p class="comp-desc">{{ comp.description }}</p>
+            <div class="variant-list">
+              <div v-for="v in comp.variants" :key="v.name" class="variant">
+                <span class="variant-name">{{ v.name }}</span>
+                <span class="variant-spec">{{ v.spec }}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -277,7 +280,7 @@ const components: ComponentDef[] = [
 
 <style scoped>
 /* ---- Category ---- */
-.category {
+.section {
   display: flex;
   flex-direction: column;
   gap: 0;

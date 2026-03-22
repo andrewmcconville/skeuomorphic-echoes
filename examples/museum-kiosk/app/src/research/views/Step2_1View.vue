@@ -309,30 +309,6 @@ const formFactors: LabelValue[] = [
   overflow: hidden;
 }
 
-/* ---- Section row ---- */
-.section-row {
-  position: relative;
-}
-
-/* Subtle background panel behind content column */
-.section-row::before {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 60%;
-  background: var(--surface-200);
-  opacity: var(--opacity-panel);
-  z-index: 0;
-}
-
-.section-row > * {
-  position: relative;
-  z-index: 1;
-}
-
-.band--no-panel .section-row::before,
 .band--title .section-row::before {
   display: none;
 }

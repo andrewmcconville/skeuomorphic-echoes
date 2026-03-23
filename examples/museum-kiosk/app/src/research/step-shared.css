@@ -255,6 +255,11 @@
   padding: var(--space-lg) var(--space-2xl);
 }
 
+/* Constrains content inside full-width sections to match .section max-width */
+.section__inner {
+  max-width: 820px;
+}
+
 .section--dark {
   background: var(--warm-mid);
   color: var(--surface-200);

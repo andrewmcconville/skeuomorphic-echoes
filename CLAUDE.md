@@ -20,15 +20,16 @@ npx playwright test # visual regression tests (Playwright)
   - index.html — Landing page linking to research + prototype
   - research.html — Process book (step views: /step/2.1, /step/2.2, etc.)
   - prototype.html — Hi-fi product prototype
-  - src/shared/ — Design tokens, shared styles, shared data
+  - src/shared/ — Design tokens, shared styles, shared data, shared components
     - tokens/colors.css — OKLCH palette custom properties
     - tokens/typography.css — IBM Plex font stacks + scale
     - tokens/spacing.css — Spacing scale
     - styles/reset.css — Base reset
+    - components/GlossaryContent.vue — Shared glossary renderer (compact/full via prop)
     - data/glossary.ts — Glossary of typographic ghosts (13 glyph entries, shared by both apps)
   - src/research/ — Research app views and router
     - step-shared.css — Shared step-page styles (hero, sections, bands, badges)
-    - data/types.ts — Research-specific TypeScript types (LabelValue, ScreenEntry, RoomEntry, CatalogGroup)
+    - data/types.ts — Barrel re-export of research TypeScript types from types/ subdirectory (common, step-2-3, step-2-4, step-2-8)
   - src/prototype/ — Prototype app views and router
   - tests/ — Playwright test specs (visual-regression.spec.ts)
 - examples/museum-kiosk/docs/ — Reference markdown documents (glossary.md, design-direction-brief.md, specimen-metadata-fields.md, 2.1–2.8 step content)
@@ -69,3 +70,4 @@ npx playwright test # visual regression tests (Playwright)
 - Museum kiosk is portrait touchscreen (1440x2560px) — viewport scaling via position: fixed + transform-origin
 - Playwright preview server uses base path `/skeuomorphic-echoes/` — new test URLs must include it
 - All files must stay in project directory (Dropbox), never in C:\Users\...\.claude\
+- Custom skills in .claude/skills/ load into context but don't register as VS Code slash commands — execute manually or reference with @

@@ -42,7 +42,7 @@ npx playwright test # visual regression tests (Playwright)
 - IBM Plex family: Serif (display), Sans (body/UI), Mono (metadata/labels)
 - Use "Step" not "Assignment" in exemplar apps (e.g., "Step 2.1")
 - Section headings use amber-500 accent with dotted amber borders
-- Implemented step views: 2.1, 2.2, 2.3, 2.8 — remaining steps use generic StepView placeholder
+- Implemented step views: 2.1, 2.2, 2.3, 2.4, 2.8 — remaining steps use generic StepView placeholder
 - Non-step pages (Glossary) go under "Reference" nav section in research sidebar
 - BEM naming strictly — no descendant selectors, no raw tag selectors
 - CSS custom properties for modifier-affects-children patterns (not descendant selectors)

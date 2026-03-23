@@ -48,8 +48,11 @@ npx playwright test # visual regression tests (Playwright)
 - CSS custom properties for modifier-affects-children patterns (not descendant selectors)
 - All pixel values must align to design token scale; snap 1–2px drift to nearest token
 - Shared step styles in step-shared.css; duplicated rules across views get extracted there
-- Spacing scale: 2, 4, 8, 16, 24, 32, 48, 64 (`--space-2xs` through `--space-3xl`)
+- Spacing scale: 2, 4, 8, 16, 24, 32, 48, 64, 96 (`--space-2xs` through `--space-4xl`)
+- Surface scale: 5-step (`--surface-100` lightest through `--surface-500`), consistent hue/chroma, lightness only varies
+- Shared `.card` class in step-shared.css — extend with component-specific classes, don't duplicate card styles
 - Stroke tokens: `--stroke-thin` (1px), `--stroke-medium` (2px) — always use vars for borders
+- Vocabulary: "Artifact" (detail page), "Artifact Collection" (list page), "Skeuomorph Room" (room landing) — never "Interior Page" or "Room Landing" alone
 
 ## Testing
 
@@ -64,4 +67,5 @@ npx playwright test # visual regression tests (Playwright)
 - Assignment briefs are raw Canvas HTML fragments — no full-document wrapper
 - AI tools intentionally withheld from student materials before p2.3
 - Museum kiosk is portrait touchscreen (1440x2560px) — viewport scaling via position: fixed + transform-origin
+- Playwright preview server uses base path `/skeuomorphic-echoes/` — new test URLs must include it
 - All files must stay in project directory (Dropbox), never in C:\Users\...\.claude\

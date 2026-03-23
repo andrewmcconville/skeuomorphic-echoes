@@ -1,25 +1,4 @@
-export interface HappyPathStep {
-  action: string
-  element: string
-  elementType: string
-}
-
-export interface HappyPath {
-  title: string
-  steps: HappyPathStep[]
-}
-
-export interface UserTask {
-  title: string
-  context: string
-  scenario: string
-  task: string
-}
-
-export interface HappyPathPair {
-  happyPath: HappyPath
-  userTask: UserTask
-}
+import type { HappyPath, HappyPathPair, UserTask } from './types/step-2-4'
 
 const happyPath1: HappyPath = {
   title: 'Explore an Artifact and Collect It',

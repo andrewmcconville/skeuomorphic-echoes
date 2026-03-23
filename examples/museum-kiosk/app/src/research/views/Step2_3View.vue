@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import HeroHeader from '../components/HeroHeader.vue'
+import SectionBlock from '../components/SectionBlock.vue'
+import SubsectionRow from '../components/SubsectionRow.vue'
+import SpecsGrid from '../components/SpecsGrid.vue'
 import {
   screens, modals, rooms,
   homeContent, collectionContent, aboutContent, glossaryContent,
@@ -9,338 +13,163 @@ import {
 <template>
   <article class="step-page">
     <!-- ===== HERO — warm dark band ===== -->
-    <header class="hero">
-      <div class="hero-badge">
-        <span class="badge-label">2.3</span>
-      </div>
-      <h1 class="hero-title">Sitemap &amp;<br />Content Inventory</h1>
-      <p class="hero-lead">
-        Mapping every screen, overlay, and content element the kiosk
-        needs — from the floor-plan home screen down to individual
-        specimen catalog fields.
-      </p>
-    </header>
+    <HeroHeader badge="2.3" lead="Mapping every screen, overlay, and content element the kiosk needs — from the floor-plan home screen down to individual specimen catalog fields.">
+      Sitemap &amp;<br />Content Inventory
+    </HeroHeader>
 
     <!-- ===== SITEMAP ===== -->
-    <section class="section">
-      <header class="section-header">
-        <div class="section-label">
-          <h2 class="section-heading">Sitemap</h2>
-        </div>
-      </header>
-      <div class="section-body">
-        <div class="section-row section-row--nested">
-          <div class="section-label section-label--nested">
-            <h3 class="subsection-heading">Structure</h3>
+    <SectionBlock heading="Sitemap" :panel="false">
+      <SubsectionRow label="Structure">
+        <div class="sitemap-tree">
+          <div class="tree-level tree-level--top">
+            <div class="tree-node tree-node--secondary">Artifact Collection</div>
+            <div class="tree-node tree-node--secondary">About</div>
+            <div class="tree-node tree-node--secondary">Glossary</div>
           </div>
-          <div class="section-content">
-            <div class="sitemap-tree">
-              <div class="tree-level tree-level--top">
-                <div class="tree-node tree-node--secondary">Artifact Collection</div>
-                <div class="tree-node tree-node--secondary">About</div>
-                <div class="tree-node tree-node--secondary">Glossary</div>
-              </div>
-              <div class="tree-connector">▲</div>
-              <div class="tree-level">
-                <div class="tree-node tree-node--home">Floor Plan Map<span class="node-tag">Home</span></div>
-              </div>
-              <div class="tree-connector">▼</div>
-              <div class="tree-level tree-level--rooms">
-                <div v-for="room in rooms" :key="room.name" class="tree-node tree-node--room">
-                  {{ room.name }}
-                </div>
-              </div>
-              <div class="tree-connector">▼</div>
-              <div class="tree-level">
-                <div class="tree-node tree-node--leaf">Evolutionary Stages (×20)</div>
-              </div>
+          <div class="tree-connector">▲</div>
+          <div class="tree-level">
+            <div class="tree-node tree-node--home">Floor Plan Map<span class="node-tag">Home</span></div>
+          </div>
+          <div class="tree-connector">▼</div>
+          <div class="tree-level tree-level--rooms">
+            <div v-for="room in rooms" :key="room.name" class="tree-node tree-node--room">
+              {{ room.name }}
             </div>
           </div>
+          <div class="tree-connector">▼</div>
+          <div class="tree-level">
+            <div class="tree-node tree-node--leaf">Evolutionary Stages (×20)</div>
+          </div>
         </div>
-      </div>
-    </section>
+      </SubsectionRow>
+    </SectionBlock>
 
     <!-- ===== SCREENS ===== -->
-    <section class="section">
-      <div class="section-panel"></div>
-      <header class="section-header">
-        <div class="section-label">
-          <h2 class="section-heading">Screens</h2>
-        </div>
-      </header>
-      <div class="section-body">
-        <div class="section-row section-row--nested">
-          <div class="section-label section-label--nested">
-            <h3 class="subsection-heading">Pages</h3>
+    <SectionBlock heading="Screens">
+      <SubsectionRow label="Pages">
+        <div class="screen-table">
+          <div class="screen-header">
+            <span class="col-name">Screen</span>
+            <span class="col-type">Type</span>
+            <span class="col-notes">Notes</span>
           </div>
-          <div class="section-content">
-            <div class="screen-table">
-              <div class="screen-header">
-                <span class="col-name">Screen</span>
-                <span class="col-type">Type</span>
-                <span class="col-notes">Notes</span>
-              </div>
-              <div v-for="s in screens" :key="s.name" class="screen-row">
-                <span class="col-name">{{ s.name }}</span>
-                <span class="col-type">{{ s.type }}</span>
-                <span class="col-notes">{{ s.notes }}</span>
-              </div>
-            </div>
+          <div v-for="s in screens" :key="s.name" class="screen-row">
+            <span class="col-name">{{ s.name }}</span>
+            <span class="col-type">{{ s.type }}</span>
+            <span class="col-notes">{{ s.notes }}</span>
           </div>
         </div>
-      </div>
-    </section>
+      </SubsectionRow>
+    </SectionBlock>
 
     <!-- ===== MODALS & OVERLAYS ===== -->
-    <section class="section">
-      <div class="section-panel"></div>
-      <header class="section-header">
-        <div class="section-label">
-          <h2 class="section-heading">Modals</h2>
-        </div>
-      </header>
-      <div class="section-body">
-        <div class="section-row section-row--nested">
-          <div class="section-label section-label--nested">
-            <h3 class="subsection-heading">Overlays</h3>
+    <SectionBlock heading="Modals">
+      <SubsectionRow label="Overlays">
+        <div class="screen-table">
+          <div class="screen-header">
+            <span class="col-name">Element</span>
+            <span class="col-type">Type</span>
+            <span class="col-notes">Notes</span>
           </div>
-          <div class="section-content">
-            <div class="screen-table">
-              <div class="screen-header">
-                <span class="col-name">Element</span>
-                <span class="col-type">Type</span>
-                <span class="col-notes">Notes</span>
-              </div>
-              <div v-for="m in modals" :key="m.name" class="screen-row">
-                <span class="col-name">{{ m.name }}</span>
-                <span class="col-type">{{ m.type }}</span>
-                <span class="col-notes">{{ m.notes }}</span>
-              </div>
-            </div>
+          <div v-for="m in modals" :key="m.name" class="screen-row">
+            <span class="col-name">{{ m.name }}</span>
+            <span class="col-type">{{ m.type }}</span>
+            <span class="col-notes">{{ m.notes }}</span>
           </div>
         </div>
-      </div>
-    </section>
-
+      </SubsectionRow>
+    </SectionBlock>
 
     <!-- ===== HOME SCREEN ===== -->
-    <section class="section">
-      <div class="section-panel"></div>
-      <header class="section-header">
-        <div class="section-label">
-          <h2 class="section-heading">Home</h2>
-        </div>
-      </header>
-      <div class="section-body">
-        <div class="section-row section-row--nested">
-          <div class="section-label section-label--nested">
-            <h3 class="subsection-heading">Fields</h3>
-          </div>
-          <div class="section-content">
-            <div class="specs-grid specs-grid--dense">
-              <div v-for="c in homeContent" :key="c.label" class="spec">
-                <span class="spec-label">{{ c.label }}</span>
-                <span class="spec-dots"></span>
-                <span class="spec-value">{{ c.value }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <SectionBlock heading="Home">
+      <SubsectionRow label="Fields">
+        <SpecsGrid :items="homeContent" dense />
+      </SubsectionRow>
+    </SectionBlock>
 
     <!-- ===== SKEUOMORPH ROOM — warm band ===== -->
-    <section class="section section--full-width section--warm">
-      <header class="section-header">
-        <div class="section-label">
-          <h2 class="section-heading">Skeuomorph Room</h2>
-        </div>
-      </header>
-      <div class="section-body">
-        <div class="section-row section-row--nested">
-          <div class="section-label section-label--nested">
-            <h3 class="subsection-heading">Fields</h3>
-          </div>
-          <div class="section-content">
-            <div class="specs-grid specs-grid--dense">
-              <div v-for="c in roomLandingContent" :key="c.label" class="spec">
-                <span class="spec-label">{{ c.label }}</span>
-                <span class="spec-dots"></span>
-                <span class="spec-value">{{ c.value }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
+    <SectionBlock heading="Skeuomorph Room" variant="warm">
+      <SubsectionRow label="Fields">
+        <SpecsGrid :items="roomLandingContent" dense />
+      </SubsectionRow>
 
-        <!-- Skeuomorph room breakdown cards -->
-        <div class="section-row section-row--nested">
-          <div class="section-label section-label--nested">
-            <h3 class="subsection-heading">Skeuomorph Rooms</h3>
-          </div>
-          <div class="section-content">
-            <div class="room-cards">
-              <div v-for="(room, i) in rooms" :key="room.name" class="card card--vertical card--room">
-                <div class="room-card-header">
-                  <span class="room-number">{{ i + 1 }}</span>
-                  <span class="room-name">{{ room.name }}</span>
-                </div>
-                <div class="room-stages">
-                  <span
-                    v-for="(stage, j) in room.stages"
-                    :key="stage"
-                    class="stage-chip"
-                  >
-                    <span class="stage-index">{{ j + 1 }}</span>
-                    {{ stage }}
-                  </span>
-                </div>
-              </div>
+      <SubsectionRow label="Skeuomorph Rooms">
+        <div class="room-cards">
+          <div v-for="(room, i) in rooms" :key="room.name" class="card card--vertical card--room">
+            <div class="room-card-header">
+              <span class="room-number">{{ i + 1 }}</span>
+              <span class="room-name">{{ room.name }}</span>
+            </div>
+            <div class="room-stages">
+              <span
+                v-for="(stage, j) in room.stages"
+                :key="stage"
+                class="stage-chip"
+              >
+                <span class="stage-index">{{ j + 1 }}</span>
+                {{ stage }}
+              </span>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </SubsectionRow>
+    </SectionBlock>
 
     <!-- ===== ARTIFACT — dark band ===== -->
-    <section class="section section--full-width section--dark">
-      <header class="section-header">
-        <div class="section-label">
-          <h2 class="section-heading section-heading--light">Artifact</h2>
-        </div>
-      </header>
-      <div class="section-body">
-        <div class="section-row section-row--nested">
-          <div class="section-label section-label--nested">
-            <h3 class="subsection-heading subsection-heading--light">Core Fields</h3>
-          </div>
-          <div class="section-content">
-            <div class="specs-grid specs-grid--dense specs-grid--light">
-              <div v-for="c in interiorCore" :key="c.label" class="spec">
-                <span class="spec-label">{{ c.label }}</span>
-                <span class="spec-dots"></span>
-                <span class="spec-value">{{ c.value }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
+    <SectionBlock heading="Artifact" variant="dark">
+      <SubsectionRow label="Core Fields" :light-label="true">
+        <SpecsGrid :items="interiorCore" dense light />
+      </SubsectionRow>
 
-        <div class="section-row section-row--nested">
-          <div class="section-label section-label--nested">
-            <h3 class="subsection-heading subsection-heading--light">Catalog Fields</h3>
-          </div>
-          <div class="section-content">
-            <div class="catalog-groups">
-              <div v-for="group in interiorCatalog" :key="group.group" class="catalog-group">
-                <h4 class="catalog-group-title">{{ group.group }}</h4>
-                <div class="catalog-fields">
-                  <span v-for="field in group.fields" :key="field" class="catalog-field">
-                    {{ field }}
-                  </span>
-                </div>
-              </div>
+      <SubsectionRow label="Catalog Fields" :light-label="true">
+        <div class="catalog-groups">
+          <div v-for="group in interiorCatalog" :key="group.group" class="catalog-group">
+            <h4 class="catalog-group-title">{{ group.group }}</h4>
+            <div class="catalog-fields">
+              <span v-for="field in group.fields" :key="field" class="catalog-field">
+                {{ field }}
+              </span>
             </div>
           </div>
         </div>
+      </SubsectionRow>
 
-        <div class="section-row section-row--nested">
-          <div class="section-label section-label--nested">
-            <h3 class="subsection-heading subsection-heading--light">Actions</h3>
+      <SubsectionRow label="Actions" :light-label="true">
+        <div class="specs-grid specs-grid--dense specs-grid--light">
+          <div class="spec">
+            <span class="spec-label">Collect</span>
+            <span class="spec-dots"></span>
+            <span class="spec-value">Button to add this stage to the visitor's collection; triggers toast</span>
           </div>
-          <div class="section-content">
-            <div class="specs-grid specs-grid--dense specs-grid--light">
-              <div class="spec">
-                <span class="spec-label">Collect</span>
-                <span class="spec-dots"></span>
-                <span class="spec-value">Button to add this stage to the visitor's collection; triggers toast</span>
-              </div>
-              <div class="spec">
-                <span class="spec-label">Collected</span>
-                <span class="spec-dots"></span>
-                <span class="spec-value">Indicator shown when stage is already collected</span>
-              </div>
-            </div>
+          <div class="spec">
+            <span class="spec-label">Collected</span>
+            <span class="spec-dots"></span>
+            <span class="spec-value">Indicator shown when stage is already collected</span>
           </div>
         </div>
-      </div>
-    </section>
+      </SubsectionRow>
+    </SectionBlock>
 
     <!-- ===== ARTIFACT COLLECTION ===== -->
-    <section class="section">
-      <div class="section-panel"></div>
-      <header class="section-header">
-        <div class="section-label">
-          <h2 class="section-heading">Artifact Collection</h2>
-        </div>
-      </header>
-      <div class="section-body">
-        <div class="section-row section-row--nested">
-          <div class="section-label section-label--nested">
-            <h3 class="subsection-heading">Fields</h3>
-          </div>
-          <div class="section-content">
-            <div class="specs-grid specs-grid--dense">
-              <div v-for="c in collectionContent" :key="c.label" class="spec">
-                <span class="spec-label">{{ c.label }}</span>
-                <span class="spec-dots"></span>
-                <span class="spec-value">{{ c.value }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <SectionBlock heading="Artifact Collection">
+      <SubsectionRow label="Fields">
+        <SpecsGrid :items="collectionContent" dense />
+      </SubsectionRow>
+    </SectionBlock>
 
     <!-- ===== ABOUT ===== -->
-    <section class="section">
-      <div class="section-panel"></div>
-      <header class="section-header">
-        <div class="section-label">
-          <h2 class="section-heading">About</h2>
-        </div>
-      </header>
-      <div class="section-body">
-        <div class="section-row section-row--nested">
-          <div class="section-label section-label--nested">
-            <h3 class="subsection-heading">Fields</h3>
-          </div>
-          <div class="section-content">
-            <div class="specs-grid specs-grid--dense">
-              <div v-for="c in aboutContent" :key="c.label" class="spec">
-                <span class="spec-label">{{ c.label }}</span>
-                <span class="spec-dots"></span>
-                <span class="spec-value">{{ c.value }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <SectionBlock heading="About">
+      <SubsectionRow label="Fields">
+        <SpecsGrid :items="aboutContent" dense />
+      </SubsectionRow>
+    </SectionBlock>
 
     <!-- ===== GLOSSARY ===== -->
-    <section class="section">
-      <div class="section-panel"></div>
-      <header class="section-header">
-        <div class="section-label">
-          <h2 class="section-heading">Glossary</h2>
-        </div>
-      </header>
-      <div class="section-body">
-        <div class="section-row section-row--nested">
-          <div class="section-label section-label--nested">
-            <h3 class="subsection-heading">Fields</h3>
-          </div>
-          <div class="section-content">
-            <div class="specs-grid specs-grid--dense">
-              <div v-for="c in glossaryContent" :key="c.label" class="spec">
-                <span class="spec-label">{{ c.label }}</span>
-                <span class="spec-dots"></span>
-                <span class="spec-value">{{ c.value }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <SectionBlock heading="Glossary">
+      <SubsectionRow label="Fields">
+        <SpecsGrid :items="glossaryContent" dense />
+      </SubsectionRow>
+    </SectionBlock>
   </article>
 </template>
 

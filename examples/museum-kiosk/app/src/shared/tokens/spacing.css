@@ -15,6 +15,7 @@
   --stroke-medium: 2px;
 
   /* Radius */
+  --radius-xs: 2px;
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-pill: 999px;

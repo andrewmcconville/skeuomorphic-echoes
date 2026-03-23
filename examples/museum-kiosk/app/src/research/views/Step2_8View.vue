@@ -1,143 +1,89 @@
 <script setup lang="ts">
+import HeroHeader from '../components/HeroHeader.vue'
+import SectionBlock from '../components/SectionBlock.vue'
+import SubsectionRow from '../components/SubsectionRow.vue'
+import SpecsGrid from '../components/SpecsGrid.vue'
 import { colorGroups, overlays, typeGroups, components } from '../data/step-2-8'
 </script>
 
 <template>
   <article class="ds-page">
-    <header class="hero">
-      <div class="hero-badge">
-        <span class="badge-label">2.8</span>
-      </div>
-      <h1 class="hero-title">Design System</h1>
-      <p class="hero-lead">
-        Color, typography, and component specifications for the museum kiosk
-        prototype. All values map directly to Figma variables, text styles,
-        and components.
-      </p>
-    </header>
-
+    <HeroHeader badge="2.8" lead="Color, typography, and component specifications for the museum kiosk prototype. All values map directly to Figma variables, text styles, and components.">
+      Design System
+    </HeroHeader>
 
     <!-- ==================== COLORS ==================== -->
-    <section class="section">
-      <header class="section-header">
-        <div class="section-label">
-          <h2 class="section-heading">Colors</h2>
-        </div>
-      </header>
-      <div class="section-body">
-        <div
-          v-for="group in colorGroups"
-          :key="group.name"
-          class="section-row section-row--nested"
-        >
-          <div class="section-label section-label--nested">
-            <h3 class="subsection-heading">{{ group.name }}</h3>
-          </div>
-          <div class="section-content">
-            <div class="color-grid">
-              <div v-for="c in group.colors" :key="c.var" class="color-swatch">
-                <div class="swatch" :style="{ background: `var(${c.var})` }" />
-                <div class="swatch-info">
-                  <span class="color-name">{{ c.name }}</span>
-                  <code class="color-hex">{{ c.hex }}</code>
-                  <span class="color-usage">{{ c.usage }}</span>
-                </div>
-              </div>
+    <SectionBlock heading="Colors" :panel="false">
+      <SubsectionRow
+        v-for="group in colorGroups"
+        :key="group.name"
+        :label="group.name"
+      >
+        <div class="color-grid">
+          <div v-for="c in group.colors" :key="c.var" class="color-swatch">
+            <div class="swatch" :style="{ background: `var(${c.var})` }" />
+            <div class="swatch-info">
+              <span class="color-name">{{ c.name }}</span>
+              <code class="color-hex">{{ c.hex }}</code>
+              <span class="color-usage">{{ c.usage }}</span>
             </div>
           </div>
         </div>
+      </SubsectionRow>
 
-        <div class="section-row section-row--nested">
-          <div class="section-label section-label--nested">
-            <h3 class="subsection-heading">Overlay Opacity</h3>
-          </div>
-          <div class="section-content">
-            <div class="specs-grid">
-              <div v-for="o in overlays" :key="o.name" class="spec">
-                <span class="spec-label">{{ o.name }}</span>
-                <span class="spec-dots"></span>
-                <span class="spec-value">{{ o.value }}</span>
-              </div>
-            </div>
-            <div class="overlay-usage">
-              <p v-for="o in overlays" :key="o.name" class="overlay-usage__text">
-                <strong class="overlay-usage__value">{{ o.value }}</strong> — {{ o.usage }}
-              </p>
-            </div>
-          </div>
+      <SubsectionRow label="Overlay Opacity">
+        <SpecsGrid :items="overlays.map(o => ({ label: o.name, value: o.value }))" />
+        <div class="overlay-usage">
+          <p v-for="o in overlays" :key="o.name" class="overlay-usage__text">
+            <strong class="overlay-usage__value">{{ o.value }}</strong> — {{ o.usage }}
+          </p>
         </div>
-      </div>
-    </section>
-
+      </SubsectionRow>
+    </SectionBlock>
 
     <!-- ==================== TYPOGRAPHY ==================== -->
-    <section class="section">
-      <header class="section-header">
-        <div class="section-label">
-          <h2 class="section-heading">Typography</h2>
-        </div>
-      </header>
-      <div class="section-body">
-        <div
-          v-for="group in typeGroups"
-          :key="group.name"
-          class="section-row section-row--nested"
-        >
-          <div class="section-label section-label--nested">
-            <h3 class="subsection-heading">{{ group.name }}</h3>
-          </div>
-          <div class="section-content">
-            <div class="type-samples">
-              <div v-for="s in group.styles" :key="s.token" class="type-sample">
-                <p
-                  class="type-preview"
-                  :style="{ font: `var(${s.token})`, ...(s.extra ? Object.fromEntries(s.extra.split('; ').map(p => { const [k, v] = p.split(': '); return [k.replace(/-([a-z])/g, (_, c) => c.toUpperCase()), v] })) : {}) }"
-                >
-                  {{ s.sample }}
-                </p>
-                <div class="type-meta">
-                  <span class="type-name">{{ s.name }}</span>
-                  <div class="type-specs">
-                    <span class="type-spec">{{ s.weight }}</span>
-                    <span class="type-spec">{{ s.size }}</span>
-                  </div>
-                </div>
+    <SectionBlock heading="Typography" :panel="false">
+      <SubsectionRow
+        v-for="group in typeGroups"
+        :key="group.name"
+        :label="group.name"
+      >
+        <div class="type-samples">
+          <div v-for="s in group.styles" :key="s.token" class="type-sample">
+            <p
+              class="type-preview"
+              :style="{ font: `var(${s.token})`, ...(s.extra ? Object.fromEntries(s.extra.split('; ').map(p => { const [k, v] = p.split(': '); return [k.replace(/-([a-z])/g, (_, c) => c.toUpperCase()), v] })) : {}) }"
+            >
+              {{ s.sample }}
+            </p>
+            <div class="type-meta">
+              <span class="type-name">{{ s.name }}</span>
+              <div class="type-specs">
+                <span class="type-spec">{{ s.weight }}</span>
+                <span class="type-spec">{{ s.size }}</span>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
+      </SubsectionRow>
+    </SectionBlock>
 
     <!-- ==================== COMPONENTS ==================== -->
-    <section class="section">
-      <header class="section-header">
-        <div class="section-label">
-          <h2 class="section-heading">Components</h2>
-        </div>
-      </header>
-      <div class="section-body">
-        <div
-          v-for="comp in components"
-          :key="comp.name"
-          class="section-row section-row--nested"
-        >
-          <div class="section-label section-label--nested">
-            <h3 class="subsection-heading">{{ comp.name }}</h3>
-          </div>
-          <div class="section-content">
-            <p class="comp-desc">{{ comp.description }}</p>
-            <div class="variant-list">
-              <div v-for="v in comp.variants" :key="v.name" class="variant">
-                <span class="variant-name">{{ v.name }}</span>
-                <span class="variant-spec">{{ v.spec }}</span>
-              </div>
-            </div>
+    <SectionBlock heading="Components" :panel="false">
+      <SubsectionRow
+        v-for="comp in components"
+        :key="comp.name"
+        :label="comp.name"
+      >
+        <p class="comp-desc">{{ comp.description }}</p>
+        <div class="variant-list">
+          <div v-for="v in comp.variants" :key="v.name" class="variant">
+            <span class="variant-name">{{ v.name }}</span>
+            <span class="variant-spec">{{ v.spec }}</span>
           </div>
         </div>
-      </div>
-    </section>
+      </SubsectionRow>
+    </SectionBlock>
   </article>
 </template>
 

@@ -40,3 +40,10 @@ export interface ComponentDef {
   description: string
   variants: ComponentVariant[]
 }
+
+/** Overlay opacity specification */
+export interface OverlaySpec {
+  name: string
+  value: string
+  usage: string
+}

@@ -1,83 +1,54 @@
 <script setup lang="ts">
+import HeroHeader from '../components/HeroHeader.vue'
+import SectionBlock from '../components/SectionBlock.vue'
+import SubsectionRow from '../components/SubsectionRow.vue'
 import { pairs } from '../data/step-2-4'
 </script>
 
 <template>
   <article class="step-page">
     <!-- ===== HERO — warm dark band ===== -->
-    <header class="hero">
-      <div class="hero-badge">
-        <span class="badge-label">2.4</span>
-      </div>
-      <h1 class="hero-title">Happy Paths &amp;<br />User Tasks</h1>
-      <p class="hero-lead">
-        Two primary paths through the kiosk, each paired with a
-        scripted user task for think-aloud testing.
-      </p>
-    </header>
+    <HeroHeader badge="2.4" lead="Two primary paths through the kiosk, each paired with a scripted user task for think-aloud testing.">
+      Happy Paths &amp;<br />User Tasks
+    </HeroHeader>
 
     <template v-for="(pair, i) in pairs" :key="i">
       <!-- ===== HAPPY PATH ===== -->
-      <section class="section">
-        <div class="section-panel"></div>
-        <header class="section-header">
-          <div class="section-label">
-            <h2 class="section-heading">Happy Path {{ i + 1 }}</h2>
-          </div>
-        </header>
-        <div class="section-body">
-          <div class="section-row section-row--nested">
-            <div class="section-label section-label--nested">
-              <h3 class="subsection-heading">{{ pair.happyPath.title }}</h3>
-            </div>
-            <div class="section-content">
-              <ol class="path-list">
-                <li
-                  v-for="(step, j) in pair.happyPath.steps"
-                  :key="j"
-                  class="path-list__item"
-                >
-                  <span class="path-action">{{ step.action }}:</span>
-                  <span class="path-element">"{{ step.element }}"</span>
-                  <span class="path-type">{{ step.elementType }}</span>
-                </li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </section>
+      <SectionBlock :heading="`Happy Path ${i + 1}`">
+        <SubsectionRow :label="pair.happyPath.title">
+          <ol class="path-list">
+            <li
+              v-for="(step, j) in pair.happyPath.steps"
+              :key="j"
+              class="path-list__item"
+            >
+              <span class="path-action">{{ step.action }}:</span>
+              <span class="path-element">"{{ step.element }}"</span>
+              <span class="path-type">{{ step.elementType }}</span>
+            </li>
+          </ol>
+        </SubsectionRow>
+      </SectionBlock>
 
       <!-- ===== USER TASK — warm band ===== -->
-      <section class="section section--full-width section--warm">
-        <header class="section-header">
-          <div class="section-label">
-            <h2 class="section-heading">User Task {{ i + 1 }}</h2>
-          </div>
-        </header>
-        <div class="section-body">
-          <div class="section-row section-row--nested">
-            <div class="section-label section-label--nested">
-              <h3 class="subsection-heading">{{ pair.userTask.title }}</h3>
+      <SectionBlock :heading="`User Task ${i + 1}`" variant="warm">
+        <SubsectionRow :label="pair.userTask.title">
+          <div class="task-fields">
+            <div class="task-field">
+              <span class="task-field__label">Context</span>
+              <p class="task-field__text">{{ pair.userTask.context }}</p>
             </div>
-            <div class="section-content">
-              <div class="task-fields">
-                <div class="task-field">
-                  <span class="task-field__label">Context</span>
-                  <p class="task-field__text">{{ pair.userTask.context }}</p>
-                </div>
-                <div class="task-field">
-                  <span class="task-field__label">Scenario</span>
-                  <p class="task-field__text">{{ pair.userTask.scenario }}</p>
-                </div>
-              </div>
-              <div class="task-card">
-                <span class="task-field__label">Task</span>
-                <p class="task-field__text">{{ pair.userTask.task }}</p>
-              </div>
+            <div class="task-field">
+              <span class="task-field__label">Scenario</span>
+              <p class="task-field__text">{{ pair.userTask.scenario }}</p>
             </div>
           </div>
-        </div>
-      </section>
+          <div class="task-card">
+            <span class="task-field__label">Task</span>
+            <p class="task-field__text">{{ pair.userTask.task }}</p>
+          </div>
+        </SubsectionRow>
+      </SectionBlock>
     </template>
   </article>
 </template>

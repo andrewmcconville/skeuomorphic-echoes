@@ -290,34 +290,34 @@ import { glossaryEntries, isCite, scrollToEntry, statusLabel } from '@shared/com
   text-transform: uppercase;
   letter-spacing: 0.08em;
   padding: 0.2em 0.6em;
-  border-radius: 2px;
+  border-radius: var(--radius-xs);
   vertical-align: middle;
 }
 
 .status--active {
-  background: oklch(0.55 0.1 145 / 0.1);
-  color: oklch(0.55 0.1 145);
+  background: var(--status-active-bg);
+  color: var(--status-active);
 }
 
 .status--vestigial {
-  background: oklch(0.5 0.1 25 / 0.1);
-  color: oklch(0.5 0.1 25);
+  background: var(--status-vestigial-bg);
+  color: var(--status-vestigial);
 }
 
 .status--extinct {
-  background: oklch(0 0 0 / 0.05);
+  background: var(--status-extinct-bg);
   color: var(--gray-500);
 }
 
 .status--repurposed {
-  background: oklch(0.5 0.1 260 / 0.1);
-  color: oklch(0.5 0.1 260);
+  background: var(--status-repurposed-bg);
+  color: var(--status-repurposed);
 }
 
 /* Sources */
 .glyph-section--sources {
   padding-top: var(--space-md);
-  border-top: 1px dashed var(--surface-400);
+  border-top: var(--stroke-thin) dashed var(--surface-400);
 }
 
 .glyph-section ol {

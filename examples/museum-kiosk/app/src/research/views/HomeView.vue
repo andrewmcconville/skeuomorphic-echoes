@@ -97,7 +97,7 @@ h1 {
 
 .step-dots {
   flex: 1;
-  border-bottom: 1px dotted var(--surface-500);
+  border-bottom: var(--stroke-thin) dotted var(--surface-500);
   margin-bottom: 3px;
 }
 

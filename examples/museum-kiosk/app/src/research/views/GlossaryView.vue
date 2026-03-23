@@ -1,20 +1,14 @@
 <script setup lang="ts">
+import HeroHeader from '../components/HeroHeader.vue'
 import { glossaryEntries, isCite, scrollToEntry, statusLabel } from '@shared/composables/useGlossary'
 </script>
 
 <template>
   <article class="step-page">
     <!-- ===== HERO ===== -->
-    <header class="hero">
-      <div class="hero-badge">
-        <span class="badge-label">§</span>
-      </div>
-      <h1 class="hero-title">Glossary of<br />Typographic Ghosts</h1>
-      <p class="hero-lead">
-        Thirteen marks that once organized the written word by hand. Some survive
-        in modern editors; others haunt our interfaces as invisible defaults.
-      </p>
-    </header>
+    <HeroHeader badge="§" lead="Thirteen marks that once organized the written word by hand. Some survive in modern editors; others haunt our interfaces as invisible defaults.">
+      Glossary of<br />Typographic Ghosts
+    </HeroHeader>
 
     <!-- ===== TABLE OF CONTENTS ===== -->
     <nav class="toc-band">
@@ -263,34 +257,34 @@ import { glossaryEntries, isCite, scrollToEntry, statusLabel } from '@shared/com
   text-transform: uppercase;
   letter-spacing: 0.08em;
   padding: 0.15em 0.5em;
-  border-radius: 2px;
+  border-radius: var(--radius-xs);
   vertical-align: middle;
 }
 
 .status-badge--active {
-  background: oklch(0.55 0.1 145 / 0.1);
-  color: oklch(0.55 0.1 145);
+  background: var(--status-active-bg);
+  color: var(--status-active);
 }
 
 .status-badge--vestigial {
-  background: oklch(0.5 0.1 25 / 0.1);
-  color: oklch(0.5 0.1 25);
+  background: var(--status-vestigial-bg);
+  color: var(--status-vestigial);
 }
 
 .status-badge--extinct {
-  background: oklch(0 0 0 / 0.05);
+  background: var(--status-extinct-bg);
   color: var(--gray-500);
 }
 
 .status-badge--repurposed {
-  background: oklch(0.5 0.1 260 / 0.1);
-  color: oklch(0.5 0.1 260);
+  background: var(--status-repurposed-bg);
+  color: var(--status-repurposed);
 }
 
 /* Sources */
 .field-group--sources {
   padding-top: var(--space-sm);
-  border-top: 1px dashed var(--surface-400);
+  border-top: var(--stroke-thin) dashed var(--surface-400);
 }
 
 .source-list {
@@ -327,4 +321,5 @@ import { glossaryEntries, isCite, scrollToEntry, statusLabel } from '@shared/com
 
 .source-note {
   font-style: italic;
-}</style>
+}
+</style>

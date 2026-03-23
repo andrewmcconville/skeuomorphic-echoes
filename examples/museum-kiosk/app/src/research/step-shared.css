@@ -67,7 +67,6 @@
 .section-body {
   position: relative;
   z-index: 1;
-  max-width: 820px;
 }
 
 .section-row,

@@ -1,4 +1,4 @@
-import type { ColorGroup, TypeGroup, ComponentDef } from './types/step-2-8'
+import type { ColorGroup, TypeGroup, ComponentDef, OverlaySpec } from './types/step-2-8'
 
 export const colorGroups: ColorGroup[] = [
   {
@@ -46,7 +46,7 @@ export const colorGroups: ColorGroup[] = [
   },
 ]
 
-export const overlays = [
+export const overlays: OverlaySpec[] = [
   { name: 'Zone-Overlay-Opacity', value: '50%', usage: 'Floor plan zone fill (amber or orange at half opacity over cream)' },
   { name: 'Shadow-Opacity', value: '12%', usage: 'Specimen card and zone drop shadows' },
 ]

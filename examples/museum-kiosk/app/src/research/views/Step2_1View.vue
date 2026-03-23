@@ -1,285 +1,209 @@
 <script setup lang="ts">
+import HeroHeader from '../components/HeroHeader.vue'
+import SectionBlock from '../components/SectionBlock.vue'
+import SubsectionRow from '../components/SubsectionRow.vue'
+import SpecsGrid from '../components/SpecsGrid.vue'
 import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } from '../data/step-2-1'
 </script>
 
 <template>
   <article class="step-page">
     <!-- ===== HERO — warm dark band ===== -->
-    <header class="hero">
-      <div class="hero-badge">
-        <span class="badge-label">2.1</span>
-      </div>
-      <h1 class="hero-title">Skeuomorph<br />Selection</h1>
-      <p class="hero-lead">
-        Identifying the physical artifacts that persist as metaphors in digital
-        interfaces — and choosing which evolution to trace.
-      </p>
-    </header>
+    <HeroHeader badge="2.1" lead="Identifying the physical artifacts that persist as metaphors in digital interfaces — and choosing which evolution to trace.">
+      Skeuomorph<br />Selection
+    </HeroHeader>
 
     <!-- ===== GOALS ===== -->
-    <section class="section">
-      <div class="section-panel"></div>
-      <header class="section-header">
-        <div class="section-label">
-          <h2 class="section-heading">Goals</h2>
-        </div>
-      </header>
-      <div class="section-body">
-        <div class="section-row section-row--nested">
-          <div class="section-content">
-            <div class="prose-group">
-              <div class="prose-block">
-                <h3 class="prose-block__heading">What do you hope to make?</h3>
-                <p class="prose-block__text">
-                  A museum kiosk interface that serves as both wayfinding guide and
-                  collectible-driven exploration tool, greeting visitors at each
-                  exhibit entrance and inviting them to collect evolutionary stages as
-                  they explore.
-                </p>
-              </div>
-              <div class="prose-block">
-                <h3 class="prose-block__heading">Why does this project matter to you?</h3>
-                <p class="prose-block__text">
-                  AI prompting is replacing the toolbars, rulers, and drop-down menus
-                  of traditional editors. If natural-language interaction removes the
-                  need for visual metaphors altogether, skeuomorphs may become
-                  artifacts themselves.
-                </p>
-              </div>
-            </div>
+    <SectionBlock heading="Goals">
+      <SubsectionRow>
+        <div class="prose-group">
+          <div class="prose-block">
+            <h3 class="prose-block__heading">What do you hope to make?</h3>
+            <p class="prose-block__text">
+              A museum kiosk interface that serves as both wayfinding guide and
+              collectible-driven exploration tool, greeting visitors at each
+              exhibit entrance and inviting them to collect evolutionary stages as
+              they explore.
+            </p>
+          </div>
+          <div class="prose-block">
+            <h3 class="prose-block__heading">Why does this project matter to you?</h3>
+            <p class="prose-block__text">
+              AI prompting is replacing the toolbars, rulers, and drop-down menus
+              of traditional editors. If natural-language interaction removes the
+              need for visual metaphors altogether, skeuomorphs may become
+              artifacts themselves.
+            </p>
           </div>
         </div>
-      </div>
-    </section>
+      </SubsectionRow>
+    </SectionBlock>
 
     <!-- ===== PRIMARY — warm dark band ===== -->
-    <section class="section section--full-width section--dark">
-      <header class="section-header">
-        <div class="section-label">
-          <h2 class="section-heading section-heading--light">Primary Skeuomorph</h2>
-        </div>
-        <div class="section-content">
-          <h3 class="primary-title">The WYSIWYG<br />Page Editor</h3>
-          <div class="evolution-timeline">
-            <div
-              v-for="(stage, i) in evolutionStages"
-              :key="stage"
-              class="evo-stage"
-            >
-              <span class="evo-marker">{{ String(i + 1).padStart(2, '0') }}</span>
-              <span class="evo-name">{{ stage }}</span>
-            </div>
+    <SectionBlock heading="Primary Skeuomorph" variant="dark">
+      <template #headerContent>
+        <h3 class="primary-title">The WYSIWYG<br />Page Editor</h3>
+        <div class="evolution-timeline">
+          <div
+            v-for="(stage, i) in evolutionStages"
+            :key="stage"
+            class="evo-stage"
+          >
+            <span class="evo-marker">{{ String(i + 1).padStart(2, '0') }}</span>
+            <span class="evo-name">{{ stage }}</span>
           </div>
-          <p class="rationale rationale--light">
-            The most popular and taken-for-granted skeuomorph in daily digital
-            life — virtual pages mimic paper, clipboards reference paste-up
-            boards, and font menus appear as mini type specimen books.
-          </p>
         </div>
-      </header>
-    </section>
+        <p class="rationale rationale--light">
+          The most popular and taken-for-granted skeuomorph in daily digital
+          life — virtual pages mimic paper, clipboards reference paste-up
+          boards, and font menus appear as mini type specimen books.
+        </p>
+      </template>
+    </SectionBlock>
 
     <!-- ===== SECONDARY ===== -->
-    <section class="section">
-      <div class="section-panel"></div>
-      <header class="section-header">
-        <div class="section-label">
-          <h2 class="section-heading">Secondary Skeuomorphs</h2>
-        </div>
-      </header>
-      <div class="section-body">
-        <div class="section-row section-row--nested">
-          <div class="section-content">
-            <div class="secondary-grid">
-              <div
-                v-for="(s, i) in secondarySkeuomorphs"
-                :key="s.name"
-                class="card card--secondary"
-              >
-                <span class="card-number">{{ i + 1 }}</span>
-                <div class="card-body">
-                  <div class="card-mapping">
-                    <span class="mapping-term">{{ s.name }}</span>
-                    <span class="mapping-arrow">→</span>
-                    <span class="mapping-term">{{ s.maps }}</span>
-                  </div>
-                  <p class="card-body__text">{{ s.description }}</p>
-                </div>
+    <SectionBlock heading="Secondary Skeuomorphs">
+      <SubsectionRow>
+        <div class="secondary-grid">
+          <div
+            v-for="(s, i) in secondarySkeuomorphs"
+            :key="s.name"
+            class="card card--secondary"
+          >
+            <span class="card-number">{{ i + 1 }}</span>
+            <div class="card-body">
+              <div class="card-mapping">
+                <span class="mapping-term">{{ s.name }}</span>
+                <span class="mapping-arrow">→</span>
+                <span class="mapping-term">{{ s.maps }}</span>
               </div>
+              <p class="card-body__text">{{ s.description }}</p>
             </div>
-            <p class="rationale">
-              Each preserves a physical object — a shutter, an envelope, a handset —
-              as a sound, icon, or gesture in software that no longer needs the
-              original thing to function.
-            </p>
           </div>
         </div>
-      </div>
-    </section>
-
+        <p class="rationale">
+          Each preserves a physical object — a shutter, an envelope, a handset —
+          as a sound, icon, or gesture in software that no longer needs the
+          original thing to function.
+        </p>
+      </SubsectionRow>
+    </SectionBlock>
 
     <!-- ===== FORMAT ===== -->
-    <section class="section">
-      <div class="section-panel"></div>
-      <header class="section-header">
-        <div class="section-label">
-          <h2 class="section-heading">UX Format</h2>
-        </div>
-      </header>
-      <div class="section-body">
-        <div class="section-row section-row--nested">
-          <div class="section-content">
-            <div class="prose-group">
-              <div class="prose-block">
-                <h3 class="prose-block__heading">UX Pattern</h3>
-                <p class="prose-block__text">Museum kiosk with wayfinding and collecting</p>
-              </div>
-              <div class="prose-block">
-                <h3 class="prose-block__heading">Media</h3>
-                <p class="prose-block__text">Typographic primary, supported by historical photography, diagrams, and floor-plan maps</p>
-              </div>
-              <div class="prose-block">
-                <h3 class="prose-block__heading">Why this format?</h3>
-                <p class="prose-block__text">
-                  Each kiosk orients visitors to the room they're entering while
-                  offering collectible evolutionary stages, turning a passive gallery
-                  walk into an active scavenger hunt through design history.
-                </p>
-              </div>
-            </div>
+    <SectionBlock heading="UX Format">
+      <SubsectionRow>
+        <div class="prose-group">
+          <div class="prose-block">
+            <h3 class="prose-block__heading">UX Pattern</h3>
+            <p class="prose-block__text">Museum kiosk with wayfinding and collecting</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ===== SOURCES ===== -->
-    <section class="section">
-      <div class="section-panel"></div>
-      <header class="section-header">
-        <div class="section-label">
-          <h2 class="section-heading">Sources</h2>
-        </div>
-      </header>
-      <div class="section-body">
-        <div class="section-row section-row--nested">
-          <div class="section-content">
-            <div class="prose-group">
-              <div class="prose-block">
-                <h3 class="prose-block__heading">Informational</h3>
-                <p class="prose-block__text">
-                  Bringhurst's <em>The Elements of Typographic Style</em>, the
-                  Letterform Archive's online collection, and the Computer History
-                  Museum's desktop publishing archives.
-                </p>
-              </div>
-              <div class="prose-block">
-                <h3 class="prose-block__heading">Visual</h3>
-                <p class="prose-block__text">
-                  The Letterform Archive's digitized type specimens, the Computer
-                  History Museum's early DTP screenshots, and archive.org for
-                  scanned specimen books and software documentation.
-                </p>
-              </div>
-            </div>
-            <p class="rationale">
-              Each provides verifiable primary-source material. Bringhurst is the
-              canonical typographic reference, the Letterform Archive holds over
-              100,000 original design objects, and the Computer History Museum
-              documented the DTP revolution firsthand.
+          <div class="prose-block">
+            <h3 class="prose-block__heading">Media</h3>
+            <p class="prose-block__text">Typographic primary, supported by historical photography, diagrams, and floor-plan maps</p>
+          </div>
+          <div class="prose-block">
+            <h3 class="prose-block__heading">Why this format?</h3>
+            <p class="prose-block__text">
+              Each kiosk orients visitors to the room they're entering while
+              offering collectible evolutionary stages, turning a passive gallery
+              walk into an active scavenger hunt through design history.
             </p>
           </div>
         </div>
-      </div>
-    </section>
+      </SubsectionRow>
+    </SectionBlock>
+
+    <!-- ===== SOURCES ===== -->
+    <SectionBlock heading="Sources">
+      <SubsectionRow>
+        <div class="prose-group">
+          <div class="prose-block">
+            <h3 class="prose-block__heading">Informational</h3>
+            <p class="prose-block__text">
+              Bringhurst's <em>The Elements of Typographic Style</em>, the
+              Letterform Archive's online collection, and the Computer History
+              Museum's desktop publishing archives.
+            </p>
+          </div>
+          <div class="prose-block">
+            <h3 class="prose-block__heading">Visual</h3>
+            <p class="prose-block__text">
+              The Letterform Archive's digitized type specimens, the Computer
+              History Museum's early DTP screenshots, and archive.org for
+              scanned specimen books and software documentation.
+            </p>
+          </div>
+        </div>
+        <p class="rationale">
+          Each provides verifiable primary-source material. Bringhurst is the
+          canonical typographic reference, the Letterform Archive holds over
+          100,000 original design objects, and the Computer History Museum
+          documented the DTP revolution firsthand.
+        </p>
+      </SubsectionRow>
+    </SectionBlock>
 
     <!-- ===== INSPIRATION — warm band ===== -->
-    <section class="section section--full-width section--warm">
-      <header class="section-header">
-        <div class="section-label">
-          <h2 class="section-heading">Inspiration</h2>
+    <SectionBlock heading="Inspiration" variant="warm">
+      <template #headerContent>
+        <div class="inspiration-grid">
+          <a
+            v-for="site in inspirationSites"
+            :key="site.url"
+            :href="site.url"
+            target="_blank"
+            rel="noopener"
+            class="inspiration-card"
+          >
+            <span class="inspiration-name">{{ site.name }}</span>
+            <span class="inspiration-arrow">↗</span>
+            <p class="inspiration-note">{{ site.note }}</p>
+          </a>
         </div>
-        <div class="section-content">
-          <div class="inspiration-grid">
-            <a
-              v-for="site in inspirationSites"
-              :key="site.url"
-              :href="site.url"
-              target="_blank"
-              rel="noopener"
-              class="inspiration-card"
-            >
-              <span class="inspiration-name">{{ site.name }}</span>
-              <span class="inspiration-arrow">↗</span>
-              <p class="inspiration-note">{{ site.note }}</p>
-            </a>
-          </div>
-        </div>
-      </header>
-    </section>
+      </template>
+    </SectionBlock>
 
     <!-- ===== FORM FACTOR ===== -->
-    <section class="section">
-      <div class="section-panel"></div>
-      <header class="section-header">
-        <div class="section-label">
-          <h2 class="section-heading">Form Factor</h2>
-        </div>
-      </header>
-      <div class="section-body">
-        <div class="section-row section-row--nested">
-          <div class="section-content">
-            <div class="specs-grid">
-              <div v-for="f in formFactors" :key="f.label" class="spec">
-                <span class="spec-label">{{ f.label }}</span>
-                <span class="spec-dots"></span>
-                <span class="spec-value">{{ f.value }}</span>
-              </div>
-            </div>
-            <div class="prose-group">
-              <div class="prose-block">
-                <h3 class="prose-block__heading">Why portrait?</h3>
-                <p class="prose-block__text">
-                  Portrait mirrors the vertical proportions of a physical page, the
-                  central artifact of the WYSIWYG skeuomorph. The fixed resolution
-                  allows precise positioning like a typeset museum placard.
-                </p>
-              </div>
-              <div class="prose-block">
-                <h3 class="prose-block__heading">Why a web app?</h3>
-                <p class="prose-block__text">
-                  The kiosk needs room-specific content, collectible tracking, touch
-                  navigation without browser chrome, and inactivity resets — all
-                  requiring app-level state management.
-                </p>
-              </div>
-              <div class="prose-block">
-                <h3 class="prose-block__heading">Why coarse input?</h3>
-                <p class="prose-block__text">
-                  Museum visitors expect to walk up and interact immediately with
-                  generously sized touch targets, echoing the tactile history of
-                  compositors physically handling type.
-                </p>
-              </div>
-            </div>
+    <SectionBlock heading="Form Factor">
+      <SubsectionRow>
+        <SpecsGrid :items="formFactors" />
+        <div class="prose-group">
+          <div class="prose-block">
+            <h3 class="prose-block__heading">Why portrait?</h3>
+            <p class="prose-block__text">
+              Portrait mirrors the vertical proportions of a physical page, the
+              central artifact of the WYSIWYG skeuomorph. The fixed resolution
+              allows precise positioning like a typeset museum placard.
+            </p>
+          </div>
+          <div class="prose-block">
+            <h3 class="prose-block__heading">Why a web app?</h3>
+            <p class="prose-block__text">
+              The kiosk needs room-specific content, collectible tracking, touch
+              navigation without browser chrome, and inactivity resets — all
+              requiring app-level state management.
+            </p>
+          </div>
+          <div class="prose-block">
+            <h3 class="prose-block__heading">Why coarse input?</h3>
+            <p class="prose-block__text">
+              Museum visitors expect to walk up and interact immediately with
+              generously sized touch targets, echoing the tactile history of
+              compositors physically handling type.
+            </p>
           </div>
         </div>
-      </div>
-    </section>
+      </SubsectionRow>
+    </SectionBlock>
 
     <!-- ===== TITLE — warm dark band ===== -->
-    <section class="section section--full-width section--dark section--title">
-      <header class="section-header">
-        <div class="section-label">
-          <h2 class="section-heading section-heading--light">Title</h2>
+    <SectionBlock heading="Title" variant="dark" class="section--title">
+      <template #headerContent>
+        <div class="title-lockup">
+          <em>Before the Prompt:<br />The Rise and Fall of Digital Icons</em>
         </div>
-        <div class="section-content">
-          <div class="title-lockup">
-            <em>Before the Prompt:<br />The Rise and Fall of Digital Icons</em>
-          </div>
-        </div>
-      </header>
-    </section>
+      </template>
+    </SectionBlock>
   </article>
 </template>
 
@@ -372,7 +296,6 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
   font: var(--text-body-small);
   color: var(--gray-500);
 }
-
 
 /* ---- Inspiration cards (on warm band) ---- */
 .inspiration-grid {

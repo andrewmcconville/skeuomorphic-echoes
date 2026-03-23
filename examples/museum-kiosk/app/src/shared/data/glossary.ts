@@ -23,12 +23,8 @@ export interface GlossaryEntry {
   function: {
     original: string
     modern: string
-    status: 'active' | 'vestigial' | 'extinct' | 'repurposed'
+    status: 'thriving' | 'endangered' | 'extinct' | 'adapted'
     statusNote: string
-  }
-  presentational: {
-    bestFace: string
-    decorativeUse: string
   }
   sources: GlossarySource[]
 }
@@ -53,15 +49,9 @@ export const glossaryEntries: readonly GlossaryEntry[] = [
         'Marked the beginning of a new paragraph or section in continuous text. Rubricators painted it in red ink after scribes copied the main text, leaving space for the mark.',
       modern:
         'Toggle icon for "show formatting marks" in word processors (Microsoft Word, Google Docs). Appears as a hidden character indicating paragraph breaks and hard returns.',
-      status: 'vestigial',
+      status: 'endangered',
       statusNote:
         'Present in every modern editor but invisible by default. The indented paragraph it left behind when rubricators couldn\u2019t keep up with the printing press is now the standard.',
-    },
-    presentational: {
-      bestFace:
-        'Cormorant Garamond — the doubled stem and calligraphic bowl are most visible at display sizes.',
-      decorativeUse:
-        'Background texture (large, low opacity), evolutionary stage marker, section divider.',
     },
     sources: [
       {
@@ -113,15 +103,9 @@ export const glossaryEntries: readonly GlossaryEntry[] = [
         'Denoted individually numbered sections in codices, particularly in legal and canonical texts, allowing precise cross-referencing.',
       modern:
         'Standard in legal citation (e.g., "16 U.S.C. § 580p"). Also used as the sixth footnote symbol in the traditional sequence: * † ‡ § ‖ ¶.',
-      status: 'active',
+      status: 'thriving',
       statusNote:
         'Still the standard section reference mark in legal writing worldwide.',
-    },
-    presentational: {
-      bestFace:
-        'Cormorant Garamond — the intertwined S-curves are most elegant in serif. JetBrains Mono renders it cleanly at small UI sizes.',
-      decorativeUse:
-        'Background texture (its vertical symmetry and double-curve create a strong, abstract silhouette). Stage marker for legal/manuscript eras.',
     },
     sources: [
       {
@@ -165,15 +149,9 @@ export const glossaryEntries: readonly GlossaryEntry[] = [
         'Marked spurious or doubtful text in critical editions of classical works. Later adopted as the second footnote reference symbol (after the asterisk).',
       modern:
         'Second footnote marker in the traditional sequence. In biographical contexts, placed before a date to indicate year of death (e.g., †1455). In linguistics, marks a reconstructed or extinct form.',
-      status: 'active',
+      status: 'thriving',
       statusNote:
         'Still used in footnotes, obituaries, and scholarly notation.',
-    },
-    presentational: {
-      bestFace:
-        'Cormorant Garamond — the serifs give the cross-arms weight. JetBrains Mono is clean at label size.',
-      decorativeUse:
-        'Stage marker (pairs naturally with ‡ for sequential stages), inline accent.',
     },
     sources: [
       {
@@ -211,15 +189,9 @@ export const glossaryEntries: readonly GlossaryEntry[] = [
         'Third footnote reference mark in the traditional sequence (* † ‡). Used where two footnotes had already been assigned on the same page.',
       modern:
         'Rare outside of traditional footnoting. Occasionally used in liturgical or scholarly texts.',
-      status: 'vestigial',
+      status: 'endangered',
       statusNote:
         'Largely replaced by superscript numerals in modern publishing.',
-    },
-    presentational: {
-      bestFace:
-        'Cormorant Garamond — the doubled crossbars are distinctly legible. Visually pairs with the dagger.',
-      decorativeUse:
-        'Sequential stage marker (with †), scattered background texture at low opacity.',
     },
     sources: [
       {
@@ -256,15 +228,9 @@ export const glossaryEntries: readonly GlossaryEntry[] = [
         'Marked a significant break between sections of text — stronger than a paragraph break, less formal than a chapter heading. Functioned as a visible silence on the page.',
       modern:
         'Largely replaced by the dinkus (three centered asterisks in a row: * * *) or simple whitespace. Occasionally used in literary publishing for aesthetic reasons.',
-      status: 'vestigial',
+      status: 'endangered',
       statusNote:
         'The dinkus or blank line has replaced it in most contexts.',
-    },
-    presentational: {
-      bestFace:
-        'Cormorant Garamond — the triangular arrangement reads clearly at large sizes.',
-      decorativeUse:
-        'Section break divider (centered between content blocks), background texture element.',
     },
     sources: [
       {
@@ -301,15 +267,9 @@ export const glossaryEntries: readonly GlossaryEntry[] = [
         'Reader\u2019s annotation mark directing attention to important text. Also used by printers from the 15th century onward as a section indicator and decorative element on title pages.',
       modern:
         'The CSS cursor:\u00a0pointer (the hand icon that appears over hyperlinks) is a direct digital descendant. Also survives in signage, wayfinding, and retro design.',
-      status: 'repurposed',
+      status: 'adapted',
       statusNote:
         'No longer drawn by readers, but its form persists as the universal "clickable" cursor and in directional signage.',
-    },
-    presentational: {
-      bestFace:
-        'Falls back to system font in most typefaces (not natively drawn in Cormorant Garamond). Consider sourcing a dedicated manicule glyph from a dingbat or ornamental font, or using it as a graphic asset.',
-      decorativeUse:
-        'Directional accent (pointing to content), wayfinding cue on the kiosk floor map, inline callout.',
     },
     sources: [
       {
@@ -358,12 +318,6 @@ export const glossaryEntries: readonly GlossaryEntry[] = [
       statusNote:
         'Replaced by whitespace, pilcrows, and asterisks for functional paragraph separation. Survives only as deliberate ornamentation.',
     },
-    presentational: {
-      bestFace:
-        'Typically falls back to system dingbat font. For authentic rendering, consider LTC Vine Leaves or source individual SVGs from public-domain specimen sheets.',
-      decorativeUse:
-        'Section divider (centered, standalone), decorative border element, inline paragraph accent.',
-    },
     sources: [
       {
         parts: [
@@ -400,15 +354,9 @@ export const glossaryEntries: readonly GlossaryEntry[] = [
         'Shorthand for the conjunction "and" in Latin text, especially in titles, headings, and informal writing.',
       modern:
         'Universal conjunction symbol. Also a logical AND operator in programming (&&). Among the most frequently used typographic symbols in the world.',
-      status: 'active',
+      status: 'thriving',
       statusNote:
         'Fully alive. One of the few ancient ligatures to survive as a standard keyboard character.',
-    },
-    presentational: {
-      bestFace:
-        'Cormorant Garamond — the italic ampersand is particularly beautiful and reveals the original E-T ligature. Every face in the stack renders it distinctly, making it useful for font comparison displays.',
-      decorativeUse:
-        'Display accent (large, as a typographic hero element), font comparison specimen.',
     },
     sources: [
       {
@@ -453,15 +401,9 @@ export const glossaryEntries: readonly GlossaryEntry[] = [
         'Shorthand for "number" preceding a numeral in European texts (e.g., №\u00a05).',
       modern:
         'Standard in Russian and some European typographic conventions. Largely replaced by # or "No." in English. Present on Russian keyboard layouts.',
-      status: 'active',
+      status: 'thriving',
       statusNote:
-        'In non-English European contexts. Vestigial in English.',
-    },
-    presentational: {
-      bestFace:
-        'Cormorant Garamond — renders as a true ligature with a connected superscript o. JetBrains Mono also includes it natively.',
-      decorativeUse:
-        'Label prefix for evolutionary stage numbering (e.g., "№\u00a03 — The Typewriter Era"), display headings.',
+        'In non-English European contexts. Endangered in English.',
     },
     sources: [
       {
@@ -498,15 +440,9 @@ export const glossaryEntries: readonly GlossaryEntry[] = [
         'Punctuation mark combining the question mark and exclamation mark into one glyph to end a rhetorical or surprised question (e.g., "You call that a typeface\u203d").',
       modern:
         'Never achieved mainstream adoption. Included in Unicode and supported by many typefaces, but rarely used outside of typographic enthusiasm and design contexts.',
-      status: 'vestigial',
+      status: 'endangered',
       statusNote:
         'Born modern, never widely adopted. A cautionary tale: not all typographic inventions take root.',
-    },
-    presentational: {
-      bestFace:
-        'Coverage varies — may fall back to system font. Cormorant Garamond includes it. Good for display sizes where the overlapping forms are legible.',
-      decorativeUse:
-        'Thematic accent (it\u2019s a skeuomorph itself — a physical mark that never fully transitioned to digital convention). Conversation starter on the kiosk.',
     },
     sources: [
       {
@@ -546,15 +482,9 @@ export const glossaryEntries: readonly GlossaryEntry[] = [
         'Word separator in Roman monumental inscriptions carved in CAPITALLETTERSWITHOUTSPACES. The dot sat at the midline between words.',
       modern:
         'Used in Catalan to distinguish between a geminate L (l·l) and a double L. Also common as a typographic separator in navigation, breadcrumbs, and UI labels (e.g., "Home · About · Contact").',
-      status: 'repurposed',
+      status: 'adapted',
       statusNote:
         'No longer a word separator, but thriving as a UI delimiter and in specific orthographies.',
-    },
-    presentational: {
-      bestFace:
-        'Universally supported. All five faces render it well. At small sizes, Outfit and JetBrains Mono give it the most presence.',
-      decorativeUse:
-        'Inline delimiter (navigation, metadata labels), section divider composites (e.g., ✦ · ✦ · ✦).',
     },
     sources: [
       {
@@ -595,12 +525,6 @@ export const glossaryEntries: readonly GlossaryEntry[] = [
       status: 'extinct',
       statusNote:
         'Fully supplanted by the pilcrow. Its inclusion in Unicode is an act of archaeological preservation.',
-    },
-    presentational: {
-      bestFace:
-        'Likely falls back to system font in most faces. Valuable precisely because of this — its visual absence demonstrates the ghost concept.',
-      decorativeUse:
-        'Evolutionary chain exhibit (display it alongside the pilcrow to show the transformation). Conceptual — showing what disappeared.',
     },
     sources: [
       {
@@ -645,15 +569,9 @@ export const glossaryEntries: readonly GlossaryEntry[] = [
         'Attention marker in Japanese text, similar to the Western asterisk or dagger. Used before annotations, disclaimers, and supplementary notes.',
       modern:
         'Still common in Japanese typography. Occasionally borrowed in Western design for its visual distinctiveness.',
-      status: 'active',
+      status: 'thriving',
       statusNote:
         'In Japanese typographic contexts. Ornamental import in Western use.',
-    },
-    presentational: {
-      bestFace:
-        'Typically renders from CJK system fonts or a Unicode fallback rather than the Latin typefaces in the stack.',
-      decorativeUse:
-        'Visual counterpoint (its non-Western origin makes it a useful contrast in a project about Western typographic ghosts). Annotation marker, inline callout.',
     },
     sources: [
       {

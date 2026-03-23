@@ -5,8 +5,8 @@ import GlossaryContent from '@shared/components/GlossaryContent.vue'
 
 <template>
   <article class="step-page">
-    <HeroHeader badge="§" lead="Thirteen marks that once organized the written word by hand. Some survive in modern editors; others haunt our interfaces as invisible defaults.">
-      Glossary of<br />Typographic Ghosts
+    <HeroHeader badge="§" lead="Thirteen marks that once organized the written word by hand. Some survive in modern editors; others persist in our interfaces as invisible defaults.">
+      Glossary of<br />Typographic Icons
     </HeroHeader>
     <div class="glossary-wrap">
       <GlossaryContent compact />

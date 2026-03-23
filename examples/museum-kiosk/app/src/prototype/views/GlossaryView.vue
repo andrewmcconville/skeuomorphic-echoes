@@ -5,11 +5,11 @@ import GlossaryContent from '@shared/components/GlossaryContent.vue'
 <template>
   <article class="glossary-page">
     <header class="glossary-header">
-      <span class="glossary-header__ghost">§</span>
-      <h1 class="glossary-header__title">Glossary of<br />Typographic Ghosts</h1>
+      <span class="glossary-header__icon">§</span>
+      <h1 class="glossary-header__title">Glossary of<br />Typographic Icons</h1>
       <p class="glossary-header__intro">
         Thirteen marks that once organized the written word by hand. Some survive
-        in modern editors; others haunt our interfaces as invisible defaults.
+        in modern editors; others persist in our interfaces as invisible defaults.
       </p>
     </header>
     <GlossaryContent />
@@ -29,7 +29,7 @@ import GlossaryContent from '@shared/components/GlossaryContent.vue'
   overflow: hidden;
 }
 
-.glossary-header__ghost {
+.glossary-header__icon {
   position: absolute;
   top: -2rem;
   right: 0;

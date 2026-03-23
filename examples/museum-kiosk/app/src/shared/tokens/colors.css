@@ -28,13 +28,13 @@
   --locked-brown: oklch(0.50 0.10 55);
 
   /* Status — glyph lifecycle badges */
-  --status-active: oklch(0.55 0.1 145);
-  --status-active-bg: oklch(0.55 0.1 145 / 0.1);
-  --status-vestigial: oklch(0.5 0.1 25);
-  --status-vestigial-bg: oklch(0.5 0.1 25 / 0.1);
+  --status-thriving: oklch(0.55 0.1 145);
+  --status-thriving-bg: oklch(0.55 0.1 145 / 0.1);
+  --status-endangered: oklch(0.5 0.1 25);
+  --status-endangered-bg: oklch(0.5 0.1 25 / 0.1);
   --status-extinct-bg: oklch(0 0 0 / 0.05);
-  --status-repurposed: oklch(0.5 0.1 260);
-  --status-repurposed-bg: oklch(0.5 0.1 260 / 0.1);
+  --status-adapted: oklch(0.5 0.1 260);
+  --status-adapted-bg: oklch(0.5 0.1 260 / 0.1);
 
   /* Overlay Opacity */
   --zone-overlay-opacity: 0.5;

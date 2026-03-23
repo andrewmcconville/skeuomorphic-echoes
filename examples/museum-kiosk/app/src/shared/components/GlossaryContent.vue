@@ -75,17 +75,6 @@ withDefaults(defineProps<{
           </dl>
         </div>
 
-        <!-- Presentational -->
-        <div class="glossary-field">
-          <div class="glossary-field__label">Presentational</div>
-          <dl class="glossary-field__list">
-            <dt class="glossary-field__term">Best face</dt>
-            <dd class="glossary-field__def">{{ entry.presentational.bestFace }}</dd>
-            <dt class="glossary-field__term">Decorative use</dt>
-            <dd class="glossary-field__def">{{ entry.presentational.decorativeUse }}</dd>
-          </dl>
-        </div>
-
         <!-- Sources -->
         <div class="glossary-field glossary-field--sources">
           <div class="glossary-field__label">Sources</div>
@@ -307,14 +296,14 @@ withDefaults(defineProps<{
   vertical-align: middle;
 }
 
-.glossary-status--active {
-  background: var(--status-active-bg);
-  color: var(--status-active);
+.glossary-status--thriving {
+  background: var(--status-thriving-bg);
+  color: var(--status-thriving);
 }
 
-.glossary-status--vestigial {
-  background: var(--status-vestigial-bg);
-  color: var(--status-vestigial);
+.glossary-status--endangered {
+  background: var(--status-endangered-bg);
+  color: var(--status-endangered);
 }
 
 .glossary-status--extinct {
@@ -322,9 +311,9 @@ withDefaults(defineProps<{
   color: var(--gray-500);
 }
 
-.glossary-status--repurposed {
-  background: var(--status-repurposed-bg);
-  color: var(--status-repurposed);
+.glossary-status--adapted {
+  background: var(--status-adapted-bg);
+  color: var(--status-adapted);
 }
 
 /* Sources */
@@ -355,6 +344,7 @@ withDefaults(defineProps<{
   content: counter(source) '.';
   position: absolute;
   left: 0;
+  top: var(--space-xs);
   font: var(--text-meta-field-value);
   color: var(--orange-500);
 }

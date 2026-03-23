@@ -38,13 +38,13 @@ export const colorGroups: ColorGroup[] = [
   {
     name: 'Status',
     colors: [
-      { name: 'Status-Active', var: '--status-active', hex: '#4A8A4A', usage: 'Active glyph status badge text' },
-      { name: 'Status-Active BG', var: '--status-active-bg', hex: '#4A8A4A1A', usage: 'Active glyph status badge background' },
-      { name: 'Status-Vestigial', var: '--status-vestigial', hex: '#8A4A3A', usage: 'Vestigial glyph status badge text' },
-      { name: 'Status-Vestigial BG', var: '--status-vestigial-bg', hex: '#8A4A3A1A', usage: 'Vestigial glyph status badge background' },
+      { name: 'Status-Thriving', var: '--status-thriving', hex: '#4A8A4A', usage: 'Thriving glyph status badge text' },
+      { name: 'Status-Thriving BG', var: '--status-thriving-bg', hex: '#4A8A4A1A', usage: 'Thriving glyph status badge background' },
+      { name: 'Status-Endangered', var: '--status-endangered', hex: '#8A4A3A', usage: 'Endangered glyph status badge text' },
+      { name: 'Status-Endangered BG', var: '--status-endangered-bg', hex: '#8A4A3A1A', usage: 'Endangered glyph status badge background' },
       { name: 'Status-Extinct BG', var: '--status-extinct-bg', hex: '#0000000D', usage: 'Extinct glyph status badge background' },
-      { name: 'Status-Repurposed', var: '--status-repurposed', hex: '#4A5A8A', usage: 'Repurposed glyph status badge text' },
-      { name: 'Status-Repurposed BG', var: '--status-repurposed-bg', hex: '#4A5A8A1A', usage: 'Repurposed glyph status badge background' },
+      { name: 'Status-Adapted', var: '--status-adapted', hex: '#4A5A8A', usage: 'Adapted glyph status badge text' },
+      { name: 'Status-Adapted BG', var: '--status-adapted-bg', hex: '#4A5A8A1A', usage: 'Adapted glyph status badge background' },
     ],
   },
 ]

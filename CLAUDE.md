@@ -26,7 +26,7 @@ npx playwright test # visual regression tests (Playwright)
     - tokens/spacing.css — Spacing scale
     - styles/reset.css — Base reset
     - components/GlossaryContent.vue — Shared glossary renderer (compact/full via prop)
-    - data/glossary.ts — Glossary of typographic ghosts (13 glyph entries, shared by both apps)
+    - data/glossary.ts — Glossary of typographic icons (13 glyph entries, shared by both apps)
   - src/research/ — Research app views and router
     - step-shared.css — Shared step-page styles (hero, section block, cards, prose, tags)
     - components/ — SectionBlock.vue, SubsectionRow.vue, HeroHeader.vue, SpecsGrid.vue
@@ -59,6 +59,7 @@ npx playwright test # visual regression tests (Playwright)
 - Stroke tokens: `--stroke-thin` (1px), `--stroke-medium` (2px) — always use vars for borders
 - Step 2.8 design system page documents only tokens actively used in styling — add/remove entries as usage changes
 - Vocabulary: "Artifact" (detail page), "Artifact Collection" (list page), "Skeuomorph Room" (room landing) — never "Interior Page" or "Room Landing" alone
+- Glyph status terms use conservation biology language: thriving, endangered, extinct, adapted
 
 ## Testing
 

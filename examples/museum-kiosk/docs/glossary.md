@@ -1,8 +1,8 @@
-# Glossary of Typographic Ghosts
+# Glossary of Typographic Icons
 
 *Before the Prompt — Museum Kiosk Companion*
 
-Thirteen marks that once organized the written word by hand. Some survive in modern editors; others haunt our interfaces as invisible defaults. Each entry traces identity, origin, function, and recommended use within the kiosk prototype.
+Thirteen marks that once organized the written word by hand. Some survive in modern editors; others persist in our interfaces as invisible defaults. Each entry traces identity, origin, function, and recommended use within the kiosk prototype.
 
 ---
 
@@ -28,7 +28,7 @@ Thirteen marks that once organized the written word by hand. Some survive in mod
 |---|---|
 | **Original** | Marked the beginning of a new paragraph or section in continuous text. Rubricators painted it in red ink after scribes copied the main text, leaving space for the mark. |
 | **Modern** | Toggle icon for "show formatting marks" in word processors (Microsoft Word, Google Docs). Appears as a hidden character indicating paragraph breaks and hard returns. |
-| **Status** | **Vestigial** — Present in every modern editor but invisible by default. The indented paragraph it left behind when rubricators couldn't keep up with the printing press is now the standard. |
+| **Status** | **Endangered** — Present in every modern editor but invisible by default. The indented paragraph it left behind when rubricators couldn't keep up with the printing press is now the standard. |
 
 ### Presentational
 
@@ -68,7 +68,7 @@ Thirteen marks that once organized the written word by hand. Some survive in mod
 |---|---|
 | **Original** | Denoted individually numbered sections in codices, particularly in legal and canonical texts, allowing precise cross-referencing. |
 | **Modern** | Standard in legal citation (e.g., "16 U.S.C. § 580p"). Also used as the sixth footnote symbol in the traditional sequence: * † ‡ § ‖ ¶. |
-| **Status** | **Active** — Still the standard section reference mark in legal writing worldwide. |
+| **Status** | **Thriving** — Still the standard section reference mark in legal writing worldwide. |
 
 ### Presentational
 
@@ -107,7 +107,7 @@ Thirteen marks that once organized the written word by hand. Some survive in mod
 |---|---|
 | **Original** | Marked spurious or doubtful text in critical editions of classical works. Later adopted as the second footnote reference symbol (after the asterisk). |
 | **Modern** | Second footnote marker in the traditional sequence. In biographical contexts, placed before a date to indicate year of death (e.g., †1455). In linguistics, marks a reconstructed or extinct form. |
-| **Status** | **Active** — Still used in footnotes, obituaries, and scholarly notation. |
+| **Status** | **Thriving** — Still used in footnotes, obituaries, and scholarly notation. |
 
 ### Presentational
 
@@ -145,7 +145,7 @@ Thirteen marks that once organized the written word by hand. Some survive in mod
 |---|---|
 | **Original** | Third footnote reference mark in the traditional sequence (* † ‡). Used where two footnotes had already been assigned on the same page. |
 | **Modern** | Rare outside of traditional footnoting. Occasionally used in liturgical or scholarly texts. |
-| **Status** | **Vestigial** — Largely replaced by superscript numerals in modern publishing. |
+| **Status** | **Endangered** — Largely replaced by superscript numerals in modern publishing. |
 
 ### Presentational
 
@@ -183,7 +183,7 @@ Thirteen marks that once organized the written word by hand. Some survive in mod
 |---|---|
 | **Original** | Marked a significant break between sections of text — stronger than a paragraph break, less formal than a chapter heading. Functioned as a visible silence on the page. |
 | **Modern** | Largely replaced by the dinkus (three centered asterisks in a row: * * *) or simple whitespace. Occasionally used in literary publishing for aesthetic reasons. |
-| **Status** | **Vestigial** — The dinkus or blank line has replaced it in most contexts. |
+| **Status** | **Endangered** — The dinkus or blank line has replaced it in most contexts. |
 
 ### Presentational
 
@@ -221,7 +221,7 @@ Thirteen marks that once organized the written word by hand. Some survive in mod
 |---|---|
 | **Original** | Reader's annotation mark directing attention to important text. Also used by printers from the 15th century onward as a section indicator and decorative element on title pages. |
 | **Modern** | The CSS cursor: pointer (the hand icon that appears over hyperlinks) is a direct digital descendant. Also survives in signage, wayfinding, and retro design. |
-| **Status** | **Repurposed** — No longer drawn by readers, but its form persists as the universal "clickable" cursor and in directional signage. |
+| **Status** | **Adapted** — No longer drawn by readers, but its form persists as the universal "clickable" cursor and in directional signage. |
 
 ### Presentational
 
@@ -298,7 +298,7 @@ Thirteen marks that once organized the written word by hand. Some survive in mod
 |---|---|
 | **Original** | Shorthand for the conjunction "and" in Latin text, especially in titles, headings, and informal writing. |
 | **Modern** | Universal conjunction symbol. Also a logical AND operator in programming (&&). Among the most frequently used typographic symbols in the world. |
-| **Status** | **Active** — Fully alive. One of the few ancient ligatures to survive as a standard keyboard character. |
+| **Status** | **Thriving** — Fully alive. One of the few ancient ligatures to survive as a standard keyboard character. |
 
 ### Presentational
 
@@ -337,7 +337,7 @@ Thirteen marks that once organized the written word by hand. Some survive in mod
 |---|---|
 | **Original** | Shorthand for "number" preceding a numeral in European texts (e.g., № 5). |
 | **Modern** | Standard in Russian and some European typographic conventions. Largely replaced by # or "No." in English. Present on Russian keyboard layouts. |
-| **Status** | **Active** — in non-English European contexts. Vestigial in English. |
+| **Status** | **Thriving** — in non-English European contexts. Endangered in English. |
 
 ### Presentational
 
@@ -375,7 +375,7 @@ Thirteen marks that once organized the written word by hand. Some survive in mod
 |---|---|
 | **Original** | Punctuation mark combining the question mark and exclamation mark into one glyph to end a rhetorical or surprised question (e.g., "You call that a typeface‽"). |
 | **Modern** | Never achieved mainstream adoption. Included in Unicode and supported by many typefaces, but rarely used outside of typographic enthusiasm and design contexts. |
-| **Status** | **Vestigial** — Born modern, never widely adopted. A cautionary tale: not all typographic inventions take root. |
+| **Status** | **Endangered** — Born modern, never widely adopted. A cautionary tale: not all typographic inventions take root. |
 
 ### Presentational
 
@@ -413,7 +413,7 @@ Thirteen marks that once organized the written word by hand. Some survive in mod
 |---|---|
 | **Original** | Word separator in Roman monumental inscriptions carved in CAPITALLETTERSWITHOUTSPACES. The dot sat at the midline between words. |
 | **Modern** | Used in Catalan to distinguish between a geminate L (l·l) and a double L. Also common as a typographic separator in navigation, breadcrumbs, and UI labels (e.g., "Home · About · Contact"). |
-| **Status** | **Repurposed** — No longer a word separator, but thriving as a UI delimiter and in specific orthographies. |
+| **Status** | **Adapted** — No longer a word separator, but thriving as a UI delimiter and in specific orthographies. |
 
 ### Presentational
 
@@ -457,7 +457,7 @@ Thirteen marks that once organized the written word by hand. Some survive in mod
 
 | | |
 |---|---|
-| **Best face** | Likely falls back to system font in most faces. Valuable precisely because of this — its visual absence demonstrates the ghost concept. |
+| **Best face** | Likely falls back to system font in most faces. Valuable precisely because of this — its visual absence demonstrates the concept. |
 | **Decorative use** | Evolutionary chain exhibit (display it alongside the pilcrow to show the transformation). Conceptual — showing what disappeared. |
 
 ### Sources
@@ -490,14 +490,14 @@ Thirteen marks that once organized the written word by hand. Some survive in mod
 |---|---|
 | **Original** | Attention marker in Japanese text, similar to the Western asterisk or dagger. Used before annotations, disclaimers, and supplementary notes. |
 | **Modern** | Still common in Japanese typography. Occasionally borrowed in Western design for its visual distinctiveness. |
-| **Status** | **Active** — in Japanese typographic contexts. Ornamental import in Western use. |
+| **Status** | **Thriving** — in Japanese typographic contexts. Ornamental import in Western use. |
 
 ### Presentational
 
 | | |
 |---|---|
 | **Best face** | Typically renders from CJK system fonts or a Unicode fallback rather than the Latin typefaces in the stack. |
-| **Decorative use** | Visual counterpoint (its non-Western origin makes it a useful contrast in a project about Western typographic ghosts). Annotation marker, inline callout. |
+| **Decorative use** | Visual counterpoint (its non-Western origin makes it a useful contrast in a project about Western typographic icons). Annotation marker, inline callout. |
 
 ### Sources
 

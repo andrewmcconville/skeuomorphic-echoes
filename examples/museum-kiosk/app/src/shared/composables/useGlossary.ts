@@ -9,10 +9,10 @@ export function scrollToEntry(id: string) {
 }
 
 export const statusLabel: Record<string, string> = {
-  active: 'Active',
-  vestigial: 'Vestigial',
+  thriving: 'Thriving',
+  endangered: 'Endangered',
   extinct: 'Extinct',
-  repurposed: 'Repurposed',
+  adapted: 'Adapted',
 }
 
 export { glossaryEntries }

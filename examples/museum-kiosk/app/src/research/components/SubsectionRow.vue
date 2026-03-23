@@ -8,13 +8,13 @@ withDefaults(defineProps<{
 </script>
 
 <template>
-  <div class="section-row section-row--nested">
-    <div v-if="label" class="section-label section-label--nested">
-      <h3 :class="['subsection-heading', { 'subsection-heading--light': lightLabel }]">
+  <div class="section__row">
+    <div v-if="label" class="section__label">
+      <h3 :class="['section__subheading', { 'section__subheading--light': lightLabel }]">
         {{ label }}
       </h3>
     </div>
-    <div class="section-content">
+    <div class="section__content">
       <slot />
     </div>
   </div>

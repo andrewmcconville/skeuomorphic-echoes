@@ -16,6 +16,7 @@ const id = route.params.id as string
 .step-page {
   max-width: 960px;
   margin: 0 auto;
+  padding: var(--space-2xl) var(--space-3xl);
 }
 
 .step-page__title {

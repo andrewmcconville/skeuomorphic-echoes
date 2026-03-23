@@ -39,29 +39,12 @@ import { steps } from './data/steps'
   </div>
 </template>
 
-<!-- Override kiosk-scale typography for web -->
 <style>
 @import './step-shared.css';
 </style>
 
 <style>
 .research-app {
-  --text-display-title: 700 48px/56px var(--font-display);
-  --text-display-specimen: 700 36px/44px var(--font-display);
-  --text-display-h1: 700 28px/36px var(--font-display);
-  --text-display-h2: 300 22px/28px var(--font-display);
-
-  --text-body-default: 400 18px/28px var(--font-body);
-  --text-body-small: 400 14px/20px var(--font-body);
-  --text-ui-button: 500 14px/14px var(--font-body);
-  --text-ui-nav: 500 13px/16px var(--font-body);
-  --text-ui-caption: 400 13px/20px var(--font-body);
-
-  --text-meta-era: 400 13px/18px var(--font-meta);
-  --text-meta-field-label: 400 12px/16px var(--font-meta);
-  --text-meta-field-value: 300 12px/16px var(--font-meta);
-  --text-meta-progress: 400 13px/16px var(--font-meta);
-
   --sidebar-width: 240px;
 }
 </style>
@@ -171,7 +154,7 @@ import { steps } from './data/steps'
 .research-app__main {
   flex: 1;
   margin-left: var(--sidebar-width);
-  padding: var(--space-2xl) var(--space-2xl);
+  padding: 0;
   min-height: 100vh;
 }
 </style>

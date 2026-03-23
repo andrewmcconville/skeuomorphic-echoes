@@ -9,8 +9,7 @@
 .hero {
   background: var(--warm-dark);
   color: var(--surface-200);
-  padding: var(--space-3xl) var(--space-2xl) var(--space-2xl);
-  margin: calc(-1 * var(--space-2xl)) calc(-1 * var(--space-2xl)) 0;
+  padding: var(--space-3xl) var(--space-3xl) var(--space-2xl);
   position: relative;
   overflow: hidden;
 }
@@ -29,8 +28,7 @@
 }
 
 .badge-label {
-  font: var(--text-display-title);
-  font-weight: 100;
+  font: var(--text-display-title-thin);
   font-size: 40px;
   line-height: 1;
   color: var(--warm-dark);
@@ -59,33 +57,14 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  max-width: 820px;
-  padding: var(--space-2xl) 0;
+  padding: var(--space-3xl);
 }
 
-.section-header,
-.section-body {
-  position: relative;
-  z-index: 1;
-}
-
-.section-row,
-.section-header {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: var(--space-2xl);
-  padding: var(--space-3xl) 0;
-  position: relative;
-}
-
-
-/* ---- Section panel (background behind content column) ---- */
-
-.section-panel {
+.section__panel {
   position: absolute;
   right: 0;
-  top: var(--space-4xl);
-  bottom: var(--space-4xl);
+  top: calc(-1 * var(--space-lg));
+  bottom: var(--space-2xl);
   width: 60%;
   background: var(--surface-300);
   opacity: var(--opacity-panel);
@@ -93,18 +72,32 @@
   pointer-events: none;
 }
 
-
-/* ---- Section label & heading ---- */
-
-.section-label {
-  grid-column: 1 / -1;
-  border-bottom: var(--stroke-medium) dotted var(--amber-500);
-  margin-bottom: var(--space-lg);
+.section__inner {
+  max-width: 820px;
   position: relative;
   z-index: 1;
 }
 
-.section-label::after {
+.section__row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: var(--space-2xl);
+  margin-bottom: var(--space-2xl);
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ---- Section header ---- */
+
+.section__header {
+  border-bottom: var(--stroke-medium) dotted var(--amber-500);
+  margin-bottom: var(--space-2xl);
+  position: relative;
+  z-index: 1;
+}
+
+.section__header::after {
   content: '';
   position: absolute;
   left: 0;
@@ -119,52 +112,40 @@
   pointer-events: none;
 }
 
-.section-heading {
-  font: var(--text-display-h2);
-  font-size: 52px;
-  line-height: 1;
+
+/* ---- Subsection label ---- */
+
+.section__label {
+  grid-column: 1;
+}
+
+.section__heading {
+  font: var(--text-display-title-thin);
   color: var(--amber-500);
   margin: 0;
   white-space: nowrap;
-  height: 0.87em;
+  height: 0.94em;
   overflow: hidden;
 }
 
-.section-heading--light {
+.section__heading--light {
   opacity: 0.6;
 }
 
 
 /* ---- Section content ---- */
 
-.section-content {
+.section__content {
   grid-column: 2;
   display: flex;
   flex-direction: column;
-  gap: var(--space-2xl);
+  gap: var(--_section-content-gap, var(--space-2xl));
   position: relative;
   z-index: 1;
 }
 
 
-/* ---- Nested rows (inside section-body) ---- */
-
-.section-row--nested {
-  padding: 0;
-  margin-bottom: var(--space-2xl);
-}
-
-.section-label--nested {
-  grid-column: 1;
-  border-bottom: none;
-  margin-bottom: 0;
-}
-
-.section-label--nested::after {
-  display: none;
-}
-
-.subsection-heading {
+.section__subheading {
   font: var(--text-meta-field-label);
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -174,7 +155,7 @@
   font-weight: 400;
 }
 
-.subsection-heading--light {
+.section__subheading--light {
   color: var(--surface-500);
 }
 
@@ -248,18 +229,6 @@
 
 /* ---- Section modifiers ---- */
 
-.section--full-width {
-  max-width: none;
-  margin-left: calc(-1 * var(--space-2xl));
-  margin-right: calc(-1 * var(--space-2xl));
-  padding: var(--space-lg) var(--space-2xl);
-}
-
-/* Constrains content inside full-width sections to match .section max-width */
-.section__inner {
-  max-width: 820px;
-}
-
 .section--dark {
   background: var(--warm-mid);
   color: var(--surface-200);
@@ -271,7 +240,7 @@
 
 .section--title {
   background: var(--warm-dark);
-  position: relative;
+  color: var(--surface-200);
   overflow: hidden;
 }
 

@@ -28,22 +28,17 @@ export interface TypeGroup {
   styles: TypeStyle[]
 }
 
-/** Component variant specification */
-export interface ComponentVariant {
-  name: string
-  spec: string
-}
-
-/** UI component definition */
-export interface ComponentDef {
-  name: string
-  description: string
-  variants: ComponentVariant[]
-}
-
 /** Overlay opacity specification */
 export interface OverlaySpec {
   name: string
+  value: string
+  usage: string
+}
+
+/** Spacing / structural token */
+export interface TokenSpec {
+  name: string
+  var: string
   value: string
   usage: string
 }

@@ -41,7 +41,7 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
 
     <!-- ===== PRIMARY — warm dark band ===== -->
     <SectionBlock heading="Primary Skeuomorph" variant="dark">
-      <template #headerContent>
+      <SubsectionRow>
         <h3 class="primary-title">The WYSIWYG<br />Page Editor</h3>
         <div class="evolution-timeline">
           <div
@@ -58,7 +58,7 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
           life — virtual pages mimic paper, clipboards reference paste-up
           boards, and font menus appear as mini type specimen books.
         </p>
-      </template>
+      </SubsectionRow>
     </SectionBlock>
 
     <!-- ===== SECONDARY ===== -->
@@ -145,7 +145,7 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
 
     <!-- ===== INSPIRATION — warm band ===== -->
     <SectionBlock heading="Inspiration" variant="warm">
-      <template #headerContent>
+      <SubsectionRow>
         <div class="inspiration-grid">
           <a
             v-for="site in inspirationSites"
@@ -160,7 +160,7 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
             <p class="inspiration-note">{{ site.note }}</p>
           </a>
         </div>
-      </template>
+      </SubsectionRow>
     </SectionBlock>
 
     <!-- ===== FORM FACTOR ===== -->
@@ -197,12 +197,12 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
     </SectionBlock>
 
     <!-- ===== TITLE — warm dark band ===== -->
-    <SectionBlock heading="Title" variant="dark" class="section--title">
-      <template #headerContent>
+    <SectionBlock heading="Title" variant="title">
+      <SubsectionRow>
         <div class="title-lockup">
           <em>Before the Prompt:<br />The Rise and Fall of Digital Icons</em>
         </div>
-      </template>
+      </SubsectionRow>
     </SectionBlock>
   </article>
 </template>

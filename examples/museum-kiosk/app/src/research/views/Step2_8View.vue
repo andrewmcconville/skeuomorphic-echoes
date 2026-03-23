@@ -3,7 +3,10 @@ import HeroHeader from '../components/HeroHeader.vue'
 import SectionBlock from '../components/SectionBlock.vue'
 import SubsectionRow from '../components/SubsectionRow.vue'
 import SpecsGrid from '../components/SpecsGrid.vue'
-import { colorGroups, overlays, typeGroups, components } from '../data/step-2-8'
+import {
+  colorGroups, overlays, typeGroups,
+  spacingTokens, strokeTokens, radiusTokens, shadowTokens,
+} from '../data/step-2-8'
 
 /** Parse CSS `extra` string (e.g. "text-transform: uppercase; letter-spacing: 0.08em") into a style object */
 function parseExtraStyles(extra?: string): Record<string, string> {
@@ -20,7 +23,7 @@ function parseExtraStyles(extra?: string): Record<string, string> {
 
 <template>
   <article class="ds-page">
-    <HeroHeader badge="2.8" lead="Color, typography, and component specifications for the museum kiosk prototype. All values map directly to Figma variables, text styles, and components.">
+    <HeroHeader badge="2.8" lead="Color, typography, spacing, and structural tokens in use across the research and prototype apps.">
       Design System
     </HeroHeader>
 
@@ -43,7 +46,7 @@ function parseExtraStyles(extra?: string): Record<string, string> {
         </div>
       </SubsectionRow>
 
-      <SubsectionRow label="Overlay Opacity">
+      <SubsectionRow label="Opacity">
         <SpecsGrid :items="overlays.map(o => ({ label: o.name, value: o.value }))" />
         <div class="overlay-usage">
           <p v-for="o in overlays" :key="o.name" class="overlay-usage__text">
@@ -80,18 +83,41 @@ function parseExtraStyles(extra?: string): Record<string, string> {
       </SubsectionRow>
     </SectionBlock>
 
-    <!-- ==================== COMPONENTS ==================== -->
-    <SectionBlock heading="Components" :panel="false">
-      <SubsectionRow
-        v-for="comp in components"
-        :key="comp.name"
-        :label="comp.name"
-      >
-        <p class="comp-desc">{{ comp.description }}</p>
-        <div class="variant-list">
-          <div v-for="v in comp.variants" :key="v.name" class="variant">
-            <span class="variant-name">{{ v.name }}</span>
-            <span class="variant-spec">{{ v.spec }}</span>
+    <!-- ==================== SPACING ==================== -->
+    <SectionBlock heading="Spacing" :panel="false">
+      <SubsectionRow label="Scale">
+        <div class="spacing-list">
+          <div v-for="t in spacingTokens" :key="t.var" class="spacing-item">
+            <div class="spacing-bar" :style="{ width: t.value }" />
+            <div class="spacing-meta">
+              <span class="token-name">{{ t.var }}</span>
+              <span class="token-value">{{ t.value }}</span>
+            </div>
+            <span class="token-usage">{{ t.usage }}</span>
+          </div>
+        </div>
+      </SubsectionRow>
+    </SectionBlock>
+
+    <!-- ==================== STRUCTURE ==================== -->
+    <SectionBlock heading="Structure" :panel="false">
+      <SubsectionRow label="Strokes">
+        <SpecsGrid :items="strokeTokens.map(t => ({ label: t.name, value: `${t.value} — ${t.usage}` }))" />
+      </SubsectionRow>
+
+      <SubsectionRow label="Radius">
+        <SpecsGrid :items="radiusTokens.map(t => ({ label: t.name, value: `${t.value} — ${t.usage}` }))" />
+      </SubsectionRow>
+
+      <SubsectionRow label="Shadows">
+        <div class="shadow-samples">
+          <div v-for="s in shadowTokens" :key="s.var" class="shadow-sample">
+            <div class="shadow-preview" :style="{ boxShadow: `${s.value} var(--surface-400)` }" />
+            <div class="shadow-meta">
+              <span class="token-name">{{ s.var }}</span>
+              <span class="token-value">{{ s.value }}</span>
+            </div>
+            <span class="token-usage">{{ s.usage }}</span>
           </div>
         </div>
       </SubsectionRow>
@@ -101,8 +127,8 @@ function parseExtraStyles(extra?: string): Record<string, string> {
 
 <style scoped>
 /* ---- Step 2.8 overrides ---- */
-.section-content {
-  gap: var(--space-lg);
+.ds-page {
+  --_section-content-gap: var(--space-lg);
 }
 
 /* ---- Color grid ---- */
@@ -198,42 +224,75 @@ function parseExtraStyles(extra?: string): Record<string, string> {
 
 .type-preview {
   color: var(--ink-900);
-  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-/* ---- Components ---- */
-.comp-desc {
-  font: var(--text-body-default);
-  font-size: 16px;
-}
-
-.variant-list {
+/* ---- Spacing scale ---- */
+.spacing-list {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: var(--space-md);
 }
 
-.variant {
+.spacing-item {
   display: flex;
   flex-direction: column;
   gap: var(--space-2xs);
-  padding: var(--space-md) 0;
-  border-bottom: var(--stroke-thin) solid var(--surface-400);
 }
 
-.variant:first-child {
-  padding-top: 0;
+.spacing-bar {
+  height: var(--space-sm);
+  background: var(--amber-500);
+  min-width: var(--space-2xs);
 }
 
-.variant-name {
-  font: var(--text-ui-nav);
-  font-weight: 500;
+.spacing-meta {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
 }
 
-.variant-spec {
-  font: var(--text-body-small);
+.token-name {
+  font: var(--text-meta-field-label);
   color: var(--gray-500);
+}
+
+.token-value {
+  font: var(--text-meta-field-value);
+  color: var(--gray-400);
+}
+
+.token-usage {
+  font: var(--text-meta-field-value);
+  font-size: 12px;
+  color: var(--gray-400);
+  line-height: 1.4;
+}
+
+/* ---- Shadow samples ---- */
+.shadow-samples {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.shadow-sample {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.shadow-preview {
+  width: 100%;
+  aspect-ratio: 1.6;
+  background: var(--surface-100);
+  border: var(--stroke-medium) solid var(--ink-900);
+}
+
+.shadow-meta {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
 }
 </style>

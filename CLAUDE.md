@@ -15,7 +15,7 @@ npx playwright test # visual regression tests (Playwright)
 
 ## Architecture
 
-- docs/briefs/ — Canvas LMS HTML fragments (no doctype/body, paste directly into Canvas raw editor)
+- docs/briefs/ — Canvas LMS HTML fragments (currently empty; no doctype/body, paste directly into Canvas raw editor)
 - examples/museum-kiosk/app/ — Vue 3 + TypeScript + Vite multi-page app
   - index.html — Landing page linking to research + prototype
   - research.html — Process book (step views: /step/2.1, /step/2.2, etc.)
@@ -33,7 +33,7 @@ npx playwright test # visual regression tests (Playwright)
     - data/types.ts — Barrel re-export of research TypeScript types from types/ subdirectory (common, step-2-3, step-2-4, step-2-8)
   - src/prototype/ — Prototype app views and router
   - tests/ — Playwright test specs (visual-regression.spec.ts)
-- examples/museum-kiosk/docs/ — Reference markdown documents (glossary.md, design-direction-brief.md, specimen-metadata-fields.md, 2.1–2.8 step content)
+- examples/museum-kiosk/docs/ — Reference markdown documents (glossary.md, design-direction-brief.md, artifact-metadata-fields.md, 2.1–2.8 step content)
 - examples/museum-kiosk/tests/ — Playwright test screenshots (visual baselines)
 
 ## Conventions
@@ -41,7 +41,7 @@ npx playwright test # visual regression tests (Playwright)
 - Hash routing (createWebHashHistory) — required for GitHub Pages
 - Path aliases: @shared, @research, @prototype
 - OKLCH color space for all color values
-- IBM Plex family: Serif (display), Sans (body/UI), Mono (metadata/labels)
+- IBM Plex family: Serif (heading), Sans (body), Mono (metadata)
 - Use "Step" not "Assignment" in exemplar apps (e.g., "Step 2.1")
 - Implemented step views: 2.1, 2.2, 2.3, 2.4, 2.8 — remaining steps use generic StepView placeholder
 - Non-step pages (Glossary) go under "Reference" nav section in research sidebar
@@ -52,14 +52,18 @@ npx playwright test # visual regression tests (Playwright)
 - Section block BEM: `.section` (outer), `.section__inner` (max-width constraint), `.section__header` (heading border), `.section__row` / `.section__label` / `.section__content` (grid layout), `.section__panel` (decorative background)
 - Section variant modifiers: `--dark`, `--warm`, `--title` — set background/color on `.section`
 - Typography tokens at `:root` in typography.css at research scale — no per-app overrides
-- `--text-display-title-thin` (weight 100) used for section headings
+- `--text-display-610` (weight 100) used for section headings
 - Spacing scale: 2, 4, 8, 16, 24, 32, 48, 64, 96 (`--space-2xs` through `--space-4xl`)
-- Surface scale: 5-step (`--surface-100` lightest through `--surface-500`), consistent hue/chroma, lightness only varies
+- Color groups: Emphasis (`--primary-500`, `--secondary-500`), Surface Light (`--surface-light-100` through `400`), Surface Dark (`--surface-dark-600` through `800`), Ink (`--ink-100` through `900`, slight cool bias)
+- Typography tokens use numbered convention: hundreds = size tier, tens = weight/10 (e.g., `--text-display-670` = largest size + Bold 700, `--text-body-440` = mid size + Regular 400)
+- Surface tokens for fills/backgrounds only; ink tokens for text, borders, and lines
+- Box-shadow colors use `--surface-light-400` (warm-tinted to match the surface they sit on)
 - Shared `.card` class in step-shared.css — extend with component-specific classes, don't duplicate card styles
 - Stroke tokens: `--stroke-thin` (1px), `--stroke-medium` (2px) — always use vars for borders
 - Step 2.8 design system page documents only tokens actively used in styling — add/remove entries as usage changes
 - Vocabulary: "Artifact" (detail page), "Artifact Collection" (list page), "Skeuomorph Room" (room landing) — never "Interior Page" or "Room Landing" alone
 - Glyph status terms use conservation biology language: thriving, endangered, extinct, adapted
+- Glyph status badges use `--primary-500` (thriving/adapted) and `--secondary-500` (endangered) — no dedicated status colors
 
 ## Testing
 

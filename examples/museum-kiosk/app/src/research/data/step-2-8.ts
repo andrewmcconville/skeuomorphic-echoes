@@ -2,49 +2,39 @@ import type { ColorGroup, TypeGroup, OverlaySpec, TokenSpec } from './types/step
 
 export const colorGroups: ColorGroup[] = [
   {
-    name: 'Primary Surface',
+    name: 'Emphasis',
     colors: [
-      { name: 'Surface-100', var: '--surface-100', hex: '#FAF7F2', usage: 'Card fills, modal backgrounds, lightest surface' },
-      { name: 'Surface-200', var: '--surface-200', hex: '#F5F0E8', usage: 'Default page ground, body background' },
-      { name: 'Surface-300', var: '--surface-300', hex: '#EDE8DC', usage: 'Alternate ground for inset panels, warm bands' },
-      { name: 'Surface-400', var: '--surface-400', hex: '#D8D3CA', usage: 'Column dividers, borders, subtle separation' },
-      { name: 'Surface-500', var: '--surface-500', hex: '#C8C2B8', usage: 'Disabled card fills, empty-state placeholders, muted text' },
+      { name: 'Primary-500', var: '--primary-500', hex: '#E8A838', usage: 'Section headings, hero badges, status badges, spacing bars' },
+      { name: 'Secondary-500', var: '--secondary-500', hex: '#D46A38', usage: 'Glossary accents, timeline markers, hover states, era tags' },
     ],
   },
   {
-    name: 'Accent',
+    name: 'Surface Light',
     colors: [
-      { name: 'Amber-500', var: '--amber-500', hex: '#E8A838', usage: 'Primary zone highlight, active tab, section headings' },
-      { name: 'Orange-500', var: '--orange-500', hex: '#D46A38', usage: 'Secondary highlight, glossary accents, era tags' },
+      { name: 'Surface-Light-100', var: '--surface-light-100', hex: '#FAF7F2', usage: 'Card fills, modal backgrounds, lightest surface' },
+      { name: 'Surface-Light-200', var: '--surface-light-200', hex: '#F5F0E8', usage: 'Page ground, sidebar background' },
+      { name: 'Surface-Light-300', var: '--surface-light-300', hex: '#EDE8DC', usage: 'Inset panels, warm bands, nav hover, glossary TOC' },
+      { name: 'Surface-Light-400', var: '--surface-light-400', hex: '#D8D3CA', usage: 'Tag fills' },
     ],
   },
   {
-    name: 'Structure',
+    name: 'Surface Dark',
     colors: [
-      { name: 'Ink-900', var: '--ink-900', hex: '#1A1A1A', usage: 'Primary text, borders, card strokes, button outlines' },
-      { name: 'Ink-800', var: '--ink-800', hex: '#2A2A2A', usage: 'Active nav state fill, pressed button background' },
-      { name: 'Gray-500', var: '--gray-500', hex: '#6B6B6B', usage: 'Secondary text, metadata labels, scale marks' },
-      { name: 'Gray-400', var: '--gray-400', hex: '#8A8A8A', usage: 'Tertiary text, placeholder copy, subsection headings' },
+      { name: 'Surface-Dark-600', var: '--surface-dark-600', hex: '#524D47', usage: 'Borders and dotted leaders on dark bands' },
+      { name: 'Surface-Dark-700', var: '--surface-dark-700', hex: '#4A4540', usage: 'Dark section bands' },
+      { name: 'Surface-Dark-800', var: '--surface-dark-800', hex: '#3A3530', usage: 'Hero backgrounds, title section bands, badge text' },
     ],
   },
   {
-    name: 'Warm Darks',
+    name: 'Ink',
     colors: [
-      { name: 'Warm-Dark', var: '--warm-dark', hex: '#3A3530', usage: 'Hero backgrounds, title section bands' },
-      { name: 'Warm-Mid', var: '--warm-mid', hex: '#4A4540', usage: 'Dark content bands, tonal contrast panels' },
-      { name: 'Warm-Border', var: '--warm-border', hex: '#524D47', usage: 'Borders and dotted leaders on dark bands' },
-    ],
-  },
-  {
-    name: 'Status',
-    colors: [
-      { name: 'Status-Thriving', var: '--status-thriving', hex: '#4A8A4A', usage: 'Thriving glyph status badge text' },
-      { name: 'Status-Thriving BG', var: '--status-thriving-bg', hex: '#4A8A4A1A', usage: 'Thriving glyph status badge background' },
-      { name: 'Status-Endangered', var: '--status-endangered', hex: '#8A4A3A', usage: 'Endangered glyph status badge text' },
-      { name: 'Status-Endangered BG', var: '--status-endangered-bg', hex: '#8A4A3A1A', usage: 'Endangered glyph status badge background' },
-      { name: 'Status-Extinct BG', var: '--status-extinct-bg', hex: '#0000000D', usage: 'Extinct glyph status badge background' },
-      { name: 'Status-Adapted', var: '--status-adapted', hex: '#4A5A8A', usage: 'Adapted glyph status badge text' },
-      { name: 'Status-Adapted BG', var: '--status-adapted-bg', hex: '#4A5A8A1A', usage: 'Adapted glyph status badge background' },
+      { name: 'Ink-900', var: '--ink-900', hex: '#1A1A1A', usage: 'Primary text, card strokes, active nav background' },
+      { name: 'Ink-800', var: '--ink-800', hex: '#2A2A2A', usage: 'Quote text, era badge background, secondary dark text' },
+      { name: 'Ink-500', var: '--ink-500', hex: '#6B6B6B', usage: 'Secondary text, metadata labels, scale marks' },
+      { name: 'Ink-400', var: '--ink-400', hex: '#8A8A8A', usage: 'Tertiary text, placeholder copy, subsection headings' },
+      { name: 'Ink-300', var: '--ink-300', hex: '#C8C2B8', usage: 'Muted text, dotted leaders, outline tag borders, card numbers' },
+      { name: 'Ink-200', var: '--ink-200', hex: '#D8D3CA', usage: 'Subtle borders, dividers, rationale borders' },
+      { name: 'Ink-100', var: '--ink-100', hex: '#F0EDE8', usage: 'Light text on dark bands, hero titles, active nav text' },
     ],
   },
 ]
@@ -56,28 +46,28 @@ export const overlays: OverlaySpec[] = [
 
 export const typeGroups: TypeGroup[] = [
   {
-    name: 'Display — IBM Plex Serif',
+    name: 'Heading',
     styles: [
-      { name: 'Display / Title', token: '--text-display-title', weight: 'Bold', size: '48 / 56', sample: 'Title Regular' },
-      { name: 'Display / Title Thin', token: '--text-display-title-thin', weight: 'Thin', size: '48 / 56', sample: 'Title Thin' },
-      { name: 'Display / Heading 1', token: '--text-display-h1', weight: 'Bold', size: '28 / 36', sample: 'Heading 1' },
-      { name: 'Display / Heading 2', token: '--text-display-h2', weight: 'Light', size: '22 / 28', sample: 'Heading 2' },
+      { name: 'Heading-670', size: '48 / 56', family: 'IBM Plex Serif', weight: 'Bold', token: '--text-display-670', sample: 'Title Bold' },
+      { name: 'Heading-610', size: '48 / 56', family: 'IBM Plex Serif', weight: 'Thin', token: '--text-display-610', sample: 'Title Thin' },
+      { name: 'Heading-470', size: '28 / 36', family: 'IBM Plex Serif', weight: 'Bold', token: '--text-display-470', sample: 'Heading 1' },
+      { name: 'Heading-230', size: '22 / 28', family: 'IBM Plex Serif', weight: 'Light', token: '--text-display-230', sample: 'Heading 2' },
     ],
   },
   {
-    name: 'Body / UI — IBM Plex Sans',
+    name: 'Body',
     styles: [
-      { name: 'Body / Default', token: '--text-body-default', weight: 'Regular', size: '18 / 28', sample: 'The quick brown fox jumps over the lazy dog.' },
-      { name: 'Body / Small', token: '--text-body-small', weight: 'Regular', size: '14 / 20', sample: 'The quick brown fox jumps over the lazy dog.' },
-      { name: 'UI / Nav Label', token: '--text-ui-nav', weight: 'Medium', size: '13 / 16', sample: 'The quick brown fox jumps over the lazy dog.' },
+      { name: 'Body-640', size: '18 / 28', family: 'IBM Plex Sans', weight: 'Regular', token: '--text-body-640', sample: 'The quick brown fox jumps over the lazy dog.' },
+      { name: 'Body-440', size: '14 / 20', family: 'IBM Plex Sans', weight: 'Regular', token: '--text-body-440', sample: 'The quick brown fox jumps over the lazy dog.' },
+      { name: 'Body-250', size: '13 / 16', family: 'IBM Plex Sans', weight: 'Medium', token: '--text-body-250', sample: 'The quick brown fox jumps over the lazy dog.' },
     ],
   },
   {
-    name: 'Metadata — IBM Plex Mono',
+    name: 'Metadata',
     styles: [
-      { name: 'Meta / Era Tag', token: '--text-meta-era', weight: 'Regular', size: '13 / 18', sample: 'MECHANICAL · c. 1450', extra: 'text-transform: uppercase; letter-spacing: 0.1em' },
-      { name: 'Meta / Field Label', token: '--text-meta-field-label', weight: 'Regular', size: '12 / 16', sample: 'Medium, Dimensions, Weight' },
-      { name: 'Meta / Field Value', token: '--text-meta-field-value', weight: 'Light', size: '12 / 16', sample: 'Cast iron, 280 × 420 mm, 12.4 kg' },
+      { name: 'Meta-640', size: '13 / 18', family: 'IBM Plex Mono', weight: 'Regular', token: '--text-meta-640', sample: 'MECHANICAL · c. 1450', extra: 'text-transform: uppercase; letter-spacing: 0.1em' },
+      { name: 'Meta-440', size: '12 / 16', family: 'IBM Plex Mono', weight: 'Regular', token: '--text-meta-440', sample: 'Medium, Dimensions, Weight' },
+      { name: 'Meta-230', size: '12 / 16', family: 'IBM Plex Mono', weight: 'Light', token: '--text-meta-230', sample: 'Cast iron, 280 × 420 mm, 12.4 kg' },
     ],
   },
 ]

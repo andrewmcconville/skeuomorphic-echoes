@@ -1,40 +1,31 @@
 :root {
-  /* Primary Surface */
-  --surface-100: oklch(0.97 0.01 85);
-  --surface-200: oklch(0.95 0.01 85);
-  --surface-300: oklch(0.92 0.01 85);
-  --surface-400: oklch(0.86 0.01 85);
-  --surface-500: oklch(0.81 0.01 85);
-
-  /* Accent — Warm Overlay Spectrum */
+  /* Emphasis — Warm Overlay Spectrum */
   --amber-500: oklch(0.76 0.14 75);
-  --amber-700: oklch(0.70 0.14 70);
   --orange-500: oklch(0.63 0.15 50);
-  --orange-700: oklch(0.58 0.15 45);
 
-  /* Structure */
-  --ink-900: oklch(0.18 0 0);
-  --ink-800: oklch(0.24 0 0);
-  --gray-500: oklch(0.50 0 0);
-  --gray-400: oklch(0.61 0 0);
+  /* Semantic accent aliases */
+  --primary-500: var(--amber-500);
+  --secondary-500: var(--orange-500);
 
-  /* Warm Darks — editorial bands, panels */
-  --warm-dark: oklch(0.30 0.02 60);
-  --warm-mid: oklch(0.37 0.02 60);
-  --warm-border: oklch(0.41 0.02 55);
+  /* Surface Light */
+  --surface-light-100: oklch(0.97 0.01 85);
+  --surface-light-200: oklch(0.95 0.01 85);
+  --surface-light-300: oklch(0.92 0.01 85);
+  --surface-light-400: oklch(0.86 0.01 85);
 
-  /* Semantic */
-  --collected-green: oklch(0.53 0.07 145);
-  --locked-brown: oklch(0.50 0.10 55);
+  /* Surface Dark — editorial bands, panels */
+  --surface-dark-600: oklch(0.41 0.02 55);
+  --surface-dark-700: oklch(0.37 0.02 60);
+  --surface-dark-800: oklch(0.30 0.02 60);
 
-  /* Status — glyph lifecycle badges */
-  --status-thriving: oklch(0.55 0.1 145);
-  --status-thriving-bg: oklch(0.55 0.1 145 / 0.1);
-  --status-endangered: oklch(0.5 0.1 25);
-  --status-endangered-bg: oklch(0.5 0.1 25 / 0.1);
-  --status-extinct-bg: oklch(0 0 0 / 0.05);
-  --status-adapted: oklch(0.5 0.1 260);
-  --status-adapted-bg: oklch(0.5 0.1 260 / 0.1);
+  /* Ink — slight cool bias */
+  --ink-900: oklch(0.18 0.04 300);
+  --ink-800: oklch(0.24 0.03 300);
+  --ink-500: oklch(0.50 0.02 300);
+  --ink-400: oklch(0.61 0.010 300);
+  --ink-300: oklch(0.81 0.008 300);
+  --ink-200: oklch(0.86 0.006 300);
+  --ink-100: oklch(0.95 0.004 300);
 
   /* Overlay Opacity */
   --zone-overlay-opacity: 0.5;

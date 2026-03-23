@@ -65,7 +65,7 @@ import { steps } from './data/steps'
   overflow-y: auto;
   padding: var(--space-xl) var(--space-lg);
   border-right: var(--stroke-medium) solid var(--ink-900);
-  background: var(--surface-200);
+  background: var(--surface-light-200);
   display: flex;
   flex-direction: column;
   gap: var(--space-xl);
@@ -76,19 +76,19 @@ import { steps } from './data/steps'
   flex-direction: column;
   gap: var(--space-2xs);
   padding-bottom: var(--space-lg);
-  border-bottom: var(--stroke-thin) solid var(--surface-400);
+  border-bottom: var(--stroke-thin) solid var(--ink-200);
 }
 
 .logo-title {
-  font: var(--text-display-h2);
+  font: var(--text-display-230);
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
 }
 
 .logo-sub {
-  font: var(--text-meta-field-label);
-  color: var(--gray-500);
+  font: var(--text-meta-440);
+  color: var(--ink-500);
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -100,10 +100,10 @@ import { steps } from './data/steps'
 }
 
 .nav-label {
-  font: var(--text-meta-field-label);
+  font: var(--text-meta-440);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--gray-400);
+  color: var(--ink-400);
   padding: var(--space-sm) var(--space-sm);
   margin-bottom: var(--space-xs);
 }
@@ -114,23 +114,23 @@ import { steps } from './data/steps'
   gap: var(--space-sm);
   padding: var(--space-xs) var(--space-sm);
   border-radius: var(--radius-sm);
-  font: var(--text-ui-nav);
-  color: var(--gray-500);
+  font: var(--text-body-250);
+  color: var(--ink-500);
   transition: background 0.15s, color 0.15s;
 }
 
 .nav-step:hover {
-  background: var(--surface-300);
+  background: var(--surface-light-300);
   color: var(--ink-900);
 }
 
 .nav-step.router-link-exact-active {
   background: var(--ink-900);
-  color: var(--surface-200);
+  color: var(--ink-100);
 }
 
 .nav-step-id {
-  font: var(--text-meta-field-value);
+  font: var(--text-meta-230);
   min-width: 24px;
   color: inherit;
   opacity: var(--opacity-muted);
@@ -147,7 +147,7 @@ import { steps } from './data/steps'
 .sidebar-nav--reference {
   padding-top: var(--space-md);
   margin-top: var(--space-md);
-  border-top: var(--stroke-thin) solid var(--surface-400);
+  border-top: var(--stroke-thin) solid var(--ink-200);
 }
 
 /* ---- Main ---- */

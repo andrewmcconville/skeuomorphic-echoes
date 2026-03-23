@@ -15,9 +15,10 @@ export interface ColorGroup {
 /** Typography style sample */
 export interface TypeStyle {
   name: string
-  token: string
-  weight: string
   size: string
+  family: string
+  weight: string
+  token: string
   sample: string
   extra?: string
 }

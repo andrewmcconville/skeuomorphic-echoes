@@ -18,7 +18,7 @@ withDefaults(defineProps<{
   >
     <div class="section__inner">
       <div v-if="panel && variant === 'default'" class="section__panel"></div>
-      <header class="section__header">
+      <header :class="['section__header', { 'section__header--light': variant === 'dark' || variant === 'title' }]">
         <h2
           :class="[
             'section__heading',

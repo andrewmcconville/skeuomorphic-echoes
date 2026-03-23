@@ -210,8 +210,8 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
 <style scoped>
 /* ---- Primary — warm dark band content ---- */
 .primary-title {
-  font: var(--text-display-title);
-  color: var(--surface-200);
+  font: var(--text-display-670);
+  color: var(--ink-100);
   margin: 0;
 }
 
@@ -219,7 +219,7 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
   display: flex;
   flex-direction: column;
   gap: 0;
-  border-left: var(--stroke-medium) solid var(--orange-500);
+  border-left: var(--stroke-medium) solid var(--secondary-500);
   margin-left: var(--space-sm);
   padding: var(--space-sm) 0;
   background: linear-gradient(
@@ -244,20 +244,20 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
   top: 50%;
   width: var(--space-sm);
   height: var(--space-sm);
-  background: var(--orange-500);
+  background: var(--secondary-500);
   border-radius: 50%;
   transform: translateY(-50%);
 }
 
 .evo-marker {
-  font: var(--text-meta-field-value);
-  color: var(--surface-500);
+  font: var(--text-meta-230);
+  color: var(--ink-300);
   min-width: 20px;
 }
 
 .evo-name {
-  font: var(--text-body-default);
-  color: var(--surface-200);
+  font: var(--text-body-640);
+  color: var(--ink-200);
 }
 
 /* ---- Secondary ---- */
@@ -272,7 +272,7 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
   align-items: baseline;
   gap: var(--space-sm);
   margin-bottom: var(--space-sm);
-  font: var(--text-ui-nav);
+  font: var(--text-body-250);
   font-size: 14px;
 }
 
@@ -282,12 +282,12 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
 }
 
 .mapping-arrow {
-  color: var(--orange-500);
+  color: var(--secondary-500);
 }
 
 .card-body__text {
-  font: var(--text-body-small);
-  color: var(--gray-500);
+  font: var(--text-body-440);
+  color: var(--ink-500);
 }
 
 /* ---- Inspiration cards (on warm band) ---- */
@@ -303,19 +303,19 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
   gap: var(--space-sm);
   padding: var(--space-lg);
   border: var(--stroke-medium) solid var(--ink-900);
-  background: var(--surface-100);
+  background: var(--surface-light-100);
   position: relative;
-  box-shadow: var(--shadow-card-sm) var(--surface-400);
+  box-shadow: var(--shadow-card-sm) var(--surface-light-400);
   transition: transform 0.15s, box-shadow 0.15s;
 }
 
 .inspiration-card:hover {
   transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-card-hover) var(--surface-500);
+  box-shadow: var(--shadow-card-hover) var(--surface-light-400);
 }
 
 .inspiration-name {
-  font: var(--text-ui-nav);
+  font: var(--text-body-250);
   font-size: 14px;
   font-weight: 500;
 }
@@ -325,26 +325,26 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
   top: var(--space-md);
   right: var(--space-md);
   font-size: 14px;
-  color: var(--gray-400);
+  color: var(--ink-400);
   transition: color 0.15s;
 }
 
 .inspiration-card:hover .inspiration-arrow {
-  color: var(--orange-500);
+  color: var(--secondary-500);
 }
 
 .inspiration-note {
-  font: var(--text-body-small);
+  font: var(--text-body-440);
   font-size: 13px;
-  color: var(--gray-500);
+  color: var(--ink-500);
 }
 
 /* ---- Title lockup — warm dark band ---- */
 .title-lockup {
-  font: var(--text-display-h1);
+  font: var(--text-display-470);
   font-size: 36px;
   line-height: 44px;
-  color: var(--surface-200);
+  color: var(--ink-100);
   position: relative;
   padding-left: var(--space-2xl);
 }

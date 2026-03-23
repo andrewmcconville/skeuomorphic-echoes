@@ -72,11 +72,9 @@ function parseExtraStyles(extra?: string): Record<string, string> {
               {{ s.sample }}
             </p>
             <div class="type-meta">
-              <span class="type-name">{{ s.name }}</span>
-              <div class="type-specs">
-                <span class="type-spec">{{ s.weight }}</span>
-                <span class="type-spec">{{ s.size }}</span>
-              </div>
+              <span class="type-label">{{ s.name }}</span>
+              <span class="type-name">{{ s.family }} · {{ s.weight }}</span>
+              <span class="type-spec">{{ s.size }}</span>
             </div>
           </div>
         </div>
@@ -112,7 +110,7 @@ function parseExtraStyles(extra?: string): Record<string, string> {
       <SubsectionRow label="Shadows">
         <div class="shadow-samples">
           <div v-for="s in shadowTokens" :key="s.var" class="shadow-sample">
-            <div class="shadow-preview" :style="{ boxShadow: `${s.value} var(--surface-400)` }" />
+            <div class="shadow-preview" :style="{ boxShadow: `${s.value} var(--surface-light-400)` }" />
             <div class="shadow-meta">
               <span class="token-name">{{ s.var }}</span>
               <span class="token-value">{{ s.value }}</span>
@@ -134,7 +132,7 @@ function parseExtraStyles(extra?: string): Record<string, string> {
 /* ---- Color grid ---- */
 .color-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-md);
 }
 
@@ -146,8 +144,8 @@ function parseExtraStyles(extra?: string): Record<string, string> {
 
 .swatch {
   width: 100%;
-  aspect-ratio: 1.2;
-  border: var(--stroke-thin) solid var(--surface-400);
+  aspect-ratio: 1.5;
+  border: var(--stroke-thin) solid var(--ink-200);
 }
 
 .swatch-info {
@@ -157,24 +155,24 @@ function parseExtraStyles(extra?: string): Record<string, string> {
 }
 
 .color-name {
-  font: var(--text-ui-nav);
+  font: var(--text-body-250);
 }
 
 .color-hex {
-  font: var(--text-meta-field-value);
-  color: var(--gray-500);
+  font: var(--text-meta-230);
+  color: var(--ink-500);
 }
 
 .color-usage {
-  font: var(--text-meta-field-value);
+  font: var(--text-meta-230);
   font-size: 12px;
-  color: var(--gray-400);
+  color: var(--ink-400);
   line-height: 1.4;
 }
 
 .overlay-usage__text {
-  font: var(--text-body-small);
-  color: var(--gray-500);
+  font: var(--text-body-440);
+  color: var(--ink-500);
   margin-bottom: var(--space-xs);
 }
 
@@ -191,7 +189,7 @@ function parseExtraStyles(extra?: string): Record<string, string> {
 
 .type-sample {
   padding: var(--space-lg) 0;
-  border-bottom: var(--stroke-thin) solid var(--surface-400);
+  border-bottom: var(--stroke-thin) solid var(--ink-200);
 }
 
 .type-sample:first-child {
@@ -200,16 +198,21 @@ function parseExtraStyles(extra?: string): Record<string, string> {
 
 .type-meta {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: var(--space-2xs);
   margin-top: var(--space-sm);
 }
 
+.type-label {
+  font: var(--text-body-250);
+  color: var(--ink-900);
+}
+
 .type-name {
-  font: var(--text-meta-field-label);
+  font: var(--text-meta-440);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--gray-500);
+  color: var(--ink-500);
 }
 
 .type-specs {
@@ -218,8 +221,8 @@ function parseExtraStyles(extra?: string): Record<string, string> {
 }
 
 .type-spec {
-  font: var(--text-meta-field-value);
-  color: var(--gray-400);
+  font: var(--text-meta-230);
+  color: var(--ink-400);
 }
 
 .type-preview {
@@ -243,7 +246,7 @@ function parseExtraStyles(extra?: string): Record<string, string> {
 
 .spacing-bar {
   height: var(--space-sm);
-  background: var(--amber-500);
+  background: var(--primary-500);
   min-width: var(--space-2xs);
 }
 
@@ -254,19 +257,19 @@ function parseExtraStyles(extra?: string): Record<string, string> {
 }
 
 .token-name {
-  font: var(--text-meta-field-label);
-  color: var(--gray-500);
+  font: var(--text-meta-440);
+  color: var(--ink-500);
 }
 
 .token-value {
-  font: var(--text-meta-field-value);
-  color: var(--gray-400);
+  font: var(--text-meta-230);
+  color: var(--ink-400);
 }
 
 .token-usage {
-  font: var(--text-meta-field-value);
+  font: var(--text-meta-230);
   font-size: 12px;
-  color: var(--gray-400);
+  color: var(--ink-400);
   line-height: 1.4;
 }
 
@@ -286,7 +289,7 @@ function parseExtraStyles(extra?: string): Record<string, string> {
 .shadow-preview {
   width: 100%;
   aspect-ratio: 1.6;
-  background: var(--surface-100);
+  background: var(--surface-light-100);
   border: var(--stroke-medium) solid var(--ink-900);
 }
 

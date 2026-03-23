@@ -17,13 +17,13 @@
 }
 
 .placeholder__title {
-  font: var(--text-display-title);
+  font: var(--text-display-670);
 }
 
 .placeholder__note {
-  font: var(--text-meta-era);
+  font: var(--text-meta-640);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--orange-500);
+  color: var(--secondary-500);
 }
 </style>

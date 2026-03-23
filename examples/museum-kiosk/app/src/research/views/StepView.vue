@@ -20,16 +20,16 @@ const id = route.params.id as string
 }
 
 .step-page__title {
-  font: var(--text-display-h1);
+  font: var(--text-display-470);
   margin-bottom: var(--space-lg);
 }
 
 .placeholder {
-  font: var(--text-body-default);
-  color: var(--gray-500);
+  font: var(--text-body-640);
+  color: var(--ink-500);
   padding: var(--space-2xl);
-  background: var(--surface-300);
-  border: var(--stroke-thin) dashed var(--surface-500);
+  background: var(--surface-light-300);
+  border: var(--stroke-thin) dashed var(--ink-300);
   border-radius: var(--radius-md);
   text-align: center;
 }

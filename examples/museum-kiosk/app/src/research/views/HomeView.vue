@@ -44,19 +44,19 @@ import { steps } from '../data/steps'
 }
 
 .home-hero__title {
-  font: var(--text-display-title);
+  font: var(--text-display-670);
   margin-bottom: var(--space-xs);
 }
 
 .subtitle {
-  font: var(--text-display-h2);
-  color: var(--gray-500);
+  font: var(--text-display-230);
+  color: var(--ink-500);
   margin-bottom: var(--space-lg);
 }
 
 .description {
-  font: var(--text-body-default);
-  color: var(--gray-500);
+  font: var(--text-body-640);
+  color: var(--ink-500);
   max-width: 560px;
 }
 
@@ -77,12 +77,12 @@ import { steps } from '../data/steps'
   align-items: baseline;
   gap: var(--space-sm);
   padding: var(--space-md) 0;
-  border-bottom: var(--stroke-thin) solid var(--surface-400);
+  border-bottom: var(--stroke-thin) solid var(--ink-200);
   transition: padding-left 0.15s;
 }
 
 .step-row:first-child {
-  border-top: var(--stroke-thin) solid var(--surface-400);
+  border-top: var(--stroke-thin) solid var(--ink-200);
 }
 
 .step-row:hover {
@@ -90,23 +90,23 @@ import { steps } from '../data/steps'
 }
 
 .step-id {
-  font: var(--text-meta-field-value);
-  color: var(--gray-400);
+  font: var(--text-meta-230);
+  color: var(--ink-400);
   min-width: 28px;
 }
 
 .step-dots {
   flex: 1;
-  border-bottom: var(--stroke-thin) dotted var(--surface-500);
+  border-bottom: var(--stroke-thin) dotted var(--ink-300);
   margin-bottom: 3px;
 }
 
 .step-title {
-  font: var(--text-body-default);
+  font: var(--text-body-640);
   font-size: 16px;
 }
 
 .step-row:hover .step-id {
-  color: var(--orange-500);
+  color: var(--secondary-500);
 }
 </style>

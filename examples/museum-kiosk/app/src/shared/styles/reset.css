@@ -12,9 +12,9 @@ html {
 }
 
 body {
-  font: var(--text-body-default);
+  font: var(--text-body-640);
   color: var(--ink-900);
-  background: var(--surface-200);
+  background: var(--surface-light-200);
 }
 
 img,

@@ -5,22 +5,18 @@
   --font-meta: 'IBM Plex Mono', monospace;
 
   /* Display — IBM Plex Serif */
-  --text-display-title: 700 48px/56px var(--font-display);
-  --text-display-title-thin: 100 48px/56px var(--font-display);
-  --text-display-specimen: 700 36px/44px var(--font-display);
-  --text-display-h1: 700 28px/36px var(--font-display);
-  --text-display-h2: 300 22px/28px var(--font-display);
+  --text-display-670: 700 48px/56px var(--font-display);
+  --text-display-610: 100 48px/56px var(--font-display);
+  --text-display-470: 700 28px/36px var(--font-display);
+  --text-display-230: 300 22px/28px var(--font-display);
 
-  /* Body / UI — IBM Plex Sans */
-  --text-body-default: 400 18px/28px var(--font-body);
-  --text-body-small: 400 14px/20px var(--font-body);
-  --text-ui-button: 500 14px/14px var(--font-body);
-  --text-ui-nav: 500 13px/16px var(--font-body);
-  --text-ui-caption: 400 13px/20px var(--font-body);
+  /* Body — IBM Plex Sans */
+  --text-body-640: 400 18px/28px var(--font-body);
+  --text-body-440: 400 14px/20px var(--font-body);
+  --text-body-250: 500 13px/16px var(--font-body);
 
   /* Metadata — IBM Plex Mono */
-  --text-meta-era: 400 13px/18px var(--font-meta);
-  --text-meta-field-label: 400 12px/16px var(--font-meta);
-  --text-meta-field-value: 300 12px/16px var(--font-meta);
-  --text-meta-progress: 400 13px/16px var(--font-meta);
+  --text-meta-640: 400 13px/18px var(--font-meta);
+  --text-meta-440: 400 12px/16px var(--font-meta);
+  --text-meta-230: 300 12px/16px var(--font-meta);
 }

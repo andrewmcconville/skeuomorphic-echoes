@@ -189,18 +189,18 @@ import {
 
 .tree-connector {
   font-size: 12px;
-  color: var(--surface-500);
+  color: var(--ink-300);
   line-height: 1;
 }
 
 .tree-node {
-  font: var(--text-meta-era);
+  font: var(--text-meta-640);
   font-size: 12px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   padding: var(--space-sm) var(--space-md);
   border: var(--stroke-medium) solid var(--ink-900);
-  background: var(--surface-200);
+  background: var(--surface-light-200);
   text-align: center;
   width: 140px;
   box-sizing: border-box;
@@ -210,7 +210,7 @@ import {
 }
 
 .tree-node--home {
-  background: var(--amber-500);
+  background: var(--primary-500);
   color: var(--ink-900);
   font-size: 14px;
   font-weight: 600;
@@ -227,17 +227,17 @@ import {
 }
 
 .tree-node--room {
-  background: var(--surface-300);
+  background: var(--surface-light-300);
 }
 
 .tree-node--secondary {
   border-style: dashed;
-  color: var(--gray-500);
+  color: var(--ink-500);
 }
 
 .tree-node--leaf {
   border-style: dotted;
-  color: var(--gray-500);
+  color: var(--ink-500);
   font-size: 12px;
 }
 
@@ -257,31 +257,31 @@ import {
 
 .screen-header {
   border-bottom: var(--stroke-medium) solid var(--ink-900);
-  font: var(--text-meta-field-label);
+  font: var(--text-meta-440);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--gray-500);
+  color: var(--ink-500);
   padding-bottom: var(--space-sm);
 }
 
 .screen-row {
-  border-bottom: var(--stroke-thin) solid var(--surface-400);
+  border-bottom: var(--stroke-thin) solid var(--ink-200);
 }
 
 .col-name {
-  font: var(--text-body-small);
+  font: var(--text-body-440);
   font-weight: 500;
 }
 
 .col-type {
-  font: var(--text-meta-field-value);
-  color: var(--gray-500);
+  font: var(--text-meta-230);
+  color: var(--ink-500);
 }
 
 .col-notes {
-  font: var(--text-body-small);
+  font: var(--text-body-440);
   font-size: 13px;
-  color: var(--gray-500);
+  color: var(--ink-500);
 }
 
 /* ---- Room cards ---- */
@@ -292,7 +292,7 @@ import {
 }
 
 .card--room {
-  box-shadow: var(--shadow-card-sm) var(--surface-400);
+  box-shadow: var(--shadow-card-sm) var(--surface-light-400);
 }
 
 .room-card-header {
@@ -303,14 +303,14 @@ import {
 }
 
 .room-number {
-  font: var(--text-display-h1);
+  font: var(--text-display-470);
   font-size: 28px;
   line-height: 1;
-  color: var(--surface-500);
+  color: var(--ink-300);
 }
 
 .room-name {
-  font: var(--text-ui-nav);
+  font: var(--text-body-250);
   font-size: 14px;
   font-weight: 500;
 }
@@ -325,14 +325,14 @@ import {
   display: flex;
   align-items: baseline;
   gap: var(--space-sm);
-  font: var(--text-body-small);
+  font: var(--text-body-440);
   font-size: 13px;
-  color: var(--gray-500);
+  color: var(--ink-500);
 }
 
 .stage-index {
-  font: var(--text-meta-field-value);
-  color: var(--surface-500);
+  font: var(--text-meta-230);
+  color: var(--ink-300);
   min-width: 14px;
 }
 
@@ -344,13 +344,11 @@ import {
 }
 
 .catalog-group-title {
-  font: var(--text-meta-era);
+  font: var(--text-meta-640);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--surface-500);
-  margin: 0 0 var(--space-sm);
-  padding-bottom: var(--space-sm);
-  border-bottom: var(--stroke-thin) solid var(--warm-border);
+  color: var(--ink-300);
+  margin-bottom: var(--space-xs);
 }
 
 .catalog-fields {
@@ -360,9 +358,9 @@ import {
 }
 
 .catalog-field {
-  font: var(--text-meta-field-value);
-  color: var(--surface-300);
+  font: var(--text-meta-230);
+  color: var(--ink-200);
   padding: var(--space-xs) var(--space-sm);
-  border: var(--stroke-thin) solid var(--warm-border);
+  border: var(--stroke-thin) solid var(--ink-300);
 }
 </style>

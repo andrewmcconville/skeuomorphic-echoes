@@ -68,7 +68,7 @@ import { pairs } from '../data/step-2-4'
   align-items: baseline;
   gap: var(--space-sm);
   padding: var(--space-sm) 0;
-  border-bottom: var(--stroke-thin) solid var(--surface-400);
+  border-bottom: var(--stroke-thin) solid var(--ink-200);
 }
 
 .path-list__item:last-child {
@@ -76,19 +76,19 @@ import { pairs } from '../data/step-2-4'
 }
 
 .path-action {
-  font: var(--text-body-small);
+  font: var(--text-body-440);
   font-weight: 600;
   white-space: nowrap;
 }
 
 .path-element {
-  font: var(--text-body-small);
+  font: var(--text-body-440);
   font-weight: 500;
 }
 
 .path-type {
-  font: var(--text-meta-field-value);
-  color: var(--gray-500);
+  font: var(--text-meta-230);
+  color: var(--ink-500);
   white-space: nowrap;
 }
 
@@ -103,7 +103,7 @@ import { pairs } from '../data/step-2-4'
 .task-card {
   padding: var(--space-xl);
   border: var(--stroke-medium) solid var(--ink-900);
-  background: var(--surface-200);
+  background: var(--surface-light-200);
 }
 
 .task-field {
@@ -113,14 +113,14 @@ import { pairs } from '../data/step-2-4'
 }
 
 .task-field__label {
-  font: var(--text-meta-era);
+  font: var(--text-meta-640);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--gray-500);
+  color: var(--ink-500);
 }
 
 .task-field__text {
-  font: var(--text-body-default);
+  font: var(--text-body-640);
   margin: 0;
 }
 </style>

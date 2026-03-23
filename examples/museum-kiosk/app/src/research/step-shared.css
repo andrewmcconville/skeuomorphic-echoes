@@ -7,8 +7,8 @@
 /* ---- Hero block — warm dark band ---- */
 
 .hero {
-  background: var(--warm-dark);
-  color: var(--surface-200);
+  background: var(--surface-dark-800);
+  color: var(--ink-100);
   padding: var(--space-3xl) var(--space-3xl) var(--space-2xl);
   position: relative;
   overflow: hidden;
@@ -19,7 +19,7 @@
   display: inline-flex;
   align-items: flex-end;
   justify-content: center;
-  background: var(--amber-500);
+  background: var(--primary-500);
   color: var(--ink-900);
   width: 100px;
   height: 120px;
@@ -28,23 +28,23 @@
 }
 
 .badge-label {
-  font: var(--text-display-title-thin);
+  font: var(--text-display-610);
   font-size: 40px;
   line-height: 1;
-  color: var(--warm-dark);
+  color: var(--ink-800);
 }
 
 .hero-title {
   position: relative;
-  font: var(--text-display-title);
-  color: var(--surface-200);
+  font: var(--text-display-670);
+  color: var(--ink-100);
   margin-bottom: var(--space-lg);
 }
 
 .hero-lead {
   position: relative;
-  font: var(--text-body-default);
-  color: var(--surface-400);
+  font: var(--text-body-640);
+  color: var(--ink-200);
   max-width: 520px;
 }
 
@@ -66,7 +66,7 @@
   top: calc(-1 * var(--space-lg));
   bottom: var(--space-2xl);
   width: 60%;
-  background: var(--surface-300);
+  background: var(--surface-light-300);
   opacity: var(--opacity-panel);
   z-index: 0;
   pointer-events: none;
@@ -91,7 +91,7 @@
 /* ---- Section header ---- */
 
 .section__header {
-  border-bottom: var(--stroke-medium) dotted var(--amber-500);
+  border-bottom: var(--stroke-medium) dotted var(--ink-500);
   margin-bottom: var(--space-2xl);
   position: relative;
   z-index: 1;
@@ -120,8 +120,8 @@
 }
 
 .section__heading {
-  font: var(--text-display-title-thin);
-  color: var(--amber-500);
+  font: var(--text-display-610);
+  color: var(--ink-500);
   margin: 0;
   white-space: nowrap;
   height: 0.94em;
@@ -129,7 +129,7 @@
 }
 
 .section__heading--light {
-  opacity: 0.6;
+  color: var(--ink-100);
 }
 
 
@@ -146,31 +146,32 @@
 
 
 .section__subheading {
-  font: var(--text-meta-field-label);
+  font: var(--text-meta-440);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--gray-400);
+  color: var(--ink-400);
   line-height: 1.4;
   margin: 0;
   font-weight: 400;
+  white-space: pre-line;
 }
 
 .section__subheading--light {
-  color: var(--surface-500);
+  color: var(--ink-300);
 }
 
 
 /* ---- Data rows ---- */
 
 .datum-label {
-  font: var(--text-meta-field-label);
+  font: var(--text-meta-440);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--gray-400);
+  color: var(--ink-400);
 }
 
 .datum-value {
-  font: var(--text-body-default);
+  font: var(--text-body-640);
   font-size: 16px;
 }
 
@@ -190,22 +191,22 @@
 }
 
 .spec-label {
-  font: var(--text-meta-field-label);
+  font: var(--text-meta-440);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--_spec-label-color, var(--gray-500));
+  color: var(--_spec-label-color, var(--ink-500));
   white-space: nowrap;
 }
 
 .spec-dots {
   flex: 1;
   min-width: var(--_spec-dots-min, 0);
-  border-bottom: var(--stroke-thin) dotted var(--_spec-dots-color, var(--surface-500));
+  border-bottom: var(--stroke-thin) dotted var(--_spec-dots-color, var(--ink-300));
   margin-bottom: var(--space-2xs);
 }
 
 .spec-value {
-  font: var(--text-body-small);
+  font: var(--text-body-440);
   font-size: var(--_spec-value-size, 14px);
   white-space: var(--_spec-value-wrap, nowrap);
   color: var(--_spec-value-color, inherit);
@@ -221,26 +222,30 @@
 }
 
 .specs-grid--light {
-  --_spec-label-color: var(--surface-500);
-  --_spec-dots-color: var(--warm-border);
-  --_spec-value-color: var(--surface-300);
+  --_spec-label-color: var(--ink-300);
+  --_spec-dots-color: var(--ink-300);
+  --_spec-value-color: var(--ink-200);
 }
 
 
 /* ---- Section modifiers ---- */
 
 .section--dark {
-  background: var(--warm-mid);
-  color: var(--surface-200);
+  background: var(--surface-dark-700);
+  color: var(--ink-100);
+}
+
+.section__header--light {
+  border-bottom-color: var(--ink-300);
 }
 
 .section--warm {
-  background: var(--surface-300);
+  background: var(--surface-light-300);
 }
 
 .section--title {
-  background: var(--warm-dark);
-  color: var(--surface-200);
+  background: var(--surface-dark-800);
+  color: var(--ink-100);
   overflow: hidden;
 }
 
@@ -252,8 +257,8 @@
   gap: var(--space-md);
   padding: var(--space-lg);
   border: var(--stroke-medium) solid var(--ink-900);
-  background: var(--surface-100);
-  box-shadow: var(--shadow-card) var(--surface-400);
+  background: var(--surface-light-100);
+  box-shadow: var(--shadow-card) var(--surface-light-400);
 }
 
 .card--vertical {
@@ -261,10 +266,10 @@
 }
 
 .card-number {
-  font: var(--text-display-h1);
+  font: var(--text-display-470);
   font-size: 32px;
   line-height: 1;
-  color: var(--surface-500);
+  color: var(--ink-300);
   min-width: 28px;
 }
 
@@ -282,27 +287,27 @@
 }
 
 .prose-block__heading {
-  font: var(--text-meta-era);
+  font: var(--text-meta-640);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--gray-500);
+  color: var(--ink-500);
   margin-bottom: var(--space-sm);
 }
 
 .prose-block__text {
-  font: var(--text-body-default);
+  font: var(--text-body-640);
 }
 
 .rationale {
-  font: var(--text-body-small);
-  color: var(--gray-500);
-  border-left: var(--stroke-medium) solid var(--surface-400);
+  font: var(--text-body-440);
+  color: var(--ink-500);
+  border-left: var(--stroke-medium) solid var(--ink-200);
   padding-left: var(--space-md);
 }
 
 .rationale--light {
-  color: var(--surface-400);
-  border-left-color: var(--warm-border);
+  color: var(--ink-200);
+  border-left-color: var(--ink-300);
 }
 
 
@@ -316,18 +321,18 @@
 }
 
 .tag {
-  font: var(--text-meta-era);
+  font: var(--text-meta-640);
   font-size: 12px;
   letter-spacing: 0.05em;
   padding: var(--space-xs) var(--space-sm);
-  background: var(--surface-400);
+  background: var(--surface-light-400);
   color: var(--ink-900);
 }
 
 .tag--outline {
   background: transparent;
-  border: var(--stroke-thin) solid var(--surface-500);
-  color: var(--gray-500);
+  border: var(--stroke-thin) solid var(--ink-300);
+  color: var(--ink-500);
 }
 
 
@@ -345,12 +350,12 @@
   display: flex;
   align-items: center;
   gap: var(--space-md);
-  font: var(--text-body-default);
+  font: var(--text-body-640);
 }
 
 .list-number {
-  font: var(--text-display-h1);
-  color: var(--surface-500);
+  font: var(--text-display-470);
+  color: var(--ink-300);
   min-width: 24px;
   flex-shrink: 0;
 }

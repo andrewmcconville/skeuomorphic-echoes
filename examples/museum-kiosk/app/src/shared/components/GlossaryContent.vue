@@ -105,17 +105,17 @@ withDefaults(defineProps<{
   --_toc-char-size: 28px;
   --_toc-char-width: 2.5rem;
   --_toc-cols: repeat(3, 1fr);
-  --_toc-bg: var(--surface-300);
-  --_toc-border: var(--stroke-thin) solid var(--surface-400);
+  --_toc-bg: var(--surface-light-300);
+  --_toc-border: var(--stroke-thin) solid var(--ink-200);
   --_toc-padding: var(--space-xl);
   --_toc-margin: var(--space-2xl);
-  --_toc-link-font: var(--text-body-default);
+  --_toc-link-font: var(--text-body-640);
   --_body-gap: var(--space-xl);
-  --_familiar-font: var(--text-body-default);
+  --_familiar-font: var(--text-body-640);
   --_familiar-padding: var(--space-lg);
-  --_aliases-font: var(--text-body-default);
+  --_aliases-font: var(--text-body-640);
   --_aliases-offset: calc(-1 * var(--space-md));
-  --_field-font: var(--text-body-default);
+  --_field-font: var(--text-body-640);
   --_entry-name-size: 36px;
 }
 
@@ -130,13 +130,13 @@ withDefaults(defineProps<{
   --_toc-border: none;
   --_toc-padding: var(--space-xl) 0;
   --_toc-margin: var(--space-lg);
-  --_toc-link-font: var(--text-body-small);
+  --_toc-link-font: var(--text-body-440);
   --_body-gap: var(--space-lg);
-  --_familiar-font: var(--text-body-small);
+  --_familiar-font: var(--text-body-440);
   --_familiar-padding: var(--space-md);
-  --_aliases-font: var(--text-body-small);
+  --_aliases-font: var(--text-body-440);
   --_aliases-offset: calc(-1 * var(--space-sm));
-  --_field-font: var(--text-body-small);
+  --_field-font: var(--text-body-440);
   --_entry-name-size: 28px;
 }
 
@@ -146,14 +146,14 @@ withDefaults(defineProps<{
   margin-bottom: var(--_toc-margin);
   background: var(--_toc-bg);
   border: var(--_toc-border);
-  border-bottom: var(--stroke-thin) solid var(--surface-400);
+  border-bottom: var(--stroke-thin) solid var(--ink-200);
 }
 
 .glossary-toc__label {
-  font: var(--text-meta-field-label);
+  font: var(--text-meta-440);
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--gray-400);
+  color: var(--ink-400);
   margin-bottom: var(--space-md);
 }
 
@@ -173,11 +173,11 @@ withDefaults(defineProps<{
 }
 
 .glossary-toc__link:hover {
-  color: var(--orange-500);
+  color: var(--secondary-500);
 }
 
 .glossary-toc__char {
-  font: var(--text-display-h2);
+  font: var(--text-display-230);
   font-size: var(--_toc-char-size);
   width: var(--_toc-char-width);
   text-align: center;
@@ -194,7 +194,7 @@ withDefaults(defineProps<{
   grid-template-columns: var(--_glyph-col) 1fr;
   gap: 0 var(--space-2xl);
   padding: var(--space-2xl) 0;
-  border-bottom: var(--stroke-thin) solid var(--surface-400);
+  border-bottom: var(--stroke-thin) solid var(--ink-200);
 }
 
 .glossary-entry:last-of-type {
@@ -214,15 +214,15 @@ withDefaults(defineProps<{
 }
 
 .glossary-entry__char {
-  font: var(--text-display-title);
+  font: var(--text-display-670);
   font-weight: 100;
   font-size: var(--_char-size);
   line-height: 1.2;
 }
 
 .glossary-entry__unicode {
-  font: var(--text-meta-field-value);
-  color: var(--gray-400);
+  font: var(--text-meta-230);
+  color: var(--ink-400);
   letter-spacing: 0.05em;
 }
 
@@ -234,7 +234,7 @@ withDefaults(defineProps<{
 }
 
 .glossary-entry__name {
-  font: var(--text-display-h1);
+  font: var(--text-display-470);
   font-size: var(--_entry-name-size);
   margin: 0;
 }
@@ -242,14 +242,14 @@ withDefaults(defineProps<{
 .glossary-entry__aliases {
   font: var(--_aliases-font);
   font-style: italic;
-  color: var(--gray-500);
+  color: var(--ink-500);
   margin-top: var(--_aliases-offset);
 }
 
 .glossary-entry__familiar {
   font: var(--_familiar-font);
   color: var(--ink-900);
-  border-left: var(--stroke-medium) solid var(--orange-500);
+  border-left: var(--stroke-medium) solid var(--secondary-500);
   padding-left: var(--_familiar-padding);
 }
 
@@ -261,10 +261,10 @@ withDefaults(defineProps<{
 }
 
 .glossary-field__label {
-  font: var(--text-meta-field-label);
+  font: var(--text-meta-440);
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--orange-500);
+  color: var(--secondary-500);
 }
 
 .glossary-field__list {
@@ -276,7 +276,7 @@ withDefaults(defineProps<{
 .glossary-field__term {
   font: var(--_field-font);
   font-weight: 500;
-  color: var(--gray-500);
+  color: var(--ink-500);
   white-space: nowrap;
 }
 
@@ -288,7 +288,7 @@ withDefaults(defineProps<{
 /* Status badges */
 .glossary-status {
   display: inline-block;
-  font: var(--text-meta-field-value);
+  font: var(--text-meta-230);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   padding: 0.15em 0.5em;
@@ -297,29 +297,29 @@ withDefaults(defineProps<{
 }
 
 .glossary-status--thriving {
-  background: var(--status-thriving-bg);
-  color: var(--status-thriving);
-}
-
-.glossary-status--endangered {
-  background: var(--status-endangered-bg);
-  color: var(--status-endangered);
-}
-
-.glossary-status--extinct {
-  background: var(--status-extinct-bg);
-  color: var(--gray-500);
+  background: oklch(0.76 0.14 75 / 0.1);
+  color: var(--primary-500);
 }
 
 .glossary-status--adapted {
-  background: var(--status-adapted-bg);
-  color: var(--status-adapted);
+  background: oklch(0.76 0.14 75 / 0.1);
+  color: var(--primary-500);
+}
+
+.glossary-status--endangered {
+  background: oklch(0.63 0.15 50 / 0.1);
+  color: var(--secondary-500);
+}
+
+.glossary-status--extinct {
+  background: oklch(0 0 0 / 0.05);
+  color: var(--ink-500);
 }
 
 /* Sources */
 .glossary-field--sources {
   padding-top: var(--space-sm);
-  border-top: var(--stroke-thin) dashed var(--surface-400);
+  border-top: var(--stroke-thin) dashed var(--ink-200);
 }
 
 .glossary-sources {
@@ -333,8 +333,8 @@ withDefaults(defineProps<{
 
 .glossary-sources__item {
   counter-increment: source;
-  font: var(--text-body-small);
-  color: var(--gray-500);
+  font: var(--text-body-440);
+  color: var(--ink-500);
   line-height: 1.5;
   padding-left: var(--space-xl);
   position: relative;
@@ -345,8 +345,8 @@ withDefaults(defineProps<{
   position: absolute;
   left: 0;
   top: var(--space-xs);
-  font: var(--text-meta-field-value);
-  color: var(--orange-500);
+  font: var(--text-meta-230);
+  color: var(--secondary-500);
 }
 
 .glossary-sources__cite {

@@ -127,7 +127,7 @@ import { demographics, interests, traits, brands, goals, motivations, frustratio
 .identity-card {
   padding: var(--space-xl);
   border: var(--stroke-medium) solid var(--ink-900);
-  background: var(--surface-300);
+  background: var(--surface-light-300);
 }
 
 .identity-top {
@@ -138,20 +138,20 @@ import { demographics, interests, traits, brands, goals, motivations, frustratio
 }
 
 .identity-name {
-  font: var(--text-display-h1);
+  font: var(--text-display-470);
   margin-bottom: var(--space-2xs);
 }
 
 .pronoun {
-  font: var(--text-meta-field-value);
-  color: var(--gray-500);
+  font: var(--text-meta-230);
+  color: var(--ink-500);
 }
 
 .role-tag {
-  font: var(--text-meta-era);
+  font: var(--text-meta-640);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--surface-200);
+  color: var(--ink-100);
   background: var(--ink-900);
   padding: var(--space-xs) 12px;
 }
@@ -164,14 +164,14 @@ import { demographics, interests, traits, brands, goals, motivations, frustratio
 
 /* ---- Bio ---- */
 .bio {
-  font: var(--text-body-default);
+  font: var(--text-body-640);
 }
 
 .bio-quote {
-  font: var(--text-display-h2);
+  font: var(--text-display-230);
   font-style: italic;
   padding-left: var(--space-lg);
-  border-left: var(--stroke-medium) solid var(--orange-500);
+  border-left: var(--stroke-medium) solid var(--secondary-500);
   color: var(--ink-800);
 }
 
@@ -184,14 +184,14 @@ import { demographics, interests, traits, brands, goals, motivations, frustratio
 
 .need-number {
   display: block;
-  font: var(--text-display-h1);
+  font: var(--text-display-470);
   font-size: 28px;
   line-height: 1;
-  color: var(--surface-500);
+  color: var(--ink-300);
   margin-bottom: var(--space-sm);
 }
 
 .card__text {
-  font: var(--text-body-small);
+  font: var(--text-body-440);
 }
 </style>

@@ -1,20 +1,5 @@
 <script setup lang="ts">
-import { glossaryEntries, type SourcePart } from '@shared/data/glossary'
-
-function isCite(part: SourcePart): part is { cite: string } {
-  return typeof part === 'object'
-}
-
-function scrollTo(id: string) {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-}
-
-const statusLabel: Record<string, string> = {
-  active: 'Active',
-  vestigial: 'Vestigial',
-  extinct: 'Extinct',
-  repurposed: 'Repurposed',
-}
+import { glossaryEntries, isCite, scrollToEntry, statusLabel } from '@shared/composables/useGlossary'
 </script>
 
 <template>
@@ -37,7 +22,7 @@ const statusLabel: Record<string, string> = {
           :key="entry.id"
           href="#"
           class="toc-item"
-          @click.prevent="scrollTo(entry.id)"
+          @click.prevent="scrollToEntry(entry.id)"
         >
           <span class="toc-char">{{ entry.char }}</span>
           <span>{{ entry.name }}</span>

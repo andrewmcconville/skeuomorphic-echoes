@@ -1,62 +1,5 @@
 <script setup lang="ts">
-import type { LabelValue, SkeuomorphMapping, InspirationSite } from '../data/types'
-
-const evolutionStages = [
-  'Hand-written manuscripts',
-  'Movable type',
-  'Linotype machines',
-  'X-Acto knife paste-ups',
-  'Adobe InDesign',
-  'Google Docs',
-]
-
-const secondarySkeuomorphs: SkeuomorphMapping[] = [
-  {
-    name: 'Camera shutter',
-    maps: 'Shutter sound effect',
-    description:
-      'Phones play a mechanical click when taking a photo, and even when capturing a screenshot, where no camera is involved at all.',
-  },
-  {
-    name: 'Envelope',
-    maps: 'Email icon',
-    description:
-      'The sealed paper envelope persists as the symbol for electronic messages decades after physical mail stopped being the default.',
-  },
-  {
-    name: 'Hanging up the phone',
-    maps: 'End Call button',
-    description:
-      'Replacing a handset on its cradle became a red button tap, preserving the gesture of a rotary-era device most users have never touched.',
-  },
-]
-
-const inspirationSites: InspirationSite[] = [
-  {
-    name: 'Klim Type Foundry',
-    url: 'https://klim.co.nz/',
-    note: 'Swiss-inspired grids, interactive type testers, and an energy that makes design history feel like a living workshop.',
-  },
-  {
-    name: 'Histography.io',
-    url: 'https://histography.io/',
-    note: 'Progressive-disclosure timeline that zooms from a full historical sweep down to individual events.',
-  },
-  {
-    name: 'Letterform Archive',
-    url: 'https://oa.letterformarchive.org/',
-    note: 'Browsable, filterable collection of 3,500+ digitized design artifacts with search by decade, country, and format.',
-  },
-]
-
-const formFactors: LabelValue[] = [
-  { label: 'Viewport', value: '1440 × 2560 px' },
-  { label: 'Orientation', value: 'Portrait' },
-  { label: 'Format', value: 'Web app' },
-  { label: 'Input', value: 'Coarse (touch)' },
-  { label: 'Context', value: 'Wall-mounted kiosk' },
-  { label: 'Location', value: '4 exhibit room entrances' },
-]
+import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } from '../data/step-2-1'
 </script>
 
 <template>
@@ -151,7 +94,7 @@ const formFactors: LabelValue[] = [
               <div
                 v-for="(s, i) in secondarySkeuomorphs"
                 :key="s.name"
-                class="card secondary-card"
+                class="card card--secondary"
               >
                 <span class="card-number">{{ i + 1 }}</span>
                 <div class="card-body">
@@ -348,37 +291,6 @@ const formFactors: LabelValue[] = [
   overflow: hidden;
 }
 
-/* ---- Prose ---- */
-.prose-block__heading {
-  font: var(--text-meta-era);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--gray-500);
-  margin-bottom: var(--space-sm);
-}
-
-.prose-block__text {
-  font: var(--text-body-default);
-}
-
-.prose-group {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2xl);
-}
-
-.rationale {
-  font: var(--text-body-small);
-  color: var(--gray-500);
-  border-left: var(--stroke-medium) solid var(--surface-400);
-  padding-left: var(--space-md);
-}
-
-.rationale--light {
-  color: var(--surface-400);
-  border-left-color: var(--warm-border);
-}
-
 /* ---- Primary — warm dark band content ---- */
 .primary-title {
   font: var(--text-display-title);
@@ -436,18 +348,6 @@ const formFactors: LabelValue[] = [
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
-}
-
-.card-number {
-  font: var(--text-display-h1);
-  font-size: 32px;
-  line-height: 1;
-  color: var(--surface-500);
-  min-width: 28px;
-}
-
-.card-body {
-  flex: 1;
 }
 
 .card-mapping {

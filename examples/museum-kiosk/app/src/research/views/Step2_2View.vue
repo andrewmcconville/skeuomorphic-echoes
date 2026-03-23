@@ -1,65 +1,5 @@
 <script setup lang="ts">
-import type { LabelValue } from '../data/types'
-
-const demographics: LabelValue[] = [
-  { label: 'Age', value: '27–33' },
-  { label: 'Location', value: 'Chicago / Milwaukee corridor' },
-  { label: 'Education', value: 'MFA (completed within the last year)' },
-  { label: 'Occupation', value: 'Independent designer/artist; freelance + residencies + short contracts' },
-  { label: 'Income', value: 'Variable / project-based' },
-  { label: 'Tech comfort', value: 'High (creative tools, prototyping, AR/interactive exhibits)' },
-  { label: 'Device habits', value: 'iPhone daily; photographs labels/screens; saves links/notes immediately' },
-  { label: 'Accessibility', value: 'Mild sensory overload in crowded galleries — prefers clear UI, low-friction flow' },
-  { label: 'Schedule', value: 'Visits in 30–60 minute loops; wants a satisfying "complete one chain" option' },
-]
-
-const interests = [
-  'Interface archaeology',
-  'Design history',
-  'Archives',
-  'Sound objects',
-  'Interaction design',
-]
-
-const traits = [
-  'Curious',
-  'Critical',
-  'Aesthetic-driven',
-  'Systems-minded',
-  'Impatient with sloppy design',
-]
-
-const brands = [
-  'Teenage Engineering',
-  'MUJI',
-  'Braun / Dieter Rams',
-  'IKEA',
-  'Apple (selectively)',
-]
-
-const goals = [
-  'Discover the history behind familiar interface icons, sounds, and language.',
-  'Save/collect references (artifacts, favorites, achievements) to revisit later.',
-]
-
-const motivations = [
-  'Builds a personal archive of design references for inspiration, talks, and fun.',
-  'Enjoys systems-thinking: timelines, taxonomies, tech trees, provenance.',
-  'Loves minimal, engineered aesthetics and objects that feel like instruments.',
-]
-
-const frustrations = [
-  'Over-explaining and academic walls of text that kill momentum.',
-  'Confusing navigation or interactions that don\'t pay off.',
-  'Visual clutter, weak hierarchy, inconsistent UI patterns.',
-]
-
-const needs = [
-  'A crisp intro definition + immediate "Start exploring" action.',
-  'Clear orientation at all times: where am I, what era is this, what\'s next.',
-  'Skimmable content with optional depth (expand/collapse, "show more context").',
-  'Progress feedback (timeline position, visited states, collection status).',
-]
+import { demographics, interests, traits, brands, goals, motivations, frustrations, needs } from '../data/step-2-2'
 </script>
 
 <template>
@@ -277,9 +217,9 @@ const needs = [
           </div>
           <div class="section-content">
             <div class="needs-grid">
-              <div v-for="(n, i) in needs" :key="n" class="card need-card">
+              <div v-for="(n, i) in needs" :key="n" class="card card--vertical">
                 <span class="need-number">{{ i + 1 }}</span>
-                <p class="need-card__text">{{ n }}</p>
+                <p class="card__text">{{ n }}</p>
               </div>
             </div>
           </div>
@@ -342,65 +282,11 @@ const needs = [
   color: var(--ink-800);
 }
 
-/* ---- Tags ---- */
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-sm);
-  justify-content: flex-end;
-}
-
-.tag {
-  font: var(--text-meta-era);
-  font-size: 12px;
-  letter-spacing: 0.05em;
-  padding: var(--space-xs) 10px;
-  background: var(--surface-400);
-  color: var(--ink-900);
-}
-
-.tag--outline {
-  background: transparent;
-  border: var(--stroke-thin) solid var(--surface-500);
-  color: var(--gray-500);
-}
-
-/* ---- Numbered lists ---- */
-.numbered-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  margin-top: -10px;
-}
-
-.numbered-list__item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  font: var(--text-body-default);
-}
-
-.list-number {
-  font: var(--text-display-h1);
-  color: var(--surface-500);
-  min-width: 24px;
-  flex-shrink: 0;
-}
-
-.list-text {
-  padding-top: 4px;
-}
-
 /* ---- Needs grid ---- */
 .needs-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-md);
-}
-
-.need-card {
-  flex-direction: column;
 }
 
 .need-number {
@@ -412,7 +298,7 @@ const needs = [
   margin-bottom: var(--space-sm);
 }
 
-.need-card__text {
+.card__text {
   font: var(--text-body-small);
 }
 </style>

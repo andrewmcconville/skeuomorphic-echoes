@@ -1,7 +1,7 @@
 <template>
   <div class="placeholder">
-    <h1>About</h1>
-    <p class="note">About page will be built here.</p>
+    <h1 class="placeholder__title">About</h1>
+    <p class="placeholder__note">About page will be built here.</p>
   </div>
 </template>
 
@@ -16,11 +16,11 @@
   text-align: center;
 }
 
-h1 {
+.placeholder__title {
   font: var(--text-display-title);
 }
 
-.note {
+.placeholder__note {
   font: var(--text-meta-era);
   text-transform: uppercase;
   letter-spacing: 0.1em;

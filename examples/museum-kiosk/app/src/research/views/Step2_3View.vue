@@ -6,7 +6,7 @@ import SpecsGrid from '../components/SpecsGrid.vue'
 import {
   screens, modals, rooms,
   homeContent, collectionContent, aboutContent, glossaryContent,
-  roomLandingContent, interiorCore, interiorCatalog,
+  roomLandingContent, interiorCore, interiorActions, interiorCatalog,
 } from '../data/step-2-3'
 </script>
 
@@ -135,18 +135,7 @@ import {
       </SubsectionRow>
 
       <SubsectionRow label="Actions" :light-label="true">
-        <div class="specs-grid specs-grid--dense specs-grid--light">
-          <div class="spec">
-            <span class="spec-label">Collect</span>
-            <span class="spec-dots"></span>
-            <span class="spec-value">Button to add this stage to the visitor's collection; triggers toast</span>
-          </div>
-          <div class="spec">
-            <span class="spec-label">Collected</span>
-            <span class="spec-dots"></span>
-            <span class="spec-value">Indicator shown when stage is already collected</span>
-          </div>
-        </div>
+        <SpecsGrid :items="interiorActions" dense light />
       </SubsectionRow>
     </SectionBlock>
 
@@ -373,7 +362,7 @@ import {
 .catalog-field {
   font: var(--text-meta-field-value);
   color: var(--surface-300);
-  padding: var(--space-xs) 10px;
+  padding: var(--space-xs) var(--space-sm);
   border: var(--stroke-thin) solid var(--warm-border);
 }
 </style>

@@ -7,7 +7,7 @@ const id = route.params.id as string
 
 <template>
   <div class="step-page">
-    <h1>Step {{ id }}</h1>
+    <h1 class="step-page__title">Step {{ id }}</h1>
     <p class="placeholder">Content for step {{ id }} will go here.</p>
   </div>
 </template>
@@ -18,7 +18,7 @@ const id = route.params.id as string
   margin: 0 auto;
 }
 
-h1 {
+.step-page__title {
   font: var(--text-display-h1);
   margin-bottom: var(--space-lg);
 }

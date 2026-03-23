@@ -6,7 +6,7 @@ import { steps } from '../data/steps'
 <template>
   <div class="home">
     <header class="home-hero">
-      <h1>Before the Prompt</h1>
+      <h1 class="home-hero__title">Before the Prompt</h1>
       <p class="subtitle">The Rise and Fall of Digital Icons</p>
       <p class="description">
         A research process book tracing the WYSIWYG page editor from
@@ -43,7 +43,7 @@ import { steps } from '../data/steps'
   margin-bottom: var(--space-2xl);
 }
 
-h1 {
+.home-hero__title {
   font: var(--text-display-title);
   margin-bottom: var(--space-xs);
 }

@@ -264,6 +264,12 @@
   background: var(--surface-300);
 }
 
+.section--title {
+  background: var(--warm-dark);
+  position: relative;
+  overflow: hidden;
+}
+
 
 /* ---- Shared card ---- */
 
@@ -339,7 +345,7 @@
   font: var(--text-meta-era);
   font-size: 12px;
   letter-spacing: 0.05em;
-  padding: var(--space-xs) 10px;
+  padding: var(--space-xs) var(--space-sm);
   background: var(--surface-400);
   color: var(--ink-900);
 }
@@ -358,7 +364,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
-  margin-top: -10px;
+  margin-top: calc(-1 * var(--space-sm));
 }
 
 .numbered-list__item {
@@ -376,5 +382,5 @@
 }
 
 .list-text {
-  padding-top: 4px;
+  padding-top: var(--space-xs);
 }

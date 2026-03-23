@@ -4,6 +4,18 @@ import SectionBlock from '../components/SectionBlock.vue'
 import SubsectionRow from '../components/SubsectionRow.vue'
 import SpecsGrid from '../components/SpecsGrid.vue'
 import { colorGroups, overlays, typeGroups, components } from '../data/step-2-8'
+
+/** Parse CSS `extra` string (e.g. "text-transform: uppercase; letter-spacing: 0.08em") into a style object */
+function parseExtraStyles(extra?: string): Record<string, string> {
+  if (!extra) return {}
+  return Object.fromEntries(
+    extra.split('; ').map(pair => {
+      const [prop, val] = pair.split(': ')
+      const camel = prop.replace(/-([a-z])/g, (_, c: string) => c.toUpperCase())
+      return [camel, val]
+    }),
+  )
+}
 </script>
 
 <template>
@@ -52,7 +64,7 @@ import { colorGroups, overlays, typeGroups, components } from '../data/step-2-8'
           <div v-for="s in group.styles" :key="s.token" class="type-sample">
             <p
               class="type-preview"
-              :style="{ font: `var(${s.token})`, ...(s.extra ? Object.fromEntries(s.extra.split('; ').map(p => { const [k, v] = p.split(': '); return [k.replace(/-([a-z])/g, (_, c) => c.toUpperCase()), v] })) : {}) }"
+              :style="{ font: `var(${s.token})`, ...parseExtraStyles(s.extra) }"
             >
               {{ s.sample }}
             </p>

@@ -208,13 +208,6 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
 </template>
 
 <style scoped>
-/* ---- Section variant: title ---- */
-.section--title {
-  background: var(--warm-dark);
-  position: relative;
-  overflow: hidden;
-}
-
 /* ---- Primary — warm dark band content ---- */
 .primary-title {
   font: var(--text-display-title);

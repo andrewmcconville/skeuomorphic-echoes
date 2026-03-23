@@ -33,7 +33,7 @@ import { steps } from './data/steps'
       </nav>
     </aside>
 
-    <main>
+    <main class="research-app__main">
       <RouterView />
     </main>
   </div>
@@ -129,7 +129,7 @@ import { steps } from './data/steps'
   display: flex;
   align-items: baseline;
   gap: var(--space-sm);
-  padding: 6px var(--space-sm);
+  padding: var(--space-xs) var(--space-sm);
   border-radius: var(--radius-sm);
   font: var(--text-ui-nav);
   color: var(--gray-500);
@@ -168,7 +168,7 @@ import { steps } from './data/steps'
 }
 
 /* ---- Main ---- */
-main {
+.research-app__main {
   flex: 1;
   margin-left: var(--sidebar-width);
   padding: var(--space-2xl) var(--space-2xl);

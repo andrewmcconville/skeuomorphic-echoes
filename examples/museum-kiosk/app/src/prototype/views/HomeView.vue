@@ -1,8 +1,8 @@
 <template>
   <div class="placeholder">
-    <h1>Museum Kiosk Prototype</h1>
-    <p>1440 &times; 2560 px</p>
-    <p class="note">Prototype views will be built here.</p>
+    <h1 class="placeholder__title">Museum Kiosk Prototype</h1>
+    <p class="placeholder__text">1440 &times; 2560 px</p>
+    <p class="placeholder__note">Prototype views will be built here.</p>
   </div>
 </template>
 
@@ -17,16 +17,16 @@
   text-align: center;
 }
 
-h1 {
+.placeholder__title {
   font: var(--text-display-title);
 }
 
-p {
+.placeholder__text {
   font: var(--text-body-default);
   color: var(--gray-500);
 }
 
-.note {
+.placeholder__note {
   font: var(--text-meta-era);
   text-transform: uppercase;
   letter-spacing: 0.1em;

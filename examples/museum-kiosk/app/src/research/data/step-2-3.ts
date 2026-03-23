@@ -98,6 +98,11 @@ export const interiorCore: LabelValue[] = [
   { label: 'Navigation', value: 'Previous / next / close / back to skeuomorph room' },
 ]
 
+export const interiorActions: LabelValue[] = [
+  { label: 'Collect', value: 'Button to add this stage to the visitor\'s collection; triggers toast' },
+  { label: 'Collected', value: 'Indicator shown when stage is already collected' },
+]
+
 export const interiorCatalog: CatalogGroup[] = [
   { group: 'Physical', fields: ['Medium / Material', 'Dimensions', 'Weight', 'Scale indicator'] },
   { group: 'Mechanism', fields: ['Input method', 'Output', 'Key constraint', 'Innovation'] },

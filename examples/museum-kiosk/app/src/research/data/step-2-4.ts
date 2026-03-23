@@ -16,7 +16,12 @@ export interface UserTask {
   task: string
 }
 
-export const happyPath1: HappyPath = {
+export interface HappyPathPair {
+  happyPath: HappyPath
+  userTask: UserTask
+}
+
+const happyPath1: HappyPath = {
   title: 'Explore an Artifact and Collect It',
   steps: [
     { action: 'Open', element: 'Floor Plan Map', elementType: 'page' },
@@ -33,7 +38,7 @@ export const happyPath1: HappyPath = {
   ],
 }
 
-export const happyPath2: HappyPath = {
+const happyPath2: HappyPath = {
   title: 'Review Artifact Collection and Navigate to an Uncollected Artifact',
   steps: [
     { action: 'Open', element: 'Floor Plan Map', elementType: 'page' },
@@ -47,7 +52,7 @@ export const happyPath2: HappyPath = {
   ],
 }
 
-export const userTask1: UserTask = {
+const userTask1: UserTask = {
   title: 'Explore an Artifact and Collect It',
   context:
     'You\u2019re standing in front of a museum kiosk running Before the Prompt: The Rise and Fall of Digital Icons. The screen shows a top-down floor plan with four highlighted rooms.',
@@ -57,7 +62,7 @@ export const userTask1: UserTask = {
     'Starting from the floor plan, navigate to the WYSIWYG room, open the Google Docs artifact, and collect it.',
 }
 
-export const userTask2: UserTask = {
+const userTask2: UserTask = {
   title: 'Review Artifact Collection and Navigate to an Uncollected Artifact',
   context:
     'You\u2019ve already been using the Before the Prompt kiosk for a few minutes and have collected some artifacts. The screen shows the floor plan home screen.',
@@ -66,3 +71,8 @@ export const userTask2: UserTask = {
   task:
     'Using the Artifact Collection screen, find the Camera Shutter group, check your progress, then navigate to the Box Camera artifact you haven\u2019t collected yet.',
 }
+
+export const pairs: HappyPathPair[] = [
+  { happyPath: happyPath1, userTask: userTask1 },
+  { happyPath: happyPath2, userTask: userTask2 },
+]

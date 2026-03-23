@@ -194,7 +194,7 @@ import {
 }
 
 .tree-node {
-  font: var(--text-meta-640);
+  font: var(--text-meta-540);
   font-size: 12px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -274,7 +274,7 @@ import {
 }
 
 .col-type {
-  font: var(--text-meta-230);
+  font: var(--text-meta-430);
   color: var(--ink-500);
 }
 
@@ -310,7 +310,7 @@ import {
 }
 
 .room-name {
-  font: var(--text-body-250);
+  font: var(--text-body-350);
   font-size: 14px;
   font-weight: 500;
 }
@@ -331,7 +331,7 @@ import {
 }
 
 .stage-index {
-  font: var(--text-meta-230);
+  font: var(--text-meta-430);
   color: var(--ink-300);
   min-width: 14px;
 }
@@ -344,7 +344,7 @@ import {
 }
 
 .catalog-group-title {
-  font: var(--text-meta-640);
+  font: var(--text-meta-540);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--ink-300);
@@ -358,7 +358,7 @@ import {
 }
 
 .catalog-field {
-  font: var(--text-meta-230);
+  font: var(--text-meta-430);
   color: var(--ink-200);
   padding: var(--space-xs) var(--space-sm);
   border: var(--stroke-thin) solid var(--ink-300);

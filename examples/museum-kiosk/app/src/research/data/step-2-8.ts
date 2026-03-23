@@ -59,15 +59,15 @@ export const typeGroups: TypeGroup[] = [
     styles: [
       { name: 'Body-640', size: '18 / 28', family: 'IBM Plex Sans', weight: 'Regular', token: '--text-body-640', sample: 'The quick brown fox jumps over the lazy dog.' },
       { name: 'Body-440', size: '14 / 20', family: 'IBM Plex Sans', weight: 'Regular', token: '--text-body-440', sample: 'The quick brown fox jumps over the lazy dog.' },
-      { name: 'Body-250', size: '13 / 16', family: 'IBM Plex Sans', weight: 'Medium', token: '--text-body-250', sample: 'The quick brown fox jumps over the lazy dog.' },
+      { name: 'Body-350', size: '13 / 16', family: 'IBM Plex Sans', weight: 'Medium', token: '--text-body-350', sample: 'The quick brown fox jumps over the lazy dog.' },
     ],
   },
   {
     name: 'Metadata',
     styles: [
-      { name: 'Meta-640', size: '13 / 18', family: 'IBM Plex Mono', weight: 'Regular', token: '--text-meta-640', sample: 'MECHANICAL · c. 1450', extra: 'text-transform: uppercase; letter-spacing: 0.1em' },
+      { name: 'Meta-540', size: '13 / 18', family: 'IBM Plex Mono', weight: 'Regular', token: '--text-meta-540', sample: 'MECHANICAL · c. 1450', extra: 'text-transform: uppercase; letter-spacing: 0.1em' },
       { name: 'Meta-440', size: '12 / 16', family: 'IBM Plex Mono', weight: 'Regular', token: '--text-meta-440', sample: 'Medium, Dimensions, Weight' },
-      { name: 'Meta-230', size: '12 / 16', family: 'IBM Plex Mono', weight: 'Light', token: '--text-meta-230', sample: 'Cast iron, 280 × 420 mm, 12.4 kg' },
+      { name: 'Meta-430', size: '12 / 16', family: 'IBM Plex Mono', weight: 'Light', token: '--text-meta-430', sample: 'Cast iron, 280 × 420 mm, 12.4 kg' },
     ],
   },
 ]

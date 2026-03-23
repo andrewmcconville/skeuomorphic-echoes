@@ -90,7 +90,7 @@ import { steps } from '../data/steps'
 }
 
 .step-id {
-  font: var(--text-meta-230);
+  font: var(--text-meta-430);
   color: var(--ink-400);
   min-width: 28px;
 }

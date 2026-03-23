@@ -155,16 +155,16 @@ function parseExtraStyles(extra?: string): Record<string, string> {
 }
 
 .color-name {
-  font: var(--text-body-250);
+  font: var(--text-body-350);
 }
 
 .color-hex {
-  font: var(--text-meta-230);
+  font: var(--text-meta-430);
   color: var(--ink-500);
 }
 
 .color-usage {
-  font: var(--text-meta-230);
+  font: var(--text-meta-430);
   font-size: 12px;
   color: var(--ink-400);
   line-height: 1.4;
@@ -189,7 +189,6 @@ function parseExtraStyles(extra?: string): Record<string, string> {
 
 .type-sample {
   padding: var(--space-lg) 0;
-  border-bottom: var(--stroke-thin) solid var(--ink-200);
 }
 
 .type-sample:first-child {
@@ -201,17 +200,7 @@ function parseExtraStyles(extra?: string): Record<string, string> {
   flex-direction: column;
   gap: var(--space-2xs);
   margin-top: var(--space-sm);
-}
-
-.type-label {
-  font: var(--text-body-250);
-  color: var(--ink-900);
-}
-
-.type-name {
   font: var(--text-meta-440);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
   color: var(--ink-500);
 }
 
@@ -220,12 +209,8 @@ function parseExtraStyles(extra?: string): Record<string, string> {
   gap: var(--space-md);
 }
 
-.type-spec {
-  font: var(--text-meta-230);
-  color: var(--ink-400);
-}
-
 .type-preview {
+  margin-bottom: var(--space-sm);
   color: var(--ink-900);
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -262,12 +247,12 @@ function parseExtraStyles(extra?: string): Record<string, string> {
 }
 
 .token-value {
-  font: var(--text-meta-230);
+  font: var(--text-meta-430);
   color: var(--ink-400);
 }
 
 .token-usage {
-  font: var(--text-meta-230);
+  font: var(--text-meta-430);
   font-size: 12px;
   color: var(--ink-400);
   line-height: 1.4;

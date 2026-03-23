@@ -250,7 +250,7 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
 }
 
 .evo-marker {
-  font: var(--text-meta-230);
+  font: var(--text-meta-430);
   color: var(--ink-300);
   min-width: 20px;
 }
@@ -272,7 +272,7 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
   align-items: baseline;
   gap: var(--space-sm);
   margin-bottom: var(--space-sm);
-  font: var(--text-body-250);
+  font: var(--text-body-350);
   font-size: 14px;
 }
 
@@ -315,7 +315,7 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
 }
 
 .inspiration-name {
-  font: var(--text-body-250);
+  font: var(--text-body-350);
   font-size: 14px;
   font-weight: 500;
 }

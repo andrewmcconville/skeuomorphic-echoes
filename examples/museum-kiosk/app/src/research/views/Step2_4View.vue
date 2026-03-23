@@ -87,7 +87,7 @@ import { pairs } from '../data/step-2-4'
 }
 
 .path-type {
-  font: var(--text-meta-230);
+  font: var(--text-meta-430);
   color: var(--ink-500);
   white-space: nowrap;
 }
@@ -113,7 +113,7 @@ import { pairs } from '../data/step-2-4'
 }
 
 .task-field__label {
-  font: var(--text-meta-640);
+  font: var(--text-meta-540);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--ink-500);

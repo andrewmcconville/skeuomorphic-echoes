@@ -287,7 +287,7 @@
 }
 
 .prose-block__heading {
-  font: var(--text-meta-640);
+  font: var(--text-meta-540);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--ink-500);
@@ -321,7 +321,7 @@
 }
 
 .tag {
-  font: var(--text-meta-640);
+  font: var(--text-meta-540);
   font-size: 12px;
   letter-spacing: 0.05em;
   padding: var(--space-xs) var(--space-sm);

@@ -114,7 +114,7 @@ import { steps } from './data/steps'
   gap: var(--space-sm);
   padding: var(--space-xs) var(--space-sm);
   border-radius: var(--radius-sm);
-  font: var(--text-body-250);
+  font: var(--text-body-350);
   color: var(--ink-500);
   transition: background 0.15s, color 0.15s;
 }
@@ -130,7 +130,7 @@ import { steps } from './data/steps'
 }
 
 .nav-step-id {
-  font: var(--text-meta-230);
+  font: var(--text-meta-430);
   min-width: 24px;
   color: inherit;
   opacity: var(--opacity-muted);

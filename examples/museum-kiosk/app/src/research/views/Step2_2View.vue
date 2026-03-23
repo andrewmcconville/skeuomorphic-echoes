@@ -143,12 +143,12 @@ import { demographics, interests, traits, brands, goals, motivations, frustratio
 }
 
 .pronoun {
-  font: var(--text-meta-230);
+  font: var(--text-meta-430);
   color: var(--ink-500);
 }
 
 .role-tag {
-  font: var(--text-meta-640);
+  font: var(--text-meta-540);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--ink-100);

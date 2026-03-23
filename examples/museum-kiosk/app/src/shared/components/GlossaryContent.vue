@@ -221,7 +221,7 @@ withDefaults(defineProps<{
 }
 
 .glossary-entry__unicode {
-  font: var(--text-meta-230);
+  font: var(--text-meta-430);
   color: var(--ink-400);
   letter-spacing: 0.05em;
 }
@@ -288,7 +288,7 @@ withDefaults(defineProps<{
 /* Status badges */
 .glossary-status {
   display: inline-block;
-  font: var(--text-meta-230);
+  font: var(--text-meta-430);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   padding: 0.15em 0.5em;
@@ -345,7 +345,7 @@ withDefaults(defineProps<{
   position: absolute;
   left: 0;
   top: var(--space-xs);
-  font: var(--text-meta-230);
+  font: var(--text-meta-430);
   color: var(--secondary-500);
 }
 

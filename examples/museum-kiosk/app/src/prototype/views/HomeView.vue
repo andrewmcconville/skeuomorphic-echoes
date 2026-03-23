@@ -27,7 +27,7 @@
 }
 
 .placeholder__note {
-  font: var(--text-meta-640);
+  font: var(--text-meta-540);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--secondary-500);

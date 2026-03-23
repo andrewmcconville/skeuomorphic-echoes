@@ -82,7 +82,7 @@ import { steps } from './data/steps'
   overflow-y: auto;
   padding: var(--space-xl) var(--space-lg);
   border-right: var(--stroke-medium) solid var(--ink-900);
-  background: var(--surface-100);
+  background: var(--surface-200);
   display: flex;
   flex-direction: column;
   gap: var(--space-xl);
@@ -93,7 +93,7 @@ import { steps } from './data/steps'
   flex-direction: column;
   gap: var(--space-2xs);
   padding-bottom: var(--space-lg);
-  border-bottom: var(--stroke-thin) solid var(--surface-300);
+  border-bottom: var(--stroke-thin) solid var(--surface-400);
 }
 
 .logo-title {
@@ -137,13 +137,13 @@ import { steps } from './data/steps'
 }
 
 .nav-step:hover {
-  background: var(--surface-200);
+  background: var(--surface-300);
   color: var(--ink-900);
 }
 
 .nav-step.router-link-exact-active {
   background: var(--ink-900);
-  color: var(--surface-100);
+  color: var(--surface-200);
 }
 
 .nav-step-id {
@@ -164,7 +164,7 @@ import { steps } from './data/steps'
 .sidebar-nav--reference {
   padding-top: var(--space-md);
   margin-top: var(--space-md);
-  border-top: var(--stroke-thin) solid var(--surface-300);
+  border-top: var(--stroke-thin) solid var(--surface-400);
 }
 
 /* ---- Main ---- */

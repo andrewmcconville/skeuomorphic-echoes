@@ -133,7 +133,7 @@ const statusLabel: Record<string, string> = {
 .toc-band {
   padding: var(--space-xl) 0;
   margin-bottom: var(--space-lg);
-  border-bottom: var(--stroke-thin) solid var(--surface-300);
+  border-bottom: var(--stroke-thin) solid var(--surface-400);
 }
 
 .toc-label {
@@ -181,7 +181,7 @@ const statusLabel: Record<string, string> = {
   grid-template-columns: 120px 1fr;
   gap: 0 var(--space-2xl);
   padding: var(--space-2xl) 0;
-  border-bottom: var(--stroke-thin) solid var(--surface-300);
+  border-bottom: var(--stroke-thin) solid var(--surface-400);
 }
 
 .entry:last-of-type {
@@ -305,7 +305,7 @@ const statusLabel: Record<string, string> = {
 /* Sources */
 .field-group--sources {
   padding-top: var(--space-sm);
-  border-top: 1px dashed var(--surface-300);
+  border-top: 1px dashed var(--surface-400);
 }
 
 .source-list {

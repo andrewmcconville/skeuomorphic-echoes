@@ -77,12 +77,12 @@ h1 {
   align-items: baseline;
   gap: var(--space-sm);
   padding: var(--space-md) 0;
-  border-bottom: var(--stroke-thin) solid var(--surface-300);
+  border-bottom: var(--stroke-thin) solid var(--surface-400);
   transition: padding-left 0.15s;
 }
 
 .step-row:first-child {
-  border-top: var(--stroke-thin) solid var(--surface-300);
+  border-top: var(--stroke-thin) solid var(--surface-400);
 }
 
 .step-row:hover {
@@ -97,7 +97,7 @@ h1 {
 
 .step-dots {
   flex: 1;
-  border-bottom: 1px dotted var(--surface-400);
+  border-bottom: 1px dotted var(--surface-500);
   margin-bottom: 3px;
 }
 

@@ -5,10 +5,11 @@ const colorGroups: ColorGroup[] = [
   {
     name: 'Primary Surface',
     colors: [
-      { name: 'Surface-100', var: '--surface-100', hex: '#F5F0E8', usage: 'Default page ground, card fill, modal backgrounds' },
-      { name: 'Surface-200', var: '--surface-200', hex: '#EDE8DC', usage: 'Alternate ground for inset panels, about screen body' },
-      { name: 'Surface-300', var: '--surface-300', hex: '#D8D3CA', usage: 'Card backgrounds, column dividers, subtle separation' },
-      { name: 'Surface-400', var: '--surface-400', hex: '#C8C2B8', usage: 'Disabled card fills, empty-state placeholders' },
+      { name: 'Surface-100', var: '--surface-100', hex: '#FAF7F2', usage: 'Card fills, modal backgrounds, lightest surface' },
+      { name: 'Surface-200', var: '--surface-200', hex: '#F5F0E8', usage: 'Default page ground, body background' },
+      { name: 'Surface-300', var: '--surface-300', hex: '#EDE8DC', usage: 'Alternate ground for inset panels, warm bands' },
+      { name: 'Surface-400', var: '--surface-400', hex: '#D8D3CA', usage: 'Column dividers, borders, subtle separation' },
+      { name: 'Surface-500', var: '--surface-500', hex: '#C8C2B8', usage: 'Disabled card fills, empty-state placeholders, muted text' },
     ],
   },
   {
@@ -87,9 +88,9 @@ const components: ComponentDef[] = [
     name: 'Specimen Card',
     description: 'The primary content container — one per evolutionary stage. Feels like a pinned card on a museum wall.',
     variants: [
-      { name: 'Default', spec: 'Cream fill (Surface-100), 2px Ink-900 stroke, 3px offset drop shadow, era tag in upper-left' },
+      { name: 'Default', spec: 'Surface-100 fill, 2px Ink-900 stroke, 3px offset drop shadow, era tag in upper-left' },
       { name: 'Collected', spec: 'Default + muted green (Collected-Green) check badge in upper-right corner' },
-      { name: 'Locked', spec: 'Surface-400 fill, dashed Ink-900 stroke, Locked-Brown lock icon, no tap action' },
+      { name: 'Locked', spec: 'Surface-500 fill, dashed Ink-900 stroke, Locked-Brown lock icon, no tap action' },
     ],
   },
   {
@@ -97,7 +98,7 @@ const components: ComponentDef[] = [
     description: 'Tappable regions on the floor plan map, one per exhibit room.',
     variants: [
       { name: 'Unvisited', spec: 'Amber-500 fill at Zone-Overlay-Opacity, 2px Ink-900 outline, drop shadow, room label centered' },
-      { name: 'Visited', spec: 'Surface-300 fill at 60% opacity, 1px Gray-500 outline, muted label' },
+      { name: 'Visited', spec: 'Surface-400 fill at 60% opacity, 1px Gray-500 outline, muted label' },
       { name: 'Active / Pressed', spec: 'Orange-500 fill at 80% opacity, 2px Ink-900 outline, scale 0.97 feedback' },
     ],
   },
@@ -107,9 +108,9 @@ const components: ComponentDef[] = [
     variants: [
       { name: 'Primary Default', spec: 'Surface-100 fill, 2px Ink-900 stroke, label in UI / Button Label style' },
       { name: 'Primary Hover', spec: 'Ink-800 fill, Surface-100 text (inverted)' },
-      { name: 'Primary Disabled', spec: 'Surface-400 fill, Gray-400 stroke and text, no tap action' },
+      { name: 'Primary Disabled', spec: 'Surface-500 fill, Gray-400 stroke and text, no tap action' },
       { name: 'Secondary Default', spec: 'No fill (transparent), 1px Gray-500 stroke, Gray-500 label' },
-      { name: 'Secondary Hover', spec: 'Surface-300 fill, Ink-900 stroke and label' },
+      { name: 'Secondary Hover', spec: 'Surface-400 fill, Ink-900 stroke and label' },
     ],
   },
   {
@@ -117,14 +118,14 @@ const components: ComponentDef[] = [
     description: 'Persistent top navigation bar — minimal chrome so the specimen content stays in focus.',
     variants: [
       { name: 'Main Header', spec: 'Back arrow + exhibit title + floor map icon + collection counter; dotted leader lines' },
-      { name: 'Slim Header', spec: 'Back/close icon only; used on interior specimen pages' },
+      { name: 'Slim Header', spec: 'Back/close icon only; used on artifact pages' },
     ],
   },
   {
     name: 'Era Tag',
     description: 'Inline label identifying a specimen\'s historical period.',
     variants: [
-      { name: 'Default', spec: 'Surface-300 pill, Meta / Era Tag text style, e.g. "Mechanical · c. 1450"' },
+      { name: 'Default', spec: 'Surface-400 pill, Meta / Era Tag text style, e.g. "Mechanical · c. 1450"' },
       { name: 'Active', spec: 'Orange-500 pill, Surface-100 text, used when viewing that era' },
     ],
   },
@@ -299,7 +300,7 @@ const components: ComponentDef[] = [
 .swatch {
   width: 100%;
   aspect-ratio: 1.2;
-  border: var(--stroke-thin) solid var(--surface-300);
+  border: var(--stroke-thin) solid var(--surface-400);
 }
 
 .swatch-info {
@@ -343,7 +344,7 @@ const components: ComponentDef[] = [
 
 .type-sample {
   padding: var(--space-lg) 0;
-  border-bottom: var(--stroke-thin) solid var(--surface-300);
+  border-bottom: var(--stroke-thin) solid var(--surface-400);
 }
 
 .type-sample:first-child {
@@ -398,7 +399,7 @@ const components: ComponentDef[] = [
   flex-direction: column;
   gap: var(--space-2xs);
   padding: var(--space-md) 0;
-  border-bottom: var(--stroke-thin) solid var(--surface-300);
+  border-bottom: var(--stroke-thin) solid var(--surface-400);
 }
 
 .variant:first-child {

@@ -162,8 +162,8 @@ const statusLabel: Record<string, string> = {
 .glossary-toc {
   margin-bottom: var(--space-2xl);
   padding: var(--space-xl);
-  background: var(--surface-200);
-  border: var(--stroke-thin) solid var(--surface-300);
+  background: var(--surface-300);
+  border: var(--stroke-thin) solid var(--surface-400);
 }
 
 .toc-label {
@@ -207,7 +207,7 @@ const statusLabel: Record<string, string> = {
   grid-template-columns: 200px 1fr;
   gap: 0 var(--space-2xl);
   padding: var(--space-2xl) 0;
-  border-bottom: var(--stroke-thin) solid var(--surface-300);
+  border-bottom: var(--stroke-thin) solid var(--surface-400);
 }
 
 .glyph-entry:last-of-type {
@@ -332,7 +332,7 @@ const statusLabel: Record<string, string> = {
 /* Sources */
 .glyph-section--sources {
   padding-top: var(--space-md);
-  border-top: 1px dashed var(--surface-300);
+  border-top: 1px dashed var(--surface-400);
 }
 
 .glyph-section ol {

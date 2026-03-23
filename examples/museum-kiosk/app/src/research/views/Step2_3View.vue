@@ -3,14 +3,14 @@ import type { LabelValue, ScreenEntry, RoomEntry, CatalogGroup } from '../data/t
 
 const screens: ScreenEntry[] = [
   { name: 'Floor Plan Map (Home)', type: 'Home screen', notes: 'Entry point; always accessible via nav' },
-  { name: 'Artifact Collection', type: 'List screen', notes: 'Accessible from home via nav icon' },
-  { name: 'About', type: 'Info screen', notes: 'Accessible from home via nav icon' },
-  { name: 'Glossary', type: 'Reference screen', notes: 'Accessible from home via nav icon' },
   { name: 'Skeuomorph Room: WYSIWYG', type: 'Room', notes: 'Tap zone on floor plan map' },
   { name: 'Skeuomorph Room: Camera Shutter', type: 'Room', notes: 'Tap zone on floor plan map' },
   { name: 'Skeuomorph Room: Envelope', type: 'Room', notes: 'Tap zone on floor plan map' },
   { name: 'Skeuomorph Room: Hanging Up', type: 'Room', notes: 'Tap zone on floor plan map' },
-  { name: 'Evolutionary stages (×20)', type: 'Interior pages', notes: 'Tap from skeuomorph room landing or previous/next' },
+  { name: 'Artifact (×20)', type: 'Detail screen', notes: 'Tap from skeuomorph room' },
+  { name: 'Artifact Collection', type: 'List screen', notes: 'Accessible from home via nav icon' },
+  { name: 'About', type: 'Info screen', notes: 'Accessible from home via nav icon' },
+  { name: 'Glossary', type: 'Reference screen', notes: 'Accessible from home via nav icon' },
 ]
 
 const modals: ScreenEntry[] = [
@@ -68,6 +68,14 @@ const aboutContent: LabelValue[] = [
   { label: 'Contact', value: 'Email or portfolio link for the creator' },
   { label: 'Overview', value: 'What the exhibit covers and why it exists' },
   { label: 'Sources', value: 'Works cited, image credits, tools used' },
+]
+
+const glossaryContent: LabelValue[] = [
+  { label: 'Title', value: '"Glossary"' },
+  { label: 'Navigation', value: 'Back arrow to return to floor plan' },
+  { label: 'Entries', value: 'typographic glyphs with origin, function, and presentation data' },
+  { label: 'Entry fields', value: 'Character, name, aliases, era, etymology, original/modern function, status' },
+  { label: 'Filtering', value: 'Table of contents linking to each glyph entry' },
 ]
 
 const roomLandingContent: LabelValue[] = [
@@ -242,11 +250,11 @@ const interiorCatalog: CatalogGroup[] = [
       </div>
     </section>
 
-    <!-- ===== SKEUOMORPH ROOM LANDING — warm band ===== -->
+    <!-- ===== SKEUOMORPH ROOM — warm band ===== -->
     <section class="section section--full-width section--warm">
       <header class="section-header">
         <div class="section-label">
-          <h2 class="section-heading">Skeuomorph<br />Room Landing</h2>
+          <h2 class="section-heading">Skeuomorph Room</h2>
         </div>
       </header>
       <div class="section-body">
@@ -272,7 +280,7 @@ const interiorCatalog: CatalogGroup[] = [
           </div>
           <div class="section-content">
             <div class="room-cards">
-              <div v-for="(room, i) in rooms" :key="room.name" class="room-card">
+              <div v-for="(room, i) in rooms" :key="room.name" class="card room-card">
                 <div class="room-card-header">
                   <span class="room-number">{{ i + 1 }}</span>
                   <span class="room-name">{{ room.name }}</span>
@@ -294,63 +302,11 @@ const interiorCatalog: CatalogGroup[] = [
       </div>
     </section>
 
-    <!-- ===== ARTIFACT COLLECTION ===== -->
-    <section class="section">
-      <div class="section-panel"></div>
-      <header class="section-header">
-        <div class="section-label">
-          <h2 class="section-heading">Artifact<br />Collection</h2>
-        </div>
-      </header>
-      <div class="section-body">
-        <div class="section-row section-row--nested">
-          <div class="section-label section-label--nested">
-            <h3 class="subsection-heading">Fields</h3>
-          </div>
-          <div class="section-content">
-            <div class="specs-grid specs-grid--dense">
-              <div v-for="c in collectionContent" :key="c.label" class="spec">
-                <span class="spec-label">{{ c.label }}</span>
-                <span class="spec-dots"></span>
-                <span class="spec-value">{{ c.value }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== ABOUT ===== -->
-    <section class="section">
-      <div class="section-panel"></div>
-      <header class="section-header">
-        <div class="section-label">
-          <h2 class="section-heading">About</h2>
-        </div>
-      </header>
-      <div class="section-body">
-        <div class="section-row section-row--nested">
-          <div class="section-label section-label--nested">
-            <h3 class="subsection-heading">Fields</h3>
-          </div>
-          <div class="section-content">
-            <div class="specs-grid specs-grid--dense">
-              <div v-for="c in aboutContent" :key="c.label" class="spec">
-                <span class="spec-label">{{ c.label }}</span>
-                <span class="spec-dots"></span>
-                <span class="spec-value">{{ c.value }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== INTERIOR PAGE — dark band ===== -->
+    <!-- ===== ARTIFACT — dark band ===== -->
     <section class="section section--full-width section--dark">
       <header class="section-header">
         <div class="section-label">
-          <h2 class="section-heading section-heading--light">Interior<br />Page</h2>
+          <h2 class="section-heading section-heading--light">Artifact</h2>
         </div>
       </header>
       <div class="section-body">
@@ -408,6 +364,84 @@ const interiorCatalog: CatalogGroup[] = [
         </div>
       </div>
     </section>
+
+    <!-- ===== ARTIFACT COLLECTION ===== -->
+    <section class="section">
+      <div class="section-panel"></div>
+      <header class="section-header">
+        <div class="section-label">
+          <h2 class="section-heading">Artifact Collection</h2>
+        </div>
+      </header>
+      <div class="section-body">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
+            <h3 class="subsection-heading">Fields</h3>
+          </div>
+          <div class="section-content">
+            <div class="specs-grid specs-grid--dense">
+              <div v-for="c in collectionContent" :key="c.label" class="spec">
+                <span class="spec-label">{{ c.label }}</span>
+                <span class="spec-dots"></span>
+                <span class="spec-value">{{ c.value }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section">
+      <div class="section-panel"></div>
+      <header class="section-header">
+        <div class="section-label">
+          <h2 class="section-heading">About</h2>
+        </div>
+      </header>
+      <div class="section-body">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
+            <h3 class="subsection-heading">Fields</h3>
+          </div>
+          <div class="section-content">
+            <div class="specs-grid specs-grid--dense">
+              <div v-for="c in aboutContent" :key="c.label" class="spec">
+                <span class="spec-label">{{ c.label }}</span>
+                <span class="spec-dots"></span>
+                <span class="spec-value">{{ c.value }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GLOSSARY ===== -->
+    <section class="section">
+      <div class="section-panel"></div>
+      <header class="section-header">
+        <div class="section-label">
+          <h2 class="section-heading">Glossary</h2>
+        </div>
+      </header>
+      <div class="section-body">
+        <div class="section-row section-row--nested">
+          <div class="section-label section-label--nested">
+            <h3 class="subsection-heading">Fields</h3>
+          </div>
+          <div class="section-content">
+            <div class="specs-grid specs-grid--dense">
+              <div v-for="c in glossaryContent" :key="c.label" class="spec">
+                <span class="spec-label">{{ c.label }}</span>
+                <span class="spec-dots"></span>
+                <span class="spec-value">{{ c.value }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </article>
 </template>
 
@@ -438,7 +472,7 @@ const interiorCatalog: CatalogGroup[] = [
 
 .tree-connector {
   font-size: 12px;
-  color: var(--surface-400);
+  color: var(--surface-500);
   line-height: 1;
 }
 
@@ -449,7 +483,7 @@ const interiorCatalog: CatalogGroup[] = [
   text-transform: uppercase;
   padding: var(--space-sm) var(--space-md);
   border: var(--stroke-medium) solid var(--ink-900);
-  background: var(--surface-100);
+  background: var(--surface-200);
   text-align: center;
   width: 140px;
   box-sizing: border-box;
@@ -476,7 +510,7 @@ const interiorCatalog: CatalogGroup[] = [
 }
 
 .tree-node--room {
-  background: var(--surface-200);
+  background: var(--surface-300);
 }
 
 .tree-node--secondary {
@@ -514,7 +548,7 @@ const interiorCatalog: CatalogGroup[] = [
 }
 
 .screen-row {
-  border-bottom: var(--stroke-thin) solid var(--surface-300);
+  border-bottom: var(--stroke-thin) solid var(--surface-400);
 }
 
 .col-name {
@@ -541,10 +575,8 @@ const interiorCatalog: CatalogGroup[] = [
 }
 
 .room-card {
-  padding: var(--space-lg);
-  border: var(--stroke-medium) solid var(--ink-900);
-  background: var(--surface-100);
-  box-shadow: var(--shadow-card-sm) var(--surface-300);
+  flex-direction: column;
+  box-shadow: var(--shadow-card-sm) var(--surface-400);
 }
 
 .room-card-header {
@@ -558,7 +590,7 @@ const interiorCatalog: CatalogGroup[] = [
   font: var(--text-display-h1);
   font-size: 28px;
   line-height: 1;
-  color: var(--surface-400);
+  color: var(--surface-500);
 }
 
 .room-name {
@@ -584,7 +616,7 @@ const interiorCatalog: CatalogGroup[] = [
 
 .stage-index {
   font: var(--text-meta-field-value);
-  color: var(--surface-400);
+  color: var(--surface-500);
   min-width: 14px;
 }
 
@@ -599,7 +631,7 @@ const interiorCatalog: CatalogGroup[] = [
   font: var(--text-meta-era);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--surface-400);
+  color: var(--surface-500);
   margin: 0 0 var(--space-sm);
   padding-bottom: var(--space-sm);
   border-bottom: var(--stroke-thin) solid var(--warm-border);
@@ -613,7 +645,7 @@ const interiorCatalog: CatalogGroup[] = [
 
 .catalog-field {
   font: var(--text-meta-field-value);
-  color: var(--surface-200);
+  color: var(--surface-300);
   padding: var(--space-xs) 10px;
   border: var(--stroke-thin) solid var(--warm-border);
 }

@@ -1,9 +1,10 @@
 :root {
   /* Primary Surface */
-  --surface-100: oklch(0.95 0.01 90);
-  --surface-200: oklch(0.92 0.01 90);
-  --surface-300: oklch(0.86 0.01 80);
-  --surface-400: oklch(0.81 0.01 75);
+  --surface-100: oklch(0.97 0.01 85);
+  --surface-200: oklch(0.95 0.01 85);
+  --surface-300: oklch(0.92 0.01 85);
+  --surface-400: oklch(0.86 0.01 85);
+  --surface-500: oklch(0.81 0.01 85);
 
   /* Accent — Warm Overlay Spectrum */
   --amber-500: oklch(0.76 0.14 75);

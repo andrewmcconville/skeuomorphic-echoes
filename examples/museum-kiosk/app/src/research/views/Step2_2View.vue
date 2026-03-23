@@ -216,7 +216,7 @@ const needs = [
             <ol class="numbered-list">
               <li v-for="(g, i) in goals" :key="g" class="numbered-list__item">
                 <span class="list-number">{{ i + 1 }}</span>
-                <span>{{ g }}</span>
+                <span class="list-text">{{ g }}</span>
               </li>
             </ol>
           </div>
@@ -230,7 +230,7 @@ const needs = [
             <ol class="numbered-list">
               <li v-for="(m, i) in motivations" :key="m" class="numbered-list__item">
                 <span class="list-number">{{ i + 1 }}</span>
-                <span>{{ m }}</span>
+                <span class="list-text">{{ m }}</span>
               </li>
             </ol>
           </div>
@@ -255,7 +255,7 @@ const needs = [
             <ol class="numbered-list">
               <li v-for="(f, i) in frustrations" :key="f" class="numbered-list__item">
                 <span class="list-number">{{ i + 1 }}</span>
-                <span>{{ f }}</span>
+                <span class="list-text">{{ f }}</span>
               </li>
             </ol>
           </div>
@@ -277,7 +277,7 @@ const needs = [
           </div>
           <div class="section-content">
             <div class="needs-grid">
-              <div v-for="(n, i) in needs" :key="n" class="need-card">
+              <div v-for="(n, i) in needs" :key="n" class="card need-card">
                 <span class="need-number">{{ i + 1 }}</span>
                 <p class="need-card__text">{{ n }}</p>
               </div>
@@ -294,7 +294,7 @@ const needs = [
 .identity-card {
   padding: var(--space-xl);
   border: var(--stroke-medium) solid var(--ink-900);
-  background: var(--surface-200);
+  background: var(--surface-300);
 }
 
 .identity-top {
@@ -318,7 +318,7 @@ const needs = [
   font: var(--text-meta-era);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--surface-100);
+  color: var(--surface-200);
   background: var(--ink-900);
   padding: var(--space-xs) 12px;
 }
@@ -355,13 +355,13 @@ const needs = [
   font-size: 12px;
   letter-spacing: 0.05em;
   padding: var(--space-xs) 10px;
-  background: var(--surface-300);
+  background: var(--surface-400);
   color: var(--ink-900);
 }
 
 .tag--outline {
   background: transparent;
-  border: var(--stroke-thin) solid var(--surface-400);
+  border: var(--stroke-thin) solid var(--surface-500);
   color: var(--gray-500);
 }
 
@@ -371,22 +371,25 @@ const needs = [
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
+  margin-top: -10px;
 }
 
 .numbered-list__item {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: var(--space-md);
   font: var(--text-body-default);
 }
 
 .list-number {
   font: var(--text-display-h1);
-  font-size: 28px;
-  line-height: 1;
-  color: var(--surface-400);
+  color: var(--surface-500);
   min-width: 24px;
   flex-shrink: 0;
+}
+
+.list-text {
+  padding-top: 4px;
 }
 
 /* ---- Needs grid ---- */
@@ -397,9 +400,7 @@ const needs = [
 }
 
 .need-card {
-  padding: var(--space-lg);
-  border: var(--stroke-thin) solid var(--surface-300);
-  background: var(--surface-100);
+  flex-direction: column;
 }
 
 .need-number {
@@ -407,7 +408,7 @@ const needs = [
   font: var(--text-display-h1);
   font-size: 28px;
   line-height: 1;
-  color: var(--surface-400);
+  color: var(--surface-500);
   margin-bottom: var(--space-sm);
 }
 

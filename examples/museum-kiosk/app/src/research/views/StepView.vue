@@ -27,8 +27,8 @@ h1 {
   font: var(--text-body-default);
   color: var(--gray-500);
   padding: var(--space-2xl);
-  background: var(--surface-200);
-  border: var(--stroke-thin) dashed var(--surface-400);
+  background: var(--surface-300);
+  border: var(--stroke-thin) dashed var(--surface-500);
   border-radius: var(--radius-md);
   text-align: center;
 }

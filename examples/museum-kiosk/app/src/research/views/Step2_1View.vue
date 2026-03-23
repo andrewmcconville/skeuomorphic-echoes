@@ -84,23 +84,25 @@ const formFactors: LabelValue[] = [
       <div class="section-body">
         <div class="section-row section-row--nested">
           <div class="section-content">
-            <div class="prose-block">
-              <h3 class="prose-block__heading">What do you hope to make?</h3>
-              <p class="prose-block__text">
-                A museum kiosk interface that serves as both wayfinding guide and
-                collectible-driven exploration tool, greeting visitors at each
-                exhibit entrance and inviting them to collect evolutionary stages as
-                they explore.
-              </p>
-            </div>
-            <div class="prose-block">
-              <h3 class="prose-block__heading">Why does this project matter to you?</h3>
-              <p class="prose-block__text">
-                AI prompting is replacing the toolbars, rulers, and drop-down menus
-                of traditional editors. If natural-language interaction removes the
-                need for visual metaphors altogether, skeuomorphs may become
-                artifacts themselves.
-              </p>
+            <div class="prose-group">
+              <div class="prose-block">
+                <h3 class="prose-block__heading">What do you hope to make?</h3>
+                <p class="prose-block__text">
+                  A museum kiosk interface that serves as both wayfinding guide and
+                  collectible-driven exploration tool, greeting visitors at each
+                  exhibit entrance and inviting them to collect evolutionary stages as
+                  they explore.
+                </p>
+              </div>
+              <div class="prose-block">
+                <h3 class="prose-block__heading">Why does this project matter to you?</h3>
+                <p class="prose-block__text">
+                  AI prompting is replacing the toolbars, rulers, and drop-down menus
+                  of traditional editors. If natural-language interaction removes the
+                  need for visual metaphors altogether, skeuomorphs may become
+                  artifacts themselves.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -111,7 +113,7 @@ const formFactors: LabelValue[] = [
     <section class="section section--full-width section--dark">
       <header class="section-header">
         <div class="section-label">
-          <h2 class="section-heading section-heading--light">Primary</h2>
+          <h2 class="section-heading section-heading--light">Primary Skeuomorph</h2>
         </div>
         <div class="section-content">
           <h3 class="primary-title">The WYSIWYG<br />Page Editor</h3>
@@ -139,7 +141,7 @@ const formFactors: LabelValue[] = [
       <div class="section-panel"></div>
       <header class="section-header">
         <div class="section-label">
-          <h2 class="section-heading">Secondary</h2>
+          <h2 class="section-heading">Secondary Skeuomorphs</h2>
         </div>
       </header>
       <div class="section-body">
@@ -149,7 +151,7 @@ const formFactors: LabelValue[] = [
               <div
                 v-for="(s, i) in secondarySkeuomorphs"
                 :key="s.name"
-                class="secondary-card"
+                class="card secondary-card"
               >
                 <span class="card-number">{{ i + 1 }}</span>
                 <div class="card-body">
@@ -178,27 +180,29 @@ const formFactors: LabelValue[] = [
       <div class="section-panel"></div>
       <header class="section-header">
         <div class="section-label">
-          <h2 class="section-heading">Format</h2>
+          <h2 class="section-heading">UX Format</h2>
         </div>
       </header>
       <div class="section-body">
         <div class="section-row section-row--nested">
           <div class="section-content">
-            <div class="prose-block">
-              <h3 class="prose-block__heading">UX Pattern</h3>
-              <p class="prose-block__text">Museum kiosk with wayfinding and collecting</p>
-            </div>
-            <div class="prose-block">
-              <h3 class="prose-block__heading">Media</h3>
-              <p class="prose-block__text">Typographic primary, supported by historical photography, diagrams, and floor-plan maps</p>
-            </div>
-            <div class="prose-block">
-              <h3 class="prose-block__heading">Why this format?</h3>
-              <p class="prose-block__text">
-                Each kiosk orients visitors to the room they're entering while
-                offering collectible evolutionary stages, turning a passive gallery
-                walk into an active scavenger hunt through design history.
-              </p>
+            <div class="prose-group">
+              <div class="prose-block">
+                <h3 class="prose-block__heading">UX Pattern</h3>
+                <p class="prose-block__text">Museum kiosk with wayfinding and collecting</p>
+              </div>
+              <div class="prose-block">
+                <h3 class="prose-block__heading">Media</h3>
+                <p class="prose-block__text">Typographic primary, supported by historical photography, diagrams, and floor-plan maps</p>
+              </div>
+              <div class="prose-block">
+                <h3 class="prose-block__heading">Why this format?</h3>
+                <p class="prose-block__text">
+                  Each kiosk orients visitors to the room they're entering while
+                  offering collectible evolutionary stages, turning a passive gallery
+                  walk into an active scavenger hunt through design history.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -217,21 +221,23 @@ const formFactors: LabelValue[] = [
       <div class="section-body">
         <div class="section-row section-row--nested">
           <div class="section-content">
-            <div class="prose-block">
-              <h3 class="prose-block__heading">Informational</h3>
-              <p class="prose-block__text">
-                Bringhurst's <em>The Elements of Typographic Style</em>, the
-                Letterform Archive's online collection, and the Computer History
-                Museum's desktop publishing archives.
-              </p>
-            </div>
-            <div class="prose-block">
-              <h3 class="prose-block__heading">Visual</h3>
-              <p class="prose-block__text">
-                The Letterform Archive's digitized type specimens, the Computer
-                History Museum's early DTP screenshots, and archive.org for
-                scanned specimen books and software documentation.
-              </p>
+            <div class="prose-group">
+              <div class="prose-block">
+                <h3 class="prose-block__heading">Informational</h3>
+                <p class="prose-block__text">
+                  Bringhurst's <em>The Elements of Typographic Style</em>, the
+                  Letterform Archive's online collection, and the Computer History
+                  Museum's desktop publishing archives.
+                </p>
+              </div>
+              <div class="prose-block">
+                <h3 class="prose-block__heading">Visual</h3>
+                <p class="prose-block__text">
+                  The Letterform Archive's digitized type specimens, the Computer
+                  History Museum's early DTP screenshots, and archive.org for
+                  scanned specimen books and software documentation.
+                </p>
+              </div>
             </div>
             <p class="rationale">
               Each provides verifiable primary-source material. Bringhurst is the
@@ -358,25 +364,25 @@ const formFactors: LabelValue[] = [
 .prose-group {
   display: flex;
   flex-direction: column;
-  gap: var(--space-lg);
+  gap: var(--space-2xl);
 }
 
 .rationale {
   font: var(--text-body-small);
   color: var(--gray-500);
-  border-left: var(--stroke-medium) solid var(--surface-300);
+  border-left: var(--stroke-medium) solid var(--surface-400);
   padding-left: var(--space-md);
 }
 
 .rationale--light {
-  color: var(--surface-300);
+  color: var(--surface-400);
   border-left-color: var(--warm-border);
 }
 
 /* ---- Primary — warm dark band content ---- */
 .primary-title {
   font: var(--text-display-title);
-  color: var(--surface-100);
+  color: var(--surface-200);
   margin: 0;
 }
 
@@ -416,13 +422,13 @@ const formFactors: LabelValue[] = [
 
 .evo-marker {
   font: var(--text-meta-field-value);
-  color: var(--surface-400);
+  color: var(--surface-500);
   min-width: 20px;
 }
 
 .evo-name {
   font: var(--text-body-default);
-  color: var(--surface-100);
+  color: var(--surface-200);
 }
 
 /* ---- Secondary ---- */
@@ -432,20 +438,11 @@ const formFactors: LabelValue[] = [
   gap: var(--space-md);
 }
 
-.secondary-card {
-  display: flex;
-  gap: var(--space-md);
-  padding: var(--space-lg);
-  border: var(--stroke-medium) solid var(--ink-900);
-  background: var(--surface-100);
-  box-shadow: var(--shadow-card) var(--surface-300);
-}
-
 .card-number {
   font: var(--text-display-h1);
   font-size: 32px;
   line-height: 1;
-  color: var(--surface-400);
+  color: var(--surface-500);
   min-width: 28px;
 }
 
@@ -492,13 +489,13 @@ const formFactors: LabelValue[] = [
   border: var(--stroke-medium) solid var(--ink-900);
   background: var(--surface-100);
   position: relative;
-  box-shadow: var(--shadow-card-sm) var(--surface-300);
+  box-shadow: var(--shadow-card-sm) var(--surface-400);
   transition: transform 0.15s, box-shadow 0.15s;
 }
 
 .inspiration-card:hover {
   transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-card-hover) var(--surface-400);
+  box-shadow: var(--shadow-card-hover) var(--surface-500);
 }
 
 .inspiration-name {
@@ -531,7 +528,7 @@ const formFactors: LabelValue[] = [
   font: var(--text-display-h1);
   font-size: 36px;
   line-height: 44px;
-  color: var(--surface-100);
+  color: var(--surface-200);
   position: relative;
   padding-left: var(--space-2xl);
 }

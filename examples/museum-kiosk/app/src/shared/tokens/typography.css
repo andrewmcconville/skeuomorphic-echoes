@@ -5,6 +5,7 @@
   --font-meta: 'IBM Plex Mono', monospace;
 
   /* Display — IBM Plex Serif */
+  --text-display-770: 700 72px/60px var(--font-display);
   --text-display-670: 700 48px/56px var(--font-display);
   --text-display-610: 100 48px/56px var(--font-display);
   --text-display-470: 700 28px/36px var(--font-display);

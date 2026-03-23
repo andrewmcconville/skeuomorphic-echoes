@@ -48,6 +48,7 @@ export const typeGroups: TypeGroup[] = [
   {
     name: 'Heading',
     styles: [
+      { name: 'Heading-770', size: '72 / 60', family: 'IBM Plex Serif', weight: 'Bold', token: '--text-display-770', sample: 'Hero Title' },
       { name: 'Heading-670', size: '48 / 56', family: 'IBM Plex Serif', weight: 'Bold', token: '--text-display-670', sample: 'Title Bold' },
       { name: 'Heading-610', size: '48 / 56', family: 'IBM Plex Serif', weight: 'Thin', token: '--text-display-610', sample: 'Title Thin' },
       { name: 'Heading-470', size: '28 / 36', family: 'IBM Plex Serif', weight: 'Bold', token: '--text-display-470', sample: 'Heading 1' },

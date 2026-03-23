@@ -24,7 +24,7 @@ function parseExtraStyles(extra?: string): Record<string, string> {
 <template>
   <article class="ds-page">
     <HeroHeader badge="2.8" lead="Color, typography, spacing, and structural tokens in use across the research and prototype apps.">
-      Design System
+      Design<br>System
     </HeroHeader>
 
     <!-- ==================== COLORS ==================== -->

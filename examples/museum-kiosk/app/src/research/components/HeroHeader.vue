@@ -7,10 +7,13 @@ defineProps<{
 
 <template>
   <header class="hero">
-    <div class="hero-badge">
-      <span class="badge-label">{{ badge }}</span>
+    <div class="hero-container">
+      <div class="hero-badge"></div>
+      <div class="badge-label">{{ badge }}</div>
+      <h1 class="hero-title"><slot /></h1>
+      <div class="hero-badge__gradient"></div>
+      <div class="hero-badge__mask"></div>
     </div>
-    <h1 class="hero-title"><slot /></h1>
     <p class="hero-lead">{{ lead }}</p>
   </header>
 </template>

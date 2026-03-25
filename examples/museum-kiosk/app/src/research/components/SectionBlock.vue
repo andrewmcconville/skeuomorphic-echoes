@@ -25,7 +25,9 @@ withDefaults(defineProps<{
             { 'section__heading--light': variant === 'dark' || variant === 'title' },
           ]"
         >
-          {{ heading }}
+          <span class="section__heading-text">
+            {{ heading }}
+          </span>
         </h2>
       </header>
       <slot />

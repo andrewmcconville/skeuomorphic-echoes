@@ -138,24 +138,28 @@
   pointer-events: none;
 }
 
-
-/* ---- Subsection label ---- */
-
-.section__label {
-  grid-column: 1;
-}
-
 .section__heading {
   font: var(--text-display-610);
   color: var(--ink-500);
   margin: 0;
   white-space: nowrap;
-  height: 0.94em;
   overflow: hidden;
 }
 
 .section__heading--light {
   color: var(--ink-100);
+}
+
+.section__heading-text {
+  position: relative;
+  bottom: -10px;
+}
+
+
+/* ---- Subsection label ---- */
+
+.section__label {
+  grid-column: 1;
 }
 
 

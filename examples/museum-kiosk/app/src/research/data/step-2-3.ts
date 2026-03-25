@@ -53,7 +53,7 @@ export const homeContent: LabelValue[] = [
 export const collectionContent: LabelValue[] = [
   { label: 'Title', value: '"Artifact Collection"' },
   { label: 'Navigation', value: 'Back arrow returns to floor plan' },
-  { label: 'Artifact cards', value: 'Each collected artifact (e.g., Printing Press, Google Docs); thumbnail + name + era' },
+  { label: 'Artifact cards', value: 'Each collected artifact; thumbnail + name + era' },
   { label: 'Grouping', value: 'Artifacts grouped by skeuomorph room' },
   { label: 'Progress per room', value: 'e.g., "3 / 5 collected" beneath each room group' },
   { label: 'Locked state', value: 'Silhouette or placeholder for uncollected artifacts' },

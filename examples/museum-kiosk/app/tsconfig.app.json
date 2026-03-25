@@ -19,7 +19,8 @@
     "paths": {
       "@shared/*": ["src/shared/*"],
       "@research/*": ["src/research/*"],
-      "@prototype/*": ["src/prototype/*"]
+      "@lo-fi-wireframe/*": ["src/lo-fi-wireframe/*"],
+      "@hi-fi-prototype/*": ["src/hi-fi-prototype/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "env.d.ts"]

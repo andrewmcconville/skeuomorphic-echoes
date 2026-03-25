@@ -1,8 +1,16 @@
+<script setup lang="ts">
+defineProps<{
+  title: string
+  note: string
+  text?: string
+}>()
+</script>
+
 <template>
   <div class="placeholder">
-    <h1 class="placeholder__title">Museum Kiosk Prototype</h1>
-    <p class="placeholder__text">1440 &times; 2560 px</p>
-    <p class="placeholder__note">Prototype views will be built here.</p>
+    <h1 class="placeholder__title">{{ title }}</h1>
+    <p v-if="text" class="placeholder__text">{{ text }}</p>
+    <p class="placeholder__note">{{ note }}</p>
   </div>
 </template>
 

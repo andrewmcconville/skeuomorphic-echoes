@@ -19,12 +19,12 @@ Read every file in these areas (use parallel reads where possible):
 ### Vue components
 - `examples/museum-kiosk/app/src/shared/**/*.vue`
 - `examples/museum-kiosk/app/src/research/**/*.vue`
-- `examples/museum-kiosk/app/src/prototype/**/*.vue`
+- `examples/museum-kiosk/app/src/hi-fi-prototype/**/*.vue`
 
 ### TypeScript modules
 - `examples/museum-kiosk/app/src/shared/**/*.ts`
 - `examples/museum-kiosk/app/src/research/**/*.ts`
-- `examples/museum-kiosk/app/src/prototype/**/*.ts`
+- `examples/museum-kiosk/app/src/hi-fi-prototype/**/*.ts`
 
 ### Stylesheets
 - `examples/museum-kiosk/app/src/**/*.css`

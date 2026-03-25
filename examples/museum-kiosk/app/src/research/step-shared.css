@@ -42,7 +42,6 @@
 .badge-label {
   position: relative;
   font: var(--text-display-610);
-  font-size: 40px;
   line-height: 1;
   color: var(--ink-800);  
   width: 120px;
@@ -55,7 +54,7 @@
 .hero-badge,
 .hero-badge__mask,
 .hero-badge__gradient {
-  bottom: -12px;
+  bottom: -16px;
   top: 0;
 }
 
@@ -202,7 +201,6 @@
 
 .datum-value {
   font: var(--text-body-640);
-  font-size: 16px;
 }
 
 
@@ -297,7 +295,7 @@
 
 .card-number {
   font: var(--text-display-470);
-  font-size: 32px;
+  font-size: 36px;
   line-height: 1;
   color: var(--ink-300);
   min-width: 28px;

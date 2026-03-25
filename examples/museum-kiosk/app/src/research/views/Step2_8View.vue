@@ -23,7 +23,7 @@ function parseExtraStyles(extra?: string): Record<string, string> {
 
 <template>
   <article class="ds-page">
-    <HeroHeader badge="2.8" lead="Color, typography, spacing, and structural tokens in use across the research and prototype apps.">
+    <HeroHeader badge="2.8" lead="Color, typography, spacing, and structural tokens in use across the research, lo-fi wireframe, and hi-fi prototype apps.">
       Design<br>System
     </HeroHeader>
 
@@ -165,7 +165,6 @@ function parseExtraStyles(extra?: string): Record<string, string> {
 
 .color-usage {
   font: var(--text-meta-430);
-  font-size: 12px;
   color: var(--ink-400);
   line-height: 1.4;
 }
@@ -202,11 +201,6 @@ function parseExtraStyles(extra?: string): Record<string, string> {
   margin-top: var(--space-sm);
   font: var(--text-meta-440);
   color: var(--ink-500);
-}
-
-.type-specs {
-  display: flex;
-  gap: var(--space-md);
 }
 
 .type-preview {
@@ -253,7 +247,6 @@ function parseExtraStyles(extra?: string): Record<string, string> {
 
 .token-usage {
   font: var(--text-meta-430);
-  font-size: 12px;
   color: var(--ink-400);
   line-height: 1.4;
 }

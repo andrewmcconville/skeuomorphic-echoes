@@ -200,7 +200,9 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
     <SectionBlock heading="Title" variant="title">
       <SubsectionRow>
         <div class="title-lockup">
-          <em>Before the Prompt:<br />The Rise and Fall of Digital Icons</em>
+          Before the Prompt:
+          <br>
+          <span class="sub-title">The Rise and Fall of Digital Icons</span>
         </div>
       </SubsectionRow>
     </SectionBlock>
@@ -220,7 +222,6 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
   flex-direction: column;
   gap: 0;
   border-left: var(--stroke-medium) solid var(--secondary-500);
-  margin-left: var(--space-sm);
   padding: var(--space-sm) 0;
   background: linear-gradient(
     to right,
@@ -341,11 +342,12 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
 
 /* ---- Title lockup — warm dark band ---- */
 .title-lockup {
-  font: var(--text-display-470);
-  font-size: 36px;
-  line-height: 44px;
-  color: var(--ink-100);
-  position: relative;
-  padding-left: var(--space-2xl);
+  font: var(--text-display-670);
+  font-style: italic;
+}
+
+.sub-title {
+  font: var(--text-display-610);
+  font-style: italic;
 }
 </style>

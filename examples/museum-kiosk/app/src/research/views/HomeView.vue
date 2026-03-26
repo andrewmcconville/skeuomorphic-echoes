@@ -98,12 +98,11 @@ import { steps } from '../data/steps'
 .step-dots {
   flex: 1;
   border-bottom: var(--stroke-thin) dotted var(--ink-300);
-  margin-bottom: 3px;
+  margin-bottom: var(--space-2xs);
 }
 
 .step-title {
   font: var(--text-body-640);
-  font-size: 16px;
 }
 
 .step-row:hover .step-id {

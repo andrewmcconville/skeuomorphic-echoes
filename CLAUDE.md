@@ -7,7 +7,7 @@ Teaching materials repo: assignment briefs + exemplar prototypes for "Skeuomorph
 ```bash
 cd examples/museum-kiosk/app
 npm install         # first-time setup
-npm run dev         # Vite dev server — open research.html, lofi.html, or prototype.html
+npm run dev         # Vite dev server — open research.html, lo-fi-wireframe.html, or hi-fi-prototype.html
 npm run build       # TypeScript check + production build
 npm run preview     # Preview production build
 npx playwright test # visual regression tests (Playwright)
@@ -19,8 +19,8 @@ npx playwright test # visual regression tests (Playwright)
 - examples/museum-kiosk/app/ — Vue 3 + TypeScript + Vite multi-page app
   - index.html — Landing page linking to research, lo-fi wireframe, + hi-fi prototype
   - research.html — Process book (step views: /step/2.1, /step/2.2, etc.)
-  - lofi.html — Lo-fi wireframe prototype
-  - prototype.html — Hi-fi product prototype
+  - lo-fi-wireframe.html — Lo-fi wireframe prototype
+  - hi-fi-prototype.html — Hi-fi product prototype
   - src/shared/ — Design tokens, shared styles, shared data, shared components
     - tokens/colors.css — OKLCH palette custom properties
     - tokens/typography.css — IBM Plex font stacks + scale

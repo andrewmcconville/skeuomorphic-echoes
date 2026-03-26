@@ -102,19 +102,6 @@ IBM Plex family across three optical roles. Cohesive, systematic, institutional 
 
 ---
 
-## Dual Register
-
-The mood board revealed two complementary tones. Rather than choosing one, use both mapped to context:
-
-| Register | When | Palette | Type weight | Density |
-|---|---|---|---|---|
-| **Warm / gallery** | Floor map, home screen, overview, collection tracker | Surface Light + primary/secondary overlays | Lighter weights, more whitespace | Sparse, inviting |
-| **Cool / clinical** | Specimen sheet, evolutionary stage detail, metadata deep-dive | Surface Light + Ink-900/800 dominant | Heavier weights, tighter spacing | Dense, authoritative |
-
-The transition from warm to cool signals the user going deeper — from browsing the gallery to studying the artifact.
-
----
-
 ## Summary Line
 
 A museum specimen catalog rendered as a touchscreen kiosk: warm cream surfaces, amber-to-orange emphasis overlays with cool ink strokes, technically dense metadata grids, and objects presented with the reverence of a field guide and the rigor of a technical manual.

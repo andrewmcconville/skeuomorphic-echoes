@@ -27,10 +27,6 @@
   --ink-200: oklch(0.86 0.006 300);
   --ink-100: oklch(0.95 0.004 300);
 
-  /* Overlay Opacity */
-  --zone-overlay-opacity: 0.5;
-  --shadow-opacity: 0.12;
-
   /* Opacity scale */
   --opacity-panel: 0.5;
   --opacity-muted: 0.6;

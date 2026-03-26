@@ -18,8 +18,8 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         research: resolve(__dirname, 'research.html'),
-        lofi: resolve(__dirname, 'lofi.html'),
-        prototype: resolve(__dirname, 'prototype.html'),
+        'lo-fi-wireframe': resolve(__dirname, 'lo-fi-wireframe.html'),
+        'hi-fi-prototype': resolve(__dirname, 'hi-fi-prototype.html'),
       },
     },
   },

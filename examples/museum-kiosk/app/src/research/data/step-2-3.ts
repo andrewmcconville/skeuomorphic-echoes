@@ -42,7 +42,7 @@ export const rooms: RoomEntry[] = [
 export const homeContent: LabelValue[] = [
   { label: 'Title', value: '"Before the Prompt" — anchors exhibit identity' },
   { label: 'Subtitle', value: 'One-line hook explaining the exhibit concept' },
-  { label: 'Floor plan', value: 'Top-down layout of the four skeuomorph rooms; primary navigation surface' },
+  { label: 'Floor plan', value: 'Top-down layout skeuomorph rooms; primary navigation UI' },
   { label: 'Skeuomorph room zones (×4)', value: 'Tappable regions with labels; 88px min touch targets' },
   { label: 'Zone states', value: 'Collected vs. uncollected differentiation' },
   { label: 'Collection icon', value: 'Shows artifacts collected out of total' },
@@ -83,7 +83,7 @@ export const roomLandingContent: LabelValue[] = [
   { label: 'Description', value: '2–3 sentences on what physical object persists and where' },
   { label: 'Summary', value: 'One-line thesis connecting the original artifact to its digital echo' },
   { label: 'Navigation', value: 'Back to map and artifact collection' },
-  { label: 'Stage cards', value: '4–5 per skeuomorph room; title + thumbnail + era tag; shows collected state' },
+  { label: 'Stage cards', value: 'title + thumbnail + era tag; shows collected state' },
   { label: 'Progress', value: 'Visual bar showing skeuomorph room completion' },
   { label: 'Mini-map', value: 'Highlights which skeuomorph room the visitor is currently in' },
 ]

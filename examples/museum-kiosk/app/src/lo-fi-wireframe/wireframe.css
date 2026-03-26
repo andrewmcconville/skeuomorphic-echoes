@@ -1,0 +1,1172 @@
+/* ───────────────────────────────────────────
+   Lo-fi Wireframe — immersive overlay system
+   Gray-only · animation-driven · 1440 × 2560
+   ─────────────────────────────────────────── */
+
+/* ── Canvas ── */
+
+.wf-canvas {
+  position: relative;
+  width: 1440px;
+  height: 2560px;
+  overflow: hidden;
+  background: #f8f8f6;
+}
+
+/* ── Floor plan (always visible) ── */
+
+.wf-map {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.wf-map--dimmed {
+  filter: blur(6px) brightness(0.7);
+  transform: scale(0.97);
+}
+
+.wf-map__title {
+  font: 100 96px/1 'IBM Plex Serif', serif;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.wf-map__subtitle {
+  font: 400 22px/1.4 'IBM Plex Sans', sans-serif;
+  color: #777;
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 64px;
+}
+
+.wf-map__grid {
+  position: relative;
+  width: 1100px;
+  height: 1100px;
+}
+
+.wf-map__corridor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 100%;
+  border-left: 2px dashed #ccc;
+  border-right: 2px dashed #ccc;
+  opacity: 0.5;
+}
+
+.wf-map__corridor--h {
+  width: 100%;
+  height: 120px;
+  border-left: none;
+  border-right: none;
+  border-top: 2px dashed #ccc;
+  border-bottom: 2px dashed #ccc;
+}
+
+/* ── Zone (tappable room on map) ── */
+
+.wf-zone {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  /* Size set per-zone below */
+  border: 3px solid #333;
+  background: rgba(220, 220, 215, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  animation: zone-breathe 3s ease-in-out infinite;
+}
+
+.wf-zone:nth-child(2) { animation-delay: 0.75s; }
+.wf-zone:nth-child(3) { animation-delay: 1.5s; }
+.wf-zone:nth-child(4) { animation-delay: 2.25s; }
+
+.wf-zone:hover {
+  transform: scale(1.03);
+  box-shadow: 4px 4px 0 #ccc;
+  background: rgba(200, 200, 195, 0.45);
+  animation-play-state: paused;
+}
+
+/* Asymmetric floor plan — each room has unique size and position */
+.wf-zone--tl { top: 0;    left: 0;    width: 520px; height: 420px; }
+.wf-zone--tr { top: 30px; right: 0;   width: 400px; height: 500px; }
+.wf-zone--bl { bottom: 0; left: 40px; width: 440px; height: 480px; }
+.wf-zone--br { bottom: 40px; right: 20px; width: 480px; height: 400px; }
+
+.wf-zone--complete {
+  border-style: double;
+  border-width: 5px;
+  background: rgba(200, 200, 195, 0.15);
+}
+
+.wf-zone__name {
+  font: 700 28px/1.1 'IBM Plex Serif', serif;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.wf-zone__count {
+  font: 300 15px/1 'IBM Plex Mono', monospace;
+  color: #888;
+  letter-spacing: 0.04em;
+}
+
+.wf-zone__progress {
+  width: 120px;
+  height: 4px;
+  background: #ddd;
+  margin-top: 4px;
+  overflow: hidden;
+}
+
+.wf-zone__progress-fill {
+  height: 100%;
+  background: #888;
+  transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes zone-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.012); }
+}
+
+/* ── Floating HUD (collection counter + nav) ── */
+
+.wf-hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 48px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.wf-hud > * {
+  pointer-events: auto;
+}
+
+.wf-hud__counter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 56px;
+  padding: 0 24px;
+  border: 2px solid #333;
+  background: #fff;
+  font: 700 18px/1 'IBM Plex Mono', monospace;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.wf-hud__counter:hover {
+  transform: scale(1.04);
+}
+
+.wf-hud__counter--bounce {
+  animation: hud-bounce 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes hud-bounce {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.wf-hud__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border: 2px solid #333;
+  background: #fff;
+  font: 400 20px/1 'IBM Plex Sans', sans-serif;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, transform 0.2s;
+}
+
+.wf-hud__btn:hover {
+  background: #333;
+  color: #fff;
+  transform: scale(1.04);
+}
+
+.wf-hud__nav {
+  display: flex;
+  gap: 12px;
+}
+
+/* ── Overlay backdrop ── */
+
+.wf-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  background: rgba(30, 30, 28, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+/* ── Room overlay (centered, content-sized) ── */
+
+.wf-room {
+  position: absolute;
+  z-index: 30;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1200px;
+  max-height: 2464px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #f8f8f6;
+  border: 3px solid #333;
+  display: flex;
+  flex-direction: column;
+  padding: 56px 64px 48px;
+  gap: 0;
+}
+
+.wf-room__close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border: 2px solid #333;
+  background: #fff;
+  font: 400 24px/1 'IBM Plex Sans', sans-serif;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, transform 0.15s;
+  z-index: 1;
+}
+
+.wf-room__close:hover {
+  background: #333;
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+/* ── Room hero ── */
+
+.wf-room__hero {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.wf-room__label {
+  font: 400 13px/1 'IBM Plex Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #aaa;
+  margin: 0 0 12px;
+}
+
+.wf-room__title {
+  font: 100 80px/0.95 'IBM Plex Serif', serif;
+  color: #1a1a1a;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.wf-room__thesis {
+  font: 400 17px/1.5 'IBM Plex Sans', sans-serif;
+  color: #666;
+  margin: 20px auto 0;
+  max-width: 680px;
+}
+
+/* ── Progress dots ── */
+
+.wf-room__progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.wf-room__progress-dots {
+  display: flex;
+  gap: 10px;
+}
+
+.wf-room__progress-dot {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  transition: background 0.4s ease, transform 0.3s ease;
+}
+
+.wf-room__progress-dot--filled {
+  background: #333;
+  transform: scale(1.15);
+}
+
+.wf-room__progress-text {
+  font: 700 14px/1 'IBM Plex Mono', monospace;
+  color: #888;
+  white-space: nowrap;
+}
+
+/* ── Timeline ── */
+
+.wf-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0 0 8px;
+}
+
+.wf-timeline__line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: #ddd;
+  transform: translateX(-50%);
+}
+
+/* ── Timeline node ── */
+
+.wf-timeline__node {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding: 0 0 32px;
+  /* Left-aligned card by default (even nodes) */
+  padding-right: calc(50% + 40px);
+  justify-content: flex-end;
+  opacity: 0;
+  animation: timeline-cascade 0.45s ease-out forwards;
+}
+
+/* Right-aligned card (odd nodes) */
+.wf-timeline__node--right {
+  padding-right: 0;
+  padding-left: calc(50% + 40px);
+  justify-content: flex-start;
+}
+
+/* ── Timeline dot (on the center line) ── */
+
+.wf-timeline__dot {
+  position: absolute;
+  left: 50%;
+  top: 16px;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 36px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 700 14px/1 'IBM Plex Mono', monospace;
+  color: #333;
+  z-index: 1;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+.wf-timeline__dot:hover,
+.wf-timeline__node:has(.wf-timeline__card:hover) .wf-timeline__dot {
+  background: #333;
+  color: #fff;
+  transform: translateX(-50%) scale(1.15);
+}
+
+/* Dot hover also highlights the card */
+.wf-timeline__node:has(.wf-timeline__dot:hover) .wf-timeline__card {
+  box-shadow: 4px 4px 0 #ccc;
+}
+
+.wf-timeline__node:not(.wf-timeline__node--right):has(.wf-timeline__dot:hover) .wf-timeline__card {
+  transform: translateX(-6px);
+  box-shadow: 6px 4px 0 #ccc;
+}
+
+.wf-timeline__node--right:has(.wf-timeline__dot:hover) .wf-timeline__card {
+  transform: translateX(6px);
+  box-shadow: -6px 4px 0 #ccc;
+}
+
+.wf-timeline__node:has(.wf-timeline__dot:hover) .wf-timeline__arrow {
+  color: #333;
+}
+
+.wf-timeline__node--collected .wf-timeline__dot {
+  background: #333;
+  color: #fff;
+}
+
+/* ── Timeline card ── */
+
+.wf-timeline__card {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  border: 2px solid #333;
+  background: #fff;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  width: 100%;
+  cursor: pointer;
+}
+
+.wf-timeline__card:hover {
+  box-shadow: 4px 4px 0 #ccc;
+}
+
+/* Even nodes: card slides toward center on hover */
+.wf-timeline__node:not(.wf-timeline__node--right) .wf-timeline__card:hover {
+  transform: translateX(-6px);
+  box-shadow: 6px 4px 0 #ccc;
+}
+
+/* Odd nodes: card slides toward center on hover */
+.wf-timeline__node--right .wf-timeline__card:hover {
+  transform: translateX(6px);
+  box-shadow: -6px 4px 0 #ccc;
+}
+
+.wf-timeline__node--collected .wf-timeline__card {
+  border-style: double;
+  border-width: 4px;
+}
+
+.wf-timeline__card-img {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  background: #eee;
+  border: 2px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 300 12px/1 'IBM Plex Mono', monospace;
+  color: #bbb;
+  text-transform: uppercase;
+}
+
+.wf-timeline__card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+  min-width: 0;
+}
+
+.wf-timeline__era {
+  font: 400 12px/1 'IBM Plex Mono', monospace;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.wf-timeline__name {
+  font: 700 20px/1.2 'IBM Plex Serif', serif;
+  color: #1a1a1a;
+}
+
+.wf-timeline__summary {
+  font: 400 14px/1.45 'IBM Plex Sans', sans-serif;
+  color: #777;
+  margin-top: 2px;
+}
+
+.wf-timeline__arrow {
+  flex-shrink: 0;
+  align-self: center;
+  font: 300 24px/1 'IBM Plex Sans', sans-serif;
+  color: #ccc;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.wf-timeline__card:hover .wf-timeline__arrow {
+  color: #333;
+}
+
+.wf-timeline__node:not(.wf-timeline__node--right) .wf-timeline__card:hover .wf-timeline__arrow {
+  transform: translateX(-3px);
+}
+
+.wf-timeline__node--right .wf-timeline__card:hover .wf-timeline__arrow {
+  transform: translateX(3px);
+}
+
+@keyframes timeline-cascade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Room description footer ── */
+
+.wf-room__desc {
+  font: 300 14px/1.6 'IBM Plex Mono', monospace;
+  color: #aaa;
+  text-align: center;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* ── Artifact modal (scales in from center) ── */
+
+.wf-modal {
+  position: absolute;
+  z-index: 40;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1200px;
+  max-height: 2464px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #fff;
+  border: 3px solid #333;
+  display: flex;
+  flex-direction: column;
+}
+
+.wf-modal__topbar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 48px;
+  border-bottom: 2px solid #e5e5e5;
+}
+
+.wf-modal__topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.wf-modal__back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 2px solid #333;
+  background: #fff;
+  font: 400 20px/1 'IBM Plex Sans', sans-serif;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.wf-modal__back:hover {
+  background: #333;
+  color: #fff;
+}
+
+.wf-modal__breadcrumb {
+  font: 400 14px/1 'IBM Plex Mono', monospace;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.wf-modal__position {
+  font: 700 16px/1 'IBM Plex Mono', monospace;
+  color: #333;
+}
+
+.wf-modal__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 2px solid #333;
+  background: #fff;
+  font: 400 20px/1 'IBM Plex Sans', sans-serif;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, transform 0.15s;
+}
+
+.wf-modal__close:hover {
+  background: #333;
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+.wf-modal__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.wf-modal__hero-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.wf-modal__era {
+  font: 400 14px/1 'IBM Plex Mono', monospace;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.wf-modal__name {
+  font: 700 56px/1.05 'IBM Plex Serif', serif;
+  color: #1a1a1a;
+}
+
+.wf-modal__summary {
+  font: 400 18px/1.6 'IBM Plex Sans', sans-serif;
+  color: #555;
+  max-width: 800px;
+}
+
+.wf-modal__hero-img {
+  width: 100%;
+  max-width: 900px;
+  height: 480px;
+  background: #eee;
+  border: 2px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 300 14px/1 'IBM Plex Mono', monospace;
+  color: #bbb;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 16px;
+}
+
+.wf-modal__divider {
+  border: none;
+  border-top: 2px solid #e5e5e5;
+}
+
+.wf-modal__divider--bold {
+  border-top-color: #333;
+}
+
+.wf-modal__section-label {
+  font: 400 12px/1 'IBM Plex Mono', monospace;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+/* ── Metadata grid ── */
+
+.wf-meta-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.wf-meta-row {
+  display: flex;
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.wf-meta-row__label {
+  flex: 0 0 220px;
+  font: 400 13px/1.6 'IBM Plex Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #aaa;
+}
+
+.wf-meta-row__value {
+  flex: 1;
+  font: 400 16px/1.6 'IBM Plex Sans', sans-serif;
+  color: #333;
+}
+
+.wf-meta-row__link {
+  color: #333;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.wf-meta-row__link:hover {
+  color: #000;
+}
+
+/* ── Collect button ── */
+
+.wf-collect {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+.wf-collect__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  height: 72px;
+  padding: 0 48px;
+  border: 3px solid #333;
+  background: #333;
+  color: #fff;
+  font: 700 18px/1 'IBM Plex Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.wf-collect__btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.wf-collect__btn:active {
+  transform: scale(0.97);
+}
+
+.wf-collect__btn--done {
+  background: #fff;
+  color: #888;
+  border-color: #ccc;
+  cursor: default;
+}
+
+.wf-collect__btn--done:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* ── Collect burst animation ── */
+
+.wf-burst {
+  position: fixed;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.wf-burst__particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 2px solid #333;
+  animation: burst-fly 0.7s ease-out forwards;
+}
+
+@keyframes burst-fly {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--dx), var(--dy)) scale(0);
+    opacity: 0;
+  }
+}
+
+/* ── Prev / Next nav ── */
+
+.wf-artifact-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.wf-artifact-nav__btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  border: 2px solid #333;
+  background: #fff;
+  font: 500 16px/1 'IBM Plex Sans', sans-serif;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.wf-artifact-nav__btn:hover {
+  transform: translateX(4px);
+  box-shadow: -2px 2px 0 #ccc;
+}
+
+.wf-artifact-nav__btn--prev:hover {
+  transform: translateX(-4px);
+  box-shadow: 2px 2px 0 #ccc;
+}
+
+.wf-artifact-nav__btn-label {
+  font: 400 13px/1 'IBM Plex Mono', monospace;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── Drawer (collection / about / glossary) ── */
+
+.wf-drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  width: 680px;
+  background: #fff;
+  border-left: 3px solid #333;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.wf-drawer__header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 48px;
+  border-bottom: 2px solid #e5e5e5;
+}
+
+.wf-drawer__title {
+  font: 700 28px/1.2 'IBM Plex Serif', serif;
+  color: #1a1a1a;
+}
+
+.wf-drawer__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 2px solid #333;
+  background: #fff;
+  font: 400 20px/1 'IBM Plex Sans', sans-serif;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, transform 0.15s;
+}
+
+.wf-drawer__close:hover {
+  background: #333;
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+.wf-drawer__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 32px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ── Collection list ── */
+
+.wf-coll-group__title {
+  font: 700 18px/1.2 'IBM Plex Serif', serif;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.wf-coll-group__progress {
+  font: 400 13px/1 'IBM Plex Mono', monospace;
+  color: #aaa;
+  margin-bottom: 16px;
+}
+
+.wf-coll-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border: 2px solid #333;
+  background: #fff;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-bottom: 8px;
+}
+
+.wf-coll-item:hover {
+  transform: translateX(4px);
+  box-shadow: -2px 2px 0 #ccc;
+}
+
+.wf-coll-item--locked {
+  border-color: #ddd;
+  opacity: 0.45;
+  cursor: default;
+}
+
+.wf-coll-item--locked:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.wf-coll-item__icon {
+  width: 48px;
+  height: 48px;
+  background: #eee;
+  border: 1px dashed #ccc;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 300 10px/1 'IBM Plex Mono', monospace;
+  color: #ccc;
+  text-transform: uppercase;
+}
+
+.wf-coll-item__name {
+  flex: 1;
+  font: 500 16px/1.2 'IBM Plex Sans', sans-serif;
+  color: #333;
+}
+
+.wf-coll-item__badge {
+  font: 400 12px/1 'IBM Plex Mono', monospace;
+  color: #aaa;
+  text-transform: uppercase;
+}
+
+/* ── Glossary list ── */
+
+.wf-glyph {
+  display: flex;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid #eee;
+  align-items: flex-start;
+}
+
+.wf-glyph__char {
+  flex: 0 0 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  line-height: 1;
+  color: #333;
+  border: 2px solid #ddd;
+  background: #fafafa;
+}
+
+.wf-glyph__info {
+  flex: 1;
+}
+
+.wf-glyph__name {
+  font: 700 16px/1.2 'IBM Plex Serif', serif;
+  color: #1a1a1a;
+}
+
+.wf-glyph__code {
+  font: 300 12px/1 'IBM Plex Mono', monospace;
+  color: #aaa;
+  margin-top: 2px;
+}
+
+.wf-glyph__desc {
+  font: 400 14px/1.5 'IBM Plex Sans', sans-serif;
+  color: #666;
+  margin-top: 6px;
+}
+
+.wf-glyph__status {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 2px 10px;
+  border: 1px solid #ccc;
+  font: 400 11px/1.4 'IBM Plex Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #999;
+}
+
+/* ── Transition classes ── */
+
+/* Backdrop fade */
+.backdrop-enter-active,
+.backdrop-leave-active {
+  transition: opacity 0.35s ease;
+}
+.backdrop-enter-from,
+.backdrop-leave-to {
+  opacity: 0;
+}
+
+/* Room scale in (centered via translate, so scale composes on top) */
+.room-enter-active {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+}
+.room-leave-active {
+  transition: transform 0.25s ease-in, opacity 0.2s ease;
+}
+.room-enter-from {
+  transform: translate(-50%, -50%) scale(0.88);
+  opacity: 0;
+}
+.room-leave-to {
+  transform: translate(-50%, -50%) scale(0.92);
+  opacity: 0;
+}
+
+/* Modal transition is JS-driven (FLIP from timeline card) — no CSS classes needed */
+
+/* Drawer slide in from right */
+.drawer-enter-active {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.drawer-leave-active {
+  transition: transform 0.3s ease-in;
+}
+.drawer-enter-from {
+  transform: translateX(100%);
+}
+.drawer-leave-to {
+  transform: translateX(100%);
+}
+
+/* Toast pop up */
+.toast-enter-active {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease;
+}
+.toast-leave-active {
+  transition: transform 0.3s ease-in, opacity 0.3s ease;
+}
+.toast-enter-from {
+  transform: translateY(32px) scale(0.9);
+  opacity: 0;
+}
+.toast-leave-to {
+  transform: translateY(-16px) scale(0.95);
+  opacity: 0;
+}
+
+/* ── Toast ── */
+
+.wf-toast {
+  position: absolute;
+  bottom: 64px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 72px;
+  padding: 0 40px;
+  border: 3px solid #333;
+  background: #fff;
+  box-shadow: 4px 4px 0 #ccc;
+  font: 700 18px/1 'IBM Plex Sans', sans-serif;
+  color: #333;
+  white-space: nowrap;
+}
+
+/* ── About section ── */
+
+.wf-about-portrait {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.wf-about-portrait__img {
+  width: 120px;
+  height: 120px;
+  background: #eee;
+  border: 2px dashed #ccc;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 300 11px/1 'IBM Plex Mono', monospace;
+  color: #bbb;
+  text-transform: uppercase;
+}
+
+.wf-about-portrait__text {
+  flex: 1;
+}
+
+.wf-about__name {
+  font: 700 18px/1.2 'IBM Plex Serif', serif;
+  color: #1a1a1a;
+}
+
+.wf-about__role {
+  font: 400 13px/1 'IBM Plex Mono', monospace;
+  color: #aaa;
+  margin-top: 4px;
+}
+
+.wf-about__bio {
+  font: 400 15px/1.6 'IBM Plex Sans', sans-serif;
+  color: #555;
+  margin-top: 12px;
+}
+
+.wf-about__section-title {
+  font: 400 12px/1 'IBM Plex Mono', monospace;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e5e5e5;
+  margin-bottom: 12px;
+}
+
+.wf-about__source {
+  font: 400 14px/1.6 'IBM Plex Sans', sans-serif;
+  color: #555;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}

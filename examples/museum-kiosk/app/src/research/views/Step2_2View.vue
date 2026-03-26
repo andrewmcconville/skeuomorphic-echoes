@@ -15,7 +15,7 @@ import { demographics, interests, traits, brands, goals, motivations, frustratio
 
     <!-- ===== IDENTITY ===== -->
     <SectionBlock heading="Identity">
-      <SubsectionRow label="Card">
+      <SubsectionRow>
         <div class="identity-card">
           <div class="identity-top">
             <div class="identity-info">
@@ -41,6 +41,9 @@ import { demographics, interests, traits, brands, goals, motivations, frustratio
           become "invisible culture," and she loves exhibits that treat everyday
           UI details like artifacts worth studying.
         </p>
+      </SubsectionRow>
+
+      <SubsectionRow label="Quote">
         <blockquote class="bio-quote">
           "I'm here for the details — show me the lineage, not just the label."
         </blockquote>
@@ -153,7 +156,7 @@ import { demographics, interests, traits, brands, goals, motivations, frustratio
   letter-spacing: 0.1em;
   color: var(--ink-100);
   background: var(--ink-900);
-  padding: var(--space-xs) 12px;
+  padding: var(--space-xs) var(--space-md);
 }
 
 .identity-org {
@@ -185,7 +188,6 @@ import { demographics, interests, traits, brands, goals, motivations, frustratio
 .need-number {
   display: block;
   font: var(--text-display-470);
-  font-size: 28px;
   line-height: 1;
   color: var(--ink-300);
   margin-bottom: var(--space-sm);

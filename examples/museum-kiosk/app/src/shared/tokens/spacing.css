@@ -8,7 +8,6 @@
   --space-xl: 32px;
   --space-2xl: 48px;
   --space-3xl: 64px;
-  --space-4xl: 96px;
 
   /* Border */
   --stroke-thin: 1px;
@@ -18,13 +17,9 @@
   --radius-xs: 2px;
   --radius-sm: 4px;
   --radius-md: 8px;
-  --radius-pill: 999px;
-
   /* Shadows (offset, no blur — "stamp" aesthetic) */
   --shadow-card: 4px 4px 0;
   --shadow-card-sm: 3px 3px 0;
   --shadow-card-hover: 5px 5px 0;
 
-  /* Touch target (kiosk) */
-  --touch-min: 88px;
 }

@@ -518,4 +518,4 @@ Thirteen marks that once organized the written word by hand. Some survive in mod
 - Sherman, William H. *Used Books: Marking Readers in Renaissance England*. Philadelphia: University of Pennsylvania Press, 2008.
 - Speckter, Martin K. "Making a New Point, Or How About That…" *TYPEtalks*, 1962.
 
-*Typefaces: Cormorant Garamond, Outfit, JetBrains Mono, IBM Plex Mono, Syne.*
+*Typefaces: IBM Plex Serif, IBM Plex Sans, IBM Plex Mono.* (Current implementation. Presentational "Best face" notes above reflect an earlier typeface exploration and are retained as reference.)

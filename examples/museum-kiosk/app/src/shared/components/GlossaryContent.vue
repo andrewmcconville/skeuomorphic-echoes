@@ -296,6 +296,7 @@ withDefaults(defineProps<{
   vertical-align: middle;
 }
 
+/* --primary-500 = oklch(0.76 0.14 75), --secondary-500 = oklch(0.63 0.15 50) */
 .glossary-status--thriving {
   background: oklch(0.76 0.14 75 / 0.1);
   color: var(--primary-500);

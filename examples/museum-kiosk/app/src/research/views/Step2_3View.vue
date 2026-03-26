@@ -220,7 +220,7 @@ import {
 
 .node-tag {
   display: block;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 400;
   color: var(--ink-800);
   margin-top: var(--space-2xs);
@@ -304,7 +304,6 @@ import {
 
 .room-number {
   font: var(--text-display-470);
-  font-size: 28px;
   line-height: 1;
   color: var(--ink-300);
 }

@@ -14,7 +14,7 @@ export const colorGroups: ColorGroup[] = [
       { name: 'Surface-Light-100', var: '--surface-light-100', hex: '#FAF7F2', usage: 'Card fills, modal backgrounds, lightest surface' },
       { name: 'Surface-Light-200', var: '--surface-light-200', hex: '#F5F0E8', usage: 'Page ground, sidebar background' },
       { name: 'Surface-Light-300', var: '--surface-light-300', hex: '#EDE8DC', usage: 'Inset panels, warm bands, nav hover, glossary TOC' },
-      { name: 'Surface-Light-400', var: '--surface-light-400', hex: '#D8D3CA', usage: 'Tag fills' },
+      { name: 'Surface-Light-400', var: '--surface-light-400', hex: '#D4D1CA', usage: 'Tag fills' },
     ],
   },
   {
@@ -33,7 +33,7 @@ export const colorGroups: ColorGroup[] = [
       { name: 'Ink-500', var: '--ink-500', hex: '#6B6B6B', usage: 'Secondary text, metadata labels, scale marks' },
       { name: 'Ink-400', var: '--ink-400', hex: '#8A8A8A', usage: 'Tertiary text, placeholder copy, subsection headings' },
       { name: 'Ink-300', var: '--ink-300', hex: '#C8C2B8', usage: 'Muted text, dotted leaders, outline tag borders, card numbers' },
-      { name: 'Ink-200', var: '--ink-200', hex: '#D8D3CA', usage: 'Subtle borders, dividers, rationale borders' },
+      { name: 'Ink-200', var: '--ink-200', hex: '#D1D0D4', usage: 'Subtle borders, dividers, rationale borders' },
       { name: 'Ink-100', var: '--ink-100', hex: '#F0EDE8', usage: 'Light text on dark bands, hero titles, active nav text' },
     ],
   },

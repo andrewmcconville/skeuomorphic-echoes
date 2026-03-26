@@ -7,8 +7,8 @@ const routes = [
   { name: 'step-2.3', path: '/research.html#/step/2.3' },
   { name: 'step-2.4', path: '/research.html#/step/2.4' },
   { name: 'step-2.8', path: '/research.html#/step/2.8' },
-  { name: 'lofi-home', path: '/lofi.html#/' },
-  { name: 'hifi-home', path: '/prototype.html#/' },
+  { name: 'lofi-home', path: '/lo-fi-wireframe.html#/' },
+  { name: 'hifi-home', path: '/hi-fi-prototype.html#/' },
 ]
 
 for (const route of routes) {

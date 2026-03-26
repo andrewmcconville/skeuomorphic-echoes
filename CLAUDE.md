@@ -35,7 +35,11 @@ npx playwright test # visual regression tests (Playwright)
     - step-shared.css — Shared step-page styles (hero, section block, cards, prose, tags)
     - components/ — SectionBlock.vue, SubsectionRow.vue, HeroHeader.vue, SpecsGrid.vue
     - data/types.ts — Barrel re-export of research TypeScript types from types/ subdirectory (common, step-2-3, step-2-4, step-2-8)
-  - src/lo-fi-wireframe/ — Lo-fi wireframe app views and router
+  - src/lo-fi-wireframe/ — Lo-fi wireframe app (overlay-driven single-canvas, no page navigation)
+    - wireframe.css — Shared wireframe styles and transition animations
+    - components/ — FloorPlan, RoomOverlay, ArtifactModal, CollectionDrawer, AboutDrawer, GlossaryDrawer
+    - composables/useCollection.ts — Reactive collection state shared across overlays
+    - data/rooms.ts — 4 rooms × 5 artifacts with content, lookup helpers
   - src/hi-fi-prototype/ — Hi-fi prototype app views and router
   - tests/ — Playwright test specs (visual-regression.spec.ts)
 - examples/museum-kiosk/docs/ — Reference markdown documents (glossary.md, design-direction-brief.md, artifact-metadata-fields.md, 2.1–2.8 step content)
@@ -70,6 +74,9 @@ npx playwright test # visual regression tests (Playwright)
 - Vocabulary: "Artifact" (detail page), "Artifact Collection" (list page), "Skeuomorph Room" (room landing) — never "Interior Page" or "Room Landing" alone
 - Glyph status terms use conservation biology language: thriving, endangered, extinct, adapted
 - Glyph status badges use `--primary-500` (thriving/adapted) and `--secondary-500` (endangered) — no dedicated status colors
+- Lo-fi wireframe is overlay-driven: floor plan always visible, rooms/artifacts/drawers layer on top as animated overlays — not page navigation
+- Lo-fi wireframe routes drive overlay state (`#/room/:id`, `#/room/:id/artifact/:id`, `#/collection`, `#/about`, `#/glossary`)
+- Lo-fi wireframe uses hard-offset shadows only (`4px 4px 0 #ccc`) — no blur
 
 ## Testing
 
@@ -84,6 +91,6 @@ npx playwright test # visual regression tests (Playwright)
 - Assignment briefs are raw Canvas HTML fragments — no full-document wrapper
 - AI tools intentionally withheld from student materials before p2.3
 - Museum kiosk is portrait touchscreen (1440x2560px) — prototype viewport scaling via position: fixed + transform-origin
-- Playwright preview server uses base path `/skeuomorphic-echoes/` — new test URLs must include it
+- Playwright preview server uses Vite base path — test URLs use root-relative paths (e.g., `/lo-fi-wireframe.html#/`)
 - All files must stay in project directory (Dropbox), never in C:\Users\...\.claude\
 - Custom skills in .claude/skills/ load into context but don't register as VS Code slash commands — execute manually or reference with @

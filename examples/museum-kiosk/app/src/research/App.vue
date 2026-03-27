@@ -45,7 +45,9 @@ import { steps } from './data/steps'
 
 <style>
 .research-app {
-  --sidebar-width: 240px;
+  --grid-column: 120px;
+  --grid-columns: 12;
+  --sidebar-width: calc(2 * var(--grid-column));
 }
 </style>
 
@@ -53,6 +55,26 @@ import { steps } from './data/steps'
 .research-app {
   min-height: 100vh;
   display: flex;
+}
+
+/* ---- Swiss grid overlay ---- */
+.research-app::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(var(--grid-columns) * var(--grid-column));
+  height: 100vh;
+  background: repeating-linear-gradient(
+    to right,
+    var(--ink-300) 0px,
+    var(--ink-300) 1px,
+    transparent 1px,
+    transparent var(--grid-column)
+  );
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 9999;
 }
 
 /* ---- Sidebar ---- */

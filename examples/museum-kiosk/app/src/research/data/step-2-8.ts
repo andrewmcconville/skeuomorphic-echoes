@@ -79,9 +79,10 @@ export const spacingTokens: TokenSpec[] = [
   { name: 'sm', var: '--space-sm', value: '8px', usage: 'Icon gaps, badge padding, spec row gaps' },
   { name: 'md', var: '--space-md', value: '16px', usage: 'Card gaps, field spacing, nav padding' },
   { name: 'lg', var: '--space-lg', value: '24px', usage: 'Card padding, hero badge margin, section gaps' },
-  { name: 'xl', var: '--space-xl', value: '32px', usage: 'Sidebar padding, glossary sticky offset' },
-  { name: '2xl', var: '--space-2xl', value: '48px', usage: 'Section row gaps, content column spacing' },
-  { name: '3xl', var: '--space-3xl', value: '64px', usage: 'Section padding, hero top padding' },
+  { name: 'xl', var: '--space-xl', value: '30px', usage: 'Sidebar padding, glossary sticky offset, section label gutter' },
+  { name: '2xl', var: '--space-2xl', value: '40px', usage: 'Section row gaps, hero bottom padding' },
+  { name: '3xl', var: '--space-3xl', value: '60px', usage: 'Half grid column — large component spacing' },
+  { name: '4xl', var: '--space-4xl', value: '120px', usage: 'Full grid column — section padding, hero padding' },
 ]
 
 export const strokeTokens: TokenSpec[] = [

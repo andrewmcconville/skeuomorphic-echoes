@@ -22,7 +22,7 @@ function parseExtraStyles(extra?: string): Record<string, string> {
 </script>
 
 <template>
-  <article class="ds-page">
+  <article class="step-page ds-page">
     <HeroHeader badge="2.8" lead="Color, typography, spacing, and structural tokens in use across the research, lo-fi wireframe, and hi-fi prototype apps.">
       Design<br>System
     </HeroHeader>

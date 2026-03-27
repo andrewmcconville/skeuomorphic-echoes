@@ -67,7 +67,8 @@ npx playwright test # visual regression tests (Playwright)
 - Section variant modifiers: `--dark`, `--warm`, `--title` — set background/color on `.section`
 - Typography tokens at `:root` in typography.css at research scale — no per-app overrides
 - `--text-display-610` (weight 100) used for section headings
-- Spacing scale: 2, 4, 8, 16, 24, 32, 48, 64 (`--space-2xs` through `--space-3xl`)
+- 12-column Swiss grid at 120px per column (1440px total); sidebar = 2 columns, content = 10 columns
+- Spacing scale: 2, 4, 8, 16, 24, 30, 40, 60, 120 (`--space-2xs` through `--space-4xl`) — top four tiers align to the 120px grid (¼, ⅓, ½, 1 column)
 - Color groups: Emphasis (`--primary-500`, `--secondary-500`), Surface Light (`--surface-light-100` through `400`), Surface Dark (`--surface-dark-600` through `800`), Ink (`--ink-100` through `900`, slight cool bias)
 - Typography tokens use numbered convention: hundreds = size tier, tens = weight/10 (e.g., `--text-display-670` = largest size + Bold 700, `--text-body-440` = mid size + Regular 400)
 - Surface tokens for fills/backgrounds only; ink tokens for text, borders, and lines

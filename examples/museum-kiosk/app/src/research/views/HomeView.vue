@@ -36,7 +36,7 @@ import { steps } from '../data/steps'
 
 <style scoped>
 .home {
-  max-width: 820px;
+  max-width: calc(7 * var(--grid-column));
 }
 
 .home-hero {
@@ -57,7 +57,7 @@ import { steps } from '../data/steps'
 .description {
   font: var(--text-body-640);
   color: var(--ink-500);
-  max-width: 560px;
+  max-width: calc(4 * var(--grid-column) + var(--space-2xl));
 }
 
 .divider {

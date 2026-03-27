@@ -16,7 +16,6 @@ import GlossaryContent from '@shared/components/GlossaryContent.vue'
 
 <style scoped>
 .glossary-wrap {
-  max-width: 948px;
-  padding: var(--space-2xl) var(--space-3xl);
+  padding: var(--space-4xl);
 }
 </style>

@@ -16,7 +16,6 @@ defineProps<{
         </div>        
       </h1>
       <div class="hero-badge__gradient"></div>
-      <div class="hero-badge__mask"></div>
     </div>
     <p class="hero-lead">{{ lead }}</p>
   </header>

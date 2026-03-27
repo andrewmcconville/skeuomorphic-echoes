@@ -77,7 +77,7 @@ import { steps } from './data/steps'
     transparent 1px,
     transparent var(--grid-column)
   );
-  opacity: 0.2;
+  opacity: 0.12;
   pointer-events: none;
   z-index: 9999;
 }

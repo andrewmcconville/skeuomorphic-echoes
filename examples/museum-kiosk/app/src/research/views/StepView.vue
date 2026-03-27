@@ -14,7 +14,7 @@ const id = route.params.id as string
 
 <style scoped>
 .step-page {
-  max-width: 960px;
+  max-width: calc(8 * var(--grid-column));
   margin: 0 auto;
   padding: var(--space-2xl) var(--space-3xl);
 }

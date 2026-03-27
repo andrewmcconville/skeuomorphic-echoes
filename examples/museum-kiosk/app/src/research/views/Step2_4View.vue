@@ -15,7 +15,10 @@ import { pairs } from '../data/step-2-4'
     <template v-for="(pair, i) in pairs" :key="i">
       <!-- ===== HAPPY PATH ===== -->
       <SectionBlock :heading="`Happy Path ${i + 1}`">
-        <SubsectionRow :label="pair.happyPath.title">
+        <SubsectionRow>
+          <div class="prose-block">
+            <h3 class="prose-block__heading">{{ pair.happyPath.title }}</h3>
+          </div>
           <ol class="path-list">
             <li
               v-for="(step, j) in pair.happyPath.steps"
@@ -32,20 +35,23 @@ import { pairs } from '../data/step-2-4'
 
       <!-- ===== USER TASK — warm band ===== -->
       <SectionBlock :heading="`User Task ${i + 1}`" variant="warm">
-        <SubsectionRow :label="pair.userTask.title">
-          <div class="task-fields">
-            <div class="task-field">
-              <span class="task-field__label">Context</span>
-              <p class="task-field__text">{{ pair.userTask.context }}</p>
+        <SubsectionRow>
+          <div class="prose-block">
+            <h3 class="prose-block__heading">{{ pair.userTask.title }}</h3>
+          </div>
+          <div class="prose-group">
+            <div class="prose-block">
+              <h3 class="prose-block__heading">Context</h3>
+              <p class="prose-block__text">{{ pair.userTask.context }}</p>
             </div>
-            <div class="task-field">
-              <span class="task-field__label">Scenario</span>
-              <p class="task-field__text">{{ pair.userTask.scenario }}</p>
+            <div class="prose-block">
+              <h3 class="prose-block__heading">Scenario</h3>
+              <p class="prose-block__text">{{ pair.userTask.scenario }}</p>
             </div>
           </div>
           <div class="task-card">
-            <span class="task-field__label">Task</span>
-            <p class="task-field__text">{{ pair.userTask.task }}</p>
+            <h3 class="prose-block__heading">Task</h3>
+            <p class="prose-block__text">{{ pair.userTask.task }}</p>
           </div>
         </SubsectionRow>
       </SectionBlock>
@@ -92,35 +98,10 @@ import { pairs } from '../data/step-2-4'
   white-space: nowrap;
 }
 
-/* ---- User task fields ---- */
-.task-fields {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2xl);
-}
-
 /* ---- User task card ---- */
 .task-card {
   padding: var(--space-xl);
   border: var(--stroke-medium) solid var(--ink-900);
   background: var(--surface-light-200);
-}
-
-.task-field {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-}
-
-.task-field__label {
-  font: var(--text-meta-540);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--ink-500);
-}
-
-.task-field__text {
-  font: var(--text-body-640);
-  margin: 0;
 }
 </style>

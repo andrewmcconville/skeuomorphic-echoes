@@ -63,11 +63,13 @@ npx playwright test # visual regression tests (Playwright)
 - All pixel values must align to design token scale; snap 1–2px drift to nearest token
 - Font-size overrides after `font` shorthand (e.g., `font: var(--text-body-350); font-size: 14px;`) are acceptable when the override is on the type scale (12, 13, 14, 18, 22, 28, 36, 48, 72) — this covers cases where a different token's weight/family is needed at a size not captured by a single token
 - Shared step styles in step-shared.css; duplicated rules across views get extracted there
-- Section block BEM: `.section` (outer), `.section__inner` (max-width constraint), `.section__header` (heading border), `.section__row` / `.section__label` / `.section__content` (grid layout), `.section__panel` (decorative background)
+- Section block BEM: `.section` (outer, padding `--space-4xl`), `.section__inner` (max-width 8 grid columns), `.section__header` (heading border), `.section__row` / `.section__label` / `.section__content` (grid layout, label = 1 grid column), `.section__panel` (decorative background, 5 grid columns)
 - Section variant modifiers: `--dark`, `--warm`, `--title` — set background/color on `.section`
 - Typography tokens at `:root` in typography.css at research scale — no per-app overrides
 - `--text-display-610` (weight 100) used for section headings
 - 12-column Swiss grid at 120px per column (1440px total); sidebar = 2 columns, content = 10 columns
+- Grid tokens on `.research-app`: `--grid-column: 120px`, `--grid-columns: 12`, `--sidebar-width: calc(2 * var(--grid-column))`
+- Research app centered in viewport (`max-width: 1440px; margin: 0 auto`); fixed sidebar and grid overlay use `calc(50% - var(--_app-width) / 2)` to track centered container
 - Spacing scale: 2, 4, 8, 16, 24, 30, 40, 60, 120 (`--space-2xs` through `--space-4xl`) — top four tiers align to the 120px grid (¼, ⅓, ½, 1 column)
 - Color groups: Emphasis (`--primary-500`, `--secondary-500`), Surface Light (`--surface-light-100` through `400`), Surface Dark (`--surface-dark-600` through `800`), Ink (`--ink-100` through `900`, slight cool bias)
 - Typography tokens use numbered convention: hundreds = size tier, tens = weight/10 (e.g., `--text-display-670` = largest size + Bold 700, `--text-body-440` = mid size + Regular 400)
@@ -95,7 +97,7 @@ npx playwright test # visual regression tests (Playwright)
 - Step view content in src/research/views/ has corresponding markdown in examples/museum-kiosk/docs/ — changes to one must be mirrored in the other
 - Assignment briefs are raw Canvas HTML fragments — no full-document wrapper
 - AI tools intentionally withheld from student materials before p2.3
-- Museum kiosk is portrait touchscreen (1440x2560px) — prototype viewport scaling via position: fixed + transform-origin
+- Museum kiosk is portrait touchscreen (1440x2560px) — research app centered via `margin: 0 auto`; prototype viewport scaling via position: fixed + transform-origin
 - Playwright preview server uses Vite base path — test URLs use root-relative paths (e.g., `/lo-fi-wireframe.html#/`)
 - All files must stay in project directory (Dropbox), never in C:\Users\...\.claude\
 - Custom skills in .claude/skills/ load into context but don't register as VS Code slash commands — execute manually or reference with @

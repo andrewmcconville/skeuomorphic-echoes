@@ -93,19 +93,19 @@ function handleCollect() {
           </div>
           <div class="wf-meta-row">
             <span class="wf-meta-row__label">Medium / Material</span>
-            <span class="wf-meta-row__value" style="color: #bbb; font-style: italic">
+            <span class="wf-meta-row__value wf-meta-row__value--placeholder">
               [Specimen-specific]
             </span>
           </div>
           <div class="wf-meta-row">
             <span class="wf-meta-row__label">Input Method</span>
-            <span class="wf-meta-row__value" style="color: #bbb; font-style: italic">
+            <span class="wf-meta-row__value wf-meta-row__value--placeholder">
               [Specimen-specific]
             </span>
           </div>
           <div class="wf-meta-row">
             <span class="wf-meta-row__label">Innovation</span>
-            <span class="wf-meta-row__value" style="color: #bbb; font-style: italic">
+            <span class="wf-meta-row__value wf-meta-row__value--placeholder">
               [Specimen-specific]
             </span>
           </div>
@@ -123,7 +123,7 @@ function handleCollect() {
               >
                 ← {{ adjacent.prev.name }}
               </span>
-              <span v-else style="color: #ccc">— Origin point</span>
+              <span v-else class="wf-meta-row__value wf-meta-row__value--muted">— Origin point</span>
             </span>
           </div>
           <div class="wf-meta-row">
@@ -136,7 +136,7 @@ function handleCollect() {
               >
                 {{ adjacent.next.name }} →
               </span>
-              <span v-else style="color: #ccc">— Present day</span>
+              <span v-else class="wf-meta-row__value wf-meta-row__value--muted">— Present day</span>
             </span>
           </div>
         </div>
@@ -145,7 +145,7 @@ function handleCollect() {
       <hr class="wf-modal__divider" />
 
       <!-- Collect -->
-      <div class="wf-collect" style="position: relative">
+      <div class="wf-collect">
         <button
           class="wf-collect__btn"
           :class="{ 'wf-collect__btn--done': isCollected(artifact.id) }"
@@ -185,7 +185,7 @@ function handleCollect() {
           class="wf-artifact-nav__btn"
           @click="emit('navigate', adjacent.next.id)"
         >
-          <div style="text-align: right">
+          <div class="wf-artifact-nav__btn-text--right">
             <span class="wf-artifact-nav__btn-label">Next</span><br />
             {{ adjacent.next.name }}
           </div>

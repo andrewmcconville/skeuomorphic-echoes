@@ -11,6 +11,7 @@ npm run dev         # Vite dev server — open research.html, lo-fi-wireframe.ht
 npm run build       # TypeScript check + production build
 npm run preview     # Preview production build
 npx playwright test # visual regression tests (Playwright)
+# Deploy: push to main — GitHub Actions builds and deploys to Pages automatically
 ```
 
 ## Architecture
@@ -35,12 +36,15 @@ npx playwright test # visual regression tests (Playwright)
     - step-shared.css — Shared step-page styles (hero, section block, cards, prose, tags)
     - components/ — SectionBlock.vue, SubsectionRow.vue, HeroHeader.vue, SpecsGrid.vue
     - data/types.ts — Barrel re-export of research TypeScript types from types/ subdirectory (common, step-2-3, step-2-4, step-2-8)
+    - data/steps.ts — Step metadata registry
+    - data/step-2-*.ts — Per-step structured content (2-1, 2-2, 2-3, 2-4, 2-8)
   - src/lo-fi-wireframe/ — Lo-fi wireframe app (overlay-driven single-canvas, no page navigation)
     - wireframe.css — Shared wireframe styles and transition animations
     - components/ — FloorPlan, RoomOverlay, ArtifactModal, CollectionDrawer, AboutDrawer, GlossaryDrawer
     - composables/useCollection.ts — Reactive collection state shared across overlays
     - data/rooms.ts — 4 rooms × 5 artifacts with content, lookup helpers
   - src/hi-fi-prototype/ — Hi-fi prototype app views and router
+    - views/ — HomeView.vue, AboutView.vue, GlossaryView.vue
   - tests/ — Playwright test specs (visual-regression.spec.ts)
 - examples/museum-kiosk/docs/ — Reference markdown documents (glossary.md, design-direction-brief.md, artifact-metadata-fields.md, 2.1–2.8 step content)
 - examples/museum-kiosk/tests/ — Playwright test screenshots (visual baselines)

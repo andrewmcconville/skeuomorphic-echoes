@@ -30,4 +30,9 @@
   /* Opacity scale */
   --opacity-panel: 0.5;
   --opacity-muted: 0.6;
+
+  /* Emphasis wash — 10% tints for badge/tag backgrounds */
+  --primary-wash: oklch(0.76 0.14 75 / 0.1);
+  --secondary-wash: oklch(0.63 0.15 50 / 0.1);
+  --ink-wash: oklch(0 0 0 / 0.05);
 }

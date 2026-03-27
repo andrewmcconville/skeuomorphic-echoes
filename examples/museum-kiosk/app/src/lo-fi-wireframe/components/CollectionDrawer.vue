@@ -19,11 +19,11 @@ const { isCollected, roomProgress, totalCollected, totalArtifacts } = useCollect
 
     <div class="wf-drawer__body">
       <!-- Overall progress -->
-      <div>
-        <p style="font: 700 16px/1 'IBM Plex Mono', monospace; color: #333">
+      <div class="wf-coll-summary">
+        <p class="wf-coll-summary__count">
           {{ totalCollected }} / {{ totalArtifacts }}
         </p>
-        <p style="font: 400 13px/1 'IBM Plex Mono', monospace; color: #aaa; margin-top: 4px">
+        <p class="wf-coll-summary__label">
           artifacts collected
         </p>
       </div>

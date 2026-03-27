@@ -296,24 +296,23 @@ withDefaults(defineProps<{
   vertical-align: middle;
 }
 
-/* --primary-500 = oklch(0.76 0.14 75), --secondary-500 = oklch(0.63 0.15 50) */
 .glossary-status--thriving {
-  background: oklch(0.76 0.14 75 / 0.1);
+  background: var(--primary-wash);
   color: var(--primary-500);
 }
 
 .glossary-status--adapted {
-  background: oklch(0.76 0.14 75 / 0.1);
+  background: var(--primary-wash);
   color: var(--primary-500);
 }
 
 .glossary-status--endangered {
-  background: oklch(0.63 0.15 50 / 0.1);
+  background: var(--secondary-wash);
   color: var(--secondary-500);
 }
 
 .glossary-status--extinct {
-  background: oklch(0 0 0 / 0.05);
+  background: var(--ink-wash);
   color: var(--ink-500);
 }
 

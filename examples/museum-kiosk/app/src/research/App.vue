@@ -53,8 +53,12 @@ import { steps } from './data/steps'
 
 <style scoped>
 .research-app {
+  --_app-width: calc(var(--grid-columns) * var(--grid-column));
   min-height: 100vh;
+  max-width: var(--_app-width);
+  margin: 0 auto;
   display: flex;
+  position: relative;
 }
 
 /* ---- Swiss grid overlay ---- */
@@ -62,8 +66,9 @@ import { steps } from './data/steps'
   content: '';
   position: fixed;
   top: 0;
-  left: 0;
-  width: calc(var(--grid-columns) * var(--grid-column));
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(var(--_app-width) + 1px);
   height: 100vh;
   background: repeating-linear-gradient(
     to right,
@@ -81,7 +86,7 @@ import { steps } from './data/steps'
 .sidebar {
   position: fixed;
   top: 0;
-  left: 0;
+  left: calc(50% - var(--_app-width) / 2);
   width: var(--sidebar-width);
   height: 100vh;
   overflow-y: auto;

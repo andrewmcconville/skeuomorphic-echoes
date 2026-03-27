@@ -85,16 +85,11 @@
   right: 0;
   top: calc(-1 * var(--space-lg));
   bottom: var(--space-2xl);
-  width: 60%;
+  width: calc(5 * var(--grid-column));
   background: var(--surface-light-300);
   opacity: var(--opacity-panel);
   z-index: 0;
   pointer-events: none;
-}
-
-.step-page {
-  max-width: calc(10 * var(--grid-column));
-  border-right: var(--stroke-medium) solid var(--ink-900);
 }
 
 .section__inner {

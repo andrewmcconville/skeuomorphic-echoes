@@ -1,11 +1,41 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { ref, watch } from 'vue'
+import { RouterLink, RouterView, useRoute } from 'vue-router'
 import { steps } from './data/steps'
+
+const sidebarOpen = ref(false)
+const route = useRoute()
+
+watch(() => route.path, () => {
+  sidebarOpen.value = false
+})
 </script>
 
 <template>
   <div class="research-app">
-    <aside class="sidebar">
+    <header class="mobile-header">
+      <button
+        class="hamburger"
+        :aria-expanded="sidebarOpen"
+        aria-label="Toggle navigation"
+        @click="sidebarOpen = !sidebarOpen"
+      >
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+      <RouterLink to="/" class="mobile-header__title" @click="sidebarOpen = false">
+        Before the Prompt
+      </RouterLink>
+    </header>
+
+    <div
+      v-if="sidebarOpen"
+      class="sidebar-overlay"
+      @click="sidebarOpen = false"
+    ></div>
+
+    <aside :class="['sidebar', { 'sidebar--open': sidebarOpen }]">
       <RouterLink to="/" class="logo">
         <span class="logo-title">Before the Prompt</span>
         <span class="logo-sub">Museum Kiosk</span>
@@ -66,8 +96,7 @@ import { steps } from './data/steps'
   content: '';
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: max(0px, calc(50% - var(--_app-width) / 2));
   width: calc(var(--_app-width) + 1px);
   height: 100vh;
   background: repeating-linear-gradient(
@@ -86,7 +115,7 @@ import { steps } from './data/steps'
 .sidebar {
   position: fixed;
   top: 0;
-  left: calc(50% - var(--_app-width) / 2);
+  left: max(0px, calc(50% - var(--_app-width) / 2));
   width: var(--sidebar-width);
   height: 100vh;
   overflow-y: auto;
@@ -183,5 +212,87 @@ import { steps } from './data/steps'
   margin-left: var(--sidebar-width);
   padding: 0;
   min-height: 100vh;
+}
+
+/* ---- Mobile header (hidden on desktop) ---- */
+.mobile-header {
+  display: none;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: var(--space-sm);
+}
+
+.hamburger__line {
+  display: block;
+  width: 100%;
+  height: var(--stroke-medium);
+  background: var(--ink-900);
+}
+
+.mobile-header__title {
+  font: var(--text-display-230);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.sidebar-overlay {
+  display: none;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .research-app {
+    max-width: none;
+  }
+
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--space-3xl);
+    padding: 0 var(--space-md);
+    background: var(--surface-light-200);
+    border-bottom: var(--stroke-medium) solid var(--ink-900);
+    z-index: 100;
+  }
+
+  .sidebar {
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    z-index: 102;
+  }
+
+  .sidebar--open {
+    transform: translateX(0);
+  }
+
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: oklch(0 0 0 / 0.4);
+    z-index: 101;
+  }
+
+  .research-app__main {
+    margin-left: 0;
+    padding-top: var(--space-3xl);
+  }
+
+  .research-app::after {
+    display: none;
+  }
 }
 </style>

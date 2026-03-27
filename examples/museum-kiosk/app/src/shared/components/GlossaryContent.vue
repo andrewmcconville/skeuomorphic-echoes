@@ -357,4 +357,38 @@ withDefaults(defineProps<{
 .glossary-sources__item--note {
   font-style: italic;
 }
+
+@media (max-width: 768px) {
+  .glossary-entry {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg) 0;
+  }
+
+  .glossary-entry__glyph {
+    position: static;
+    flex-direction: row;
+    align-items: baseline;
+    gap: var(--space-md);
+  }
+
+  .glossary-entry__char {
+    font-size: 48px;
+    line-height: 1;
+  }
+
+  .glossary-field__list {
+    grid-template-columns: 1fr;
+    gap: var(--space-xs);
+  }
+
+  .glossary-field__term {
+    color: var(--ink-400);
+  }
+}
+
+@media (max-width: 600px) {
+  .glossary-toc__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 </style>

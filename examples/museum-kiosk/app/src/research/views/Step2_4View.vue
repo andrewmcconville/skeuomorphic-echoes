@@ -104,4 +104,14 @@ import { pairs } from '../data/step-2-4'
   border: var(--stroke-medium) solid var(--ink-900);
   background: var(--surface-light-200);
 }
+
+@media (max-width: 600px) {
+  .path-list__item {
+    flex-wrap: wrap;
+  }
+
+  .task-card {
+    padding: var(--space-lg);
+  }
+}
 </style>

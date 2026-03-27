@@ -276,4 +276,29 @@ function parseExtraStyles(extra?: string): Record<string, string> {
   align-items: baseline;
   gap: var(--space-md);
 }
+
+@media (max-width: 768px) {
+  .color-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .shadow-samples {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .color-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shadow-samples {
+    grid-template-columns: 1fr;
+  }
+
+  .type-preview {
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+}
 </style>

@@ -196,4 +196,10 @@ import { demographics, interests, traits, brands, goals, motivations, frustratio
 .card__text {
   font: var(--text-body-440);
 }
+
+@media (max-width: 600px) {
+  .needs-grid {
+    grid-template-columns: 1fr;
+  }
+}
 </style>

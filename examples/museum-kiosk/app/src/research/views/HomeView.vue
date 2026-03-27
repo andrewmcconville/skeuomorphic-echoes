@@ -108,4 +108,26 @@ import { steps } from '../data/steps'
 .step-row:hover .step-id {
   color: var(--secondary-500);
 }
+
+@media (max-width: 1024px) {
+  .home {
+    max-width: none;
+    padding: var(--space-3xl) var(--space-2xl);
+  }
+}
+
+@media (max-width: 600px) {
+  .home {
+    padding: var(--space-2xl) var(--space-lg);
+  }
+
+  .home-hero__title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .description {
+    max-width: none;
+  }
+}
 </style>

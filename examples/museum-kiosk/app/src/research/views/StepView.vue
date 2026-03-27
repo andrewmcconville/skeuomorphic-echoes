@@ -33,4 +33,16 @@ const id = route.params.id as string
   border-radius: var(--radius-md);
   text-align: center;
 }
+
+@media (max-width: 1024px) {
+  .step-page {
+    max-width: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .step-page {
+    padding: var(--space-2xl) var(--space-lg);
+  }
+}
 </style>

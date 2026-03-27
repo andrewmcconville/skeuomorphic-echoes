@@ -350,4 +350,30 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
   font: var(--text-display-610);
   font-style: italic;
 }
+
+@media (max-width: 768px) {
+  .inspiration-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .inspiration-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .primary-title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .title-lockup {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .sub-title {
+    font-size: 28px;
+  }
+}
 </style>

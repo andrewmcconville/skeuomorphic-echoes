@@ -362,4 +362,44 @@ import {
   padding: var(--space-xs) var(--space-sm);
   border: var(--stroke-thin) solid var(--ink-300);
 }
+
+@media (max-width: 768px) {
+  .screen-header,
+  .screen-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .col-notes {
+    grid-column: 1 / -1;
+  }
+
+  .tree-node {
+    width: auto;
+    min-width: 100px;
+  }
+
+  .tree-node--home {
+    width: auto;
+    min-width: 140px;
+  }
+}
+
+@media (max-width: 600px) {
+  .room-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .screen-header,
+  .screen-row {
+    grid-template-columns: 1fr;
+  }
+
+  .col-notes {
+    grid-column: 1;
+  }
+
+  .tree-level--top {
+    gap: var(--space-sm);
+  }
+}
 </style>

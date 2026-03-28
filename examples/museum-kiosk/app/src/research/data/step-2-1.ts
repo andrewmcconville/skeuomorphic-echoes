@@ -1,4 +1,6 @@
 import type { LabelValue, SkeuomorphMapping, InspirationSite } from './types/common'
+import inspirationChm from '../assets/inspiration-chm.png'
+import inspirationHistography from '../assets/inspiration-histography.png'
 
 export const evolutionStages = [
   'Google Docs',
@@ -32,19 +34,16 @@ export const secondarySkeuomorphs: SkeuomorphMapping[] = [
 
 export const inspirationSites: InspirationSite[] = [
   {
-    name: 'Klim Type Foundry',
-    url: 'https://klim.co.nz/',
-    note: 'Swiss-inspired grids, interactive type testers, and an energy that makes design history feel like a living workshop.',
+    name: 'Computer History Museum and Letterform Archive',
+    description:
+      'Both have very readable layouts and organize their collection\u2019s meta data well. Both are also museums, which is where this project would hypothetically live.',
+    image: inspirationChm,
   },
   {
-    name: 'Histography.io',
-    url: 'https://histography.io/',
-    note: 'Progressive-disclosure timeline that zooms from a full historical sweep down to individual events.',
-  },
-  {
-    name: 'Letterform Archive',
-    url: 'https://oa.letterformarchive.org/',
-    note: 'Browsable, filterable collection of 3,500+ digitized design artifacts with search by decade, country, and format.',
+    name: 'histography.io',
+    description:
+      'Very dynamic micro-interactions. Moving in and out of timeline events is very smooth and intuitive. The act of filtering transitions the timeline events with an animation instead of just refreshing the page with new events.',
+    image: inspirationHistography,
   },
 ]
 

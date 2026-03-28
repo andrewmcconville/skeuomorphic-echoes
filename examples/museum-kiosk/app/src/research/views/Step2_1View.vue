@@ -95,11 +95,11 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
         <div class="prose-group">
           <div class="prose-block">
             <h3 class="prose-block__heading">UX Pattern</h3>
-            <p class="prose-block__text">Museum kiosk with wayfinding and collecting</p>
+            <p class="prose-block__text">Museum kiosk with wayfinding and collecting.</p>
           </div>
           <div class="prose-block">
             <h3 class="prose-block__heading">Media</h3>
-            <p class="prose-block__text">Typographic primary, supported by historical photography, diagrams, and floor-plan maps</p>
+            <p class="prose-block__text">Typography heavy; supporting design elements, shapes, gradients; icons and glyphs.</p>
           </div>
           <div class="prose-block">
             <h3 class="prose-block__heading">Why this format?</h3>
@@ -120,25 +120,28 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
           <div class="prose-block">
             <h3 class="prose-block__heading">Informational</h3>
             <p class="prose-block__text">
-              Bringhurst's <em>The Elements of Typographic Style</em>, the
-              Letterform Archive's online collection, and the Computer History
-              Museum's desktop publishing archives.
+              Letterform Archive<br />
+              https://oa.letterformarchive.org/
+            </p>
+            <p class="prose-block__text">
+              Computer History Museum<br />
+              https://www.computerhistory.org/collections/catalog
             </p>
           </div>
           <div class="prose-block">
             <h3 class="prose-block__heading">Visual</h3>
             <p class="prose-block__text">
-              The Letterform Archive's digitized type specimens, the Computer
-              History Museum's early DTP screenshots, and archive.org for
-              scanned specimen books and software documentation.
+              I'm thinking I'll attempt to generate visuals with AI. I don't
+              plan on having many images, but keeping them all consistent in
+              visual style will be important to deliver a consistent user
+              experience.
             </p>
           </div>
         </div>
         <p class="rationale">
-          Each provides verifiable primary-source material. Bringhurst is the
-          canonical typographic reference, the Letterform Archive holds over
-          100,000 original design objects, and the Computer History Museum
-          documented the DTP revolution firsthand.
+          Each provides verifiable primary-source material. They also have
+          discrete pieces of information, such as date, weight, creator,
+          origin, category, make, model, serial numbers, and more
         </p>
       </SubsectionRow>
     </SectionBlock>
@@ -147,18 +150,15 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
     <SectionBlock heading="Inspiration" variant="warm">
       <SubsectionRow>
         <div class="inspiration-grid">
-          <a
+          <div
             v-for="site in inspirationSites"
-            :key="site.url"
-            :href="site.url"
-            target="_blank"
-            rel="noopener"
-            class="inspiration-card"
+            :key="site.name"
+            class="card card--vertical"
           >
             <span class="inspiration-name">{{ site.name }}</span>
-            <span class="inspiration-arrow">↗</span>
-            <p class="inspiration-note">{{ site.note }}</p>
-          </a>
+            <p class="inspiration-description">{{ site.description }}</p>
+            <img :src="site.image" :alt="site.name" class="inspiration-image" />
+          </div>
         </div>
       </SubsectionRow>
     </SectionBlock>
@@ -292,50 +292,21 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
 /* ---- Inspiration cards (on warm band) ---- */
 .inspiration-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
-}
-
-.inspiration-card {
-  display: flex;
-  flex-direction: column;
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-sm);
-  padding: var(--space-lg);
-  border: var(--stroke-medium) solid var(--ink-900);
-  background: var(--surface-light-100);
-  position: relative;
-  box-shadow: var(--shadow-card-sm) var(--surface-light-400);
-  transition: transform 0.15s, box-shadow 0.15s;
-}
-
-.inspiration-card:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-card-hover) var(--surface-light-400);
 }
 
 .inspiration-name {
-  font: var(--text-body-350);
-  font-size: 14px;
-  font-weight: 500;
+  font: var(--text-body-450);
 }
 
-.inspiration-arrow {
-  position: absolute;
-  top: var(--space-md);
-  right: var(--space-md);
-  font-size: 14px;
-  color: var(--ink-400);
-  transition: color 0.15s;
+.inspiration-description {
+  font: var(--text-body-640);
 }
 
-.inspiration-card:hover .inspiration-arrow {
-  color: var(--secondary-500);
-}
-
-.inspiration-note {
-  font: var(--text-body-440);
-  font-size: 13px;
-  color: var(--ink-500);
+.inspiration-image {
+  width: 100%;
+  display: block;
 }
 
 /* ---- Title lockup — warm dark band ---- */
@@ -351,15 +322,11 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
 
 @media (max-width: 768px) {
   .inspiration-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 600px) {
-  .inspiration-grid {
-    grid-template-columns: 1fr;
-  }
-
   .primary-title {
     font-size: 36px;
     line-height: 40px;

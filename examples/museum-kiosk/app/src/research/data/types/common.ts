@@ -4,11 +4,11 @@ export interface LabelValue {
   value: string
 }
 
-/** Inspiration site link */
+/** Inspiration site card */
 export interface InspirationSite {
   name: string
-  url: string
-  note: string
+  description: string
+  image: string
 }
 
 /** Secondary skeuomorph mapping */

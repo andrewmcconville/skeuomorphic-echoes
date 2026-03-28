@@ -1,12 +1,12 @@
 import type { LabelValue, SkeuomorphMapping, InspirationSite } from './types/common'
 
 export const evolutionStages = [
-  'Hand-written manuscripts',
-  'Movable type',
-  'Linotype machines',
-  'X-Acto knife paste-ups',
-  'Adobe InDesign',
   'Google Docs',
+  'Adobe InDesign',
+  'X-Acto knife paste-ups',
+  'Linotype machines',
+  'Movable type',
+  'Hand-written manuscripts',
 ]
 
 export const secondarySkeuomorphs: SkeuomorphMapping[] = [

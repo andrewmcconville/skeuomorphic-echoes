@@ -33,7 +33,7 @@
 
 .badge-label {
   position: relative;
-  font: var(--text-heading-610);
+  font: var(--text-heading-620);
   line-height: 1;
   color: var(--ink-800);
   width: var(--grid-column);
@@ -65,7 +65,7 @@
   position: relative;
   font: var(--text-body-640);
   color: var(--ink-200);
-  max-width: 520px;
+  max-width: calc(5 * var(--grid-column));
 }
 
 
@@ -111,7 +111,7 @@
 /* ---- Section header ---- */
 
 .section__header {
-  border-bottom: var(--stroke-medium) dotted var(--ink-500);
+  border-bottom: var(--stroke-medium) dashed var(--ink-500);
   margin-bottom: var(--space-2xl);
   position: relative;
   z-index: 1;
@@ -133,7 +133,7 @@
 }
 
 .section__heading {
-  font: var(--text-heading-610);
+  font: var(--text-heading-620);
   color: var(--ink-500);
   margin: 0;
   white-space: nowrap;
@@ -290,8 +290,7 @@
 }
 
 .card-number {
-  font: var(--text-heading-470);
-  font-size: 36px;
+  font: var(--text-heading-570);
   line-height: 1;
   color: var(--ink-300);
   min-width: 28px;
@@ -331,7 +330,6 @@
 
 .rationale--light {
   color: var(--ink-200);
-  border-left-color: var(--ink-300);
 }
 
 

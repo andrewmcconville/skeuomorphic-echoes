@@ -273,12 +273,10 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
   align-items: baseline;
   gap: var(--space-sm);
   margin-bottom: var(--space-sm);
-  font: var(--text-body-350);
-  font-size: 14px;
+  font: var(--text-body-450);
 }
 
 .mapping-term {
-  font-weight: 500;
   color: var(--ink-900);
 }
 
@@ -347,7 +345,7 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
 }
 
 .sub-title {
-  font: var(--text-heading-610);
+  font: var(--text-heading-620);
   font-style: italic;
 }
 

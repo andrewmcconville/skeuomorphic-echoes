@@ -66,7 +66,7 @@ npx playwright test # visual regression tests (Playwright)
 - Section block BEM: `.section` (outer, padding `--space-4xl`), `.section__inner` (max-width 8 grid columns), `.section__header` (heading border), `.section__row` / `.section__label` / `.section__content` (grid layout, label = 1 grid column), `.section__panel` (decorative background, 5 grid columns)
 - Section variant modifiers: `--dark`, `--warm`, `--title` — set background/color on `.section`
 - Typography tokens at `:root` in typography.css at research scale — no per-app overrides
-- `--text-heading-610` (weight 100) used for section headings
+- `--text-heading-620` (weight 200) used for section headings
 - 12-column Swiss grid at 120px per column (1440px total); sidebar = 2 columns, content = 10 columns
 - Grid tokens on `.research-app`: `--grid-column: 120px`, `--grid-columns: 12`, `--sidebar-width: calc(2 * var(--grid-column))`
 - Research app centered in viewport (`max-width: 1440px; margin: 0 auto`); fixed sidebar and grid overlay use `calc(50% - var(--_app-width) / 2)` to track centered container

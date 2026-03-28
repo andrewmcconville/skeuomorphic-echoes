@@ -7,12 +7,14 @@
   /* Heading — IBM Plex Serif */
   --text-heading-770: italic 700 72px/60px var(--font-heading);
   --text-heading-670: 700 48px/56px var(--font-heading);
-  --text-heading-610: 100 48px/56px var(--font-heading);
+  --text-heading-620: 200 48px/56px var(--font-heading);
+  --text-heading-570: 700 36px/44px var(--font-heading);
   --text-heading-470: 700 28px/36px var(--font-heading);
   --text-heading-230: 300 22px/28px var(--font-heading);
 
   /* Body — IBM Plex Sans */
   --text-body-640: 400 18px/28px var(--font-body);
+  --text-body-450: 500 14px/20px var(--font-body);
   --text-body-440: 400 14px/20px var(--font-body);
   --text-body-350: 500 13px/16px var(--font-body);
 

@@ -20,7 +20,6 @@ export const colorGroups: ColorGroup[] = [
   {
     name: 'Surface Dark',
     colors: [
-      { name: 'Surface-Dark-600', var: '--surface-dark-600', hex: '#534840', usage: 'Borders and dotted leaders on dark bands' },
       { name: 'Surface-Dark-700', var: '--surface-dark-700', hex: '#483D35', usage: 'Dark section bands' },
       { name: 'Surface-Dark-800', var: '--surface-dark-800', hex: '#362C24', usage: 'Hero backgrounds, title section bands, badge text' },
     ],
@@ -50,7 +49,8 @@ export const typeGroups: TypeGroup[] = [
     styles: [
       { name: 'Heading-770', size: '72 / 60', family: 'IBM Plex Serif', weight: 'Bold Italic', token: '--text-heading-770', sample: 'Hero Title' },
       { name: 'Heading-670', size: '48 / 56', family: 'IBM Plex Serif', weight: 'Bold', token: '--text-heading-670', sample: 'Title Bold' },
-      { name: 'Heading-610', size: '48 / 56', family: 'IBM Plex Serif', weight: 'Thin', token: '--text-heading-610', sample: 'Title Thin' },
+      { name: 'Heading-620', size: '48 / 56', family: 'IBM Plex Serif', weight: 'ExtraLight', token: '--text-heading-620', sample: 'Title ExtraLight' },
+      { name: 'Heading-570', size: '36 / 44', family: 'IBM Plex Serif', weight: 'Bold', token: '--text-heading-570', sample: 'Card Number' },
       { name: 'Heading-470', size: '28 / 36', family: 'IBM Plex Serif', weight: 'Bold', token: '--text-heading-470', sample: 'Heading 1' },
       { name: 'Heading-230', size: '22 / 28', family: 'IBM Plex Serif', weight: 'Light', token: '--text-heading-230', sample: 'Heading 2' },
     ],
@@ -59,6 +59,7 @@ export const typeGroups: TypeGroup[] = [
     name: 'Body',
     styles: [
       { name: 'Body-640', size: '18 / 28', family: 'IBM Plex Sans', weight: 'Regular', token: '--text-body-640', sample: 'The quick brown fox jumps over the lazy dog.' },
+      { name: 'Body-450', size: '14 / 20', family: 'IBM Plex Sans', weight: 'Medium', token: '--text-body-450', sample: 'The quick brown fox jumps over the lazy dog.' },
       { name: 'Body-440', size: '14 / 20', family: 'IBM Plex Sans', weight: 'Regular', token: '--text-body-440', sample: 'The quick brown fox jumps over the lazy dog.' },
       { name: 'Body-350', size: '13 / 16', family: 'IBM Plex Sans', weight: 'Medium', token: '--text-body-350', sample: 'The quick brown fox jumps over the lazy dog.' },
     ],

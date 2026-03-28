@@ -133,7 +133,7 @@ function parseExtraStyles(extra?: string): Record<string, string> {
 .color-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
+  gap: var(--space-3xl);
 }
 
 .color-swatch {

@@ -141,7 +141,7 @@ import { demographics, interests, traits, brands, goals, motivations, frustratio
 }
 
 .identity-name {
-  font: var(--text-display-470);
+  font: var(--text-heading-470);
   margin-bottom: var(--space-2xs);
 }
 
@@ -171,7 +171,7 @@ import { demographics, interests, traits, brands, goals, motivations, frustratio
 }
 
 .bio-quote {
-  font: var(--text-display-230);
+  font: var(--text-heading-230);
   font-style: italic;
   padding-left: var(--space-lg);
   border-left: var(--stroke-medium) solid var(--secondary-500);
@@ -187,7 +187,7 @@ import { demographics, interests, traits, brands, goals, motivations, frustratio
 
 .need-number {
   display: block;
-  font: var(--text-display-470);
+  font: var(--text-heading-470);
   line-height: 1;
   color: var(--ink-300);
   margin-bottom: var(--space-sm);

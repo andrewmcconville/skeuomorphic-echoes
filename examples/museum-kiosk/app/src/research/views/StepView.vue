@@ -20,7 +20,7 @@ const id = route.params.id as string
 }
 
 .step-page__title {
-  font: var(--text-display-470);
+  font: var(--text-heading-470);
   margin-bottom: var(--space-lg);
 }
 

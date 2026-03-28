@@ -212,7 +212,7 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
 <style scoped>
 /* ---- Primary — warm dark band content ---- */
 .primary-title {
-  font: var(--text-display-670);
+  font: var(--text-heading-670);
   color: var(--ink-100);
   margin: 0;
 }
@@ -342,12 +342,12 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
 
 /* ---- Title lockup — warm dark band ---- */
 .title-lockup {
-  font: var(--text-display-670);
+  font: var(--text-heading-670);
   font-style: italic;
 }
 
 .sub-title {
-  font: var(--text-display-610);
+  font: var(--text-heading-610);
   font-style: italic;
 }
 

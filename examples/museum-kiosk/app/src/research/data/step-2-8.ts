@@ -48,11 +48,11 @@ export const typeGroups: TypeGroup[] = [
   {
     name: 'Heading',
     styles: [
-      { name: 'Heading-770', size: '72 / 60', family: 'IBM Plex Serif', weight: 'Bold', token: '--text-display-770', sample: 'Hero Title' },
-      { name: 'Heading-670', size: '48 / 56', family: 'IBM Plex Serif', weight: 'Bold', token: '--text-display-670', sample: 'Title Bold' },
-      { name: 'Heading-610', size: '48 / 56', family: 'IBM Plex Serif', weight: 'Thin', token: '--text-display-610', sample: 'Title Thin' },
-      { name: 'Heading-470', size: '28 / 36', family: 'IBM Plex Serif', weight: 'Bold', token: '--text-display-470', sample: 'Heading 1' },
-      { name: 'Heading-230', size: '22 / 28', family: 'IBM Plex Serif', weight: 'Light', token: '--text-display-230', sample: 'Heading 2' },
+      { name: 'Heading-770', size: '72 / 60', family: 'IBM Plex Serif', weight: 'Bold Italic', token: '--text-heading-770', sample: 'Hero Title' },
+      { name: 'Heading-670', size: '48 / 56', family: 'IBM Plex Serif', weight: 'Bold', token: '--text-heading-670', sample: 'Title Bold' },
+      { name: 'Heading-610', size: '48 / 56', family: 'IBM Plex Serif', weight: 'Thin', token: '--text-heading-610', sample: 'Title Thin' },
+      { name: 'Heading-470', size: '28 / 36', family: 'IBM Plex Serif', weight: 'Bold', token: '--text-heading-470', sample: 'Heading 1' },
+      { name: 'Heading-230', size: '22 / 28', family: 'IBM Plex Serif', weight: 'Light', token: '--text-heading-230', sample: 'Heading 2' },
     ],
   },
   {

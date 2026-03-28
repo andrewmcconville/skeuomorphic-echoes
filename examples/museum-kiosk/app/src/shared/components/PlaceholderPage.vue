@@ -26,7 +26,7 @@ defineProps<{
 }
 
 .placeholder__title {
-  font: var(--text-display-670);
+  font: var(--text-heading-670);
 }
 
 .placeholder__text {

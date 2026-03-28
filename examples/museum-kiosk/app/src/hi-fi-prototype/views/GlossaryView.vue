@@ -33,7 +33,7 @@ import GlossaryContent from '@shared/components/GlossaryContent.vue'
   position: absolute;
   top: -2rem;
   right: 0;
-  font: var(--text-display-670);
+  font: var(--text-heading-670);
   font-size: 240px;
   line-height: 1;
   opacity: 0.04;
@@ -42,7 +42,7 @@ import GlossaryContent from '@shared/components/GlossaryContent.vue'
 }
 
 .glossary-header__title {
-  font: var(--text-display-670);
+  font: var(--text-heading-670);
   margin-bottom: var(--space-md);
 }
 

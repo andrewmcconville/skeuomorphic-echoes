@@ -44,12 +44,12 @@ import { steps } from '../data/steps'
 }
 
 .home-hero__title {
-  font: var(--text-display-670);
+  font: var(--text-heading-670);
   margin-bottom: var(--space-xs);
 }
 
 .subtitle {
-  font: var(--text-display-230);
+  font: var(--text-heading-230);
   color: var(--ink-500);
   margin-bottom: var(--space-lg);
 }

@@ -177,7 +177,7 @@ withDefaults(defineProps<{
 }
 
 .glossary-toc__char {
-  font: var(--text-display-230);
+  font: var(--text-heading-230);
   font-size: var(--_toc-char-size);
   width: var(--_toc-char-width);
   text-align: center;
@@ -214,7 +214,7 @@ withDefaults(defineProps<{
 }
 
 .glossary-entry__char {
-  font: var(--text-display-670);
+  font: var(--text-heading-670);
   font-weight: 100;
   font-size: var(--_char-size);
   line-height: 1.2;
@@ -234,7 +234,7 @@ withDefaults(defineProps<{
 }
 
 .glossary-entry__name {
-  font: var(--text-display-470);
+  font: var(--text-heading-470);
   font-size: var(--_entry-name-size);
   margin: 0;
 }
@@ -350,7 +350,7 @@ withDefaults(defineProps<{
 }
 
 .glossary-sources__cite {
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-style: italic;
 }
 

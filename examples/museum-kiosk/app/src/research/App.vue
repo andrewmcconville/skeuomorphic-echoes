@@ -136,7 +136,7 @@ watch(() => route.path, () => {
 }
 
 .logo-title {
-  font: var(--text-display-230);
+  font: var(--text-heading-230);
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
@@ -237,7 +237,7 @@ watch(() => route.path, () => {
 }
 
 .mobile-header__title {
-  font: var(--text-display-230);
+  font: var(--text-heading-230);
   font-weight: 700;
   font-size: 18px;
 }

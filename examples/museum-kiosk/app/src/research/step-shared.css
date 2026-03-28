@@ -33,7 +33,7 @@
 
 .badge-label {
   position: relative;
-  font: var(--text-display-610);
+  font: var(--text-heading-610);
   line-height: 1;
   color: var(--ink-800);
   width: var(--grid-column);
@@ -50,7 +50,7 @@
 
 .hero-title {
   position: relative;
-  font: var(--text-display-770);
+  font: var(--text-heading-770);
   color: var(--ink-100);
   margin-top: var(--space-4xl);
   padding-bottom: var(--space-2xl);
@@ -133,7 +133,7 @@
 }
 
 .section__heading {
-  font: var(--text-display-610);
+  font: var(--text-heading-610);
   color: var(--ink-500);
   margin: 0;
   white-space: nowrap;
@@ -290,7 +290,7 @@
 }
 
 .card-number {
-  font: var(--text-display-470);
+  font: var(--text-heading-470);
   font-size: 36px;
   line-height: 1;
   color: var(--ink-300);
@@ -378,7 +378,7 @@
 }
 
 .list-number {
-  font: var(--text-display-470);
+  font: var(--text-heading-470);
   color: var(--ink-300);
   min-width: 24px;
   flex-shrink: 0;

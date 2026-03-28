@@ -303,7 +303,7 @@ import {
 }
 
 .room-number {
-  font: var(--text-display-470);
+  font: var(--text-heading-470);
   line-height: 1;
   color: var(--ink-300);
 }

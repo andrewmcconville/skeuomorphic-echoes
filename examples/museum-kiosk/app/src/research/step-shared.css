@@ -20,21 +20,19 @@
 
 .hero-badge {
   position: absolute;
-  background: var(--amber-500);
+  background: var(--primary-500);
   width: var(--grid-column);
 }
 
 .hero-badge__gradient {
   position: absolute;
-  background: linear-gradient(to right, var(--orange-500) 18px, oklch(0.76 0.14 75 / 0) 50%);
-  opacity: .5;
+  background: linear-gradient(to right, oklch(0.63 0.15 50 / 0.5), oklch(0.63 0.15 50 / 0) 50%);
   width: var(--grid-column);
 }
 
 .badge-label {
   position: relative;
   font: var(--text-heading-620);
-  line-height: 1;
   color: var(--ink-800);
   width: var(--grid-column);
   text-align: center;
@@ -58,7 +56,7 @@
 }
 
 .hero-title__content {
-  margin-left: -18px;
+  margin-left: calc(-1 * var(--space-md));
 }
 
 .hero-lead {

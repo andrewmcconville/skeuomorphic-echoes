@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import HeroHeader from '../components/HeroHeader.vue'
-import SectionBlock from '../components/SectionBlock.vue'
-import SubsectionRow from '../components/SubsectionRow.vue'
+import Hero from '../components/Hero.vue'
+import Section from '../components/Section.vue'
+import SectionRow from '../components/SectionRow.vue'
 import { pairs } from '../data/step-2-4'
 </script>
 
 <template>
   <article class="step-page">
     <!-- ===== HERO — warm dark band ===== -->
-    <HeroHeader badge="2.4" lead="Two primary paths through the kiosk, each paired with a scripted user task for think-aloud testing.">
+    <Hero part="2.4" intro="Two primary paths through the kiosk, each paired with a scripted user task for think-aloud testing.">
       Happy Paths &amp;<br />User Tasks
-    </HeroHeader>
+    </Hero>
 
     <template v-for="(pair, i) in pairs" :key="i">
       <!-- ===== HAPPY PATH ===== -->
-      <SectionBlock :heading="`Happy Path ${i + 1}`">
-        <SubsectionRow>
+      <Section :heading="`Happy Path ${i + 1}`">
+        <SectionRow>
           <div class="prose-block">
             <h3 class="prose-block__heading">{{ pair.happyPath.title }}</h3>
           </div>
@@ -30,12 +30,12 @@ import { pairs } from '../data/step-2-4'
               <span class="path-type">{{ step.elementType }}</span>
             </li>
           </ol>
-        </SubsectionRow>
-      </SectionBlock>
+        </SectionRow>
+      </Section>
 
       <!-- ===== USER TASK — warm band ===== -->
-      <SectionBlock :heading="`User Task ${i + 1}`" variant="warm">
-        <SubsectionRow>
+      <Section :heading="`User Task ${i + 1}`" variant="warm">
+        <SectionRow>
           <div class="prose-block">
             <h3 class="prose-block__heading">{{ pair.userTask.title }}</h3>
           </div>
@@ -53,8 +53,8 @@ import { pairs } from '../data/step-2-4'
             <h3 class="prose-block__heading">Task</h3>
             <p class="prose-block__text">{{ pair.userTask.task }}</p>
           </div>
-        </SubsectionRow>
-      </SectionBlock>
+        </SectionRow>
+      </Section>
     </template>
   </article>
 </template>

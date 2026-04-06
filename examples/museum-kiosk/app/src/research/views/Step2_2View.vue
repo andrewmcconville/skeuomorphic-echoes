@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import HeroHeader from '../components/HeroHeader.vue'
-import SectionBlock from '../components/SectionBlock.vue'
-import SubsectionRow from '../components/SubsectionRow.vue'
+import Hero from '../components/Hero.vue'
+import Section from '../components/Section.vue'
+import SectionRow from '../components/SectionRow.vue'
 import SpecsGrid from '../components/SpecsGrid.vue'
 import { demographics, interests, traits, brands, goals, motivations, frustrations, needs } from '../data/step-2-2'
 </script>
@@ -9,13 +9,13 @@ import { demographics, interests, traits, brands, goals, motivations, frustratio
 <template>
   <article class="step-page">
     <!-- ===== HERO — warm dark band ===== -->
-    <HeroHeader badge="2.2" lead="Defining the target visitor — their goals, frustrations, and the experience they expect from a museum kiosk.">
+    <Hero part="2.2" intro="Defining the target visitor — their goals, frustrations, and the experience they expect from a museum kiosk.">
       Persona
-    </HeroHeader>
+    </Hero>
 
     <!-- ===== IDENTITY ===== -->
-    <SectionBlock heading="Identity">
-      <SubsectionRow>
+    <Section heading="Identity">
+      <SectionRow>
         <div class="identity-card">
           <div class="identity-top">
             <div class="identity-info">
@@ -31,9 +31,9 @@ import { demographics, interests, traits, brands, goals, motivations, frustratio
             <span class="datum-value">Independent artist and maker</span>
           </div>
         </div>
-      </SubsectionRow>
+      </SectionRow>
 
-      <SubsectionRow label="Bio">
+      <SectionRow label="Bio">
         <p class="bio">
           Maya just finished her MFA in Art &amp; Design + Technology and is
           decompressing by visiting museums and design exhibitions — part
@@ -41,87 +41,87 @@ import { demographics, interests, traits, brands, goals, motivations, frustratio
           become "invisible culture," and she loves exhibits that treat everyday
           UI details like artifacts worth studying.
         </p>
-      </SubsectionRow>
+      </SectionRow>
 
-      <SubsectionRow label="Quote">
+      <SectionRow label="Quote">
         <blockquote class="bio-quote">
           "I'm here for the details — show me the lineage, not just the label."
         </blockquote>
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
 
     <!-- ===== DEMOGRAPHICS ===== -->
-    <SectionBlock heading="Demographics">
-      <SubsectionRow label="Profile">
+    <Section heading="Demographics">
+      <SectionRow label="Profile">
         <SpecsGrid :items="demographics" dense />
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
 
     <!-- ===== PSYCHOGRAPHICS ===== -->
-    <SectionBlock heading="Psychographics" :panel="false">
-      <SubsectionRow label="Interests">
+    <Section heading="Psychographics" :panel="false">
+      <SectionRow label="Interests">
         <div class="tags">
           <span v-for="t in interests" :key="t" class="tag">{{ t }}</span>
         </div>
-      </SubsectionRow>
+      </SectionRow>
 
-      <SubsectionRow label="Personality">
+      <SectionRow label="Personality">
         <div class="tags">
           <span v-for="t in traits" :key="t" class="tag">{{ t }}</span>
         </div>
-      </SubsectionRow>
+      </SectionRow>
 
-      <SubsectionRow label="Brands">
+      <SectionRow label="Brands">
         <div class="tags">
           <span v-for="b in brands" :key="b" class="tag tag--outline">{{ b }}</span>
         </div>
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
 
     <!-- ===== MOTIVATIONS ===== -->
-    <SectionBlock heading="Motivations">
-      <SubsectionRow label="Goals">
+    <Section heading="Motivations">
+      <SectionRow label="Goals">
         <ol class="numbered-list">
           <li v-for="(g, i) in goals" :key="g" class="numbered-list__item">
             <span class="list-number">{{ i + 1 }}</span>
             <span class="list-text">{{ g }}</span>
           </li>
         </ol>
-      </SubsectionRow>
+      </SectionRow>
 
-      <SubsectionRow label="Drivers">
+      <SectionRow label="Drivers">
         <ol class="numbered-list">
           <li v-for="(m, i) in motivations" :key="m" class="numbered-list__item">
             <span class="list-number">{{ i + 1 }}</span>
             <span class="list-text">{{ m }}</span>
           </li>
         </ol>
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
 
     <!-- ===== FRUSTRATIONS ===== -->
-    <SectionBlock heading="Frustrations">
-      <SubsectionRow label="Pain Points">
+    <Section heading="Frustrations">
+      <SectionRow label="Pain Points">
         <ol class="numbered-list">
           <li v-for="(f, i) in frustrations" :key="f" class="numbered-list__item">
             <span class="list-number">{{ i + 1 }}</span>
             <span class="list-text">{{ f }}</span>
           </li>
         </ol>
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
 
     <!-- ===== UX NEEDS ===== -->
-    <SectionBlock heading="UX Needs" :panel="false">
-      <SubsectionRow label="Requirements">
+    <Section heading="UX Needs" :panel="false">
+      <SectionRow label="Requirements">
         <div class="needs-grid">
           <div v-for="(n, i) in needs" :key="n" class="card card--vertical">
             <span class="need-number">{{ i + 1 }}</span>
             <p class="card__text">{{ n }}</p>
           </div>
         </div>
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
   </article>
 </template>
 

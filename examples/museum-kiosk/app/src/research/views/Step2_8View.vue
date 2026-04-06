@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import HeroHeader from '../components/HeroHeader.vue'
-import SectionBlock from '../components/SectionBlock.vue'
-import SubsectionRow from '../components/SubsectionRow.vue'
+import Hero from '../components/Hero.vue'
+import Section from '../components/Section.vue'
+import SectionRow from '../components/SectionRow.vue'
 import SpecsGrid from '../components/SpecsGrid.vue'
 import {
   colorGroups, overlays, typeGroups,
@@ -23,13 +23,13 @@ function parseExtraStyles(extra?: string): Record<string, string> {
 
 <template>
   <article class="step-page ds-page">
-    <HeroHeader badge="2.8" lead="Color, typography, spacing, and structural tokens in use across the research, lo-fi wireframe, and hi-fi prototype apps.">
+    <Hero part="2.8" intro="Color, typography, spacing, and structural tokens in use across the research, lo-fi wireframe, and hi-fi prototype apps.">
       Design<br>System
-    </HeroHeader>
+    </Hero>
 
     <!-- ==================== COLORS ==================== -->
-    <SectionBlock heading="Colors" :panel="false">
-      <SubsectionRow
+    <Section heading="Colors" :panel="false">
+      <SectionRow
         v-for="group in colorGroups"
         :key="group.name"
         :label="group.name"
@@ -44,21 +44,21 @@ function parseExtraStyles(extra?: string): Record<string, string> {
             </div>
           </div>
         </div>
-      </SubsectionRow>
+      </SectionRow>
 
-      <SubsectionRow label="Opacity">
+      <SectionRow label="Opacity">
         <SpecsGrid :items="overlays.map(o => ({ label: o.name, value: o.value }))" />
         <div class="overlay-usage">
           <p v-for="o in overlays" :key="o.name" class="overlay-usage__text">
             <strong class="overlay-usage__value">{{ o.value }}</strong> — {{ o.usage }}
           </p>
         </div>
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
 
     <!-- ==================== TYPOGRAPHY ==================== -->
-    <SectionBlock heading="Typography" :panel="false">
-      <SubsectionRow
+    <Section heading="Typography" :panel="false">
+      <SectionRow
         v-for="group in typeGroups"
         :key="group.name"
         :label="group.name"
@@ -78,12 +78,12 @@ function parseExtraStyles(extra?: string): Record<string, string> {
             </div>
           </div>
         </div>
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
 
     <!-- ==================== SPACING ==================== -->
-    <SectionBlock heading="Spacing" :panel="false">
-      <SubsectionRow label="Scale">
+    <Section heading="Spacing" :panel="false">
+      <SectionRow label="Scale">
         <div class="spacing-list">
           <div v-for="t in spacingTokens" :key="t.var" class="spacing-item">
             <div class="spacing-bar" :style="{ width: t.value }" />
@@ -94,20 +94,20 @@ function parseExtraStyles(extra?: string): Record<string, string> {
             <span class="token-usage">{{ t.usage }}</span>
           </div>
         </div>
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
 
     <!-- ==================== STRUCTURE ==================== -->
-    <SectionBlock heading="Structure" :panel="false">
-      <SubsectionRow label="Strokes">
+    <Section heading="Structure" :panel="false">
+      <SectionRow label="Strokes">
         <SpecsGrid :items="strokeTokens.map(t => ({ label: t.name, value: `${t.value} — ${t.usage}` }))" />
-      </SubsectionRow>
+      </SectionRow>
 
-      <SubsectionRow label="Radius">
+      <SectionRow label="Radius">
         <SpecsGrid :items="radiusTokens.map(t => ({ label: t.name, value: `${t.value} — ${t.usage}` }))" />
-      </SubsectionRow>
+      </SectionRow>
 
-      <SubsectionRow label="Shadows">
+      <SectionRow label="Shadows">
         <div class="shadow-samples">
           <div v-for="s in shadowTokens" :key="s.var" class="shadow-sample">
             <div class="shadow-preview" :style="{ boxShadow: `${s.value} var(--surface-light-400)` }" />
@@ -118,8 +118,8 @@ function parseExtraStyles(extra?: string): Record<string, string> {
             <span class="token-usage">{{ s.usage }}</span>
           </div>
         </div>
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
   </article>
 </template>
 

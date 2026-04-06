@@ -5,7 +5,7 @@ export interface StepEntry {
 }
 
 export const steps: readonly StepEntry[] = [
-  { id: '2.1', title: 'Skeuomorph Selection', to: '/step/2.1' },
+  { id: '2.1', title: 'Project Overview', to: '/step/2.1' },
   { id: '2.2', title: 'Persona', to: '/step/2.2' },
   { id: '2.3', title: 'Sitemap & Content Inventory', to: '/step/2.3' },
   { id: '2.4', title: 'Happy Path & User Task', to: '/step/2.4' },

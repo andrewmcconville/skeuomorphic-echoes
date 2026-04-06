@@ -1,7 +1,7 @@
 <script setup lang="ts">
 defineProps<{
-  badge: string
-  lead: string
+  part: string
+  intro: string
 }>()
 </script>
 
@@ -9,14 +9,14 @@ defineProps<{
   <header class="hero">
     <div class="hero-container">
       <div class="hero-badge"></div>
-      <div class="badge-label">{{ badge }}</div>
+      <div class="badge-label">{{ part }}</div>
       <h1 class="hero-title">
         <div class="hero-title__content">
           <slot />
-        </div>        
+        </div>
       </h1>
       <div class="hero-badge__gradient"></div>
     </div>
-    <p class="hero-lead">{{ lead }}</p>
+    <p class="hero-lead">{{ intro }}</p>
   </header>
 </template>

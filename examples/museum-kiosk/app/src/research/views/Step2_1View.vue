@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import HeroHeader from '../components/HeroHeader.vue'
-import SectionBlock from '../components/SectionBlock.vue'
-import SubsectionRow from '../components/SubsectionRow.vue'
+import Hero from '../components/Hero.vue'
+import Section from '../components/Section.vue'
+import SectionRow from '../components/SectionRow.vue'
 import SpecsGrid from '../components/SpecsGrid.vue'
 import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } from '../data/step-2-1'
 </script>
@@ -9,13 +9,13 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
 <template>
   <article class="step-page">
     <!-- ===== HERO — warm dark band ===== -->
-    <HeroHeader badge="2.1" lead="Identifying the physical artifacts that persist as metaphors in digital interfaces — and choosing which evolution to trace.">
-      Skeuomorph<br />Selection
-    </HeroHeader>
+    <Hero part="2.1" intro="Identifying the physical artifacts that persist as metaphors in digital interfaces — and choosing which evolution to trace.">
+      Project<br />Overview
+    </Hero>
 
     <!-- ===== GOALS ===== -->
-    <SectionBlock heading="Goals">
-      <SubsectionRow>
+    <Section heading="Goals">
+      <SectionRow>
         <div class="prose-group">
           <div class="prose-block">
             <h3 class="prose-block__heading">What do you hope to make?</h3>
@@ -36,12 +36,12 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
             </p>
           </div>
         </div>
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
 
     <!-- ===== PRIMARY — warm dark band ===== -->
-    <SectionBlock heading="Primary Skeuomorph" variant="dark">
-      <SubsectionRow>
+    <Section heading="Primary Skeuomorph" variant="dark">
+      <SectionRow>
         <h3 class="primary-title">The WYSIWYG<br />Page Editor</h3>
         <div class="evolution-timeline">
           <div
@@ -58,12 +58,12 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
           life — virtual pages mimic paper, clipboards reference paste-up
           boards, and font menus appear as mini type specimen books.
         </p>
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
 
     <!-- ===== SECONDARY ===== -->
-    <SectionBlock heading="Secondary Skeuomorphs">
-      <SubsectionRow>
+    <Section heading="Secondary Skeuomorphs">
+      <SectionRow>
         <div class="secondary-grid">
           <div
             v-for="(s, i) in secondarySkeuomorphs"
@@ -86,12 +86,12 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
           as a sound, icon, or gesture in software that no longer needs the
           original thing to function.
         </p>
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
 
     <!-- ===== FORMAT ===== -->
-    <SectionBlock heading="UX Format">
-      <SubsectionRow>
+    <Section heading="UX Format">
+      <SectionRow>
         <div class="prose-group">
           <div class="prose-block">
             <h3 class="prose-block__heading">UX Pattern</h3>
@@ -110,12 +110,12 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
             </p>
           </div>
         </div>
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
 
     <!-- ===== SOURCES ===== -->
-    <SectionBlock heading="Sources">
-      <SubsectionRow>
+    <Section heading="Sources">
+      <SectionRow>
         <div class="prose-group">
           <div class="prose-block">
             <h3 class="prose-block__heading">Informational</h3>
@@ -143,12 +143,12 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
           discrete pieces of information, such as date, weight, creator,
           origin, category, make, model, serial numbers, and more
         </p>
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
 
     <!-- ===== INSPIRATION — warm band ===== -->
-    <SectionBlock heading="Inspiration" variant="warm">
-      <SubsectionRow>
+    <Section heading="Inspiration" variant="warm">
+      <SectionRow>
         <div class="inspiration-grid">
           <div
             v-for="site in inspirationSites"
@@ -160,12 +160,12 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
             <img :src="site.image" :alt="site.name" class="inspiration-image" />
           </div>
         </div>
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
 
     <!-- ===== FORM FACTOR ===== -->
-    <SectionBlock heading="Form Factor">
-      <SubsectionRow>
+    <Section heading="Form Factor">
+      <SectionRow>
         <SpecsGrid :items="formFactors" />
         <div class="prose-group">
           <div class="prose-block">
@@ -193,19 +193,19 @@ import { evolutionStages, secondarySkeuomorphs, inspirationSites, formFactors } 
             </p>
           </div>
         </div>
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
 
     <!-- ===== TITLE — warm dark band ===== -->
-    <SectionBlock heading="Title" variant="title">
-      <SubsectionRow>
+    <Section heading="Title" variant="title">
+      <SectionRow>
         <div class="title-lockup">
           Before the Prompt:
           <br>
           <span class="sub-title">The Rise and Fall of Digital Icons</span>
         </div>
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
   </article>
 </template>
 

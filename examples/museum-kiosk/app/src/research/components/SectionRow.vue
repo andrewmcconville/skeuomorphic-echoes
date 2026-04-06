@@ -10,7 +10,7 @@ withDefaults(defineProps<{
 <template>
   <div class="section__row">
     <div v-if="label" class="section__label">
-      <h3 :class="['section__subheading', { 'section__subheading--light': lightLabel }]">
+      <h3 :class="['section__label-text', { 'section__label-text--light': lightLabel }]">
         {{ label }}
       </h3>
     </div>

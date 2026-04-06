@@ -4,7 +4,7 @@
    ============================================ */
 
 
-/* ---- Hero block — warm dark band ---- */
+/* ---- Hero ---- */
 
 .hero {
   background: var(--surface-dark-800);
@@ -18,12 +18,14 @@
   margin-bottom: var(--space-xl);
 }
 
+/* Figma layer: "Orange Block" */
 .hero-badge {
   position: absolute;
   background: var(--primary-500);
   width: var(--grid-column);
 }
 
+/* Figma layer: "Orange Gradient" */
 .hero-badge__gradient {
   position: absolute;
   background: linear-gradient(to right, oklch(0.63 0.15 50 / 0.5), oklch(0.63 0.15 50 / 0) 50%);
@@ -69,7 +71,7 @@
 
 
 
-/* ---- Section block ---- */
+/* ---- Section ---- */
 
 .section {
   display: flex;
@@ -115,6 +117,7 @@
   z-index: 1;
 }
 
+/* Figma layer: "Gradient" */
 .section__header::after {
   content: '';
   position: absolute;
@@ -148,7 +151,7 @@
 }
 
 
-/* ---- Subsection label ---- */
+/* ---- Section Row: Label ---- */
 
 .section__label {
   grid-column: 1;
@@ -156,7 +159,7 @@
 }
 
 
-/* ---- Section content ---- */
+/* ---- Section Row: Content ---- */
 
 .section__content {
   grid-column: 2;
@@ -168,7 +171,7 @@
 }
 
 
-.section__subheading {
+.section__label-text {
   font: var(--text-meta-440);
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -179,7 +182,7 @@
   white-space: pre-line;
 }
 
-.section__subheading--light {
+.section__label-text--light {
   color: var(--ink-300);
 }
 

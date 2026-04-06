@@ -33,8 +33,8 @@ npx playwright test # visual regression tests (Playwright)
     - composables/useGlossary.ts — Glossary search/filter composable
     - createApp.ts — Shared app bootstrap (mounts Vue + router + global styles)
   - src/research/ — Research app views and router
-    - step-shared.css — Shared step-page styles (hero, section block, cards, prose, tags)
-    - components/ — SectionBlock.vue, SubsectionRow.vue, HeroHeader.vue, SpecsGrid.vue
+    - step-shared.css — Shared step-page styles (hero, section, section row, cards, prose, tags)
+    - components/ — Hero.vue, Section.vue, SectionRow.vue, SpecsGrid.vue
     - data/types.ts — Barrel re-export of research TypeScript types from types/ subdirectory (common, step-2-3, step-2-4, step-2-8)
     - data/steps.ts — Step metadata registry
     - data/step-2-*.ts — Per-step structured content (2-1, 2-2, 2-3, 2-4, 2-8)
@@ -63,7 +63,8 @@ npx playwright test # visual regression tests (Playwright)
 - All pixel values must align to design token scale; snap 1–2px drift to nearest token
 - Font-size overrides after `font` shorthand (e.g., `font: var(--text-body-350); font-size: 14px;`) are acceptable when the override is on the type scale (12, 13, 14, 18, 22, 28, 36, 48, 72) — this covers cases where a different token's weight/family is needed at a size not captured by a single token
 - Shared step styles in step-shared.css; duplicated rules across views get extracted there
-- Section block BEM: `.section` (outer, padding `--space-4xl`), `.section__inner` (max-width 8 grid columns), `.section__header` (heading border), `.section__row` / `.section__label` / `.section__content` (grid layout, label = 1 grid column), `.section__panel` (decorative background, 5 grid columns)
+- Section BEM: `.section` (outer, padding `--space-4xl`), `.section__inner` (max-width 8 grid columns), `.section__header` (heading border), `.section__row` / `.section__label` / `.section__label-text` / `.section__content` (grid layout, label = 1 grid column), `.section__panel` (decorative background, 5 grid columns)
+- Hero props: `part` (step number), `intro` (lead text), default slot (title) — names match Figma component props
 - Section variant modifiers: `--dark`, `--warm`, `--title` — set background/color on `.section`
 - Typography tokens at `:root` in typography.css at research scale — no per-app overrides
 - `--text-heading-620` (weight 200) used for section headings

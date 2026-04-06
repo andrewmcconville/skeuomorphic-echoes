@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import HeroHeader from '../components/HeroHeader.vue'
-import SectionBlock from '../components/SectionBlock.vue'
-import SubsectionRow from '../components/SubsectionRow.vue'
+import Hero from '../components/Hero.vue'
+import Section from '../components/Section.vue'
+import SectionRow from '../components/SectionRow.vue'
 import SpecsGrid from '../components/SpecsGrid.vue'
 import {
   screens, modals, rooms,
@@ -13,13 +13,13 @@ import {
 <template>
   <article class="step-page">
     <!-- ===== HERO — warm dark band ===== -->
-    <HeroHeader badge="2.3" lead="Mapping every screen, overlay, and content element the kiosk needs — from the floor-plan home screen down to individual specimen catalog fields.">
+    <Hero part="2.3" intro="Mapping every screen, overlay, and content element the kiosk needs — from the floor-plan home screen down to individual specimen catalog fields.">
       Sitemap &amp;<br />Content Inventory
-    </HeroHeader>
+    </Hero>
 
     <!-- ===== SITEMAP ===== -->
-    <SectionBlock heading="Sitemap" :panel="false">
-      <SubsectionRow label="Structure">
+    <Section heading="Sitemap" :panel="false">
+      <SectionRow label="Structure">
         <div class="sitemap-tree">
           <div class="tree-level tree-level--top">
             <div class="tree-node tree-node--secondary">Artifact Collection</div>
@@ -41,12 +41,12 @@ import {
             <div class="tree-node tree-node--leaf">Evolutionary Stages (×20)</div>
           </div>
         </div>
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
 
     <!-- ===== SCREENS ===== -->
-    <SectionBlock heading="Screens">
-      <SubsectionRow label="Pages">
+    <Section heading="Screens">
+      <SectionRow label="Pages">
         <div class="screen-table">
           <div class="screen-header">
             <span class="col-name">Screen</span>
@@ -59,12 +59,12 @@ import {
             <span class="col-notes">{{ s.notes }}</span>
           </div>
         </div>
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
 
     <!-- ===== MODALS & OVERLAYS ===== -->
-    <SectionBlock heading="Modals">
-      <SubsectionRow label="Overlays">
+    <Section heading="Modals">
+      <SectionRow label="Overlays">
         <div class="screen-table">
           <div class="screen-header">
             <span class="col-name">Element</span>
@@ -77,23 +77,23 @@ import {
             <span class="col-notes">{{ m.notes }}</span>
           </div>
         </div>
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
 
     <!-- ===== HOME SCREEN ===== -->
-    <SectionBlock heading="Home">
-      <SubsectionRow label="Fields">
+    <Section heading="Home">
+      <SectionRow label="Fields">
         <SpecsGrid :items="homeContent" dense />
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
 
     <!-- ===== SKEUOMORPH ROOM — warm band ===== -->
-    <SectionBlock heading="Skeuomorph Room" variant="warm">
-      <SubsectionRow label="Fields">
+    <Section heading="Skeuomorph Room" variant="warm">
+      <SectionRow label="Fields">
         <SpecsGrid :items="roomLandingContent" dense />
-      </SubsectionRow>
+      </SectionRow>
 
-      <SubsectionRow label="Skeuomorph Rooms">
+      <SectionRow label="Skeuomorph Rooms">
         <div class="room-cards">
           <div v-for="(room, i) in rooms" :key="room.name" class="card card--vertical card--room">
             <div class="room-card-header">
@@ -112,16 +112,16 @@ import {
             </div>
           </div>
         </div>
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
 
     <!-- ===== ARTIFACT — dark band ===== -->
-    <SectionBlock heading="Artifact" variant="dark">
-      <SubsectionRow label="Core Fields" :light-label="true">
+    <Section heading="Artifact" variant="dark">
+      <SectionRow label="Core Fields" :light-label="true">
         <SpecsGrid :items="interiorCore" dense light />
-      </SubsectionRow>
+      </SectionRow>
 
-      <SubsectionRow label="Catalog Fields" :light-label="true">
+      <SectionRow label="Catalog Fields" :light-label="true">
         <div class="catalog-groups">
           <div v-for="group in interiorCatalog" :key="group.group" class="catalog-group">
             <h4 class="catalog-group-title">{{ group.group }}</h4>
@@ -132,33 +132,33 @@ import {
             </div>
           </div>
         </div>
-      </SubsectionRow>
+      </SectionRow>
 
-      <SubsectionRow label="Actions" :light-label="true">
+      <SectionRow label="Actions" :light-label="true">
         <SpecsGrid :items="interiorActions" dense light />
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
 
     <!-- ===== ARTIFACT COLLECTION ===== -->
-    <SectionBlock heading="Artifact Collection">
-      <SubsectionRow label="Fields">
+    <Section heading="Artifact Collection">
+      <SectionRow label="Fields">
         <SpecsGrid :items="collectionContent" dense />
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
 
     <!-- ===== ABOUT ===== -->
-    <SectionBlock heading="About">
-      <SubsectionRow label="Fields">
+    <Section heading="About">
+      <SectionRow label="Fields">
         <SpecsGrid :items="aboutContent" dense />
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
 
     <!-- ===== GLOSSARY ===== -->
-    <SectionBlock heading="Glossary">
-      <SubsectionRow label="Fields">
+    <Section heading="Glossary">
+      <SectionRow label="Fields">
         <SpecsGrid :items="glossaryContent" dense />
-      </SubsectionRow>
-    </SectionBlock>
+      </SectionRow>
+    </Section>
   </article>
 </template>
 

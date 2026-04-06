@@ -17,5 +17,11 @@ dist
 .DS_Store
 Thumbs.db
 
-# Claude Code memory (keep in sync separately)
+# Claude Code
 memory/
+.claude/settings.local.json
+.mcp.json
+.playwright-mcp/
+
+# Test results
+examples/museum-kiosk/app/test-results/

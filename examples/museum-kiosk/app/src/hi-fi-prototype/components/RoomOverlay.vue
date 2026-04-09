@@ -16,67 +16,67 @@ const progress = computed(() => roomProgress(props.roomId))
 </script>
 
 <template>
-  <div v-if="room" class="wf-room">
+  <div v-if="room" class="hf-room">
     <!-- Close -->
-    <button class="wf-room__close" @click="emit('close')">✕</button>
+    <button class="hf-room__close" @click="emit('close')">&#x2715;</button>
 
-    <!-- Big typographic header -->
-    <div class="wf-room__hero">
-      <p class="wf-room__label">Skeuomorph Room</p>
-      <h2 class="wf-room__title">{{ room.name }}</h2>
-      <p class="wf-room__thesis">{{ room.thesis }}</p>
+    <!-- Dark hero band -->
+    <div class="hf-room__hero">
+      <p class="hf-room__label">Skeuomorph Room</p>
+      <h2 class="hf-room__title">{{ room.name }}</h2>
+      <p class="hf-room__thesis">{{ room.thesis }}</p>
     </div>
 
     <!-- Progress strip -->
-    <div class="wf-room__progress">
-      <div class="wf-room__progress-dots">
+    <div class="hf-room__progress">
+      <div class="hf-room__progress-dots">
         <span
           v-for="artifact in room.artifacts"
           :key="artifact.id"
-          class="wf-room__progress-dot"
-          :class="{ 'wf-room__progress-dot--filled': isCollected(artifact.id) }"
+          class="hf-room__progress-dot"
+          :class="{ 'hf-room__progress-dot--filled': isCollected(artifact.id) }"
         ></span>
       </div>
-      <span class="wf-room__progress-text">
+      <span class="hf-room__progress-text">
         {{ progress.collected }} / {{ progress.total }}
       </span>
     </div>
 
     <!-- Timeline -->
-    <div class="wf-timeline">
-      <div class="wf-timeline__line"></div>
+    <div class="hf-timeline">
+      <div class="hf-timeline__line"></div>
 
       <div
         v-for="(artifact, i) in room.artifacts"
         :key="artifact.id"
-        class="wf-timeline__node"
+        class="hf-timeline__node"
         :class="{
-          'wf-timeline__node--right': i % 2 !== 0,
-          'wf-timeline__node--collected': isCollected(artifact.id),
+          'hf-timeline__node--right': i % 2 !== 0,
+          'hf-timeline__node--collected': isCollected(artifact.id),
         }"
         :style="{ animationDelay: (i * 0.1) + 's' }"
       >
-        <!-- Connector dot on the timeline -->
+        <!-- Connector dot -->
         <div
-          class="wf-timeline__dot"
+          class="hf-timeline__dot"
           role="button"
           :tabindex="0"
           @click="(e: MouseEvent) => {
-            const card = (e.currentTarget as HTMLElement).parentElement!.querySelector('.wf-timeline__card') as HTMLElement
+            const card = (e.currentTarget as HTMLElement).parentElement!.querySelector('.hf-timeline__card') as HTMLElement
             emit('open-artifact', artifact.id, card.getBoundingClientRect())
           }"
           @keydown.enter="(e: KeyboardEvent) => {
-            const card = (e.currentTarget as HTMLElement).parentElement!.querySelector('.wf-timeline__card') as HTMLElement
+            const card = (e.currentTarget as HTMLElement).parentElement!.querySelector('.hf-timeline__card') as HTMLElement
             emit('open-artifact', artifact.id, card.getBoundingClientRect())
           }"
         >
-          <span v-if="isCollected(artifact.id)">✓</span>
+          <span v-if="isCollected(artifact.id)">&#x2713;</span>
           <span v-else>{{ i + 1 }}</span>
         </div>
 
         <!-- Card -->
         <div
-          class="wf-timeline__card"
+          class="hf-timeline__card"
           role="button"
           :tabindex="0"
           @click="(e: MouseEvent) => {
@@ -86,20 +86,20 @@ const progress = computed(() => roomProgress(props.roomId))
             emit('open-artifact', artifact.id, (e.currentTarget as HTMLElement).getBoundingClientRect())
           }"
         >
-          <div class="wf-timeline__card-img">
-            {{ isCollected(artifact.id) ? '✓' : 'IMG' }}
+          <div class="hf-timeline__card-img">
+            {{ isCollected(artifact.id) ? '\u2713' : 'IMG' }}
           </div>
-          <div class="wf-timeline__card-body">
-            <span class="wf-timeline__era">{{ artifact.era }}</span>
-            <span class="wf-timeline__name">{{ artifact.name }}</span>
-            <span class="wf-timeline__summary">{{ artifact.summary }}</span>
+          <div class="hf-timeline__card-body">
+            <span class="hf-timeline__era">{{ artifact.era }}</span>
+            <span class="hf-timeline__name">{{ artifact.name }}</span>
+            <span class="hf-timeline__summary">{{ artifact.summary }}</span>
           </div>
-          <span class="wf-timeline__arrow">→</span>
+          <span class="hf-timeline__arrow">&rarr;</span>
         </div>
       </div>
     </div>
 
-    <!-- Room description at the bottom -->
-    <p class="wf-room__desc">{{ room.description }}</p>
+    <!-- Room description footer -->
+    <p class="hf-room__desc">{{ room.description }}</p>
   </div>
 </template>

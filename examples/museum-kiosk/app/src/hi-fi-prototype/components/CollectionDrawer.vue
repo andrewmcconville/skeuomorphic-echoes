@@ -11,46 +11,50 @@ const { isCollected, roomProgress, totalCollected, totalArtifacts } = useCollect
 </script>
 
 <template>
-  <div class="wf-drawer">
-    <div class="wf-drawer__header">
-      <h2 class="wf-drawer__title">Artifact Collection</h2>
-      <button class="wf-drawer__close" @click="emit('close')">✕</button>
+  <div class="hf-drawer">
+    <div class="hf-drawer__header">
+      <h2 class="hf-drawer__title">Artifact Collection</h2>
+      <button class="hf-drawer__close" @click="emit('close')">&#x2715;</button>
     </div>
 
-    <div class="wf-drawer__body">
+    <div class="hf-drawer__body">
       <!-- Overall progress -->
-      <div class="wf-coll-summary">
-        <p class="wf-coll-summary__count">
+      <div class="hf-coll-summary">
+        <p class="hf-coll-summary__count">
           {{ totalCollected }} / {{ totalArtifacts }}
         </p>
-        <p class="wf-coll-summary__label">
+        <p class="hf-coll-summary__label">
           artifacts collected
         </p>
       </div>
 
       <!-- Room groups -->
       <div v-for="room in rooms" :key="room.id">
-        <p class="wf-coll-group__title">{{ room.name }}</p>
-        <p class="wf-coll-group__progress">
+        <p class="hf-coll-group__title">{{ room.name }}</p>
+        <p class="hf-coll-group__progress">
           {{ roomProgress(room.id).collected }} / {{ roomProgress(room.id).total }}
         </p>
 
         <div
           v-for="artifact in room.artifacts"
           :key="artifact.id"
-          class="wf-coll-item"
-          :class="{ 'wf-coll-item--locked': !isCollected(artifact.id) }"
+          class="hf-coll-item"
+          :class="{
+            'hf-coll-item--locked': !isCollected(artifact.id),
+            'hf-coll-item--collected': isCollected(artifact.id),
+          }"
           role="button"
           :tabindex="isCollected(artifact.id) ? 0 : -1"
           @click="isCollected(artifact.id) && emit('open-artifact', room.id, artifact.id)"
+          @keydown.enter="isCollected(artifact.id) && emit('open-artifact', room.id, artifact.id)"
         >
-          <div class="wf-coll-item__icon">
-            {{ isCollected(artifact.id) ? '✓' : '?' }}
+          <div class="hf-coll-item__icon">
+            {{ isCollected(artifact.id) ? '\u2713' : '?' }}
           </div>
-          <span class="wf-coll-item__name">
+          <span class="hf-coll-item__name">
             {{ isCollected(artifact.id) ? artifact.name : '???' }}
           </span>
-          <span class="wf-coll-item__badge">
+          <span class="hf-coll-item__badge">
             {{ isCollected(artifact.id) ? 'Collected' : 'Locked' }}
           </span>
         </div>

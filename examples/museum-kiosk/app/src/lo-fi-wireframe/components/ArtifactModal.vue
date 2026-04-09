@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { findArtifact, findRoom, getAdjacentArtifacts } from '../data/rooms'
-import { useCollection } from '../composables/useCollection'
+import { findArtifact, findRoom, getAdjacentArtifacts } from '@shared/data/rooms'
+import { useCollection } from '@shared/composables/useCollection'
 
 const props = defineProps<{ artifactId: string; roomId: string }>()
 

@@ -30,7 +30,9 @@ npx playwright test # visual regression tests (Playwright)
     - components/GlossaryContent.vue — Shared glossary renderer (compact/full via prop)
     - components/PlaceholderPage.vue — Shared placeholder page for stub views
     - data/glossary.ts — Glossary of typographic icons (13 glyph entries, shared by all apps)
+    - data/rooms.ts — 4 rooms × 5 artifacts with content, lookup helpers (shared by lo-fi + hi-fi)
     - composables/useGlossary.ts — Glossary search/filter composable
+    - composables/useCollection.ts — Reactive collection state shared across overlays (shared by lo-fi + hi-fi)
     - createApp.ts — Shared app bootstrap (mounts Vue + router + global styles)
   - src/research/ — Research app views and router
     - step-shared.css — Shared step-page styles (hero, section, section row, cards, prose, tags)
@@ -41,10 +43,9 @@ npx playwright test # visual regression tests (Playwright)
   - src/lo-fi-wireframe/ — Lo-fi wireframe app (overlay-driven single-canvas, no page navigation)
     - wireframe.css — Shared wireframe styles and transition animations
     - components/ — FloorPlan, RoomOverlay, ArtifactModal, CollectionDrawer, AboutDrawer, GlossaryDrawer
-    - composables/useCollection.ts — Reactive collection state shared across overlays
-    - data/rooms.ts — 4 rooms × 5 artifacts with content, lookup helpers
-  - src/hi-fi-prototype/ — Hi-fi prototype app views and router
-    - views/ — HomeView.vue, AboutView.vue, GlossaryView.vue
+  - src/hi-fi-prototype/ — Hi-fi prototype app (overlay-driven, same architecture as lo-fi with design tokens)
+    - prototype.css — Hi-fi styles using design tokens, editorial museum-catalog aesthetic
+    - components/ — FloorPlan, RoomOverlay, ArtifactModal, CollectionDrawer, AboutDrawer, GlossaryDrawer
   - tests/ — Playwright test specs (visual-regression.spec.ts)
 - examples/museum-kiosk/docs/ — Reference markdown documents (glossary.md, design-direction-brief.md, artifact-metadata-fields.md, 2.1–2.8 step content)
 - examples/museum-kiosk/tests/ — Playwright test screenshots (visual baselines)

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { useCollection } from './composables/useCollection'
+import { useCollection } from '@shared/composables/useCollection'
 import FloorPlan from './components/FloorPlan.vue'
 import RoomOverlay from './components/RoomOverlay.vue'
 import ArtifactModal from './components/ArtifactModal.vue'
